@@ -35,6 +35,17 @@ export abstract class AlphaComponentBase {
     return this.contactsSubject$.value;
   }
 
+  get email(): string {
+    const first: number = 0;
+    return this.contacts.filter((c) => c.type === "email").map((c) => c.id)[
+      first
+    ];
+  }
+
+  get emailHref(): string {
+    return `mailto:${this.email}`;
+  }
+
   get skills(): Skill[] {
     return this.skillsSubject$.value;
   }
@@ -47,7 +58,7 @@ export abstract class AlphaComponentBase {
     return this.educationsSubject$.value;
   }
 
-  get fullname(): string {
+  get fullName(): string {
     return `${this.firstNameSubject$.value} ${this.lastNameSubject$.value}`;
   }
 
