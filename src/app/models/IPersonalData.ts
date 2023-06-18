@@ -3,6 +3,7 @@ export interface IPersonalData {
   lastName: string;
   contacts: Contact[];
   githubProfile: string;
+  profileSummary: string;
   location: string;
   jobTitle: string;
   skills: Skill[];
