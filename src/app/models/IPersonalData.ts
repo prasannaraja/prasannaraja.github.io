@@ -1,12 +1,13 @@
 export interface IPersonalData {
-  name: string;
-  contact: Contact[];
-  github: string;
+  firstName: string;
+  lastName: string;
+  contacts: Contact[];
+  githubProfile: string;
   location: string;
   jobTitle: string;
-  skills: Skills[];
+  skills: Skill[];
   educations: Education[];
-  reference: Reference[];
+  references: Reference[];
 }
 
 export interface Contact {
@@ -14,7 +15,7 @@ export interface Contact {
   type: string;
 }
 
-export interface Skills {
+export interface Skill {
   title: string;
   type: string;
   data: {
