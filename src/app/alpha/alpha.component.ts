@@ -52,8 +52,6 @@ export class AlphaComponent extends AlphaComponentBase implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getData$.subscribe(() => {
-      console.log(this.fullName);
-    });
+    this.getData$.subscribe();
   }
 }
