@@ -17,6 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "baseHref": "https://prasannaraja.github.io/",
             "outputPath": "dist/my-resume",
             "index": "src/index.html",
             "main": "src/main.ts",
