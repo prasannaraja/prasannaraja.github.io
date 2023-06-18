@@ -4,7 +4,7 @@ export interface IPersonalData {
   github: string;
   location: string;
   jobTitle: string;
-  skills: Skills;
+  skills: Skills[];
   educations: Education[];
   reference: Reference[];
 }
@@ -15,47 +15,12 @@ export interface Contact {
 }
 
 export interface Skills {
-  language: Language;
-  framework: Framework;
-  databases: Databases;
-  VersionControl: VersionControl;
-  Tools: Tools;
-  Testing: Testing;
-}
-
-export interface Language {
   title: string;
-  data: Info[];
-}
-
-export interface Info {
-  name: string;
   type: string;
-}
-
-export interface Framework {
-  title: string;
-  data: Info[];
-}
-
-export interface Databases {
-  title: string;
-  data: Info[];
-}
-
-export interface VersionControl {
-  title: string;
-  data: Info[];
-}
-
-export interface Tools {
-  title: string;
-  data: Info[];
-}
-
-export interface Testing {
-  title: string;
-  data: Info[];
+  data: {
+    name: string;
+    type: string;
+  };
 }
 
 export interface Education {
