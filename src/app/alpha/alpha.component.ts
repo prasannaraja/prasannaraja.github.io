@@ -19,7 +19,6 @@ export class AlphaComponent extends AlphaComponentBase implements OnInit {
   get personalData$(): Observable<IPersonalData> {
     return this.dataService.getPersonalData().pipe(
       map((p) => {
-        debugger;
         this.contactsSubject$.next(p.contacts);
         this.skillsSubject$.next(p.skills);
         this.referencesSubject$.next(p.references);
@@ -37,9 +36,9 @@ export class AlphaComponent extends AlphaComponentBase implements OnInit {
 
   get experienceData$(): Observable<Company[]> {
     return this.dataService.getExperienceData().pipe(
-      map((c) => {
-        this.companiesSubject$.next(c);
-        return c;
+      map((c: any) => {
+        this.companiesSubject$.next(c.companies);
+        return c.companies;
       })
     );
   }
