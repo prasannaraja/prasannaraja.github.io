@@ -19,6 +19,7 @@ export abstract class AlphaComponentBase {
   locationSubject$: BehaviorSubject<string>;
   jobTitleSubject$: BehaviorSubject<string>;
   companiesSubject$: BehaviorSubject<Company[]>;
+  profileSummarySubject$: BehaviorSubject<string>;
   constructor() {
     this.contactsSubject$ = new BehaviorSubject<Contact[]>([]);
     this.skillsSubject$ = new BehaviorSubject<Skill[]>([]);
@@ -30,6 +31,7 @@ export abstract class AlphaComponentBase {
     this.locationSubject$ = new BehaviorSubject<string>("");
     this.jobTitleSubject$ = new BehaviorSubject<string>("");
     this.companiesSubject$ = new BehaviorSubject<Company[]>([]);
+    this.profileSummarySubject$ = new BehaviorSubject<string>("");
   }
 
   get contacts(): Contact[] {
@@ -78,6 +80,10 @@ export abstract class AlphaComponentBase {
 
   get location(): string {
     return this.locationSubject$.value;
+  }
+
+  get profileSummary(): string {
+    return this.profileSummarySubject$.value;
   }
 
   get companies(): Company[] {
