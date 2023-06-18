@@ -19,6 +19,7 @@ export class AlphaComponent extends AlphaComponentBase implements OnInit {
   get personalData$(): Observable<IPersonalData> {
     return this.dataService.getPersonalData().pipe(
       map((p) => {
+        debugger;
         this.contactsSubject$.next(p.contacts);
         this.skillsSubject$.next(p.skills);
         this.referencesSubject$.next(p.references);
@@ -51,6 +52,8 @@ export class AlphaComponent extends AlphaComponentBase implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getData$.subscribe();
+    this.getData$.subscribe(() => {
+      console.log(this.fullName);
+    });
   }
 }
