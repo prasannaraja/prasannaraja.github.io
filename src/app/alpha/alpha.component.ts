@@ -29,6 +29,7 @@ export class AlphaComponent extends AlphaComponentBase implements OnInit {
         this.jobTitleSubject$.next(p.jobTitle);
         this.locationSubject$.next(p.location);
         this.githubProfileSubject$.next(p.githubProfile);
+        this.profileSummarySubject$.next(p.profileSummary);
         return p;
       })
     );
