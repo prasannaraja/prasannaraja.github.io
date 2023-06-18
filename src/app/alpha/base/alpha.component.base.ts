@@ -1,4 +1,4 @@
-import { BehaviorSubject } from "rxjs";
+import { BehaviorSubject, Observable } from "rxjs";
 import {
   Contact,
   Skill,
@@ -88,5 +88,9 @@ export abstract class AlphaComponentBase {
 
   get companies(): Company[] {
     return this.companiesSubject$.value;
+  }
+
+  get companies$(): Observable<Company[]> {
+    return this.companiesSubject$.asObservable();
   }
 }
