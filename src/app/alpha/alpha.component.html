@@ -82,6 +82,7 @@
                 <div>
                     <!-- Company -->
                     <h4 class="mb-1 lg:mb-4">{{company.name}}</h4>
+                    <p>{{company.summary.work.location.country}}</p>
                     <p class="text-sm mb-1">
                         <a href={{company.website}} target="_blank" rel="noreferrer">
                             {{company.website|hostname}}
@@ -96,7 +97,8 @@
                     <p>{{company.summary.company.details}}</p>
                     <p class="hidden"></p>
                     <ul>
-                        <li *ngFor="let resp of company.summary.work.responsibilities">{{resp}}</li>
+                        <li *ngFor="let responsibility of company.summary.work.responsibilities">{{responsibility}}
+                        </li>
                     </ul>
                 </div>
             </div>
