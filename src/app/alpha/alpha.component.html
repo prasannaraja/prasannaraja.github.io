@@ -112,24 +112,24 @@
             <div *ngFor="let skill of skills">
                 <h4 class="mt-8">{{skill.title}}</h4>
                 <ul>
-                    <!-- <li *ngFor="let s of skill.data">{{s.name}}</li> -->
+                    <li *ngFor="let s of skill.data">{{s.name}}</li>
                 </ul>
             </div>
             <!-- Education -->
             <h3 class="mt-12 lg:mt-16">Education</h3>
-            <h4 class="mb-1">Anna University</h4>
-            <p class="mb-1">Bachelor Degree in Computer Science Engineering</p>
-
+            <div *ngFor="let edu of educations">
+                <!-- Education 1 -->
+                <h4 class="mb-1">{{edu.university}}</h4>
+                <p class="mb-1">{{edu.program}}</p>
+            </div>
             <!-- References -->
             <h3 class="mt-12 lg:mt-16">References</h3>
+            <div *ngFor="let ref of references">
+                <!-- Reference 1 -->
+                <h4 class="mb-1">{{ref.firstName}} {{ref.lastName}}</h4>
+                <p>{{ref.designation}}</p>
+            </div>
 
-            <!-- Reference 1 -->
-            <h4 class="mb-1">Siva Kumar Ponnu Durai</h4>
-            <p>Software Engineer</p>
-
-            <!-- Reference 2 -->
-            <h4 class="mt-8 mb-1">Alber Michale</h4>
-            <p class="mb-1">Lead Engineer</p>
         </div>
     </div>
 </div>
