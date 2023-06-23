@@ -51,7 +51,7 @@ export class AlphaComponent extends AlphaComponentBase implements OnInit {
     );
   }
 
-  toObject(obj: string): any {
+  toObject(obj: any): any {
     return JSON.parse(obj);
   }
 
