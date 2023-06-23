@@ -6,7 +6,7 @@ export interface IPersonalData {
   profileSummary: string;
   location: string;
   jobTitle: string;
-  skills: Skill[];
+  skills: SkillGroup[];
   educations: Education[];
   references: Reference[];
 }
@@ -17,15 +17,17 @@ export interface Contact {
   data: string
 }
 
-export interface Skill {
+export interface SkillGroup {
   id: string;
   title: string;
   type: RequiredType;
-  data: {
-    id: string
-    name: string;
-    type: string;
-  };
+  data: Skill[];
+}
+
+export interface Skill {
+  id: string
+  name: string;
+  type: RequiredType;
 }
 
 export interface Education {
