@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from "@angular/core";
 import { DataService } from "../services/data.service";
 import { Observable, Subscription, map, switchMap, tap } from "rxjs";
 import { IPersonalData } from "../models/IPersonalData";
-import { Company } from "../models/ICompanies";
+import { ICompanies } from "../models/ICompanies";
 import { AlphaComponentBase } from "./base/alpha.component.base";
 
 @Component({
@@ -28,7 +28,7 @@ export class AlphaComponent extends AlphaComponentBase implements OnInit, OnDest
     return this.dataService.getPersonalData();
   }
 
-  get getExperienceData$(): Observable<Company[]> {
+  get getExperienceData$(): Observable<ICompanies> {
     return this.dataService.getExperienceData()
   }
 
@@ -49,18 +49,15 @@ export class AlphaComponent extends AlphaComponentBase implements OnInit, OnDest
     );
   }
 
-  get experienceData$(): Observable<Company[]> {
+  get experienceData$(): Observable<ICompanies> {
     return this.getExperienceData$.pipe(
-      map((c: any) => {
-        return c.companies;
-      }),
-      tap((companies) => {
-        this.companiesSubject$.next(companies);
+      tap((companies: ICompanies) => {
+        this.companiesSubject$.next(companies.data);
       })
     );
   }
 
-  get formData$(): Observable<Company[]> {
+  get formData$(): Observable<ICompanies> {
     return this.personalData$.pipe(
       switchMap(() => {
         return this.experienceData$;
