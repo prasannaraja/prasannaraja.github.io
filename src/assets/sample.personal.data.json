@@ -1,0 +1,68 @@
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "contacts": [
+    {
+      "id": "1",
+      "type": "Phone"
+    },
+    {
+      "id": "2",
+      "type": "Email"
+    }
+  ],
+  "githubProfile": "https://github.com/johndoe",
+  "profileSummary": "Experienced software engineer with expertise in web development.",
+  "location": "New York",
+  "jobTitle": "Senior Software Engineer",
+  "skills": [
+    {
+      "title": "Programming Languages",
+      "type": "General",
+      "data": {
+        "name": "JavaScript",
+        "type": "Proficient"
+      }
+    },
+    {
+      "title": "Web Development",
+      "type": "Specific",
+      "data": {
+        "name": "React",
+        "type": "Advanced"
+      }
+    }
+  ],
+  "educations": [
+    {
+      "university": "University of XYZ",
+      "program": "Bachelor of Science in Computer Science",
+      "latest": true,
+      "type": "Graduate"
+    },
+    {
+      "university": "ABC College",
+      "program": "Diploma in Web Development",
+      "latest": false,
+      "type": "Undergraduate"
+    }
+  ],
+  "references": [
+    {
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "designation": "Senior Software Engineer",
+      "mobile": "123-456-7890",
+      "email": "jane.smith@example.com",
+      "type": "Professional"
+    },
+    {
+      "firstName": "David",
+      "lastName": "Johnson",
+      "designation": "Project Manager",
+      "mobile": "987-654-3210",
+      "email": "david.johnson@example.com",
+      "type": "Personal"
+    }
+  ]
+}
