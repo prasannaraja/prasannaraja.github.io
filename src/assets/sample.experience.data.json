@@ -1,0 +1,66 @@
+{
+  "name": "ABC Company",
+  "website": "https://www.abccompany.com",
+  "position": "Software Engineer",
+  "summary": {
+    "company": {
+      "details": "ABC Company is a leading software development company specializing in web and mobile applications."
+    },
+    "work": {
+      "details": "As a software engineer, I was responsible for developing and maintaining web applications for clients.",
+      "email": "john.doe@abccompany.com",
+      "manager": {
+        "name": "Jane Smith",
+        "email": "jane.smith@abccompany.com",
+        "mobile": "123-456-7890",
+        "team": "Web Development"
+      },
+      "hr": {
+        "name": "David Johnson",
+        "email": "david.johnson@abccompany.com",
+        "mobile": "987-654-3210"
+      },
+      "employeeId": "123456",
+      "contact": "john.doe@abccompany.com",
+      "duration": "2 years",
+      "teamSize": 5,
+      "location": null,
+      "projects": [
+        {
+          "title": "E-commerce Website",
+          "client": "XYZ Retail",
+          "website": "https://www.xyzretail.com",
+          "shortSummary": "Developed an e-commerce website for XYZ Retail to sell their products online.",
+          "summary": "Worked as a part of a team to design and develop a scalable and user-friendly e-commerce website using React and Node.js.",
+          "keywords": ["e-commerce", "web development", "React", "Node.js"],
+          "responsibilities": [
+            "Front-end development",
+            "API integration",
+            "Database design"
+          ],
+          "skills": ["React", "Node.js", "HTML", "CSS"]
+        },
+        {
+          "title": "Mobile App",
+          "client": "ABC Corporation",
+          "website": "https://www.abccorporation.com",
+          "shortSummary": "Built a mobile app for ABC Corporation to enhance their customer engagement.",
+          "summary": "Collaborated with a cross-functional team to develop a feature-rich mobile app for ABC Corporation using React Native.",
+          "keywords": ["mobile app", "React Native", "customer engagement"],
+          "responsibilities": [
+            "Mobile app development",
+            "API integration",
+            "Testing"
+          ],
+          "skills": ["React Native", "JavaScript", "RESTful API"]
+        }
+      ],
+      "responsibilities": [
+        "Developing and maintaining web applications",
+        "Collaborating with team members",
+        "Testing and debugging"
+      ],
+      "skills": ["JavaScript", "HTML", "CSS", "React", "Node.js"]
+    }
+  }
+}
