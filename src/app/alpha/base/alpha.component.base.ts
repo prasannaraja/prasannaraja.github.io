@@ -58,6 +58,10 @@ export abstract class AlphaComponentBase {
     return this.skillsSubject$.value;
   }
 
+  get skills$(): Observable<Skill[]> {
+    return this.skillsSubject$.asObservable();
+  }
+
   get references(): Reference[] {
     return this.referencesSubject$.value;
   }
