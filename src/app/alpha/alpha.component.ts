@@ -1,21 +1,67 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
 import { DataService } from "../services/data.service";
-import { Observable } from "rxjs";
+import { Observable, Subscription, map, switchMap, tap } from "rxjs";
 import { IPersonalData } from "../models/IPersonalData";
+import { ICompanies } from "../models/ICompanies";
+import { AlphaComponentBase } from "./base/alpha.component.base";
 
 @Component({
   selector: "app-alpha",
-  providers: [DataService],
   templateUrl: "./alpha.component.html",
   styleUrls: ["./alpha.component.scss"],
 })
-export class AlphaComponent implements OnInit {
-  constructor(public dataService: DataService) {}
+export class AlphaComponent extends AlphaComponentBase implements OnInit, OnDestroy {
+  private subscriptions: Subscription;
+  constructor(public dataService: DataService) {
+    super();
+    this.subscriptions = new Subscription();
+  }
+
   ngOnInit(): void {
-    this.personalData$.subscribe((p) => console.log(p));
+    this.subscriptions.add(this.formData$.subscribe());
+  }
+  ngOnDestroy(): void {
+    this.subscriptions.unsubscribe();
+  }
+
+  get getPersonalData$() {
+    return this.dataService.getPersonalData();
+  }
+
+  get getExperienceData$(): Observable<ICompanies> {
+    return this.dataService.getExperienceData()
   }
 
   get personalData$(): Observable<IPersonalData> {
-    return this.dataService.getPersonalData();
+    return this.getPersonalData$.pipe(
+      tap((p) => {
+        this.contactsSubject$.next(p.contacts);
+        this.skillsSubject$.next(p.skills);
+        this.referencesSubject$.next(p.references);
+        this.educationsSubject$.next(p.educations);
+        this.firstNameSubject$.next(p.firstName);
+        this.lastNameSubject$.next(p.lastName);
+        this.jobTitleSubject$.next(p.jobTitle);
+        this.locationSubject$.next(p.location);
+        this.githubProfileSubject$.next(p.githubProfile);
+        this.profileSummarySubject$.next(p.profileSummary);
+      })
+    );
+  }
+
+  get experienceData$(): Observable<ICompanies> {
+    return this.getExperienceData$.pipe(
+      tap((companies: ICompanies) => {
+        this.companiesSubject$.next(companies.data);
+      })
+    );
+  }
+
+  get formData$(): Observable<ICompanies> {
+    return this.personalData$.pipe(
+      switchMap(() => {
+        return this.experienceData$;
+      })
+    );
   }
 }

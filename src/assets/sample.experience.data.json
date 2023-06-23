@@ -1,0 +1,304 @@
+{
+  "data": [
+    {
+      "name": "Company A",
+      "website": "www.companya.com",
+      "position": "Software Engineer",
+      "summary": {
+        "company": {
+          "details": "Company A is a leading technology company specializing in software development."
+        },
+        "work": {
+          "details": "Developed and maintained software solutions for clients in various industries.",
+          "email": "john.doe@companya.com",
+          "manager": {
+            "name": "Michael Johnson",
+            "email": "michael.johnson@companya.com",
+            "mobile": "+1 (123) 456-7890",
+            "team": "Development Team"
+          },
+          "hr": {
+            "name": "Emily Wilson",
+            "email": "emily.wilson@companya.com",
+            "mobile": "+1 (987) 654-3210"
+          },
+          "employeeId": "E123456",
+          "contact": "John Doe",
+          "duration": "3 years",
+          "teamSize": 15,
+          "location": {
+            "type": "mandatory",
+            "country": "United States",
+            "city": "San Francisco"
+          },
+          "projects": [
+            {
+              "title": "Project A",
+              "client": "Client A",
+              "website": "www.clienta.com",
+              "shortSummary": "Developed a web application for client A",
+              "summary": "Led the development of a web application for client A, utilizing modern technologies and frameworks. Collaborated with the client to gather requirements, designed system architecture, and implemented key features.",
+              "keywords": ["Web Development", "Front-end", "Back-end"],
+              "responsibilities": ["Requirement gathering", "System architecture design", "Feature implementation", "Code review"],
+              "skills": ["JavaScript", "React", "Node.js", "MongoDB"],
+              "duration": "2 years"
+            },
+            {
+              "title": "Project B",
+              "client": "Client B",
+              "website": "www.clientb.com",
+              "shortSummary": "Optimized database performance for client B",
+              "summary": "Identified performance bottlenecks in the client B's database system and implemented optimizations to enhance scalability and improve response times. Conducted performance testing and monitoring to ensure optimal system performance.",
+              "keywords": ["Database Optimization", "Performance Testing", "Monitoring"],
+              "responsibilities": ["Performance analysis", "Optimization implementation", "Testing and monitoring"],
+              "skills": ["Database Management", "SQL", "Performance Tuning"],
+              "duration": "1 year"
+            }
+          ],
+          "responsibilities": ["Software development", "System maintenance", "Code debugging", "Collaboration with cross-functional teams"],
+          "skills": ["JavaScript", "Python", "React", "Node.js", "SQL"]
+        }
+      }
+    },
+    {
+      "name": "Company B",
+      "website": "www.companyb.com",
+      "position": "Marketing Specialist",
+      "summary": {
+        "company": {
+          "details": "Company B is a global marketing agency providing comprehensive marketing solutions."
+        },
+        "work": {
+          "details": "Developed and executed digital marketing strategies for clients across various industries.",
+          "email": "jane.smith@companyb.com",
+          "manager": {
+            "name": "David Wilson",
+            "email": "david.wilson@companyb.com",
+            "mobile": "+1 (123) 456-7890",
+            "team": "Marketing Team"
+          },
+          "hr": {
+            "name": "Jessica Davis",
+            "email": "jessica.davis@companyb.com",
+            "mobile": "+1 (987) 654-3210"
+          },
+          "employeeId": "E987654",
+          "contact": "Jane Smith",
+          "duration": "2.5 years",
+          "teamSize": 10,
+          "location": {
+            "type": "mandatory",
+            "country": "United States",
+            "city": "New York"
+          },
+          "projects": [
+            {
+              "title": "Project C",
+              "client": "Client C",
+              "website": "www.clientc.com",
+              "shortSummary": "Developed and executed a social media marketing campaign for client C",
+              "summary": "Designed and implemented a comprehensive social media marketing campaign for client C, focusing on audience engagement and brand awareness. Monitored campaign performance, analyzed metrics, and provided strategic recommendations for optimization.",
+              "keywords": ["Social Media Marketing", "Audience Engagement", "Brand Awareness"],
+              "responsibilities": ["Campaign planning", "Content creation", "Performance monitoring", "Optimization"],
+              "skills": ["Social Media Management", "Content Marketing", "Analytics"],
+              "duration": "1.5 years"
+            },
+            {
+              "title": "Project D",
+              "client": "Client D",
+              "website": "www.clientd.com",
+              "shortSummary": "Conducted market research and competitor analysis for client D",
+              "summary": "Performed in-depth market research and competitor analysis for client D to identify target markets, customer preferences, and competitive landscape. Prepared comprehensive reports and delivered strategic insights to support client's marketing decisions.",
+              "keywords": ["Market Research", "Competitor Analysis", "Strategic Insights"],
+              "responsibilities": ["Data collection", "Analysis and interpretation", "Report preparation", "Strategic recommendations"],
+              "skills": ["Market Research", "Competitive Analysis", "Data Analysis"],
+              "duration": "1 year"
+            }
+          ],
+          "responsibilities": ["Digital marketing strategy development", "Campaign management", "Data analysis", "Client communication"],
+          "skills": ["Digital Marketing", "Social Media Management", "Content Marketing", "Market Research"]
+        }
+      }
+    },
+    {
+      "name": "Company C",
+      "website": "www.companyc.com",
+      "position": "Financial Analyst",
+      "summary": {
+        "company": {
+          "details": "Company C is a financial services firm providing comprehensive financial solutions."
+        },
+        "work": {
+          "details": "Conducted financial analysis and provided strategic recommendations for clients.",
+          "email": "alex.johnson@companyc.com",
+          "manager": {
+            "name": "Jennifer Smith",
+            "email": "jennifer.smith@companyc.com",
+            "mobile": "+1 (123) 456-7890",
+            "team": "Finance Team"
+          },
+          "hr": {
+            "name": "Michael Davis",
+            "email": "michael.davis@companyc.com",
+            "mobile": "+1 (987) 654-3210"
+          },
+          "employeeId": "E246810",
+          "contact": "Alex Johnson",
+          "duration": "3.5 years",
+          "teamSize": 8,
+          "location": {
+            "type": "mandatory",
+            "country": "United States",
+            "city": "Chicago"
+          },
+          "projects": [
+            {
+              "title": "Project E",
+              "client": "Client E",
+              "website": "www.cliente.com",
+              "shortSummary": "Performed financial analysis for client E's investment portfolio",
+              "summary": "Conducted detailed financial analysis of client E's investment portfolio, assessed risk levels, and provided strategic recommendations for portfolio optimization. Prepared comprehensive reports and presented findings to the client.",
+              "keywords": ["Financial Analysis", "Investment Portfolio", "Risk Assessment", "Optimization"],
+              "responsibilities": ["Data analysis", "Risk assessment", "Report preparation", "Presentation"],
+              "skills": ["Financial Analysis", "Investment Management", "Risk Assessment"],
+              "duration": "2.5 years"
+            },
+            {
+              "title": "Project F",
+              "client": "Client F",
+              "website": "www.clientf.com",
+              "shortSummary": "Conducted cost analysis and budget planning for client F",
+              "summary": "Performed cost analysis, budget planning, and financial forecasting for client F to support strategic decision-making. Collaborated with the client to identify cost-saving opportunities and improve financial performance.",
+              "keywords": ["Cost Analysis", "Budget Planning", "Financial Forecasting", "Strategic Decision-making"],
+              "responsibilities": ["Cost analysis", "Budget planning", "Financial forecasting", "Collaboration with client"],
+              "skills": ["Cost Analysis", "Budgeting", "Financial Forecasting", "Strategic Planning"],
+              "duration": "1 year"
+            }
+          ],
+          "responsibilities": ["Financial analysis", "Strategic recommendations", "Risk assessment", "Budget planning"],
+          "skills": ["Financial Analysis", "Risk Assessment", "Budgeting", "Financial Planning"]
+        }
+      }
+    },
+    {
+      "name": "Company D",
+      "website": "www.companyd.com",
+      "position": "Graphic Designer",
+      "summary": {
+        "company": {
+          "details": "Company D is a creative agency specializing in graphic design and branding."
+        },
+        "work": {
+          "details": "Designed and developed creative visual solutions for clients' marketing materials.",
+          "email": "sarah.wilson@companyd.com",
+          "manager": {
+            "name": "Robert Thompson",
+            "email": "robert.thompson@companyd.com",
+            "mobile": "+1 (123) 456-7890",
+            "team": "Design Team"
+          },
+          "hr": {
+            "name": "Laura Davis",
+            "email": "laura.davis@companyd.com",
+            "mobile": "+1 (987) 654-3210"
+          },
+          "employeeId": "E3691215",
+          "contact": "Sarah Wilson",
+          "duration": "2 years",
+          "teamSize": 6,
+          "location": {
+            "type": "mandatory",
+            "country": "United States",
+            "city": "Los Angeles"
+          },
+          "projects": [
+            {
+              "title": "Project G",
+              "client": "Client G",
+              "website": "www.clientg.com",
+              "shortSummary": "Designed a visually appealing brand identity for client G",
+              "summary": "Created a visually appealing brand identity for client G, including logo design, color schemes, typography, and brand guidelines. Collaborated with the client to understand their vision and delivered creative solutions that aligned with their brand image.",
+              "keywords": ["Brand Identity", "Logo Design", "Typography", "Brand Guidelines"],
+              "responsibilities": ["Logo design", "Color scheme selection", "Typography design", "Brand guideline creation"],
+              "skills": ["Graphic Design", "Logo Design", "Typography", "Branding"],
+              "duration": "1.5 years"
+            },
+            {
+              "title": "Project H",
+              "client": "Client H",
+              "website": "www.clienth.com",
+              "shortSummary": "Created engaging visual assets for client H's marketing campaigns",
+              "summary": "Developed engaging visual assets, including illustrations, infographics, and social media graphics, for client H's marketing campaigns. Translated client's concepts and requirements into visually appealing designs that effectively communicated their messages.",
+              "keywords": ["Visual Assets", "Illustrations", "Infographics", "Social Media Graphics"],
+              "responsibilities": ["Concept development", "Graphic design", "Visualization", "Client collaboration"],
+              "skills": ["Graphic Design", "Illustration", "Infographics", "Visual Communication"],
+              "duration": "0.5 years"
+            }
+          ],
+          "responsibilities": ["Graphic design", "Visual concept development", "Client collaboration", "Brand guideline adherence"],
+          "skills": ["Graphic Design", "Illustration", "Typography", "Visual Communication"]
+        }
+      }
+    },
+    {
+      "name": "Company E",
+      "website": "www.companye.com",
+      "position": "Sales Representative",
+      "summary": {
+        "company": {
+          "details": "Company E is a leading provider of sales and marketing solutions."
+        },
+        "work": {
+          "details": "Managed sales activities and fostered client relationships to drive revenue growth.",
+          "email": "mark.jones@companye.com",
+          "manager": {
+            "name": "Jennifer Davis",
+            "email": "jennifer.davis@companye.com",
+            "mobile": "+1 (123) 456-7890",
+            "team": "Sales Team"
+          },
+          "hr": {
+            "name": "Brian Wilson",
+            "email": "brian.wilson@companye.com",
+            "mobile": "+1 (987) 654-3210"
+          },
+          "employeeId": "E151617",
+          "contact": "Mark Jones",
+          "duration": "2 years",
+          "teamSize": 12,
+          "location": {
+            "type": "mandatory",
+            "country": "United States",
+            "city": "Boston"
+          },
+          "projects": [
+            {
+              "title": "Project I",
+              "client": "Client I",
+              "website": "www.clienti.com",
+              "shortSummary": "Generated new leads and secured client I's business",
+              "summary": "Identified and pursued new business opportunities, generated leads, and successfully secured client I's business. Conducted sales presentations, negotiated contracts, and maintained strong client relationships to drive revenue growth.",
+              "keywords": ["Sales Generation", "Lead Generation", "Client Relationship Management", "Contract Negotiation"],
+              "responsibilities": ["Lead generation", "Sales presentations", "Contract negotiation", "Client relationship management"],
+              "skills": ["Sales", "Lead Generation", "Negotiation", "Client Relationship"],
+              "duration": "1.5 years"
+            },
+            {
+              "title": "Project J",
+              "client": "Client J",
+              "website": "www.clientj.com",
+              "shortSummary": "Managed key accounts and achieved sales targets for client J",
+              "summary": "Managed key client accounts, developed strategic account plans, and achieved sales targets for client J. Conducted regular account reviews, identified upselling opportunities, and provided excellent customer service to maximize client satisfaction.",
+              "keywords": ["Account Management", "Sales Targets", "Upselling", "Customer Service"],
+              "responsibilities": ["Account management", "Strategic planning", "Sales target achievement", "Customer service"],
+              "skills": ["Account Management", "Sales", "Strategic Planning", "Customer Service"],
+              "duration": "0.5 years"
+            }
+          ],
+          "responsibilities": ["Sales management", "Client relationship development", "Lead generation", "Sales target achievement"],
+          "skills": ["Sales", "Client Relationship Management", "Lead Generation", "Negotiation"]
+        }
+      }
+    }
+  ]
+}

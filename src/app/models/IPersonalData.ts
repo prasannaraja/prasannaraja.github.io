@@ -1,75 +1,57 @@
 export interface IPersonalData {
-  name: string;
-  contact: Contact[];
-  github: string;
+  firstName: string;
+  lastName: string;
+  contacts: Contact[];
+  githubProfile: string;
+  profileSummary: string;
   location: string;
   jobTitle: string;
-  skills: Skills;
+  skills: SkillGroup[];
   educations: Education[];
-  reference: Reference[];
+  references: Reference[];
 }
 
 export interface Contact {
   id: string;
-  type: string;
+  type: ContactType;
+  data: string
 }
 
-export interface Skills {
-  language: Language;
-  framework: Framework;
-  databases: Databases;
-  VersionControl: VersionControl;
-  Tools: Tools;
-  Testing: Testing;
-}
-
-export interface Language {
+export interface SkillGroup {
+  id: string;
   title: string;
-  data: Info[];
+  type: RequiredType;
+  data: Skill[];
 }
 
-export interface Info {
+export interface Skill {
+  id: string
   name: string;
-  type: string;
-}
-
-export interface Framework {
-  title: string;
-  data: Info[];
-}
-
-export interface Databases {
-  title: string;
-  data: Info[];
-}
-
-export interface VersionControl {
-  title: string;
-  data: Info[];
-}
-
-export interface Tools {
-  title: string;
-  data: Info[];
-}
-
-export interface Testing {
-  title: string;
-  data: Info[];
+  type: RequiredType;
 }
 
 export interface Education {
+  id: string;
   university: string;
   program: string;
   latest: boolean;
-  type: string;
+  type: RequiredType;
 }
 
 export interface Reference {
+  id: string;
   firstName: string;
   lastName: string;
   designation: string;
   mobile: string;
   email: string;
-  type: string;
+  type: RequiredType;
+}
+
+export enum ContactType {
+  mobile, email, teams
+}
+
+export enum RequiredType {
+  mandatory, standard, optional
 }

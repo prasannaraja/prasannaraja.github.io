@@ -1,11 +1,11 @@
 <div class="py-20 lg:py-24 px-6 mx-auto max-w-7xl">
     <div class="relative">
         <!-- Your Name -->
-        <h1>Prasanna Prabhakaran</h1>
+        <h1>{{fullName}}</h1>
 
         <div class="relative grid grid-cols-1 lg:grid-cols-4 gap-10 xl:gap-24 z-10">
             <!-- Your Title -->
-            <h2>Full Stack Developer</h2>
+            <h2>{{jobTitle}}</h2>
 
             <div
                 class="lg:flex lg:justify-between grid-3 xl:grid-3 lg:col-span-3 gap-4 mt-5 pt-4 border-t-2 border-gray-300">
@@ -21,8 +21,8 @@
                     <div class="ml-3">
                         <p class="mb-0 font-semibold text-sm">Email</p>
                         <p class="mb-0">
-                            <a href="mailto:prasannaraja@msn.com" target="_blank" rel="noreferrer">
-                                prasannaraja@msn.com
+                            <a href={{emailHref}} target="_blank" rel="noreferrer">
+                                {{email}}
                             </a>
                         </p>
                     </div>
@@ -40,8 +40,8 @@
                     <div class="ml-3">
                         <p class="mb-0 font-semibold text-sm">GitHub</p>
                         <p class="mb-0">
-                            <a href="https://github.com/prasannaraja" target="_blank" rel="noreferrer">
-                                github.com/prasannaraja
+                            <a href={{githubProfileUrl}} target="_blank" rel="noreferrer">
+                                {{githubProfileUrl | removeHttpPrefix}}
                             </a>
                         </p>
                     </div>
@@ -60,7 +60,7 @@
                         <p class="mb-0 font-semibold text-sm">Mobile</p>
                         <p class="mb-0">
                             <a href="mailto:prasannaraja@msn.com" target="_blank" rel="noreferrer">
-                                +35600000000
+                                {{mobile}}
                             </a>
                         </p>
                     </div>
@@ -76,146 +76,31 @@
         <!-- Work Experience -->
         <div class="lg:col-span-2">
             <h3>Work Experience</h3>
+            <!-- Work Experiences (i) -->
 
-            <!-- Work Experience 1 -->
-            <div class="grid-3 gap-x-6">
+            <div *ngFor="let company of companies let i = index" class="grid-3 gap-x-6 lg:mt-12">
                 <div>
-                    <!-- Company 1 -->
-                    <h4 class="mb-1 lg:mb-4">KPMG Malta</h4>
+                    <!-- Company -->
+                    <h4 class="mb-1 lg:mb-4">{{company.name}}</h4>
+                    <p>{{company.summary.work.location.country}}</p>
                     <p class="text-sm mb-1">
-                        <a href="https://kpmg.com/mt/en/home.html" target="_blank" rel="noreferrer">
-                            kpmg.com
+                        <a href={{company.website}} target="_blank" rel="noreferrer">
+                            {{company.website|hostname}}
                         </a>
                     </p>
-                    <p class="text-sm">OCT. 2021 - Present</p>
-                </div>
-
-                <div class="lg:col-span-2">
-                    <!-- Job Title 1 -->
-                    <h4 class="mb-4">Senior Analyst Programmer</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Integer a imperdiet urna. Praesent eu posuere magna, in
-                        suscipit quam. Here is an example of an
-                        <a href="https://resumewind.com/" target="_blank" rel="noreferrer">external link</a>.
-                    </p>
-                    <p>
-                        Mauris ullamcorper neque in ultrices mollis. Sed justo eros,
-                        mollis sed odio id, finibus gravida enim. Aenean pharetra ante
-                        elit, sit amet accumsan felis suscipit vitae. Vestibulum ante
-                        ipsum primis.
-                    </p>
-                    <ul>
-                        <li>Cras in erat bibendum, rhoncus nisl ac, luctus tortor</li>
-                        <li>Vivamus volutpat nunc non quam dapibus</li>
-                        <li>Nulla molestie odio odio, ut congue dui</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Work Experience 2 -->
-            <div class="grid-3 gap-x-6 mt-8 lg:mt-12">
-                <div>
-                    <!-- Company 2 -->
-                    <h4 class="mb-1 lg:mb-4">Finesse Technologies</h4>
-                    <p class="text-sm mb-1">
-                        <a href="https://www.gemseducation.com/" target="_blank" rel="noreferrer">
-                            gemseducation.com
-                        </a>
-                    </p>
-                    <p class="text-sm">Mar. 2021 - Sept. 2021 </p>
+                    <p class="text-sm">{{company.summary.work.duration}}</p>
                 </div>
 
                 <div class="lg:col-span-2">
                     <!-- Job Title 2 -->
-                    <h4 class="mb-4">Senior .NET Developer</h4>
-                    <p>
-                        An Internation Educational Group (GEMS Edu) - Lead Developer on a multi-national and
-                        multi-lingual platform for students, parents & teachers. Developed, delivered the new
-                        system with an API interface for other applications to interface with it. </p>
+                    <h4 class="mb-4">{{company.position}}</h4>
+                    <p>{{company.summary.company.details}}</p>
                     <p class="hidden"></p>
                     <ul>
-                        <li>Individual Contributor, Designed and developed the application from the scratch</li>
-                        <li>Developed the application using C#, ASP.NET Core, WebApi, Entity Framework, LINQ,
-                            SQL Server 2012</li>
-                        <li>Version Control using TFS, preer reviews and approvals</li>
-                        <li>Developed many reusable component for the swift development</li>
+                        <li *ngFor="let responsibility of company.summary.work.responsibilities">{{responsibility}}
+                        </li>
                     </ul>
                 </div>
-            </div>
-
-            <!-- Work Experience 3 -->
-            <div class="grid-3 mt-8 lg:mt-12">
-                <div>
-                    <!-- Company 3 -->
-                    <h4 class="mb-1 lg:mb-4">Randstad India</h4>
-                    <p class="text-sm mb-1">
-                        <a href="https://resumewind.com/" target="_blank" rel="noreferrer">
-                            companywebsite.com
-                        </a>
-                    </p>
-                    <p class="text-sm">Jul. 2020 - Feb. 2021</p>
-                </div>
-
-                <div class="lg:col-span-2">
-                    <!-- Job Title 3 -->
-                    <h4 class="mb-4">Job Title 3</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Integer a imperdiet urna. Praesent eu posuere magna, in
-                        suscipit quam. Here is an example of an
-                        <a href="https://resumewind.com/" target="_blank" rel="noreferrer">external link</a>.
-                    </p>
-                    <p>
-                        Mauris ullamcorper neque in ultrices mollis. Sed justo eros,
-                        mollis sed odio id, finibus gravida enim. Aenean pharetra ante
-                        elit, sit amet accumsan felis suscipit vitae. Vestibulum ante
-                        ipsum primis.
-                    </p>
-                    <ul>
-                        <li>Cras in erat bibendum, rhoncus nisl ac, luctus tortor</li>
-                        <li>Vivamus volutpat nunc non quam dapibus</li>
-                        <li>Nulla molestie odio odio, ut congue dui</li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <!-- Work Experience 4 -->
-            <div class="grid-3 mt-8 lg:mt-12">
-                <div>
-                    <!-- Company 3 -->
-                    <h4 class="mb-1 lg:mb-4">Company Name 3</h4>
-                    <p class="text-sm mb-1">
-                        <a href="https://resumewind.com/" target="_blank" rel="noreferrer">
-                            companywebsite.com
-                        </a>
-                    </p>
-                    <p class="text-sm">Jan. 2016 - Oct. 2019</p>
-                </div>
-
-                <div class="lg:col-span-2">
-                    <!-- Job Title 3 -->
-                    <h4 class="mb-4">Job Title 3</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Integer a imperdiet urna. Praesent eu posuere magna, in
-                        suscipit quam. Here is an example of an
-                        <a href="https://resumewind.com/" target="_blank" rel="noreferrer">external link</a>.
-                    </p>
-                    <p>
-                        Mauris ullamcorper neque in ultrices mollis. Sed justo eros,
-                        mollis sed odio id, finibus gravida enim. Aenean pharetra ante
-                        elit, sit amet accumsan felis suscipit vitae. Vestibulum ante
-                        ipsum primis.
-                    </p>
-                    <ul>
-                        <li>Cras in erat bibendum, rhoncus nisl ac, luctus tortor</li>
-                        <li>Vivamus volutpat nunc non quam dapibus</li>
-                        <li>Nulla molestie odio odio, ut congue dui</li>
-                    </ul>
-                </div>
-
             </div>
         </div>
 
@@ -223,51 +108,30 @@
             <!-- Profile -->
             <h3>Profile</h3>
             <p>
-                Experienced Senior .Net Specialist with a total of 12+ years of experience in custom solutions
-                development, enterprise application development, and application development (Green Field).
-                Proficient in .NET Core C#, Angular, ASP.NET Core, Entity Framework, LINQ, SQL Server, WCF, Web
-                API, HTML, CSS, and JavaScript. Skilled in CI/CD in Azure DevOps, managing pipelines,
-                auto-deployment based on approval, UI/UX development, and software packaging and deployment.
-                Successfully led the development of multiple projects for clients such as KPMG, Finesse Global,
-                Randstad India, Raqmiyat, Cognizant, HCLTech, and Inatech. Holds a BE in Computer Science
-                Engineering and a diploma in Electronics and Communication Engineering. Certified as a Microsoft
-                Certified Technology Specialist in Windows and web application development. Also completed
-                courses on AngularJS, ASP.NET Core MVC, and data science & analytics career paths and
-                certifications
+                {{profileSummary}}
             </p> <!-- Skills -->
             <h3 class="mt-12 lg:mt-16">Skills</h3>
-
-            <!-- Skills 1 -->
-            <h4>Programming Languages</h4>
-            <ul>
-                <li>C#</li>
-                <li>JavaScript</li>
-                <li>TypeScript</li>
-                <li>Python</li>
-            </ul>
-
-            <!-- Skills 2 -->
-            <h4 class="mt-8">Libraries &amp; Frameworks</h4>
-            <ul>
-                <li>Angular</li>
-                <li>React.js</li>
-            </ul>
-
+            <div *ngFor="let skill of skills">
+                <h4 class="mt-8">{{skill.title}}</h4>
+                <ul>
+                    <li *ngFor="let s of skill.data">{{s.name}}</li>
+                </ul>
+            </div>
             <!-- Education -->
             <h3 class="mt-12 lg:mt-16">Education</h3>
-            <h4 class="mb-1">Anna University</h4>
-            <p class="mb-1">Bachelor Degree in Computer Science Engineering</p>
-
+            <div *ngFor="let edu of educations">
+                <!-- Education 1 -->
+                <h4 class="mb-1">{{edu.university}}</h4>
+                <p class="mb-1">{{edu.program}}</p>
+            </div>
             <!-- References -->
             <h3 class="mt-12 lg:mt-16">References</h3>
+            <div *ngFor="let ref of references">
+                <!-- Reference 1 -->
+                <h4 class="mb-1">{{ref.firstName}} {{ref.lastName}}</h4>
+                <p>{{ref.designation}}</p>
+            </div>
 
-            <!-- Reference 1 -->
-            <h4 class="mb-1">Siva Kumar Ponnu Durai</h4>
-            <p>Software Engineer</p>
-
-            <!-- Reference 2 -->
-            <h4 class="mt-8 mb-1">Alber Michale</h4>
-            <p class="mb-1">Lead Engineer</p>
         </div>
     </div>
 </div>

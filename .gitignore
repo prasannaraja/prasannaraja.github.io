@@ -4,4 +4,5 @@
 node_modules
 dist
 
-src/assets/*
+src/assets/experience.data.json
+src/assets/personal.data.json
