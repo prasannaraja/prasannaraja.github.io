@@ -9,7 +9,6 @@ import {
 import { Company } from "src/app/models/ICompanies";
 
 export abstract class AlphaComponentBase {
-  first: number = 0;
   contactsSubject$: BehaviorSubject<Contact[]>;
   skillsSubject$: BehaviorSubject<Skill[]>;
   referencesSubject$: BehaviorSubject<Reference[]>;
@@ -39,18 +38,20 @@ export abstract class AlphaComponentBase {
     return this.contactsSubject$.value;
   }
 
-  get email(): Contact | undefined {
-    const emailContact = this.contacts.filter((c) => c.type === ContactType.email).find((c) => c);
-    console.log(emailContact)
-    return emailContact;
+  get email(): string | undefined {
+    return this.contacts
+      .filter((c) => c.type.toString() === ContactType[ContactType.email])
+      .find((c) => c)?.data;
   }
 
   get emailHref(): string {
     return `mailto:${this.email}`;
   }
 
-  get mobile(): Contact | undefined {
-    return this.contacts.filter((c) => c.type === ContactType.mobile).find((c) => c);
+  get mobile(): string | undefined {
+    return this.contacts
+      .filter((c) => c.type.toString() === ContactType[ContactType.mobile])
+      .find((c) => c)?.data;
   }
 
   get skills(): Skill[] {
