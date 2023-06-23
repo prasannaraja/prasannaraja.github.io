@@ -3,75 +3,187 @@
   "lastName": "Doe",
   "contacts": [
     {
-      "id": "b2b74957-cd4a-4c37-bf3c-8a2d56f6d3f4",
+      "id": "6fbb2a44-20b9-4e21-bb69-08b3a5e5f2d1",
       "type": "mobile",
-      "data": "+1 123-456-7890"
+      "data": "+1 (123) 456-7890"
     },
     {
-      "id": "95d5ebf0-8e89-4e4b-bf26-0975484c3aa1",
+      "id": "23176cdd-d8e9-410e-95a6-eb6207088f7b",
       "type": "email",
-      "data": "johndoe@example.com"
+      "data": "john.doe@example.com"
+    },
+    {
+      "id": "ed92650f-1657-4cc2-8439-9c03b866f549",
+      "type": "teams",
+      "data": "john.doe@teams.example.com"
+    },
+    {
+      "id": "b58d78be-12a7-4f51-9c10-1e7e9be9614d",
+      "type": "mobile",
+      "data": "+1 (987) 654-3210"
     }
   ],
   "githubProfile": "https://github.com/johndoe",
-  "profileSummary": "Experienced software engineer with a strong passion for web development. Skilled in JavaScript, React, and other modern web technologies. Proven track record of delivering high-quality software solutions. Excellent problem-solving and communication skills. Detail-oriented and highly motivated. Committed to continuous learning and staying up-to-date with industry trends. Dedicated team player with a collaborative mindset. Experienced in Agile methodologies and working in cross-functional teams. Always seeking new challenges and opportunities to grow professionally. Enthusiastic about creating innovative and user-friendly web applications that make a positive impact.",
-  "location": "New York",
-  "jobTitle": "Software Engineer",
+  "profileSummary": "Experienced software engineer with a passion for building scalable web applications. Highly skilled in JavaScript, Java, and Python, with expertise in React and Angular frameworks. Proficient in database management using MySQL, PostgreSQL, and MongoDB. Strong problem-solving abilities and ability to work in collaborative environments. Committed to delivering high-quality code and exceeding client expectations. Excellent communication and teamwork skills. Completed a Bachelor of Science in Computer Science from the University of ABC and a Master of Science in Software Engineering from XYZ University. Available for challenging software engineering opportunities.",
+  "location": "New York, USA",
+  "jobTitle": "Senior Software Engineer",
   "skills": [
     {
-      "id": "5a184906-249a-4c91-99d5-4328b2b5f872",
+      "id": "7b44c7b5-23eb-4e2c-a3dd-7e799716a8f7",
       "title": "Programming Languages",
       "type": "mandatory",
-      "data": {
-        "id": "6ef159c7-34c7-4f4f-8a70-3d9f2c19cbda",
-        "name": "JavaScript",
-        "type": "Proficient"
-      }
+      "data": [
+        {
+          "id": "6942a7b3-7a3f-475e-8746-1855c7e33e7d",
+          "name": "JavaScript",
+          "type": "mandatory"
+        },
+        {
+          "id": "db51cfa3-02ab-4967-9513-8d98de6db6d8",
+          "name": "Java",
+          "type": "mandatory"
+        },
+        {
+          "id": "7f8e0421-d9f2-4384-9d8e-85ad61736932",
+          "name": "Python",
+          "type": "standard"
+        },
+        {
+          "id": "711d56fd-96a5-40a4-b692-4d92a23c9d4a",
+          "name": "C#",
+          "type": "standard"
+        },
+        {
+          "id": "571f938c-578e-415e-a729-042f3a1be0d2",
+          "name": "Ruby",
+          "type": "optional"
+        },
+        {
+          "id": "b56d5e18-8ff9-4987-8f95-2c0a8493f3a2",
+          "name": "PHP",
+          "type": "optional"
+        }
+      ]
     },
     {
-      "id": "1a2b3c4d-5e6f-7g8h-9i1j-2k3l4m5n6o7p",
-      "title": "Web Development",
+      "id": "ce3a22e4-3e8d-4855-bf23-32d0c256e9e9",
+      "title": "Front-end Development",
+      "type": "mandatory",
+      "data": [
+        {
+          "id": "b22a8df2-9f57-4d29-9347-91a5a349d75f",
+          "name": "React",
+          "type": "mandatory"
+        },
+        {
+          "id": "7912e04e-d94a-4bb1-8a1e-5e3036cb61b2",
+          "name": "Angular",
+          "type": "standard"
+        },
+        {
+          "id": "7e073d6b-ba06-47a4-9b8a-3f1080d051ce",
+          "name": "Vue.js",
+          "type": "optional"
+        },
+        {
+          "id": "4c6d5a1c-ef03-4ea9-937d-7d4fd68b9197",
+          "name": "Express.js",
+          "type": "optional"
+        },
+        {
+          "id": "e3ed1274-5b8b-4509-af7a-22de3b5f37d3",
+          "name": "HTML",
+          "type": "mandatory"
+        },
+        {
+          "id": "d22a6a8b-9931-4b81-b92a-73c2b45fd018",
+          "name": "CSS",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "abfc78cd-3f3c-400f-a822-51e9d413f462",
+      "title": "Databases",
       "type": "standard",
-      "data": {
-        "id": "8a9b0c1d-2e3f-4g5h-6i7j-8k9l0m1n2o3p",
-        "name": "React",
-        "type": "Advanced"
-      }
+      "data": [
+        {
+          "id": "b7cb449c-ec42-4d9f-9e48-6a0b9e3e59e9",
+          "name": "MySQL",
+          "type": "mandatory"
+        },
+        {
+          "id": "e82608da-7b1e-47fb-87ab-56b68e44e65d",
+          "name": "PostgreSQL",
+          "type": "standard"
+        },
+        {
+          "id": "6fc2a79f-1361-47e0-9645-6e2c7698085f",
+          "name": "MongoDB",
+          "type": "standard"
+        },
+        {
+          "id": "f76e0287-c7f3-4860-9817-bb7ac593c75a",
+          "name": "Oracle",
+          "type": "optional"
+        },
+        {
+          "id": "6d2a58d0-2b6f-4aeb-8e42-d24b56d2b2e5",
+          "name": "SQLite",
+          "type": "optional"
+        }
+      ]
     }
   ],
   "educations": [
     {
-      "id": "09876543-21fe-dcba-9876-543210fedcba",
-      "university": "University of XYZ",
+      "id": "a7d687c3-46a3-4c9d-9cfd-1c6bbf3a5703",
+      "university": "University of ABC",
       "program": "Bachelor of Science in Computer Science",
+      "latest": false,
+      "type": "mandatory"
+    },
+    {
+      "id": "0fd56f6e-119d-4cfe-93d1-1588680654a5",
+      "university": "XYZ University",
+      "program": "Master of Science in Software Engineering",
       "latest": true,
       "type": "mandatory"
     },
     {
-      "id": "01234567-89ab-cdef-0123-456789abcdef",
-      "university": "ABC College",
-      "program": "Diploma in Web Development",
+      "id": "c532f297-786e-4e64-8d6e-6ed33ad56e50",
+      "university": "University of DEF",
+      "program": "Bachelor of Arts in Graphic Design",
       "latest": false,
-      "type": "standard"
+      "type": "optional"
     }
   ],
   "references": [
     {
-      "id": "a1b2c3d4-e5f6-789a-bcde-f0123456789a",
-      "firstName": "Jane",
-      "lastName": "Smith",
+      "id": "534a91e9-8485-4e54-9b2d-2e82670d0326",
+      "firstName": "Sarah",
+      "lastName": "Wilson",
       "designation": "Senior Software Engineer",
-      "mobile": "+1 987-654-3210",
-      "email": "jane.smith@example.com",
+      "mobile": "+1 (555) 123-4567",
+      "email": "sarah.wilson@example.com",
       "type": "mandatory"
     },
     {
-      "id": "b3c4d5e6-f7g8-9h0i-j1k2-l3m4n5o6p7q",
-      "firstName": "David",
-      "lastName": "Johnson",
+      "id": "bfdf8b55-52e9-4e45-9c26-1015ee02a5b0",
+      "firstName": "Robert",
+      "lastName": "Anderson",
+      "designation": "Software Architect",
+      "mobile": "+1 (555) 987-6543",
+      "email": "robert.anderson@example.com",
+      "type": "standard"
+    },
+    {
+      "id": "7292d66d-7d4f-4459-a9e3-2eaf1e16e063",
+      "firstName": "Amy",
+      "lastName": "Wilson",
       "designation": "Project Manager",
-      "mobile": "+1 555-123-4567",
-      "email": "david.johnson@example.com",
+      "mobile": "+1 (555) 222-3333",
+      "email": "amy.wilson@example.com",
       "type": "optional"
     }
   ]
