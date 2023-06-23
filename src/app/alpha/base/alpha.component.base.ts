@@ -4,6 +4,7 @@ import {
   Skill,
   Reference,
   Education,
+  ContactType,
 } from "../../models/IPersonalData";
 import { Company } from "src/app/models/ICompanies";
 
@@ -38,24 +39,22 @@ export abstract class AlphaComponentBase {
     return this.contactsSubject$.value;
   }
 
-  get email(): string {
-    return this.contacts.filter((c) => c.type === "email").map((c) => c.id)[
-      this.first
-    ];
+  get email(): Contact | undefined {
+    const emailContact = this.contacts.filter((c) => c.type === ContactType.email).find((c) => c);
+    console.log(emailContact)
+    return emailContact;
   }
 
   get emailHref(): string {
     return `mailto:${this.email}`;
   }
 
-  get mobile(): string {
-    return this.contacts.filter((c) => c.type === "mobile").map((c) => c.id)[
-      this.first
-    ];
+  get mobile(): Contact | undefined {
+    return this.contacts.filter((c) => c.type === ContactType.mobile).find((c) => c);
   }
 
   get skills(): Skill[] {
-    return this.skillsSubject$.value;
+    return this.skillsSubject$.getValue();
   }
 
   get skills$(): Observable<Skill[]> {
@@ -63,11 +62,11 @@ export abstract class AlphaComponentBase {
   }
 
   get references(): Reference[] {
-    return this.referencesSubject$.value;
+    return this.referencesSubject$.getValue();
   }
 
   get educations(): Education[] {
-    return this.educationsSubject$.value;
+    return this.educationsSubject$.getValue();
   }
 
   get fullName(): string {
@@ -75,23 +74,23 @@ export abstract class AlphaComponentBase {
   }
 
   get jobTitle(): string {
-    return this.jobTitleSubject$.value;
+    return this.jobTitleSubject$.getValue();
   }
 
   get githubProfileUrl(): string {
-    return this.githubProfileSubject$.value;
+    return this.githubProfileSubject$.getValue();
   }
 
   get location(): string {
-    return this.locationSubject$.value;
+    return this.locationSubject$.getValue();
   }
 
   get profileSummary(): string {
-    return this.profileSummarySubject$.value;
+    return this.profileSummarySubject$.getValue();
   }
 
   get companies(): Company[] {
-    return this.companiesSubject$.value;
+    return this.companiesSubject$.getValue();
   }
 
   get companies$(): Observable<Company[]> {
