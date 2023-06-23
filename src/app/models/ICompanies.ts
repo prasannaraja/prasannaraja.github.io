@@ -21,6 +21,7 @@ export interface Work {
   hr: Hr;
   employeeId: string;
   contact: string;
+  duration: string;
   teamSize: number;
   location: any;
   projects: Project[];
