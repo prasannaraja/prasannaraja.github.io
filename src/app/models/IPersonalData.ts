@@ -13,30 +13,43 @@ export interface IPersonalData {
 
 export interface Contact {
   id: string;
-  type: string;
+  type: ContactType;
+  data: string
 }
 
 export interface Skill {
+  id: string;
   title: string;
-  type: string;
+  type: RequiredType;
   data: {
+    id: string
     name: string;
     type: string;
   };
 }
 
 export interface Education {
+  id: string;
   university: string;
   program: string;
   latest: boolean;
-  type: string;
+  type: RequiredType;
 }
 
 export interface Reference {
+  id: string;
   firstName: string;
   lastName: string;
   designation: string;
   mobile: string;
   email: string;
-  type: string;
+  type: RequiredType;
+}
+
+export enum ContactType {
+  mobile, email, teams
+}
+
+export enum RequiredType {
+  mandatory, standard, optional
 }
