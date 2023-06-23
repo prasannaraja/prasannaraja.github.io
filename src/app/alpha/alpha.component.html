@@ -22,7 +22,7 @@
                         <p class="mb-0 font-semibold text-sm">Email</p>
                         <p class="mb-0">
                             <a href={{emailHref}} target="_blank" rel="noreferrer">
-                                {{email}}
+                                {{email?.data}}
                             </a>
                         </p>
                     </div>
@@ -60,7 +60,7 @@
                         <p class="mb-0 font-semibold text-sm">Mobile</p>
                         <p class="mb-0">
                             <a href="mailto:prasannaraja@msn.com" target="_blank" rel="noreferrer">
-                                {{mobile}}
+                                {{mobile?.data}}
                             </a>
                         </p>
                     </div>
@@ -112,7 +112,7 @@
             <div *ngFor="let skill of skills">
                 <h4 class="mt-8">{{skill.title}}</h4>
                 <ul>
-                    <li *ngFor="let s of toObject(skill.data)">{{s.name}}</li>
+                    <!-- <li *ngFor="let s of skill.data">{{s.name}}</li> -->
                 </ul>
             </div>
             <!-- Education -->
