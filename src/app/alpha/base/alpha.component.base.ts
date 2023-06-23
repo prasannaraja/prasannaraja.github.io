@@ -5,12 +5,13 @@ import {
   Reference,
   Education,
   ContactType,
+  SkillGroup,
 } from "../../models/IPersonalData";
 import { Company } from "src/app/models/ICompanies";
 
 export abstract class AlphaComponentBase {
   contactsSubject$: BehaviorSubject<Contact[]>;
-  skillsSubject$: BehaviorSubject<Skill[]>;
+  skillsSubject$: BehaviorSubject<SkillGroup[]>;
   referencesSubject$: BehaviorSubject<Reference[]>;
   educationsSubject$: BehaviorSubject<Education[]>;
   firstNameSubject$: BehaviorSubject<string>;
@@ -22,7 +23,7 @@ export abstract class AlphaComponentBase {
   profileSummarySubject$: BehaviorSubject<string>;
   constructor() {
     this.contactsSubject$ = new BehaviorSubject<Contact[]>([]);
-    this.skillsSubject$ = new BehaviorSubject<Skill[]>([]);
+    this.skillsSubject$ = new BehaviorSubject<SkillGroup[]>([]);
     this.referencesSubject$ = new BehaviorSubject<Reference[]>([]);
     this.educationsSubject$ = new BehaviorSubject<Education[]>([]);
     this.firstNameSubject$ = new BehaviorSubject<string>("");
@@ -54,11 +55,11 @@ export abstract class AlphaComponentBase {
       .find((c) => c)?.data;
   }
 
-  get skills(): Skill[] {
+  get skills(): SkillGroup[] {
     return this.skillsSubject$.getValue();
   }
 
-  get skills$(): Observable<Skill[]> {
+  get skills$(): Observable<SkillGroup[]> {
     return this.skillsSubject$.asObservable();
   }
 
