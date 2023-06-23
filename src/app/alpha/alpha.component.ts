@@ -55,13 +55,12 @@ export class AlphaComponent extends AlphaComponentBase implements OnInit, OnDest
         return c.companies;
       }),
       tap((companies) => {
-        console.log(companies);
         this.companiesSubject$.next(companies);
       })
     );
   }
 
-  get formData$() {
+  get formData$(): Observable<Company[]> {
     return this.personalData$.pipe(
       switchMap(() => {
         return this.experienceData$;
