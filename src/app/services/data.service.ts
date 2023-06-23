@@ -11,10 +11,10 @@ export class DataService {
   constructor(private http: HttpClient) {}
 
   public getPersonalData(): Observable<IPersonalData> {
-    return this.http.get<IPersonalData>("assets/personal.data.json");
+    return this.http.get<IPersonalData>("assets/sample.personal.data.json");
   }
 
   public getExperienceData(): Observable<Company[]> {
-    return this.http.get<Company[]>("assets/experience.data.json");
+    return this.http.get<Company[]>("assets/sample.experience.data.json");
   }
 }
