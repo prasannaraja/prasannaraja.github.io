@@ -3,31 +3,37 @@
   "lastName": "Doe",
   "contacts": [
     {
-      "id": "1",
-      "type": "Phone"
+      "id": "b2b74957-cd4a-4c37-bf3c-8a2d56f6d3f4",
+      "type": "mobile",
+      "data": "+1 123-456-7890"
     },
     {
-      "id": "2",
-      "type": "Email"
+      "id": "95d5ebf0-8e89-4e4b-bf26-0975484c3aa1",
+      "type": "email",
+      "data": "johndoe@example.com"
     }
   ],
   "githubProfile": "https://github.com/johndoe",
-  "profileSummary": "Experienced software engineer with expertise in web development.",
+  "profileSummary": "Experienced software engineer with a strong passion for web development. Skilled in JavaScript, React, and other modern web technologies. Proven track record of delivering high-quality software solutions. Excellent problem-solving and communication skills. Detail-oriented and highly motivated. Committed to continuous learning and staying up-to-date with industry trends. Dedicated team player with a collaborative mindset. Experienced in Agile methodologies and working in cross-functional teams. Always seeking new challenges and opportunities to grow professionally. Enthusiastic about creating innovative and user-friendly web applications that make a positive impact.",
   "location": "New York",
-  "jobTitle": "Senior Software Engineer",
+  "jobTitle": "Software Engineer",
   "skills": [
     {
+      "id": "5a184906-249a-4c91-99d5-4328b2b5f872",
       "title": "Programming Languages",
-      "type": "General",
+      "type": "mandatory",
       "data": {
+        "id": "6ef159c7-34c7-4f4f-8a70-3d9f2c19cbda",
         "name": "JavaScript",
         "type": "Proficient"
       }
     },
     {
+      "id": "1a2b3c4d-5e6f-7g8h-9i1j-2k3l4m5n6o7p",
       "title": "Web Development",
-      "type": "Specific",
+      "type": "standard",
       "data": {
+        "id": "8a9b0c1d-2e3f-4g5h-6i7j-8k9l0m1n2o3p",
         "name": "React",
         "type": "Advanced"
       }
@@ -35,34 +41,38 @@
   ],
   "educations": [
     {
+      "id": "09876543-21fe-dcba-9876-543210fedcba",
       "university": "University of XYZ",
       "program": "Bachelor of Science in Computer Science",
       "latest": true,
-      "type": "Graduate"
+      "type": "mandatory"
     },
     {
+      "id": "01234567-89ab-cdef-0123-456789abcdef",
       "university": "ABC College",
       "program": "Diploma in Web Development",
       "latest": false,
-      "type": "Undergraduate"
+      "type": "standard"
     }
   ],
   "references": [
     {
+      "id": "a1b2c3d4-e5f6-789a-bcde-f0123456789a",
       "firstName": "Jane",
       "lastName": "Smith",
       "designation": "Senior Software Engineer",
-      "mobile": "123-456-7890",
+      "mobile": "+1 987-654-3210",
       "email": "jane.smith@example.com",
-      "type": "Professional"
+      "type": "mandatory"
     },
     {
+      "id": "b3c4d5e6-f7g8-9h0i-j1k2-l3m4n5o6p7q",
       "firstName": "David",
       "lastName": "Johnson",
       "designation": "Project Manager",
-      "mobile": "987-654-3210",
+      "mobile": "+1 555-123-4567",
       "email": "david.johnson@example.com",
-      "type": "Personal"
+      "type": "optional"
     }
   ]
 }
