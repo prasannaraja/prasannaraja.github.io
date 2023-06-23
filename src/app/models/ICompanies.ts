@@ -1,3 +1,7 @@
+export interface ICompanies {
+  data: Company[];
+}
+
 export interface Company {
   name: string;
   website: string;
@@ -6,12 +10,10 @@ export interface Company {
 }
 
 export interface Summary {
-  company: Company2;
+  company: {
+    details: string;
+  };
   work: Work;
-}
-
-export interface Company2 {
-  details: string;
 }
 
 export interface Work {
@@ -23,10 +25,16 @@ export interface Work {
   contact: string;
   duration: string;
   teamSize: number;
-  location: any;
+  location: Location;
   projects: Project[];
   responsibilities: string[];
   skills: string[];
+}
+
+export interface Location {
+  type: RequiredType,
+  country: string,
+  city: string
 }
 
 export interface Manager {
@@ -52,4 +60,8 @@ export interface Project {
   responsibilities: string[];
   skills: string[];
   duration?: string;
+}
+
+export enum RequiredType {
+  mandatory, standard, optional
 }
