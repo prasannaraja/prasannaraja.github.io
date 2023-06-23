@@ -51,6 +51,10 @@ export class AlphaComponent extends AlphaComponentBase implements OnInit {
     );
   }
 
+  toObject(obj: string): any {
+    return JSON.parse(obj);
+  }
+
   ngOnInit(): void {
     this.getData$.subscribe();
   }
