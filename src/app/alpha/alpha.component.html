@@ -107,7 +107,7 @@
         <div>
             <!-- Profile -->
             <h3>Profile</h3>
-            <p>
+            <p class="text-justify">
                 {{profileSummary}}
             </p> <!-- Skills -->
             <h3 class="mt-12 lg:mt-16">Skills</h3>
@@ -132,6 +132,16 @@
                 <p>{{ref.designation}}</p>
             </div>
 
+        </div>
+    </div>
+    <div class="grid-2 gap-10 lg:gap-24 items-start mt-12 lg:mt-24">
+        <div class="lg:col-span-1">
+            <h3>Projects</h3>
+        </div>
+        <div class="grid-2 gap-x-4 lg:mt-12">
+            <ul>
+                <li *ngFor="let project of projects">[2020 - 2021] {{project.shortSummary}} {{project.skills|json}}</li>
+            </ul>
         </div>
     </div>
 </div>
