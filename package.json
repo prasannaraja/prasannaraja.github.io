@@ -1,5 +1,5 @@
 {
-  "name": "@org/source",
+  "name": "@prasannaraja.github.io/source",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -20,6 +20,7 @@
     "@angular/platform-browser-dynamic": "~16.1.2",
     "@angular/router": "~16.1.2",
     "@nx/angular": "16.4.0",
+    "postcss-scss": "^4.0.6",
     "rxjs": "~7.8.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.1"
@@ -44,10 +45,10 @@
     "@schematics/angular": "~16.1.1",
     "@types/jest": "^29.5.2",
     "@types/node": "20.3.1",
-    "@typescript-eslint/eslint-plugin": "^5.60.0",
-    "@typescript-eslint/parser": "^5.60.0",
+    "@typescript-eslint/eslint-plugin": "^5.60.1",
+    "@typescript-eslint/parser": "^5.60.1",
     "autoprefixer": "^10.4.14",
-    "cypress": "^12.15.0",
+    "cypress": "^12.16.0",
     "eslint": "~8.43.0",
     "eslint-config-prettier": "8.8.0",
     "eslint-plugin-cypress": "^2.13.3",
