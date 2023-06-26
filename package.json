@@ -4,10 +4,10 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "nx serve resume-builder-x",
-    "build": "nx build resume-builder-x",
-    "watch": "nx build resume-builder-x --watch --configuration development",
-    "test": "nx test resume-builder-x"
+    "start": "npx nx serve resume-builder-x",
+    "build": "npx nx build resume-builder-x",
+    "watch": "npx nx build resume-builder-x --watch --configuration development",
+    "test": "npx nx test resume-builder-x"
   },
   "private": true,
   "dependencies": {
