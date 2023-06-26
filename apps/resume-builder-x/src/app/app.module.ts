@@ -4,8 +4,8 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
 import { HttpClientModule } from '@angular/common/http';
-import { GenerateModule } from './generate/src';
-import { UpdateModule } from './update/src';
+import { GenerateModule } from '@prasannaraja.github.io/resume-builder-x/src/app/generate';
+import { UpdateModule } from '@prasannaraja.github.io/resume-builder-x/src/app/update';
 import { SharedModule } from './shared.module';
 
 @NgModule({
@@ -21,4 +21,4 @@ import { SharedModule } from './shared.module';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
