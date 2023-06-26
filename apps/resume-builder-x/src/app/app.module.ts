@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
 import { HttpClientModule } from '@angular/common/http';
 import { GenerateModule } from './generate/src';
+import { UpdateModule } from './update/src';
 
 @NgModule({
   declarations: [AppComponent],
@@ -12,6 +13,7 @@ import { GenerateModule } from './generate/src';
     BrowserModule,
     HttpClientModule,
     GenerateModule,
+    UpdateModule,
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
   ],
   providers: [],
