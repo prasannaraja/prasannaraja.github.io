@@ -1,0 +1,130 @@
+{
+  "firstName": "Prasanna",
+  "lastName": "Prabhakaran",
+  "contacts": [
+    {
+      "id": "prasannaraja@msn.com",
+      "type": "email"
+    },
+    {
+      "id": "+356-79450435",
+      "type": "mobile"
+    },
+    {
+      "id": "prasannaraja@msn.com",
+      "type": "teams"
+    },
+    {
+      "id": "prasannaraja@msn.com",
+      "type": "skype"
+    }
+  ],
+  "githubProfile": "https://github.com/prasannaraja",
+  "location": "Malta",
+  "jobTitle": "Senior Analyst",
+  "skills": [
+    {
+      "title": "Programming Languages",
+      "type": "language",
+      "data": [
+        { "name": "C#", "type": "mandatory" },
+        { "name": "Javascript", "type": "standard" },
+        { "name": "TypeScript", "type": "mandatory" },
+        { "name": "Python", "type": "optional" }
+      ]
+    },
+    {
+      "title": "Libraries & Frameworks",
+      "type": "framework",
+      "data": [
+        { "name": ".Net Framework", "type": "mandatory" },
+        { "name": ".Net Core", "type": "mandatory" },
+        { "name": "ASP.NET", "type": "mandatory" },
+        { "name": "WebAPI", "type": "mandatory" },
+        { "name": "MVC", "type": "standard" }
+      ]
+    },
+    {
+      "title": "Database",
+      "type": "databases",
+      "data": [
+        { "name": "Microsoft Sql Server", "type": "mandatory" },
+        { "name": "Oracle", "type": "standard" },
+        { "name": "MongoDb", "type": "optional" },
+        { "name": "SQL", "type": "standard" }
+      ]
+    },
+    {
+      "title": "Code Version Controls",
+      "type": "VersionControl",
+      "data": [
+        { "name": "SVN", "type": "optional" },
+        { "name": "TFS", "type": "standard" },
+        { "name": "Git", "type": "mandatory" }
+      ]
+    },
+    {
+      "title": "Tools",
+      "type": "Tools",
+      "data": [{ "name": "Qliksense", "type": "optional" }]
+    },
+    {
+      "title": "Testing framework",
+      "type": "Testing",
+      "data": [
+        { "name": "Mictosof Unit Test", "type": "optional" },
+        { "name": "NUnit", "type": "optional" },
+        { "name": "CodeWright", "type": "optional" }
+      ]
+    }
+  ],
+  "educations": [
+    {
+      "university": "Anna University",
+      "program": "Bachelor Degree in Computer Science Engineering",
+      "latest": true,
+      "type": "mandatory"
+    },
+    {
+      "university": "Central Polytechnic",
+      "program": "Diploma in Electronics & Communication Engineering",
+      "latest": false,
+      "type": "optional"
+    }
+  ],
+  "reference": [
+    {
+      "firstName": "Siva Kumar",
+      "lastName": "Ponnu Durai",
+      "designation": "Software Engineer",
+      "mobile": "",
+      "email": "siva@cts.com",
+      "type": "mandatory"
+    },
+    {
+      "firstName": "Senthil Kumar",
+      "lastName": "AD",
+      "designation": "Software Engineer",
+      "mobile": "",
+      "email": "senthil@se.com",
+      "type": "standard"
+    },
+    {
+      "firstName": "Alber Michale",
+      "lastName": "",
+      "designation": "Software Engineer",
+      "mobile": "",
+      "email": "albert@aa.com",
+      "type": "standard"
+    },
+    {
+      "firstName": "Sesha Verdhana",
+      "lastName": "Bhadrinath",
+      "designation": "Software Engineer",
+      "mobile": "",
+      "email": "sesha@pharma.ca",
+      "type": "optional"
+    }
+  ],
+  "profileSummary": "I am an experienced Senior .Net Specialist with over 12 years of expertise in custom solutions development, enterprise application development, and Green Field application development. Proficient in .NET Core C#, Angular, ASP.NET Core, Entity Framework, LINQ, SQL Server, WCF, Web API, HTML, CSS, and JavaScript. Skilled in Azure DevOps for CI/CD, managing pipelines, auto-deployment, UI/UX development, and software packaging. Led successful projects for renowned clients like KPMG, Finesse Global, Randstad India, Raqmiyat, Cognizant, HCLTech, and Inatech. Holds a BE in Computer Science Engineering, diploma in Electronics and Communication Engineering, and certifications as a Microsoft Certified Technology Specialist in Windows and web app development. Completed courses on AngularJS, ASP.NET Core MVC, and data science & analytics."
+}

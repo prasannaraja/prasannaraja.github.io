@@ -1,0 +1,33 @@
+{
+  "name": "resume-builder-x-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/resume-builder-x-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/resume-builder-x-e2e/cypress.config.ts",
+        "devServerTarget": "resume-builder-x:serve:development",
+        "testingType": "e2e"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "resume-builder-x:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "resume-builder-x:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/resume-builder-x-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["resume-builder-x"]
+}

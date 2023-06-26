@@ -1,0 +1,28 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@prasannaraja.github.io/resume-builder-x/src/app/generate": [
+        "apps/resume-builder-x/src/app/generate/src/index.ts"
+      ],
+      "@prasannaraja.github.io/resume-builder-x/src/app/update": [
+        "apps/resume-builder-x/src/app/update/src/index.ts"
+      ],
+      "@prasannaraja.github.io/shared-ui": ["libs/shared-ui/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
