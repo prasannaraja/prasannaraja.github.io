@@ -4,13 +4,9 @@ import { RouterModule } from '@angular/router';
 import { generateRoutes } from './lib.routes';
 import { AlphaComponent } from './alpha/alpha.component';
 
-
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule.forChild(generateRoutes),
-  ],
-  declarations: [AlphaComponent],
-  exports: [AlphaComponent],
+    imports: [CommonModule, RouterModule.forChild(generateRoutes)],
+    declarations: [AlphaComponent],
+    exports: [AlphaComponent],
 })
-export class GenerateModule { }
+export class GenerateModule {}
