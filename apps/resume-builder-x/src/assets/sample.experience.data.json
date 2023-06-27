@@ -286,15 +286,15 @@
                     },
                     "employeeId": "12345",
                     "contact": "+1 555 123 4567",
-                    "present": true,
+                    "present": false,
                     "duration": {
                         "start": {
-                            "month": "June",
-                            "year": "2019"
+                            "month": "April",
+                            "year": "2017"
                         },
                         "end": {
-                            "month": "",
-                            "year": ""
+                            "month": "December",
+                            "year": "2019"
                         }
                     },
                     "teamSize": 15,
@@ -566,15 +566,15 @@
                     },
                     "employeeId": "98765",
                     "contact": "+91 5551234567",
-                    "present": true,
+                    "present": false,
                     "duration": {
                         "start": {
                             "month": "January",
-                            "year": "2018"
+                            "year": "2016"
                         },
                         "end": {
-                            "month": "",
-                            "year": ""
+                            "month": "March",
+                            "year": "2017"
                         }
                     },
                     "teamSize": 8,
@@ -865,15 +865,15 @@
                     },
                     "employeeId": "12345",
                     "contact": "+971 5559876543",
-                    "present": true,
+                    "present": false,
                     "duration": {
                         "start": {
-                            "month": "March",
-                            "year": "2019"
+                            "month": "June",
+                            "year": "2012"
                         },
                         "end": {
-                            "month": "",
-                            "year": ""
+                            "month": "December",
+                            "year": "2015"
                         }
                     },
                     "teamSize": 12,
@@ -1141,15 +1141,15 @@
                     },
                     "employeeId": "54321",
                     "contact": "+1 5559876543",
-                    "present": true,
+                    "present": false,
                     "duration": {
                         "start": {
-                            "month": "January",
-                            "year": "2018"
+                            "month": "April",
+                            "year": "2009"
                         },
                         "end": {
-                            "month": "",
-                            "year": ""
+                            "month": "May",
+                            "year": "2012"
                         }
                     },
                     "teamSize": 15,
@@ -1439,15 +1439,15 @@
                     },
                     "employeeId": "12345",
                     "contact": "+1 5551234567",
-                    "present": true,
+                    "present": false,
                     "duration": {
                         "start": {
-                            "month": "February",
-                            "year": "2019"
+                            "month": "June",
+                            "year": "2012"
                         },
                         "end": {
-                            "month": "",
-                            "year": ""
+                            "month": "March",
+                            "year": "2009"
                         }
                     },
                     "teamSize": 12,
@@ -1737,15 +1737,15 @@
                     },
                     "employeeId": "12345",
                     "contact": "+1 5551234567",
-                    "present": true,
+                    "present": false,
                     "duration": {
                         "start": {
-                            "month": "March",
-                            "year": "2020"
+                            "month": "Feb",
+                            "year": "2009"
                         },
                         "end": {
-                            "month": "",
-                            "year": ""
+                            "month": "June",
+                            "year": "2012"
                         }
                     },
                     "teamSize": 8,
@@ -2013,15 +2013,15 @@
                     },
                     "employeeId": "54321",
                     "contact": "+1 5559876543",
-                    "present": true,
+                    "present": false,
                     "duration": {
                         "start": {
                             "month": "June",
                             "year": "2019"
                         },
                         "end": {
-                            "month": "",
-                            "year": ""
+                            "month": "June",
+                            "year": "2019"
                         }
                     },
                     "teamSize": 6,
@@ -2117,15 +2117,15 @@
                     },
                     "employeeId": "98765",
                     "contact": "+1 5551234567",
-                    "present": true,
+                    "present": false,
                     "duration": {
                         "start": {
                             "month": "January",
                             "year": "2020"
                         },
                         "end": {
-                            "month": "",
-                            "year": ""
+                            "month": "January",
+                            "year": "2020"
                         }
                     },
                     "teamSize": 8,
