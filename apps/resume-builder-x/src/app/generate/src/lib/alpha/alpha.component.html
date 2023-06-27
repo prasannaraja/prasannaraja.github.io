@@ -82,13 +82,13 @@
                 <div>
                     <!-- Company -->
                     <h4 class="mb-1 lg:mb-4">{{company.name}}</h4>
-                    <p>{{company.summary.work.location.country}}</p>
+                    <p class="hidden">{{company.summary.work.location.country}}</p>
                     <p class="text-sm mb-1">
                         <a href={{company.website}} target="_blank" rel="noreferrer">
                             {{company.website}}
                         </a>
                     </p>
-                    <p class="text-sm">{{company.summary.work.duration}}</p>
+                    <p class="text-sm">{{company.summary.work.duration.start.month}} {{company.summary.work.duration.start.year}} - {{company.summary.work.duration.end.month}} {{company.summary.work.duration.end.year}}</p>
                 </div>
 
                 <div class="lg:col-span-2">
