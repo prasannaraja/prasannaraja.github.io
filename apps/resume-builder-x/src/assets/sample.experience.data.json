@@ -92,15 +92,15 @@
           },
           "employeeId": "E67890",
           "contact": "456 Elm St, City, Country",
-          "present": true,
+          "present": false,
           "duration": {
             "start": {
               "month": "March",
               "year": "2017"
             },
             "end": {
-              "month": "Present",
-              "year": "2023"
+              "month": "December",
+              "year": "2019"
             }
           },
           "teamSize": 20,
