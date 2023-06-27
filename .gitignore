@@ -1,4 +1,5 @@
 .DS_Store
 .angular
+.vscode
 node_modules
 dist
