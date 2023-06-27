@@ -88,7 +88,8 @@
                             {{company.website}}
                         </a>
                     </p>
-                    <p class="text-sm">{{company.summary.work.duration.start.month}} {{company.summary.work.duration.start.year}} - {{company.summary.work.duration.end.month}} {{company.summary.work.duration.end.year}}</p>
+                    <p *ngIf="company.summary.work.present" class="text-sm">{{company.summary.work.duration.start.month}} {{company.summary.work.duration.start.year}} - <b>Present</b></p>
+                    <p *ngIf="!company.summary.work.present" class="text-sm">{{company.summary.work.duration.start.month}} {{company.summary.work.duration.start.year}} - {{company.summary.work.duration.end.month}} {{company.summary.work.duration.end.year}}</p>
                 </div>
 
                 <div class="lg:col-span-2">
