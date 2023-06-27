@@ -1,140 +1,1043 @@
 {
-  "companies": [
-    {
-      "name": "ABC Company",
-      "website": "https://www.abc.com",
-      "position": "Software Engineer",
-      "summary": {
-        "company": {
-          "details": "A leading software development company"
+    "companies": [
+        {
+            "name": "KPMG",
+            "website": "https://www.kpmg.com",
+            "position": "Auditor",
+            "summary": {
+                "company": {
+                    "details": "A global network of professional firms providing audit, tax, and advisory services."
+                },
+                "work": {
+                    "details": "Conducted financial audits for clients.",
+                    "email": "john.doe@kpmg.com",
+                    "manager": {
+                        "name": "Jane Smith",
+                        "email": "jane.smith@kpmg.com",
+                        "mobile": "+1 123 456 7890",
+                        "team": "Audit Department"
+                    },
+                    "hr": {
+                        "name": "Emily Johnson",
+                        "email": "emily.johnson@kpmg.com",
+                        "mobile": "+1 987 654 3210"
+                    },
+                    "employeeId": "E123456",
+                    "contact": "John Doe",
+                    "present": true,
+                    "duration": {
+                        "start": {
+                            "month": "January",
+                            "year": "2018"
+                        },
+                        "end": {
+                            "month": "",
+                            "year": ""
+                        }
+                    },
+                    "teamSize": 8,
+                    "location": {
+                        "type": "mandatory",
+                        "country": "United States",
+                        "city": "New York"
+                    },
+                    "projects": [
+                        {
+                            "title": "Project A",
+                            "client": "ABC Corporation",
+                            "website": "https://www.abc-corp.com",
+                            "shortSummary": "Performed financial audits for a multinational corporation.",
+                            "summary": "Conducted financial audits for ABC Corporation across various divisions and locations.",
+                            "keywords": [
+                                "financial audit",
+                                "multinational corporation",
+                                "compliance",
+                                "risk assessment"
+                            ],
+                            "responsibilities": [
+                                "Conducted audit planning and scoping",
+                                "Performed substantive testing",
+                                "Identified control weaknesses",
+                                "Prepared audit reports"
+                            ],
+                            "skills": [
+                                "Financial auditing",
+                                "Risk assessment",
+                                "GAAP"
+                            ],
+                            "duration": "2 years"
+                        },
+                        {
+                            "title": "Project B",
+                            "client": "XYZ Corporation",
+                            "website": "https://www.xyz-corp.com",
+                            "shortSummary": "Provided advisory services for a technology company.",
+                            "summary": "Assisted XYZ Corporation with financial advisory services related to mergers and acquisitions.",
+                            "keywords": [
+                                "financial advisory",
+                                "mergers and acquisitions",
+                                "valuation",
+                                "due diligence"
+                            ],
+                            "responsibilities": [
+                                "Conducted financial analysis",
+                                "Performed company valuation",
+                                "Assisted with due diligence",
+                                "Prepared financial models"
+                            ],
+                            "skills": [
+                                "Financial analysis",
+                                "Valuation",
+                                "Due diligence"
+                            ],
+                            "duration": "1.5 years"
+                        }
+                    ],
+                    "responsibilities": [
+                        "Conducted financial audits",
+                        "Analyzed financial statements",
+                        "Provided recommendations for improvement"
+                    ],
+                    "skills": [
+                        "Financial auditing",
+                        "Analytical skills",
+                        "Communication"
+                    ]
+                }
+            }
         },
-        "work": {
-          "details": "Developed web applications for clients",
-          "email": "john.doe@abc.com",
-          "manager": {
-            "name": "Jane Smith",
-            "email": "jane.smith@abc.com",
-            "mobile": "+1 123-456-7890",
-            "team": "Development Team"
-          },
-          "hr": {
-            "name": "Michael Johnson",
-            "email": "michael.johnson@abc.com",
-            "mobile": "+1 987-654-3210"
-          },
-          "employeeId": "E12345",
-          "contact": "123 Main St, City, Country",
-          "present": true,
-          "duration": {
-            "start": {
-              "month": "January",
-              "year": "2019"
-            },
-            "end": {
-              "month": "December",
-              "year": "2022"
+        {
+            "name": "Microsoft Business Solutions Malta",
+            "website": "https://www.microsoft.com.mt",
+            "position": "Software Engineer",
+            "summary": {
+                "company": {
+                    "details": "A subsidiary of Microsoft Corporation, providing business software solutions."
+                },
+                "work": {
+                    "details": "Developed and maintained enterprise software applications.",
+                    "email": "john.doe@microsoft.com.mt",
+                    "manager": {
+                        "name": "Jane Smith",
+                        "email": "jane.smith@microsoft.com.mt",
+                        "mobile": "+356 12345678",
+                        "team": "Engineering Department"
+                    },
+                    "hr": {
+                        "name": "Emily Johnson",
+                        "email": "emily.johnson@microsoft.com.mt",
+                        "mobile": "+356 98765432"
+                    },
+                    "employeeId": "E123456",
+                    "contact": "John Doe",
+                    "present": false,
+                    "duration": {
+                        "start": {
+                            "month": "March",
+                            "year": "2019"
+                        },
+                        "end": {
+                            "month": "June",
+                            "year": "2021"
+                        }
+                    },
+                    "teamSize": 12,
+                    "location": {
+                        "type": "standard",
+                        "country": "Malta",
+                        "city": "Valletta"
+                    },
+                    "projects": [
+                        {
+                            "title": "Project A",
+                            "client": "ABC Corporation",
+                            "website": "https://www.abc-corp.com",
+                            "shortSummary": "Developed a cloud-based CRM system for a multinational corporation.",
+                            "summary": "Led a team of developers to design and implement a cloud-based customer relationship management (CRM) system for ABC Corporation.",
+                            "keywords": [
+                                "CRM",
+                                "cloud application",
+                                "Azure",
+                                "API integration"
+                            ],
+                            "responsibilities": [
+                                "Gathered requirements",
+                                "Designed system architecture",
+                                "Implemented backend using Azure services",
+                                "Collaborated with cross-functional teams"
+                            ],
+                            "skills": ["Azure", "C#", "API integration", "CRM"],
+                            "duration": "2 years"
+                        },
+                        {
+                            "title": "Project B",
+                            "client": "XYZ Corporation",
+                            "website": "https://www.xyz-corp.com",
+                            "shortSummary": "Developed a mobile productivity app for a technology company.",
+                            "summary": "Contributed to the development of a mobile productivity application for XYZ Corporation.",
+                            "keywords": [
+                                "mobile app",
+                                "productivity",
+                                "iOS",
+                                "Android"
+                            ],
+                            "responsibilities": [
+                                "Implemented frontend using React Native",
+                                "Integrated with backend APIs",
+                                "Performed unit testing"
+                            ],
+                            "skills": [
+                                "React Native",
+                                "JavaScript",
+                                "API integration"
+                            ],
+                            "duration": "1.5 years"
+                        }
+                    ],
+                    "responsibilities": [
+                        "Developed enterprise software applications",
+                        "Collaborated with cross-functional teams",
+                        "Participated in code reviews"
+                    ],
+                    "skills": ["C#", "JavaScript", "React Native"]
+                }
             }
-          },
-          "teamSize": 10,
-          "location": {
-            "type": "mandatory",
-            "country": "United States",
-            "city": "New York"
-          },
-          "projects": [
-            {
-              "title": "E-commerce Platform",
-              "client": "XYZ Corporation",
-              "website": "https://www.xyzcorp.com",
-              "shortSummary": "Developed an online marketplace for XYZ Corporation",
-              "summary": "Implemented various features and integrations for the e-commerce platform of XYZ Corporation. Worked closely with the client to understand their requirements and deliver a high-quality solution.",
-              "keywords": ["e-commerce", "marketplace", "integration"],
-              "responsibilities": ["Designing and developing frontend components", "Integrating payment gateways", "Optimizing website performance"],
-              "skills": ["JavaScript", "React", "Node.js", "SQL"]
-            },
-            {
-              "title": "CRM System",
-              "client": "ABC Inc.",
-              "website": "https://www.abcinc.com",
-              "shortSummary": "Built a customer relationship management system for ABC Inc.",
-              "summary": "Developed a custom CRM system for ABC Inc. to manage their customer data, sales pipeline, and communication. Implemented features based on the client's specific requirements and provided ongoing support and maintenance.",
-              "keywords": ["CRM", "customer relationship management", "sales pipeline"],
-              "responsibilities": ["Designing and implementing database schema", "Creating APIs for data retrieval and manipulation", "Integrating email communication functionality"],
-              "skills": ["PHP", "MySQL", "JavaScript", "HTML", "CSS"]
-            }
-          ],
-          "responsibilities": ["Developing web applications", "Collaborating with cross-functional teams", "Participating in code reviews"],
-          "skills": ["JavaScript", "HTML", "CSS", "React", "Node.js"]
-        }
-      }
-    },
-    {
-      "name": "XYZ Corporation",
-      "website": "https://www.xyzcorp.com",
-      "position": "Senior Software Engineer",
-      "summary": {
-        "company": {
-          "details": "A multinational technology company"
         },
-        "work": {
-          "details": "Led a team of engineers and worked on large-scale projects",
-          "email": "jane.smith@xyzcorp.com",
-          "manager": {
-            "name": "Michael Johnson",
-            "email": "michael.johnson@xyzcorp.com",
-            "mobile": "+1 987-654-3210",
-            "team": "Engineering Team"
-          },
-          "hr": {
-            "name": "Emily Davis",
-            "email": "emily.davis@xyzcorp.com",
-            "mobile": "+1 123-456-7890"
-          },
-          "employeeId": "E67890",
-          "contact": "456 Elm St, City, Country",
-          "present": false,
-          "duration": {
-            "start": {
-              "month": "March",
-              "year": "2017"
-            },
-            "end": {
-              "month": "December",
-              "year": "2019"
+        {
+            "name": "Finesse Global",
+            "website": "https://www.finesseglobal.com",
+            "position": "Business Analyst",
+            "summary": {
+                "company": {
+                    "details": "A global IT solutions provider specializing in digital transformation."
+                },
+                "work": {
+                    "details": "Performed business analysis for client projects.",
+                    "email": "john.doe@finesseglobal.com",
+                    "manager": {
+                        "name": "Jane Smith",
+                        "email": "jane.smith@finesseglobal.com",
+                        "mobile": "+1 123 456 7890",
+                        "team": "Business Analysis Team"
+                    },
+                    "hr": {
+                        "name": "Emily Johnson",
+                        "email": "emily.johnson@finesseglobal.com",
+                        "mobile": "+1 987 654 3210"
+                    },
+                    "employeeId": "E123456",
+                    "contact": "John Doe",
+                    "present": false,
+                    "duration": {
+                        "start": {
+                            "month": "April",
+                            "year": "2020"
+                        },
+                        "end": {
+                            "month": "December",
+                            "year": "2022"
+                        }
+                    },
+                    "teamSize": 6,
+                    "location": {
+                        "type": "standard",
+                        "country": "United States",
+                        "city": "Chicago"
+                    },
+                    "projects": [
+                        {
+                            "title": "Project A",
+                            "client": "ABC Corporation",
+                            "website": "https://www.abc-corp.com",
+                            "shortSummary": "Conducted business analysis for a digital transformation project.",
+                            "summary": "Collaborated with ABC Corporation to analyze business processes and identify opportunities for digital transformation.",
+                            "keywords": [
+                                "business analysis",
+                                "digital transformation",
+                                "process improvement",
+                                "stakeholder management"
+                            ],
+                            "responsibilities": [
+                                "Conducted requirements gathering workshops",
+                                "Performed gap analysis",
+                                "Developed business process models",
+                                "Presented findings to stakeholders"
+                            ],
+                            "skills": [
+                                "Business analysis",
+                                "Process improvement",
+                                "Stakeholder management"
+                            ],
+                            "duration": "2.5 years"
+                        },
+                        {
+                            "title": "Project B",
+                            "client": "XYZ Corporation",
+                            "website": "https://www.xyz-corp.com",
+                            "shortSummary": "Provided business analysis support for an ERP implementation project.",
+                            "summary": "Assisted XYZ Corporation with requirements analysis and process mapping for an enterprise resource planning (ERP) implementation.",
+                            "keywords": [
+                                "business analysis",
+                                "ERP implementation",
+                                "requirements analysis",
+                                "process mapping"
+                            ],
+                            "responsibilities": [
+                                "Conducted interviews with key stakeholders",
+                                "Documented current and future state processes",
+                                "Created functional specifications",
+                                "Assisted with user acceptance testing"
+                            ],
+                            "skills": [
+                                "Business analysis",
+                                "ERP",
+                                "Requirements analysis"
+                            ],
+                            "duration": "2 years"
+                        }
+                    ],
+                    "responsibilities": [
+                        "Conducted business analysis",
+                        "Identified process improvement opportunities",
+                        "Collaborated with clients"
+                    ],
+                    "skills": [
+                        "Business analysis",
+                        "Process mapping",
+                        "Requirements gathering"
+                    ]
+                }
             }
-          },
-          "teamSize": 20,
-          "location": {
-            "type": "standard",
-            "country": "United States",
-            "city": "San Francisco"
-          },
-          "projects": [
-            {
-              "title": "Data Analytics Platform",
-              "client": "PQR Corp.",
-              "website": "https://www.pqrcorp.com",
-              "shortSummary": "Built a data analytics platform for PQR Corp.",
-              "summary": "Developed a comprehensive data analytics platform for PQR Corp. to process and analyze large datasets. Led a team of engineers and collaborated with data scientists to implement advanced algorithms and visualizations.",
-              "keywords": ["data analytics", "big data", "visualization"],
-              "responsibilities": ["Designing and implementing data processing pipelines", "Creating interactive data visualizations", "Optimizing platform performance"],
-              "skills": ["Python", "Apache Spark", "SQL", "Tableau"]
-            },
-            {
-              "title": "Mobile Application",
-              "client": "LMN Corporation",
-              "website": "https://www.lmncorp.com",
-              "shortSummary": "Developed a mobile application for LMN Corporation",
-              "summary": "Built a native mobile application for LMN Corporation to enhance their customer engagement and service offerings. Implemented intuitive user interfaces and integrated with backend APIs for seamless functionality.",
-              "keywords": ["mobile app", "native development", "API integration"],
-              "responsibilities": ["Designing and implementing mobile app screens", "Integrating with backend APIs", "Implementing push notifications"],
-              "skills": ["Swift", "Java", "RESTful APIs"]
+        },
+        {
+            "name": "Randstad India",
+            "website": "https://www.randstad.in",
+            "position": "HR Executive",
+            "summary": {
+                "company": {
+                    "details": "A leading HR services provider in India."
+                },
+                "work": {
+                    "details": "Managed HR activities for clients.",
+                    "email": "john.doe@randstad.in",
+                    "manager": {
+                        "name": "Jane Smith",
+                        "email": "jane.smith@randstad.in",
+                        "mobile": "+91 1234567890",
+                        "team": "HR Department"
+                    },
+                    "hr": {
+                        "name": "Emily Johnson",
+                        "email": "emily.johnson@randstad.in",
+                        "mobile": "+91 9876543210"
+                    },
+                    "employeeId": "E123456",
+                    "contact": "John Doe",
+                    "present": false,
+                    "duration": {
+                        "start": {
+                            "month": "May",
+                            "year": "2017"
+                        },
+                        "end": {
+                            "month": "July",
+                            "year": "2021"
+                        }
+                    },
+                    "teamSize": 15,
+                    "location": {
+                        "type": "mandatory",
+                        "country": "India",
+                        "city": "Mumbai"
+                    },
+                    "projects": [
+                        {
+                            "title": "Project A",
+                            "client": "ABC Corporation",
+                            "website": "https://www.abc-corp.com",
+                            "shortSummary": "Managed recruitment process outsourcing (RPO) for a multinational corporation.",
+                            "summary": "Handled end-to-end recruitment process outsourcing (RPO) for ABC Corporation, including candidate sourcing, screening, and onboarding.",
+                            "keywords": [
+                                "recruitment",
+                                "RPO",
+                                "candidate sourcing",
+                                "onboarding"
+                            ],
+                            "responsibilities": [
+                                "Sourced candidates using various channels",
+                                "Conducted interviews and assessments",
+                                "Coordinated with hiring managers",
+                                "Managed onboarding process"
+                            ],
+                            "skills": [
+                                "Recruitment",
+                                "RPO",
+                                "Candidate screening"
+                            ],
+                            "duration": "4 years"
+                        },
+                        {
+                            "title": "Project B",
+                            "client": "XYZ Corporation",
+                            "website": "https://www.xyz-corp.com",
+                            "shortSummary": "Provided HR consulting services for a technology company.",
+                            "summary": "Offered HR consulting services to XYZ Corporation, including policy development, performance management, and employee engagement.",
+                            "keywords": [
+                                "HR consulting",
+                                "policy development",
+                                "performance management",
+                                "employee engagement"
+                            ],
+                            "responsibilities": [
+                                "Developed HR policies and procedures",
+                                "Conducted performance appraisals",
+                                "Facilitated employee engagement activities",
+                                "Provided HR guidance to management"
+                            ],
+                            "skills": [
+                                "HR consulting",
+                                "Performance management",
+                                "Employee engagement"
+                            ],
+                            "duration": "3 years"
+                        }
+                    ],
+                    "responsibilities": [
+                        "Managed recruitment process",
+                        "Provided HR consulting",
+                        "Coordinated with clients"
+                    ],
+                    "skills": [
+                        "Recruitment",
+                        "HR consulting",
+                        "Employee relations"
+                    ]
+                }
             }
-          ],
-          "responsibilities": ["Leading a team of engineers", "Architecting scalable solutions", "Providing technical guidance and mentoring"],
-          "skills": ["Java", "Python", "JavaScript", "React", "SQL"]
+        },
+        {
+            "name": "Raqmiyat",
+            "website": "https://www.raqmiyat.com",
+            "position": "Software Developer",
+            "summary": {
+                "company": {
+                    "details": "A leading IT solutions and services provider in the Middle East."
+                },
+                "work": {
+                    "details": "Developed and maintained software applications.",
+                    "email": "john.doe@raqmiyat.com",
+                    "manager": {
+                        "name": "Jane Smith",
+                        "email": "jane.smith@raqmiyat.com",
+                        "mobile": "+971 123456789",
+                        "team": "Development Team"
+                    },
+                    "hr": {
+                        "name": "Emily Johnson",
+                        "email": "emily.johnson@raqmiyat.com",
+                        "mobile": "+971 987654321"
+                    },
+                    "employeeId": "E123456",
+                    "contact": "John Doe",
+                    "present": false,
+                    "duration": {
+                        "start": {
+                            "month": "June",
+                            "year": "2018"
+                        },
+                        "end": {
+                            "month": "Present",
+                            "year": ""
+                        }
+                    },
+                    "teamSize": 10,
+                    "location": {
+                        "type": "optional",
+                        "country": "United Arab Emirates",
+                        "city": "Dubai"
+                    },
+                    "projects": [
+                        {
+                            "title": "Project A",
+                            "client": "ABC Corporation",
+                            "website": "https://www.abc-corp.com",
+                            "shortSummary": "Developed a web-based application for a multinational corporation.",
+                            "summary": "Designed and implemented a web-based application for ABC Corporation to manage their inventory and sales processes.",
+                            "keywords": [
+                                "web application",
+                                "inventory management",
+                                "sales management",
+                                "database"
+                            ],
+                            "responsibilities": [
+                                "Developed frontend using Angular",
+                                "Implemented backend using Node.js",
+                                "Designed and maintained database schema",
+                                "Collaborated with QA team"
+                            ],
+                            "skills": [
+                                "Angular",
+                                "Node.js",
+                                "Database management"
+                            ],
+                            "duration": "3 years"
+                        },
+                        {
+                            "title": "Project B",
+                            "client": "XYZ Corporation",
+                            "website": "https://www.xyz-corp.com",
+                            "shortSummary": "Enhanced an existing mobile application for a technology company.",
+                            "summary": "Contributed to the enhancement and maintenance of a mobile application for XYZ Corporation.",
+                            "keywords": [
+                                "mobile application",
+                                "Android",
+                                "iOS",
+                                "bug fixing"
+                            ],
+                            "responsibilities": [
+                                "Resolved bugs and issues",
+                                "Added new features",
+                                "Performed code reviews",
+                                "Ensured app compatibility across platforms"
+                            ],
+                            "skills": ["Android", "iOS", "Bug fixing"],
+                            "duration": "2.5 years"
+                        }
+                    ],
+                    "responsibilities": [
+                        "Developed software applications",
+                        "Collaborated with cross-functional teams",
+                        "Participated in code reviews"
+                    ],
+                    "skills": ["Java", "Angular", "Node.js"]
+                }
+            }
+        },
+        {
+            "name": "Cognizant Technology Solutions",
+            "website": "https://www.cognizant.com",
+            "position": "Senior Consultant",
+            "summary": {
+                "company": {
+                    "details": "A multinational IT services and consulting company."
+                },
+                "work": {
+                    "details": "Provided consulting services to clients in various industries.",
+                    "email": "john.doe@cognizant.com",
+                    "manager": {
+                        "name": "Jane Smith",
+                        "email": "jane.smith@cognizant.com",
+                        "mobile": "+1 123 456 7890",
+                        "team": "Consulting Team"
+                    },
+                    "hr": {
+                        "name": "Emily Johnson",
+                        "email": "emily.johnson@cognizant.com",
+                        "mobile": "+1 987 654 3210"
+                    },
+                    "employeeId": "E123456",
+                    "contact": "John Doe",
+                    "present": false,
+                    "duration": {
+                        "start": {
+                            "month": "January",
+                            "year": "2017"
+                        },
+                        "end": {
+                            "month": "Present",
+                            "year": ""
+                        }
+                    },
+                    "teamSize": 20,
+                    "location": {
+                        "type": "mandatory",
+                        "country": "United States",
+                        "city": "New Jersey"
+                    },
+                    "projects": [
+                        {
+                            "title": "Project A",
+                            "client": "ABC Corporation",
+                            "website": "https://www.abc-corp.com",
+                            "shortSummary": "Provided IT strategy consulting for a multinational corporation.",
+                            "summary": "Assisted ABC Corporation with developing and implementing their IT strategy to support business growth.",
+                            "keywords": [
+                                "IT strategy",
+                                "business transformation",
+                                "digitalization",
+                                "technology roadmap"
+                            ],
+                            "responsibilities": [
+                                "Conducted stakeholder interviews",
+                                "Performed current state assessment",
+                                "Developed future state vision",
+                                "Created technology roadmap"
+                            ],
+                            "skills": [
+                                "IT strategy",
+                                "Business transformation",
+                                "Technology roadmap"
+                            ],
+                            "duration": "4 years"
+                        },
+                        {
+                            "title": "Project B",
+                            "client": "XYZ Corporation",
+                            "website": "https://www.xyz-corp.com",
+                            "shortSummary": "Led a digital transformation project for a technology company.",
+                            "summary": "Led a team to develop and implement a digital transformation strategy for XYZ Corporation, focusing on customer experience and operational efficiency.",
+                            "keywords": [
+                                "digital transformation",
+                                "customer experience",
+                                "operational efficiency",
+                                "change management"
+                            ],
+                            "responsibilities": [
+                                "Conducted workshops and interviews",
+                                "Analyzed customer journey and pain points",
+                                "Developed digital transformation roadmap",
+                                "Provided change management support"
+                            ],
+                            "skills": [
+                                "Digital transformation",
+                                "Change management",
+                                "Customer experience"
+                            ],
+                            "duration": "3.5 years"
+                        }
+                    ],
+                    "responsibilities": [
+                        "Provided consulting services",
+                        "Conducted assessments",
+                        "Developed strategies"
+                    ],
+                    "skills": [
+                        "IT consulting",
+                        "Digital transformation",
+                        "Change management"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "HCL Technologies",
+            "website": "https://www.hcltech.com",
+            "position": "Software Engineer",
+            "summary": {
+                "company": {
+                    "details": "A multinational IT services and consulting company."
+                },
+                "work": {
+                    "details": "Developed and maintained software applications for clients.",
+                    "email": "john.doe@hcltech.com",
+                    "manager": {
+                        "name": "Jane Smith",
+                        "email": "jane.smith@hcltech.com",
+                        "mobile": "+1 123 456 7890",
+                        "team": "Development Team"
+                    },
+                    "hr": {
+                        "name": "Emily Johnson",
+                        "email": "emily.johnson@hcltech.com",
+                        "mobile": "+1 987 654 3210"
+                    },
+                    "employeeId": "E123456",
+                    "contact": "John Doe",
+                    "present": false,
+                    "duration": {
+                        "start": {
+                            "month": "June",
+                            "year": "2019"
+                        },
+                        "end": {
+                            "month": "Present",
+                            "year": ""
+                        }
+                    },
+                    "teamSize": 8,
+                    "location": {
+                        "type": "mandatory",
+                        "country": "United States",
+                        "city": "Seattle"
+                    },
+                    "projects": [
+                        {
+                            "title": "Project A",
+                            "client": "ABC Corporation",
+                            "website": "https://www.abc-corp.com",
+                            "shortSummary": "Developed a web application for a multinational corporation.",
+                            "summary": "Developed a web application for ABC Corporation to automate their business processes and improve efficiency.",
+                            "keywords": [
+                                "web application",
+                                "automation",
+                                "business processes",
+                                "efficiency"
+                            ],
+                            "responsibilities": [
+                                "Developed frontend using Angular",
+                                "Implemented backend using Java",
+                                "Performed unit testing",
+                                "Collaborated with QA team"
+                            ],
+                            "skills": [
+                                "Angular",
+                                "Java",
+                                "Automation",
+                                "Business process"
+                            ],
+                            "duration": "3 years"
+                        },
+                        {
+                            "title": "Project B",
+                            "client": "XYZ Corporation",
+                            "website": "https://www.xyz-corp.com",
+                            "shortSummary": "Maintained and enhanced a mobile application for a technology company.",
+                            "summary": "Maintained and enhanced a mobile application for XYZ Corporation, focusing on improving user experience and adding new features.",
+                            "keywords": [
+                                "mobile application",
+                                "user experience",
+                                "feature enhancement",
+                                "bug fixing"
+                            ],
+                            "responsibilities": [
+                                "Resolved bugs and issues",
+                                "Implemented new features",
+                                "Performed code refactoring",
+                                "Ensured app performance optimization"
+                            ],
+                            "skills": [
+                                "Mobile application",
+                                "User experience",
+                                "Bug fixing",
+                                "Code refactoring"
+                            ],
+                            "duration": "2.5 years"
+                        }
+                    ],
+                    "responsibilities": [
+                        "Developed software applications",
+                        "Performed testing",
+                        "Collaborated with cross-functional teams"
+                    ],
+                    "skills": ["Java", "Angular", "Mobile development"]
+                }
+            }
+        },
+        {
+            "name": "Inatech",
+            "website": "https://www.inatech.com",
+            "position": "Business Analyst",
+            "summary": {
+                "company": {
+                    "details": "A leading provider of software solutions for the marine industry."
+                },
+                "work": {
+                    "details": "Analyzed business requirements and provided solutions for clients.",
+                    "email": "john.doe@inatech.com",
+                    "manager": {
+                        "name": "Jane Smith",
+                        "email": "jane.smith@inatech.com",
+                        "mobile": "+44 1234567890",
+                        "team": "Business Analysis Team"
+                    },
+                    "hr": {
+                        "name": "Emily Johnson",
+                        "email": "emily.johnson@inatech.com",
+                        "mobile": "+44 9876543210"
+                    },
+                    "employeeId": "E123456",
+                    "contact": "John Doe",
+                    "present": false,
+                    "duration": {
+                        "start": {
+                            "month": "March",
+                            "year": "2020"
+                        },
+                        "end": {
+                            "month": "Present",
+                            "year": ""
+                        }
+                    },
+                    "teamSize": 5,
+                    "location": {
+                        "type": "optional",
+                        "country": "United Kingdom",
+                        "city": "London"
+                    },
+                    "projects": [
+                        {
+                            "title": "Project A",
+                            "client": "ABC Corporation",
+                            "website": "https://www.abc-corp.com",
+                            "shortSummary": "Analyzed business processes and provided software solutions for a multinational corporation.",
+                            "summary": "Conducted analysis of business processes and implemented software solutions to improve efficiency and productivity for ABC Corporation.",
+                            "keywords": [
+                                "business analysis",
+                                "process improvement",
+                                "software solutions",
+                                "efficiency"
+                            ],
+                            "responsibilities": [
+                                "Conducted workshops with stakeholders",
+                                "Analyzed current processes",
+                                "Developed software requirements",
+                                "Collaborated with development team"
+                            ],
+                            "skills": [
+                                "Business analysis",
+                                "Process improvement",
+                                "Software requirements"
+                            ],
+                            "duration": "3.5 years"
+                        },
+                        {
+                            "title": "Project B",
+                            "client": "XYZ Corporation",
+                            "website": "https://www.xyz-corp.com",
+                            "shortSummary": "Provided business analysis support for a marine industry software project.",
+                            "summary": "Supported the implementation of a software solution for the marine industry, including requirements gathering and user acceptance testing.",
+                            "keywords": [
+                                "business analysis",
+                                "marine industry",
+                                "requirements gathering",
+                                "user acceptance testing"
+                            ],
+                            "responsibilities": [
+                                "Gathered and documented business requirements",
+                                "Conducted user acceptance testing",
+                                "Provided training and support",
+                                "Ensured alignment with industry standards"
+                            ],
+                            "skills": [
+                                "Business analysis",
+                                "Requirements gathering",
+                                "User acceptance testing"
+                            ],
+                            "duration": "2 years"
+                        }
+                    ],
+                    "responsibilities": [
+                        "Conducted business analysis",
+                        "Implemented software solutions",
+                        "Collaborated with clients"
+                    ],
+                    "skills": [
+                        "Business analysis",
+                        "Software implementation",
+                        "Requirements gathering"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Midas Communication Technologies",
+            "website": "https://www.midascommtech.com",
+            "position": "Network Engineer",
+            "summary": {
+                "company": {
+                    "details": "A telecommunications company providing networking solutions."
+                },
+                "work": {
+                    "details": "Designed and maintained network infrastructure for clients.",
+                    "email": "john.doe@midascommtech.com",
+                    "manager": {
+                        "name": "Jane Smith",
+                        "email": "jane.smith@midascommtech.com",
+                        "mobile": "+1 123 456 7890",
+                        "team": "Network Engineering Team"
+                    },
+                    "hr": {
+                        "name": "Emily Johnson",
+                        "email": "emily.johnson@midascommtech.com",
+                        "mobile": "+1 987 654 3210"
+                    },
+                    "employeeId": "E123456",
+                    "contact": "John Doe",
+                    "present": false,
+                    "duration": {
+                        "start": {
+                            "month": "September",
+                            "year": "2018"
+                        },
+                        "end": {
+                            "month": "Present",
+                            "year": ""
+                        }
+                    },
+                    "teamSize": 6,
+                    "location": {
+                        "type": "mandatory",
+                        "country": "United States",
+                        "city": "New York"
+                    },
+                    "projects": [
+                        {
+                            "title": "Project A",
+                            "client": "ABC Corporation",
+                            "website": "https://www.abc-corp.com",
+                            "shortSummary": "Designed and implemented network infrastructure for a multinational corporation.",
+                            "summary": "Designed and implemented network infrastructure for ABC Corporation, including LAN, WAN, and security solutions.",
+                            "keywords": [
+                                "network design",
+                                "LAN",
+                                "WAN",
+                                "security"
+                            ],
+                            "responsibilities": [
+                                "Conducted network assessment",
+                                "Designed network architecture",
+                                "Implemented network solutions",
+                                "Provided ongoing support"
+                            ],
+                            "skills": [
+                                "Network design",
+                                "LAN",
+                                "WAN",
+                                "Security"
+                            ],
+                            "duration": "3.5 years"
+                        },
+                        {
+                            "title": "Project B",
+                            "client": "XYZ Corporation",
+                            "website": "https://www.xyz-corp.com",
+                            "shortSummary": "Upgraded and optimized network infrastructure for a technology company.",
+                            "summary": "Upgraded and optimized network infrastructure for XYZ Corporation, enhancing performance and ensuring scalability.",
+                            "keywords": [
+                                "network upgrade",
+                                "network optimization",
+                                "performance enhancement",
+                                "scalability"
+                            ],
+                            "responsibilities": [
+                                "Assessed current network infrastructure",
+                                "Developed network upgrade plan",
+                                "Implemented network optimizations",
+                                "Performed network testing"
+                            ],
+                            "skills": [
+                                "Network upgrade",
+                                "Network optimization",
+                                "Performance enhancement"
+                            ],
+                            "duration": "2.5 years"
+                        }
+                    ],
+                    "responsibilities": [
+                        "Designed network infrastructure",
+                        "Implemented network solutions",
+                        "Provided support"
+                    ],
+                    "skills": [
+                        "Network design",
+                        "Network implementation",
+                        "Network support"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "HTL Limited Chennai",
+            "website": "https://www.htlchennai.com",
+            "position": "Software Developer",
+            "summary": {
+                "company": {
+                    "details": "A software development company specializing in enterprise solutions."
+                },
+                "work": {
+                    "details": "Developed and maintained software applications for clients.",
+                    "email": "john.doe@htlchennai.com",
+                    "manager": {
+                        "name": "Jane Smith",
+                        "email": "jane.smith@htlchennai.com",
+                        "mobile": "+91 1234567890",
+                        "team": "Development Team"
+                    },
+                    "hr": {
+                        "name": "Emily Johnson",
+                        "email": "emily.johnson@htlchennai.com",
+                        "mobile": "+91 9876543210"
+                    },
+                    "employeeId": "E123456",
+                    "contact": "John Doe",
+                    "present": false,
+                    "duration": {
+                        "start": {
+                            "month": "January",
+                            "year": "2019"
+                        },
+                        "end": {
+                            "month": "Present",
+                            "year": ""
+                        }
+                    },
+                    "teamSize": 10,
+                    "location": {
+                        "type": "mandatory",
+                        "country": "India",
+                        "city": "Chennai"
+                    },
+                    "projects": [
+                        {
+                            "title": "Project A",
+                            "client": "ABC Corporation",
+                            "website": "https://www.abc-corp.com",
+                            "shortSummary": "Developed an enterprise web application for a multinational corporation.",
+                            "summary": "Developed an enterprise web application for ABC Corporation, enabling efficient management of business processes.",
+                            "keywords": [
+                                "enterprise web application",
+                                "business process management",
+                                "efficiency"
+                            ],
+                            "responsibilities": [
+                                "Developed frontend using Angular",
+                                "Implemented backend using Java",
+                                "Integrated with database",
+                                "Performed unit testing"
+                            ],
+                            "skills": [
+                                "Angular",
+                                "Java",
+                                "Database integration",
+                                "Unit testing"
+                            ],
+                            "duration": "3 years"
+                        },
+                        {
+                            "title": "Project B",
+                            "client": "XYZ Corporation",
+                            "website": "https://www.xyz-corp.com",
+                            "shortSummary": "Enhanced and maintained a mobile application for a technology company.",
+                            "summary": "Enhanced and maintained a mobile application for XYZ Corporation, incorporating new features and ensuring stability.",
+                            "keywords": [
+                                "mobile application",
+                                "feature enhancement",
+                                "maintenance",
+                                "stability"
+                            ],
+                            "responsibilities": [
+                                "Added new features",
+                                "Resolved issues",
+                                "Performed code optimization",
+                                "Conducted testing"
+                            ],
+                            "skills": [
+                                "Mobile application",
+                                "Feature enhancement",
+                                "Code optimization",
+                                "Testing"
+                            ],
+                            "duration": "2.5 years"
+                        }
+                    ],
+                    "responsibilities": [
+                        "Developed software applications",
+                        "Collaborated with clients",
+                        "Performed testing"
+                    ],
+                    "skills": ["Java", "Angular", "Mobile development"]
+                }
+            }
         }
-      }
-    }
-  ]
+    ]
 }
