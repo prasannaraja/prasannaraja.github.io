@@ -1,8 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription, switchMap, tap } from 'rxjs';
 import { AlphaComponentBase } from './base/alpha.component.base';
-import { ICompanies, IPersonalData } from '../../models';
-import { DataService } from '../../services';
+import { DataService } from '../../services/data.service';
+import { IExperience } from '../../models/IExperience';
+import { IPersonalData } from '../../models/IPersonalData';
+
 
 @Component({
     selector: 'rbx-alpha',
@@ -11,8 +13,7 @@ import { DataService } from '../../services';
 })
 export class AlphaComponent
     extends AlphaComponentBase
-    implements OnInit, OnDestroy
-{
+    implements OnInit, OnDestroy {
     private subscriptions: Subscription;
     constructor(public dataService: DataService) {
         super();
@@ -30,7 +31,7 @@ export class AlphaComponent
         return this.dataService.getPersonalData();
     }
 
-    get getExperienceData$(): Observable<ICompanies> {
+    get getExperienceData$(): Observable<IExperience> {
         return this.dataService.getExperienceData();
     }
 
@@ -51,15 +52,15 @@ export class AlphaComponent
         );
     }
 
-    get experienceData$(): Observable<ICompanies> {
+    get experienceData$(): Observable<IExperience> {
         return this.getExperienceData$.pipe(
-            tap((companies: ICompanies) => {
-                this.companiesSubject$.next(companies.data);
+            tap((experience: IExperience) => {
+                this.companiesSubject$.next(experience.companies);
             })
         );
     }
 
-    get formData$(): Observable<ICompanies> {
+    get formData$(): Observable<IExperience> {
         return this.personalData$.pipe(
             switchMap(() => {
                 return this.experienceData$;

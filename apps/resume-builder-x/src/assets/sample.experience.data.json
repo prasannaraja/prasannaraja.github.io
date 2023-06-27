@@ -1,304 +1,2201 @@
 {
-  "data": [
-    {
-      "name": "Company A",
-      "website": "www.companya.com",
-      "position": "Software Engineer",
-      "summary": {
-        "company": {
-          "details": "Company A is a leading technology company specializing in software development."
-        },
-        "work": {
-          "details": "Developed and maintained software solutions for clients in various industries.",
-          "email": "john.doe@companya.com",
-          "manager": {
-            "name": "Michael Johnson",
-            "email": "michael.johnson@companya.com",
-            "mobile": "+1 (123) 456-7890",
-            "team": "Development Team"
-          },
-          "hr": {
-            "name": "Emily Wilson",
-            "email": "emily.wilson@companya.com",
-            "mobile": "+1 (987) 654-3210"
-          },
-          "employeeId": "E123456",
-          "contact": "John Doe",
-          "duration": "3 years",
-          "teamSize": 15,
-          "location": {
-            "type": "mandatory",
-            "country": "United States",
-            "city": "San Francisco"
-          },
-          "projects": [
-            {
-              "title": "Project A",
-              "client": "Client A",
-              "website": "www.clienta.com",
-              "shortSummary": "Developed a web application for client A",
-              "summary": "Led the development of a web application for client A, utilizing modern technologies and frameworks. Collaborated with the client to gather requirements, designed system architecture, and implemented key features.",
-              "keywords": ["Web Development", "Front-end", "Back-end"],
-              "responsibilities": ["Requirement gathering", "System architecture design", "Feature implementation", "Code review"],
-              "skills": ["JavaScript", "React", "Node.js", "MongoDB"],
-              "duration": "2 years"
-            },
-            {
-              "title": "Project B",
-              "client": "Client B",
-              "website": "www.clientb.com",
-              "shortSummary": "Optimized database performance for client B",
-              "summary": "Identified performance bottlenecks in the client B's database system and implemented optimizations to enhance scalability and improve response times. Conducted performance testing and monitoring to ensure optimal system performance.",
-              "keywords": ["Database Optimization", "Performance Testing", "Monitoring"],
-              "responsibilities": ["Performance analysis", "Optimization implementation", "Testing and monitoring"],
-              "skills": ["Database Management", "SQL", "Performance Tuning"],
-              "duration": "1 year"
+    "companies": [
+        {
+            "name": "KPMG (Microsoft Business Solutions Malta)",
+            "website": "https://www.kpmg.com/mt",
+            "position": "Software Developer",
+            "summary": {
+                "company": {
+                    "details": "KPMG is a leading global network of professional firms providing audit, tax, and advisory services. With a strong presence in Malta, KPMG offers a wide range of services to clients across various industries. The firm is committed to delivering high-quality solutions and helping clients navigate complex business challenges. KPMG (Microsoft Business Solutions Malta) focuses on developing innovative software solutions using Microsoft technologies. As a software developer."
+                },
+                "work": {
+                    "details": "Worked on developing software solutions for clients using Microsoft technologies.",
+                    "email": "john.doe@kpmg.com",
+                    "manager": {
+                        "name": "Jane Smith",
+                        "email": "jane.smith@kpmg.com",
+                        "mobile": "+1 123 456 7890",
+                        "team": "Development Team"
+                    },
+                    "hr": {
+                        "name": "Emily Johnson",
+                        "email": "emily.johnson@kpmg.com",
+                        "mobile": "+1 987 654 3210"
+                    },
+                    "employeeId": "12345",
+                    "contact": "+1 555 123 4567",
+                    "present": true,
+                    "duration": {
+                        "start": {
+                            "month": "January",
+                            "year": "2020"
+                        },
+                        "end": {
+                            "month": "",
+                            "year": ""
+                        }
+                    },
+                    "teamSize": 10,
+                    "location": {
+                        "type": "standard",
+                        "country": "Malta",
+                        "city": "Valletta"
+                    },
+                    "projects": [
+                        {
+                            "title": "CRM Integration",
+                            "client": "ABC Company",
+                            "website": "https://www.abccompany.com",
+                            "shortSummary": "Developed and integrated CRM solution for ABC Company.",
+                            "summary": "Developed a custom CRM (Customer Relationship Management) solution for ABC Company, integrating it with their existing systems.",
+                            "keywords": [
+                                "CRM",
+                                "integration",
+                                "custom software"
+                            ],
+                            "responsibilities": [
+                                "Gathered requirements",
+                                "Designed and implemented the solution",
+                                "Performed testing and debugging"
+                            ],
+                            "skills": ["C#", ".NET", "SQL Server"]
+                        },
+                        {
+                            "title": "Financial Reporting System",
+                            "client": "XYZ Corporation",
+                            "website": "https://www.xyzcorp.com",
+                            "shortSummary": "Implemented a financial reporting system for XYZ Corporation.",
+                            "summary": "Implemented a financial reporting system for XYZ Corporation, enabling them to generate comprehensive financial reports.",
+                            "keywords": [
+                                "financial reporting",
+                                "data analysis",
+                                "report generation"
+                            ],
+                            "responsibilities": [
+                                "Collaborated with the client to understand their requirements",
+                                "Developed the system using Microsoft technologies",
+                                "Conducted system testing"
+                            ],
+                            "skills": ["ASP.NET", "MVC", "SQL Server"]
+                        },
+                        {
+                            "title": "Inventory Management System",
+                            "client": "EFG Industries",
+                            "website": "https://www.efgindustries.com",
+                            "shortSummary": "Developed an inventory management system for EFG Industries.",
+                            "summary": "Designed and implemented an inventory management system for EFG Industries, providing real-time tracking of stock levels and optimizing inventory control processes.",
+                            "keywords": [
+                                "inventory management",
+                                "stock tracking",
+                                "supply chain"
+                            ],
+                            "responsibilities": [
+                                "Performed system analysis and requirements gathering",
+                                "Developed the application using C# and .NET",
+                                "Collaborated with stakeholders for user acceptance testing"
+                            ],
+                            "skills": ["C#", ".NET", "SQL Server"]
+                        },
+                        {
+                            "title": "E-commerce Website Development",
+                            "client": "123 Retail",
+                            "website": "https://www.123retail.com",
+                            "shortSummary": "Developed an e-commerce website for 123 Retail.",
+                            "summary": "Led the development of a fully functional e-commerce website for 123 Retail, implementing features such as product catalog, shopping cart, and secure payment integration.",
+                            "keywords": [
+                                "e-commerce",
+                                "web development",
+                                "online shopping"
+                            ],
+                            "responsibilities": [
+                                "Collaborated with the design team to create an intuitive user interface",
+                                "Implemented the front-end using HTML, CSS, and JavaScript",
+                                "Integrated with back-end systems for order processing"
+                            ],
+                            "skills": ["HTML", "CSS", "JavaScript", "ASP.NET"]
+                        },
+                        {
+                            "title": "Data Analytics Dashboard",
+                            "client": "LMN Analytics",
+                            "website": "https://www.lmnanalytics.com",
+                            "shortSummary": "Built a data analytics dashboard for LMN Analytics.",
+                            "summary": "Developed a data analytics dashboard for LMN Analytics, providing visualizations and insights into complex data sets for informed decision-making.",
+                            "keywords": [
+                                "data analytics",
+                                "dashboard",
+                                "data visualization"
+                            ],
+                            "responsibilities": [
+                                "Designed and implemented the dashboard using Tableau",
+                                "Worked closely with data analysts to define requirements",
+                                "Optimized performance for handling large data volumes"
+                            ],
+                            "skills": ["Tableau", "SQL", "Data visualization"]
+                        },
+                        {
+                            "title": "Mobile App Development",
+                            "client": "PQR Solutions",
+                            "website": "https://www.pqrsolutions.com",
+                            "shortSummary": "Developed a mobile app for PQR Solutions.",
+                            "summary": "Created a cross-platform mobile app for PQR Solutions, enabling users to access their services and receive real-time updates on-the-go.",
+                            "keywords": [
+                                "mobile app",
+                                "cross-platform",
+                                "real-time updates"
+                            ],
+                            "responsibilities": [
+                                "Developed the mobile app using React Native",
+                                "Integrated with backend APIs for data retrieval",
+                                "Performed extensive testing on various devices"
+                            ],
+                            "skills": [
+                                "React Native",
+                                "JavaScript",
+                                "RESTful APIs"
+                            ]
+                        },
+                        {
+                            "title": "Document Management System",
+                            "client": "LMK Legal Services",
+                            "website": "https://www.lmklegalservices.com",
+                            "shortSummary": "Implemented a document management system for LMK Legal Services.",
+                            "summary": "Implemented a secure document management system for LMK Legal Services, enabling efficient storage, retrieval, and collaboration on legal documents.",
+                            "keywords": [
+                                "document management",
+                                "legal services",
+                                "collaboration"
+                            ],
+                            "responsibilities": [
+                                "Conducted requirements analysis and solution design",
+                                "Developed the system using SharePoint",
+                                "Provided user training and support"
+                            ],
+                            "skills": ["SharePoint", "C#", ".NET"]
+                        },
+                        {
+                            "title": "Machine Learning Model",
+                            "client": "MNO Tech",
+                            "website": "https://www.mnotech.com",
+                            "shortSummary": "Developed a machine learning model for MNO Tech.",
+                            "summary": "Developed and trained a machine learning model for MNO Tech, enabling predictive analytics and data-driven decision-making.",
+                            "keywords": [
+                                "machine learning",
+                                "predictive analytics",
+                                "data modeling"
+                            ],
+                            "responsibilities": [
+                                "Explored and preprocessed the data",
+                                "Implemented the machine learning algorithm using Python and TensorFlow",
+                                "Evaluated and fine-tuned the model for optimal performance"
+                            ],
+                            "skills": [
+                                "Python",
+                                "TensorFlow",
+                                "Machine Learning"
+                            ]
+                        },
+                        {
+                            "title": "Payment Gateway Integration",
+                            "client": "GHI Financial Services",
+                            "website": "https://www.ghifinancial.com",
+                            "shortSummary": "Integrated a payment gateway for GHI Financial Services.",
+                            "summary": "Integrated a secure payment gateway for GHI Financial Services, enabling seamless online transactions and ensuring data privacy.",
+                            "keywords": [
+                                "payment gateway",
+                                "online transactions",
+                                "data security"
+                            ],
+                            "responsibilities": [
+                                "Researched and selected an appropriate payment gateway",
+                                "Implemented the integration using API calls",
+                                "Ensured compliance with industry standards"
+                            ],
+                            "skills": [
+                                "Payment Gateway APIs",
+                                "Encryption",
+                                "Security"
+                            ]
+                        },
+                        {
+                            "title": "Customer Support Portal",
+                            "client": "UVW Solutions",
+                            "website": "https://www.uvwsolutions.com",
+                            "shortSummary": "Developed a customer support portal for UVW Solutions.",
+                            "summary": "Developed a web-based customer support portal for UVW Solutions, enabling customers to submit queries, track their requests, and access knowledge base articles.",
+                            "keywords": [
+                                "customer support",
+                                "web portal",
+                                "ticketing system"
+                            ],
+                            "responsibilities": [
+                                "Designed the user interface for easy navigation and intuitive interaction",
+                                "Implemented the portal using ASP.NET and MVC",
+                                "Integrated with backend systems for ticket management"
+                            ],
+                            "skills": ["ASP.NET", "MVC", "HTML", "CSS"]
+                        },
+                        {
+                            "title": "Sales Analytics Dashboard",
+                            "client": "RST Enterprises",
+                            "website": "https://www.rstenterprises.com",
+                            "shortSummary": "Built a sales analytics dashboard for RST Enterprises.",
+                            "summary": "Developed a comprehensive sales analytics dashboard for RST Enterprises, providing insights into sales performance, revenue trends, and market analysis.",
+                            "keywords": [
+                                "sales analytics",
+                                "dashboard",
+                                "data visualization"
+                            ],
+                            "responsibilities": [
+                                "Collaborated with stakeholders to define key metrics and visualizations",
+                                "Implemented the dashboard using Power BI",
+                                "Integrated with multiple data sources"
+                            ],
+                            "skills": ["Power BI", "SQL", "Data visualization"]
+                        }
+                    ],
+                    "responsibilities": [
+                        "Developed and maintained software applications",
+                        "Collaborated with team members on projects",
+                        "Participated in code reviews"
+                    ],
+                    "skills": ["C#", ".NET", "SQL", "JavaScript"]
+                }
             }
-          ],
-          "responsibilities": ["Software development", "System maintenance", "Code debugging", "Collaboration with cross-functional teams"],
-          "skills": ["JavaScript", "Python", "React", "Node.js", "SQL"]
-        }
-      }
-    },
-    {
-      "name": "Company B",
-      "website": "www.companyb.com",
-      "position": "Marketing Specialist",
-      "summary": {
-        "company": {
-          "details": "Company B is a global marketing agency providing comprehensive marketing solutions."
         },
-        "work": {
-          "details": "Developed and executed digital marketing strategies for clients across various industries.",
-          "email": "jane.smith@companyb.com",
-          "manager": {
-            "name": "David Wilson",
-            "email": "david.wilson@companyb.com",
-            "mobile": "+1 (123) 456-7890",
-            "team": "Marketing Team"
-          },
-          "hr": {
-            "name": "Jessica Davis",
-            "email": "jessica.davis@companyb.com",
-            "mobile": "+1 (987) 654-3210"
-          },
-          "employeeId": "E987654",
-          "contact": "Jane Smith",
-          "duration": "2.5 years",
-          "teamSize": 10,
-          "location": {
-            "type": "mandatory",
-            "country": "United States",
-            "city": "New York"
-          },
-          "projects": [
-            {
-              "title": "Project C",
-              "client": "Client C",
-              "website": "www.clientc.com",
-              "shortSummary": "Developed and executed a social media marketing campaign for client C",
-              "summary": "Designed and implemented a comprehensive social media marketing campaign for client C, focusing on audience engagement and brand awareness. Monitored campaign performance, analyzed metrics, and provided strategic recommendations for optimization.",
-              "keywords": ["Social Media Marketing", "Audience Engagement", "Brand Awareness"],
-              "responsibilities": ["Campaign planning", "Content creation", "Performance monitoring", "Optimization"],
-              "skills": ["Social Media Management", "Content Marketing", "Analytics"],
-              "duration": "1.5 years"
-            },
-            {
-              "title": "Project D",
-              "client": "Client D",
-              "website": "www.clientd.com",
-              "shortSummary": "Conducted market research and competitor analysis for client D",
-              "summary": "Performed in-depth market research and competitor analysis for client D to identify target markets, customer preferences, and competitive landscape. Prepared comprehensive reports and delivered strategic insights to support client's marketing decisions.",
-              "keywords": ["Market Research", "Competitor Analysis", "Strategic Insights"],
-              "responsibilities": ["Data collection", "Analysis and interpretation", "Report preparation", "Strategic recommendations"],
-              "skills": ["Market Research", "Competitive Analysis", "Data Analysis"],
-              "duration": "1 year"
+        {
+            "name": "Finesse Global",
+            "website": "https://www.finesseglobal.com",
+            "position": "Software Engineer",
+            "summary": {
+                "company": {
+                    "details": "Finesse Global is a leading technology solutions provider, offering innovative and cutting-edge solutions to clients worldwide. With a focus on delivering exceptional services and driving digital transformation, Finesse Global has established itself as a trusted partner in various industries. The company's expertise spans across software development, cloud computing, data analytics, and more."
+                },
+                "work": {
+                    "details": "Worked on developing software solutions using modern technologies.",
+                    "email": "john.doe@finesseglobal.com",
+                    "manager": {
+                        "name": "Jane Smith",
+                        "email": "jane.smith@finesseglobal.com",
+                        "mobile": "+1 123 456 7890",
+                        "team": "Development Team"
+                    },
+                    "hr": {
+                        "name": "Emily Johnson",
+                        "email": "emily.johnson@finesseglobal.com",
+                        "mobile": "+1 987 654 3210"
+                    },
+                    "employeeId": "12345",
+                    "contact": "+1 555 123 4567",
+                    "present": false,
+                    "duration": {
+                        "start": {
+                            "month": "April",
+                            "year": "2017"
+                        },
+                        "end": {
+                            "month": "December",
+                            "year": "2019"
+                        }
+                    },
+                    "teamSize": 15,
+                    "location": {
+                        "type": "standard",
+                        "country": "United States",
+                        "city": "New York"
+                    },
+                    "projects": [
+                        {
+                            "title": "E-commerce Platform",
+                            "client": "ABC Retail",
+                            "website": "https://www.abcretail.com",
+                            "shortSummary": "Developed a scalable e-commerce platform for ABC Retail.",
+                            "summary": "Developed a scalable and feature-rich e-commerce platform for ABC Retail, enabling them to effectively sell products online and manage their business operations.",
+                            "keywords": [
+                                "e-commerce",
+                                "web development",
+                                "online sales"
+                            ],
+                            "responsibilities": [
+                                "Collaborated with the client to gather requirements",
+                                "Designed and implemented the platform using modern web technologies",
+                                "Integrated with payment gateways and order management systems"
+                            ],
+                            "skills": ["Java", "Spring", "React", "MySQL"]
+                        },
+                        {
+                            "title": "Supply Chain Management System",
+                            "client": "XYZ Logistics",
+                            "website": "https://www.xyzlogistics.com",
+                            "shortSummary": "Implemented a robust supply chain management system for XYZ Logistics.",
+                            "summary": "Implemented a robust and efficient supply chain management system for XYZ Logistics, streamlining their operations and optimizing inventory management.",
+                            "keywords": [
+                                "supply chain management",
+                                "logistics",
+                                "inventory optimization"
+                            ],
+                            "responsibilities": [
+                                "Conducted system analysis and design",
+                                "Developed the system using Python and Django framework",
+                                "Integrated with ERP systems for seamless data exchange"
+                            ],
+                            "skills": ["Python", "Django", "PostgreSQL"]
+                        },
+                        {
+                            "title": "Customer Relationship Management (CRM) Solution",
+                            "client": "LMN Enterprises",
+                            "website": "https://www.lmnenterprises.com",
+                            "shortSummary": "Developed a customized CRM solution for LMN Enterprises.",
+                            "summary": "Developed a customized Customer Relationship Management (CRM) solution for LMN Enterprises, providing them with a comprehensive tool to manage customer interactions, sales pipelines, and marketing campaigns.",
+                            "keywords": [
+                                "CRM",
+                                "customer relationship management",
+                                "sales pipeline"
+                            ],
+                            "responsibilities": [
+                                "Collaborated with stakeholders to define requirements and workflows",
+                                "Designed and implemented the CRM solution using Salesforce platform",
+                                "Provided training and support to end-users"
+                            ],
+                            "skills": ["Salesforce", "Apex", "Visualforce"]
+                        },
+                        {
+                            "title": "Data Analytics Platform",
+                            "client": "PQR Analytics",
+                            "website": "https://www.pqranalytics.com",
+                            "shortSummary": "Built a data analytics platform for PQR Analytics.",
+                            "summary": "Built a comprehensive data analytics platform for PQR Analytics, enabling them to analyze and visualize large volumes of data to gain valuable insights and make data-driven decisions.",
+                            "keywords": [
+                                "data analytics",
+                                "data visualization",
+                                "big data"
+                            ],
+                            "responsibilities": [
+                                "Performed data modeling and database design",
+                                "Developed the analytics platform using Apache Spark and Angular",
+                                "Implemented interactive visualizations and reporting functionalities"
+                            ],
+                            "skills": [
+                                "Apache Spark",
+                                "Scala",
+                                "Angular",
+                                "SQL"
+                            ]
+                        },
+                        {
+                            "title": "Mobile Banking Application",
+                            "client": "DEF Bank",
+                            "website": "https://www.defbank.com",
+                            "shortSummary": "Developed a secure mobile banking application for DEF Bank.",
+                            "summary": "Developed a secure and user-friendly mobile banking application for DEF Bank, enabling their customers to perform banking transactions, manage accounts, and access financial services on their mobile devices.",
+                            "keywords": [
+                                "mobile banking",
+                                "financial services",
+                                "mobile app"
+                            ],
+                            "responsibilities": [
+                                "Collaborated with UX designers to create an intuitive interface",
+                                "Developed the mobile app using React Native",
+                                "Integrated with banking APIs for seamless transaction processing"
+                            ],
+                            "skills": [
+                                "React Native",
+                                "JavaScript",
+                                "RESTful APIs"
+                            ]
+                        },
+                        {
+                            "title": "Human Resources Management System",
+                            "client": "GHI Corp",
+                            "website": "https://www.ghicorp.com",
+                            "shortSummary": "Implemented a comprehensive Human Resources Management System for GHI Corp.",
+                            "summary": "Implemented a comprehensive Human Resources Management System (HRMS) for GHI Corp, automating HR processes, managing employee data, and facilitating efficient workforce management.",
+                            "keywords": [
+                                "HRMS",
+                                "human resources",
+                                "workforce management"
+                            ],
+                            "responsibilities": [
+                                "Conducted business analysis and requirements gathering",
+                                "Designed and developed the HRMS using Java and Oracle Database",
+                                "Implemented features such as employee self-service and performance management"
+                            ],
+                            "skills": ["Java", "Oracle Database", "Spring Boot"]
+                        },
+                        {
+                            "title": "Healthcare Management Application",
+                            "client": "IJK Medical",
+                            "website": "https://www.ijkmedical.com",
+                            "shortSummary": "Developed a healthcare management application for IJK Medical.",
+                            "summary": "Developed a comprehensive healthcare management application for IJK Medical, facilitating patient records management, appointment scheduling, and medical billing.",
+                            "keywords": [
+                                "healthcare",
+                                "medical records",
+                                "appointment scheduling"
+                            ],
+                            "responsibilities": [
+                                "Collaborated with healthcare professionals to define workflows and functionalities",
+                                "Designed and implemented the application using C# and ASP.NET",
+                                "Ensured compliance with HIPAA regulations"
+                            ],
+                            "skills": ["C#", "ASP.NET", "SQL", "HIPAA"]
+                        },
+                        {
+                            "title": "Inventory Management System",
+                            "client": "MNO Retail",
+                            "website": "https://www.mnoretail.com",
+                            "shortSummary": "Implemented an efficient inventory management system for MNO Retail.",
+                            "summary": "Implemented an efficient and automated inventory management system for MNO Retail, enabling them to track stock levels, manage purchase orders, and streamline their supply chain.",
+                            "keywords": [
+                                "inventory management",
+                                "stock tracking",
+                                "purchase orders"
+                            ],
+                            "responsibilities": [
+                                "Conducted system analysis and requirements gathering",
+                                "Developed the inventory management system using PHP and MySQL",
+                                "Integrated with barcode scanning and RFID technologies"
+                            ],
+                            "skills": [
+                                "PHP",
+                                "MySQL",
+                                "Barcode scanning",
+                                "RFID"
+                            ]
+                        },
+                        {
+                            "title": "Education Management Portal",
+                            "client": "UVW Education",
+                            "website": "https://www.uvweducation.com",
+                            "shortSummary": "Developed an education management portal for UVW Education.",
+                            "summary": "Developed an education management portal for UVW Education, providing administrators, teachers, and students with a centralized platform to manage courses, assessments, and learning materials.",
+                            "keywords": [
+                                "education management",
+                                "e-learning",
+                                "course administration"
+                            ],
+                            "responsibilities": [
+                                "Collaborated with educational experts to define requirements",
+                                "Designed and developed the portal using Laravel framework",
+                                "Implemented features such as gradebook and attendance tracking"
+                            ],
+                            "skills": ["PHP", "Laravel", "JavaScript", "MySQL"]
+                        },
+                        {
+                            "title": "Social Media Analytics Platform",
+                            "client": "RST Social",
+                            "website": "https://www.rstsocial.com",
+                            "shortSummary": "Built a social media analytics platform for RST Social.",
+                            "summary": "Built a powerful social media analytics platform for RST Social, enabling them to monitor and analyze social media data, track trends, and measure the impact of their marketing campaigns.",
+                            "keywords": [
+                                "social media analytics",
+                                "data visualization",
+                                "marketing insights"
+                            ],
+                            "responsibilities": [
+                                "Performed data collection and integration from various social media platforms",
+                                "Developed the analytics platform using Python and Django",
+                                "Implemented real-time monitoring and visualizations"
+                            ],
+                            "skills": [
+                                "Python",
+                                "Django",
+                                "Data Analytics",
+                                "Data Visualization"
+                            ]
+                        },
+                        {
+                            "title": "E-learning Platform",
+                            "client": "PQR Academy",
+                            "website": "https://www.pqracademy.com",
+                            "shortSummary": "Developed an interactive e-learning platform for PQR Academy.",
+                            "summary": "Developed an interactive e-learning platform for PQR Academy, providing learners with a rich and engaging online learning experience through multimedia content, quizzes, and progress tracking.",
+                            "keywords": [
+                                "e-learning",
+                                "online education",
+                                "multimedia content"
+                            ],
+                            "responsibilities": [
+                                "Collaborated with subject matter experts to create course materials",
+                                "Developed the e-learning platform using Ruby on Rails",
+                                "Implemented gamification elements to enhance learner motivation"
+                            ],
+                            "skills": [
+                                "Ruby on Rails",
+                                "JavaScript",
+                                "HTML",
+                                "CSS"
+                            ]
+                        }
+                    ],
+                    "responsibilities": [
+                        "Collaborated with cross-functional teams to deliver software solutions",
+                        "Participated in Agile development processes",
+                        "Conducted code reviews and implemented best practices"
+                    ],
+                    "skills": [
+                        "Java",
+                        "Python",
+                        "JavaScript",
+                        "C#",
+                        "Ruby on Rails"
+                    ]
+                }
             }
-          ],
-          "responsibilities": ["Digital marketing strategy development", "Campaign management", "Data analysis", "Client communication"],
-          "skills": ["Digital Marketing", "Social Media Management", "Content Marketing", "Market Research"]
-        }
-      }
-    },
-    {
-      "name": "Company C",
-      "website": "www.companyc.com",
-      "position": "Financial Analyst",
-      "summary": {
-        "company": {
-          "details": "Company C is a financial services firm providing comprehensive financial solutions."
         },
-        "work": {
-          "details": "Conducted financial analysis and provided strategic recommendations for clients.",
-          "email": "alex.johnson@companyc.com",
-          "manager": {
-            "name": "Jennifer Smith",
-            "email": "jennifer.smith@companyc.com",
-            "mobile": "+1 (123) 456-7890",
-            "team": "Finance Team"
-          },
-          "hr": {
-            "name": "Michael Davis",
-            "email": "michael.davis@companyc.com",
-            "mobile": "+1 (987) 654-3210"
-          },
-          "employeeId": "E246810",
-          "contact": "Alex Johnson",
-          "duration": "3.5 years",
-          "teamSize": 8,
-          "location": {
-            "type": "mandatory",
-            "country": "United States",
-            "city": "Chicago"
-          },
-          "projects": [
-            {
-              "title": "Project E",
-              "client": "Client E",
-              "website": "www.cliente.com",
-              "shortSummary": "Performed financial analysis for client E's investment portfolio",
-              "summary": "Conducted detailed financial analysis of client E's investment portfolio, assessed risk levels, and provided strategic recommendations for portfolio optimization. Prepared comprehensive reports and presented findings to the client.",
-              "keywords": ["Financial Analysis", "Investment Portfolio", "Risk Assessment", "Optimization"],
-              "responsibilities": ["Data analysis", "Risk assessment", "Report preparation", "Presentation"],
-              "skills": ["Financial Analysis", "Investment Management", "Risk Assessment"],
-              "duration": "2.5 years"
-            },
-            {
-              "title": "Project F",
-              "client": "Client F",
-              "website": "www.clientf.com",
-              "shortSummary": "Conducted cost analysis and budget planning for client F",
-              "summary": "Performed cost analysis, budget planning, and financial forecasting for client F to support strategic decision-making. Collaborated with the client to identify cost-saving opportunities and improve financial performance.",
-              "keywords": ["Cost Analysis", "Budget Planning", "Financial Forecasting", "Strategic Decision-making"],
-              "responsibilities": ["Cost analysis", "Budget planning", "Financial forecasting", "Collaboration with client"],
-              "skills": ["Cost Analysis", "Budgeting", "Financial Forecasting", "Strategic Planning"],
-              "duration": "1 year"
+        {
+            "name": "Randstad India",
+            "website": "https://www.randstad.in",
+            "position": "HR Manager",
+            "summary": {
+                "company": {
+                    "details": "Randstad India is a leading human resources consulting firm, providing comprehensive HR solutions to clients across various industries. With a strong focus on talent acquisition, talent management, and workforce optimization, Randstad India helps organizations build effective teams and achieve their business goals."
+                },
+                "work": {
+                    "details": "Responsible for managing HR operations and implementing HR strategies.",
+                    "email": "john.doe@randstad.in",
+                    "manager": {
+                        "name": "Jane Smith",
+                        "email": "jane.smith@randstad.in",
+                        "mobile": "+91 9876543210",
+                        "team": "HR Team"
+                    },
+                    "hr": {
+                        "name": "Emily Johnson",
+                        "email": "emily.johnson@randstad.in",
+                        "mobile": "+91 1234567890"
+                    },
+                    "employeeId": "98765",
+                    "contact": "+91 5551234567",
+                    "present": false,
+                    "duration": {
+                        "start": {
+                            "month": "January",
+                            "year": "2016"
+                        },
+                        "end": {
+                            "month": "March",
+                            "year": "2017"
+                        }
+                    },
+                    "teamSize": 8,
+                    "location": {
+                        "type": "standard",
+                        "country": "India",
+                        "city": "Mumbai"
+                    },
+                    "projects": [
+                        {
+                            "title": "Talent Acquisition Strategy",
+                            "client": "ABC Corporation",
+                            "website": "https://www.abccorp.com",
+                            "shortSummary": "Developed a comprehensive talent acquisition strategy for ABC Corporation.",
+                            "summary": "Developed a comprehensive talent acquisition strategy for ABC Corporation, including sourcing strategies, recruitment processes, and employer branding initiatives. The goal was to attract top talent and build a strong workforce for the company's expansion plans.",
+                            "keywords": [
+                                "talent acquisition",
+                                "recruitment",
+                                "employer branding"
+                            ],
+                            "responsibilities": [
+                                "Conducted talent market analysis",
+                                "Designed and implemented recruitment campaigns",
+                                "Developed employer branding materials"
+                            ],
+                            "skills": [
+                                "HR strategy",
+                                "Talent sourcing",
+                                "Recruitment marketing"
+                            ]
+                        },
+                        {
+                            "title": "Performance Management System",
+                            "client": "XYZ Industries",
+                            "website": "https://www.xyzindustries.com",
+                            "shortSummary": "Implemented an effective performance management system for XYZ Industries.",
+                            "summary": "Implemented an effective performance management system for XYZ Industries, including goal-setting processes, performance evaluations, and employee development plans. The system aimed to enhance employee performance and align individual goals with organizational objectives.",
+                            "keywords": [
+                                "performance management",
+                                "goal-setting",
+                                "employee development"
+                            ],
+                            "responsibilities": [
+                                "Conducted performance management needs assessment",
+                                "Designed and implemented performance appraisal processes",
+                                "Provided training on performance management"
+                            ],
+                            "skills": [
+                                "Performance evaluation",
+                                "Goal alignment",
+                                "Employee feedback"
+                            ]
+                        },
+                        {
+                            "title": "Employee Engagement Program",
+                            "client": "PQR Technologies",
+                            "website": "https://www.pqrtech.com",
+                            "shortSummary": "Developed and implemented an employee engagement program for PQR Technologies.",
+                            "summary": "Developed and implemented an employee engagement program for PQR Technologies, aiming to enhance employee satisfaction, motivation, and retention. The program included various initiatives such as team-building activities, recognition programs, and wellness initiatives.",
+                            "keywords": [
+                                "employee engagement",
+                                "team building",
+                                "employee satisfaction"
+                            ],
+                            "responsibilities": [
+                                "Conducted employee engagement surveys",
+                                "Designed and executed engagement activities",
+                                "Monitored program effectiveness"
+                            ],
+                            "skills": [
+                                "Employee satisfaction surveys",
+                                "Event planning",
+                                "Employee recognition"
+                            ]
+                        },
+                        {
+                            "title": "Diversity and Inclusion Initiative",
+                            "client": "LMN Group",
+                            "website": "https://www.lmngroup.com",
+                            "shortSummary": "Led a diversity and inclusion initiative for LMN Group.",
+                            "summary": "Led a diversity and inclusion initiative for LMN Group, developing strategies and programs to foster an inclusive workplace culture. The initiative involved promoting diversity, equity, and inclusion through training, policies, and employee resource groups.",
+                            "keywords": [
+                                "diversity and inclusion",
+                                "inclusive workplace",
+                                "employee resource groups"
+                            ],
+                            "responsibilities": [
+                                "Conducted diversity and inclusion assessments",
+                                "Developed diversity training programs",
+                                "Established employee resource groups"
+                            ],
+                            "skills": [
+                                "Diversity training",
+                                "Inclusive policies",
+                                "Employee resource group management"
+                            ]
+                        },
+                        {
+                            "title": "Leadership Development Program",
+                            "client": "GHI Enterprises",
+                            "website": "https://www.ghienterprises.com",
+                            "shortSummary": "Designed and delivered a leadership development program for GHI Enterprises.",
+                            "summary": "Designed and delivered a comprehensive leadership development program for GHI Enterprises, focusing on developing leadership competencies, fostering effective communication, and building high-performing teams. The program aimed to groom future leaders within the organization.",
+                            "keywords": [
+                                "leadership development",
+                                "leadership competencies",
+                                "team building"
+                            ],
+                            "responsibilities": [
+                                "Conducted leadership needs analysis",
+                                "Designed and facilitated leadership workshops",
+                                "Provided executive coaching"
+                            ],
+                            "skills": [
+                                "Leadership assessment",
+                                "Facilitation skills",
+                                "Executive coaching"
+                            ]
+                        },
+                        {
+                            "title": "Employee Wellness Program",
+                            "client": "DEF Services",
+                            "website": "https://www.defservices.com",
+                            "shortSummary": "Implemented an employee wellness program for DEF Services.",
+                            "summary": "Implemented an employee wellness program for DEF Services, promoting employee well-being, work-life balance, and stress management. The program included wellness workshops, fitness challenges, and mental health support initiatives.",
+                            "keywords": [
+                                "employee wellness",
+                                "work-life balance",
+                                "stress management"
+                            ],
+                            "responsibilities": [
+                                "Conducted employee wellness assessments",
+                                "Designed and executed wellness initiatives",
+                                "Collaborated with external wellness vendors"
+                            ],
+                            "skills": [
+                                "Wellness program design",
+                                "Work-life balance initiatives",
+                                "Mental health support"
+                            ]
+                        },
+                        {
+                            "title": "HR Policy Development",
+                            "client": "IJK Corporation",
+                            "website": "https://www.ijkcorp.com",
+                            "shortSummary": "Developed and revised HR policies for IJK Corporation.",
+                            "summary": "Developed and revised HR policies for IJK Corporation, ensuring compliance with labor laws, industry regulations, and best practices. The policies covered areas such as employee benefits, leave management, and code of conduct.",
+                            "keywords": [
+                                "HR policies",
+                                "compliance",
+                                "employee benefits"
+                            ],
+                            "responsibilities": [
+                                "Conducted policy gap analysis",
+                                "Developed and updated HR policies",
+                                "Provided guidance on policy implementation"
+                            ],
+                            "skills": [
+                                "HR policy development",
+                                "Legal compliance",
+                                "Policy communication"
+                            ]
+                        },
+                        {
+                            "title": "Employee Training and Development",
+                            "client": "EFG Manufacturing",
+                            "website": "https://www.efgmanufacturing.com",
+                            "shortSummary": "Designed and delivered employee training and development programs for EFG Manufacturing.",
+                            "summary": "Designed and delivered employee training and development programs for EFG Manufacturing, focusing on technical skills, soft skills, and leadership development. The programs aimed to enhance employee capabilities and support career growth.",
+                            "keywords": [
+                                "employee training",
+                                "skills development",
+                                "leadership programs"
+                            ],
+                            "responsibilities": [
+                                "Conducted training needs analysis",
+                                "Designed and facilitated training programs",
+                                "Evaluated training effectiveness"
+                            ],
+                            "skills": [
+                                "Training needs assessment",
+                                "Training program design",
+                                "Training evaluation"
+                            ]
+                        },
+                        {
+                            "title": "Compensation and Benefits Review",
+                            "client": "HIJ Financial Services",
+                            "website": "https://www.hijfinancial.com",
+                            "shortSummary": "Conducted a comprehensive review of compensation and benefits for HIJ Financial Services.",
+                            "summary": "Conducted a comprehensive review of compensation and benefits for HIJ Financial Services, benchmarking against industry standards and recommending adjustments to ensure competitiveness and employee satisfaction.",
+                            "keywords": [
+                                "compensation and benefits",
+                                "salary benchmarking",
+                                "employee satisfaction"
+                            ],
+                            "responsibilities": [
+                                "Conducted compensation benchmarking analysis",
+                                "Analyzed employee satisfaction survey data",
+                                "Developed recommendations for compensation adjustments"
+                            ],
+                            "skills": [
+                                "Compensation analysis",
+                                "Salary benchmarking",
+                                "Total rewards strategy"
+                            ]
+                        },
+                        {
+                            "title": "Employee Relations Program",
+                            "client": "KLM Retail",
+                            "website": "https://www.klmretail.com",
+                            "shortSummary": "Developed and implemented an employee relations program for KLM Retail.",
+                            "summary": "Developed and implemented an employee relations program for KLM Retail, focusing on fostering positive employee relations, conflict resolution, and employee engagement. The program aimed to create a harmonious work environment and enhance employee satisfaction.",
+                            "keywords": [
+                                "employee relations",
+                                "conflict resolution",
+                                "employee engagement"
+                            ],
+                            "responsibilities": [
+                                "Developed employee relations policies and procedures",
+                                "Provided guidance on conflict resolution",
+                                "Implemented employee engagement initiatives"
+                            ],
+                            "skills": [
+                                "Employee relations management",
+                                "Conflict resolution",
+                                "Employee engagement"
+                            ]
+                        },
+                        {
+                            "title": "Workforce Planning and Analytics",
+                            "client": "MNO Consulting",
+                            "website": "https://www.mnoconsulting.com",
+                            "shortSummary": "Conducted workforce planning and implemented analytics solutions for MNO Consulting.",
+                            "summary": "Conducted workforce planning and implemented analytics solutions for MNO Consulting, providing insights into workforce trends, succession planning, and talent retention strategies. The goal was to align the workforce with the organization's strategic objectives.",
+                            "keywords": [
+                                "workforce planning",
+                                "succession planning",
+                                "workforce analytics"
+                            ],
+                            "responsibilities": [
+                                "Conducted workforce analysis and forecasting",
+                                "Developed succession planning frameworks",
+                                "Implemented workforce analytics tools"
+                            ],
+                            "skills": [
+                                "Workforce planning",
+                                "Succession planning",
+                                "Workforce analytics"
+                            ]
+                        }
+                    ],
+                    "responsibilities": [
+                        "Collaborated with cross-functional teams to deliver HR solutions",
+                        "Provided HR consultancy and advisory services",
+                        "Managed employee relations and performance management"
+                    ],
+                    "skills": [
+                        "Talent acquisition",
+                        "Performance management",
+                        "Employee engagement",
+                        "HR policy development"
+                    ]
+                }
             }
-          ],
-          "responsibilities": ["Financial analysis", "Strategic recommendations", "Risk assessment", "Budget planning"],
-          "skills": ["Financial Analysis", "Risk Assessment", "Budgeting", "Financial Planning"]
-        }
-      }
-    },
-    {
-      "name": "Company D",
-      "website": "www.companyd.com",
-      "position": "Graphic Designer",
-      "summary": {
-        "company": {
-          "details": "Company D is a creative agency specializing in graphic design and branding."
         },
-        "work": {
-          "details": "Designed and developed creative visual solutions for clients' marketing materials.",
-          "email": "sarah.wilson@companyd.com",
-          "manager": {
-            "name": "Robert Thompson",
-            "email": "robert.thompson@companyd.com",
-            "mobile": "+1 (123) 456-7890",
-            "team": "Design Team"
-          },
-          "hr": {
-            "name": "Laura Davis",
-            "email": "laura.davis@companyd.com",
-            "mobile": "+1 (987) 654-3210"
-          },
-          "employeeId": "E3691215",
-          "contact": "Sarah Wilson",
-          "duration": "2 years",
-          "teamSize": 6,
-          "location": {
-            "type": "mandatory",
-            "country": "United States",
-            "city": "Los Angeles"
-          },
-          "projects": [
-            {
-              "title": "Project G",
-              "client": "Client G",
-              "website": "www.clientg.com",
-              "shortSummary": "Designed a visually appealing brand identity for client G",
-              "summary": "Created a visually appealing brand identity for client G, including logo design, color schemes, typography, and brand guidelines. Collaborated with the client to understand their vision and delivered creative solutions that aligned with their brand image.",
-              "keywords": ["Brand Identity", "Logo Design", "Typography", "Brand Guidelines"],
-              "responsibilities": ["Logo design", "Color scheme selection", "Typography design", "Brand guideline creation"],
-              "skills": ["Graphic Design", "Logo Design", "Typography", "Branding"],
-              "duration": "1.5 years"
-            },
-            {
-              "title": "Project H",
-              "client": "Client H",
-              "website": "www.clienth.com",
-              "shortSummary": "Created engaging visual assets for client H's marketing campaigns",
-              "summary": "Developed engaging visual assets, including illustrations, infographics, and social media graphics, for client H's marketing campaigns. Translated client's concepts and requirements into visually appealing designs that effectively communicated their messages.",
-              "keywords": ["Visual Assets", "Illustrations", "Infographics", "Social Media Graphics"],
-              "responsibilities": ["Concept development", "Graphic design", "Visualization", "Client collaboration"],
-              "skills": ["Graphic Design", "Illustration", "Infographics", "Visual Communication"],
-              "duration": "0.5 years"
+        {
+            "name": "Raqmiyat",
+            "website": "https://www.raqmiyat.com",
+            "position": "Software Engineer",
+            "summary": {
+                "company": {
+                    "details": "Raqmiyat is a leading technology consulting and solutions provider, offering a wide range of IT services and solutions to clients worldwide. With expertise in software development, system integration, and digital transformation, Raqmiyat helps organizations achieve their business objectives through innovative technology solutions."
+                },
+                "work": {
+                    "details": "Responsible for software development and system integration.",
+                    "email": "john.doe@raqmiyat.com",
+                    "manager": {
+                        "name": "Sarah Johnson",
+                        "email": "sarah.johnson@raqmiyat.com",
+                        "mobile": "+971 123456789",
+                        "team": "Development Team"
+                    },
+                    "hr": {
+                        "name": "Michael Smith",
+                        "email": "michael.smith@raqmiyat.com",
+                        "mobile": "+971 987654321"
+                    },
+                    "employeeId": "12345",
+                    "contact": "+971 5559876543",
+                    "present": false,
+                    "duration": {
+                        "start": {
+                            "month": "June",
+                            "year": "2012"
+                        },
+                        "end": {
+                            "month": "December",
+                            "year": "2015"
+                        }
+                    },
+                    "teamSize": 12,
+                    "location": {
+                        "type": "standard",
+                        "country": "United Arab Emirates",
+                        "city": "Dubai"
+                    },
+                    "projects": [
+                        {
+                            "title": "Enterprise Resource Planning System",
+                            "client": "ABC Corporation",
+                            "website": "https://www.abccorp.com",
+                            "shortSummary": "Developed an enterprise resource planning system for ABC Corporation.",
+                            "summary": "Developed an enterprise resource planning system for ABC Corporation, streamlining their business processes and enhancing operational efficiency. The system integrated modules for finance, inventory management, and human resources, providing a comprehensive solution to manage the organization's resources effectively.",
+                            "keywords": [
+                                "enterprise resource planning",
+                                "business process optimization",
+                                "inventory management"
+                            ],
+                            "responsibilities": [
+                                "Gathered requirements and conducted system analysis",
+                                "Designed and developed ERP modules",
+                                "Performed system testing and deployment"
+                            ],
+                            "skills": [
+                                "ERP development",
+                                "Business process analysis",
+                                "Module integration"
+                            ]
+                        },
+                        {
+                            "title": "E-commerce Platform",
+                            "client": "XYZ Retail",
+                            "website": "https://www.xyzretail.com",
+                            "shortSummary": "Built a scalable e-commerce platform for XYZ Retail.",
+                            "summary": "Built a scalable e-commerce platform for XYZ Retail, enabling them to expand their online presence and reach a wider customer base. The platform incorporated features such as product catalog management, secure payment gateways, and order management, providing a seamless online shopping experience for customers.",
+                            "keywords": [
+                                "e-commerce",
+                                "online shopping",
+                                "payment gateway"
+                            ],
+                            "responsibilities": [
+                                "Collaborated with UX designers for platform UI/UX",
+                                "Developed front-end and back-end components",
+                                "Integrated third-party APIs for payment and order management"
+                            ],
+                            "skills": [
+                                "E-commerce platform development",
+                                "Front-end development",
+                                "Payment gateway integration"
+                            ]
+                        },
+                        {
+                            "title": "Data Analytics Dashboard",
+                            "client": "LMN Analytics",
+                            "website": "https://www.lmnanalytics.com",
+                            "shortSummary": "Designed and developed a data analytics dashboard for LMN Analytics.",
+                            "summary": "Designed and developed a data analytics dashboard for LMN Analytics, providing real-time insights and visualizations for their clients. The dashboard integrated with various data sources and included features such as interactive charts, data filtering, and customizable reports, empowering clients to make data-driven decisions.",
+                            "keywords": [
+                                "data analytics",
+                                "data visualization",
+                                "business intelligence"
+                            ],
+                            "responsibilities": [
+                                "Collaborated with data scientists for data integration",
+                                "Designed and implemented dashboard UI/UX",
+                                "Implemented data visualization libraries"
+                            ],
+                            "skills": [
+                                "Data analytics",
+                                "Data visualization",
+                                "Dashboard development"
+                            ]
+                        },
+                        {
+                            "title": "Mobile Banking Application",
+                            "client": "PQR Bank",
+                            "website": "https://www.pqrbank.com",
+                            "shortSummary": "Developed a secure mobile banking application for PQR Bank.",
+                            "summary": "Developed a secure mobile banking application for PQR Bank, providing customers with convenient access to their accounts, fund transfers, and financial transactions. The application incorporated robust security measures and intuitive user interfaces, ensuring a seamless and secure mobile banking experience.",
+                            "keywords": [
+                                "mobile banking",
+                                "financial transactions",
+                                "security"
+                            ],
+                            "responsibilities": [
+                                "Collaborated with UX designers for app UI/UX",
+                                "Implemented app features and functionalities",
+                                "Performed rigorous security testing"
+                            ],
+                            "skills": [
+                                "Mobile app development",
+                                "Financial transactions",
+                                "Security testing"
+                            ]
+                        },
+                        {
+                            "title": "Customer Relationship Management System",
+                            "client": "DEF Solutions",
+                            "website": "https://www.defsolutions.com",
+                            "shortSummary": "Developed a customer relationship management system for DEF Solutions.",
+                            "summary": "Developed a customer relationship management system for DEF Solutions, enabling them to manage their customer interactions and improve customer satisfaction. The system integrated modules for lead management, contact management, and sales forecasting, providing a centralized platform for effective customer relationship management.",
+                            "keywords": [
+                                "customer relationship management",
+                                "lead management",
+                                "sales forecasting"
+                            ],
+                            "responsibilities": [
+                                "Gathered requirements and conducted CRM analysis",
+                                "Designed and developed CRM modules",
+                                "Provided system training and support"
+                            ],
+                            "skills": [
+                                "CRM development",
+                                "Lead management",
+                                "Sales forecasting"
+                            ]
+                        },
+                        {
+                            "title": "Cloud Migration Strategy",
+                            "client": "GHI Enterprises",
+                            "website": "https://www.ghienterprises.com",
+                            "shortSummary": "Developed a cloud migration strategy for GHI Enterprises.",
+                            "summary": "Developed a comprehensive cloud migration strategy for GHI Enterprises, guiding them through the process of transitioning their applications and infrastructure to the cloud. The strategy included assessing existing systems, designing a scalable cloud architecture, and implementing a secure migration plan.",
+                            "keywords": [
+                                "cloud migration",
+                                "cloud architecture",
+                                "infrastructure"
+                            ],
+                            "responsibilities": [
+                                "Conducted infrastructure assessment and analysis",
+                                "Designed scalable cloud architecture",
+                                "Implemented cloud migration plan"
+                            ],
+                            "skills": [
+                                "Cloud migration strategy",
+                                "Infrastructure assessment",
+                                "Cloud architecture design"
+                            ]
+                        },
+                        {
+                            "title": "Human Resource Management System",
+                            "client": "HIJ Corporation",
+                            "website": "https://www.hijcorp.com",
+                            "shortSummary": "Developed a comprehensive human resource management system for HIJ Corporation.",
+                            "summary": "Developed a comprehensive human resource management system for HIJ Corporation, automating their HR processes and facilitating efficient workforce management. The system included modules for employee data management, leave and attendance tracking, and performance evaluation, enhancing HR operational efficiency.",
+                            "keywords": [
+                                "human resource management",
+                                "workforce management",
+                                "performance evaluation"
+                            ],
+                            "responsibilities": [
+                                "Gathered HR requirements and conducted system analysis",
+                                "Designed and developed HR modules",
+                                "Performed system testing and deployment"
+                            ],
+                            "skills": [
+                                "HRMS development",
+                                "Workforce management",
+                                "Performance evaluation"
+                            ]
+                        },
+                        {
+                            "title": "Supply Chain Optimization",
+                            "client": "IJK Logistics",
+                            "website": "https://www.ijklogistics.com",
+                            "shortSummary": "Optimized the supply chain processes for IJK Logistics.",
+                            "summary": "Optimized the supply chain processes for IJK Logistics, leveraging data analytics and automation to improve efficiency and reduce costs. Conducted process mapping, identified bottlenecks, and implemented solutions such as demand forecasting models, inventory management systems, and transportation optimization algorithms.",
+                            "keywords": [
+                                "supply chain optimization",
+                                "demand forecasting",
+                                "inventory management"
+                            ],
+                            "responsibilities": [
+                                "Analyzed supply chain processes and identified improvement opportunities",
+                                "Designed and implemented demand forecasting models",
+                                "Optimized inventory management and transportation processes"
+                            ],
+                            "skills": [
+                                "Supply chain optimization",
+                                "Demand forecasting",
+                                "Inventory management"
+                            ]
+                        },
+                        {
+                            "title": "Quality Assurance Framework",
+                            "client": "LMN Healthcare",
+                            "website": "https://www.lmnhealthcare.com",
+                            "shortSummary": "Developed a quality assurance framework for LMN Healthcare.",
+                            "summary": "Developed a quality assurance framework for LMN Healthcare, ensuring adherence to regulatory standards and best practices. Designed and implemented quality control processes, conducted audits, and established performance metrics to continuously monitor and improve the quality of healthcare services.",
+                            "keywords": [
+                                "quality assurance",
+                                "regulatory compliance",
+                                "performance metrics"
+                            ],
+                            "responsibilities": [
+                                "Developed quality control processes and procedures",
+                                "Conducted audits and implemented corrective actions",
+                                "Established performance metrics and monitoring mechanisms"
+                            ],
+                            "skills": [
+                                "Quality assurance",
+                                "Regulatory compliance",
+                                "Performance monitoring"
+                            ]
+                        },
+                        {
+                            "title": "Artificial Intelligence Chatbot",
+                            "client": "PQR Insurance",
+                            "website": "https://www.pqrinsurance.com",
+                            "shortSummary": "Developed an AI-powered chatbot for PQR Insurance.",
+                            "summary": "Developed an AI-powered chatbot for PQR Insurance, enhancing customer support and engagement. The chatbot utilized natural language processing and machine learning algorithms to provide personalized assistance, answer FAQs, and streamline customer interactions.",
+                            "keywords": [
+                                "chatbot",
+                                "artificial intelligence",
+                                "natural language processing"
+                            ],
+                            "responsibilities": [
+                                "Designed chatbot conversational flows",
+                                "Implemented natural language processing algorithms",
+                                "Trained chatbot using machine learning techniques"
+                            ],
+                            "skills": [
+                                "Chatbot development",
+                                "Natural language processing",
+                                "Machine learning"
+                            ]
+                        }
+                    ],
+                    "responsibilities": [
+                        "Collaborated with cross-functional teams to deliver software solutions",
+                        "Participated in code reviews and quality assurance",
+                        "Provided technical support and troubleshooting"
+                    ],
+                    "skills": [
+                        "Software development",
+                        "System integration",
+                        "IT infrastructure optimization"
+                    ]
+                }
             }
-          ],
-          "responsibilities": ["Graphic design", "Visual concept development", "Client collaboration", "Brand guideline adherence"],
-          "skills": ["Graphic Design", "Illustration", "Typography", "Visual Communication"]
-        }
-      }
-    },
-    {
-      "name": "Company E",
-      "website": "www.companye.com",
-      "position": "Sales Representative",
-      "summary": {
-        "company": {
-          "details": "Company E is a leading provider of sales and marketing solutions."
         },
-        "work": {
-          "details": "Managed sales activities and fostered client relationships to drive revenue growth.",
-          "email": "mark.jones@companye.com",
-          "manager": {
-            "name": "Jennifer Davis",
-            "email": "jennifer.davis@companye.com",
-            "mobile": "+1 (123) 456-7890",
-            "team": "Sales Team"
-          },
-          "hr": {
-            "name": "Brian Wilson",
-            "email": "brian.wilson@companye.com",
-            "mobile": "+1 (987) 654-3210"
-          },
-          "employeeId": "E151617",
-          "contact": "Mark Jones",
-          "duration": "2 years",
-          "teamSize": 12,
-          "location": {
-            "type": "mandatory",
-            "country": "United States",
-            "city": "Boston"
-          },
-          "projects": [
-            {
-              "title": "Project I",
-              "client": "Client I",
-              "website": "www.clienti.com",
-              "shortSummary": "Generated new leads and secured client I's business",
-              "summary": "Identified and pursued new business opportunities, generated leads, and successfully secured client I's business. Conducted sales presentations, negotiated contracts, and maintained strong client relationships to drive revenue growth.",
-              "keywords": ["Sales Generation", "Lead Generation", "Client Relationship Management", "Contract Negotiation"],
-              "responsibilities": ["Lead generation", "Sales presentations", "Contract negotiation", "Client relationship management"],
-              "skills": ["Sales", "Lead Generation", "Negotiation", "Client Relationship"],
-              "duration": "1.5 years"
-            },
-            {
-              "title": "Project J",
-              "client": "Client J",
-              "website": "www.clientj.com",
-              "shortSummary": "Managed key accounts and achieved sales targets for client J",
-              "summary": "Managed key client accounts, developed strategic account plans, and achieved sales targets for client J. Conducted regular account reviews, identified upselling opportunities, and provided excellent customer service to maximize client satisfaction.",
-              "keywords": ["Account Management", "Sales Targets", "Upselling", "Customer Service"],
-              "responsibilities": ["Account management", "Strategic planning", "Sales target achievement", "Customer service"],
-              "skills": ["Account Management", "Sales", "Strategic Planning", "Customer Service"],
-              "duration": "0.5 years"
+        {
+            "name": "Cognizant Technology Solutions",
+            "website": "https://www.cognizant.com",
+            "position": "Software Developer",
+            "summary": {
+                "company": {
+                    "details": "Cognizant Technology Solutions is a multinational technology company that provides consulting, digital, technology, and outsourcing services. With a strong focus on innovation and digital transformation, Cognizant helps clients across industries to leverage technology for business growth and competitive advantage."
+                },
+                "work": {
+                    "details": "Responsible for software development and implementation.",
+                    "email": "jane.doe@cognizant.com",
+                    "manager": {
+                        "name": "Robert Johnson",
+                        "email": "robert.johnson@cognizant.com",
+                        "mobile": "+1 1234567890",
+                        "team": "Development Team"
+                    },
+                    "hr": {
+                        "name": "Emily Smith",
+                        "email": "emily.smith@cognizant.com",
+                        "mobile": "+1 9876543210"
+                    },
+                    "employeeId": "54321",
+                    "contact": "+1 5559876543",
+                    "present": false,
+                    "duration": {
+                        "start": {
+                            "month": "April",
+                            "year": "2009"
+                        },
+                        "end": {
+                            "month": "May",
+                            "year": "2012"
+                        }
+                    },
+                    "teamSize": 15,
+                    "location": {
+                        "type": "standard",
+                        "country": "United States",
+                        "city": "New York"
+                    },
+                    "projects": [
+                        {
+                            "title": "Enterprise Web Application",
+                            "client": "ABC Corporation",
+                            "website": "https://www.abccorp.com",
+                            "shortSummary": "Developed an enterprise web application for ABC Corporation.",
+                            "summary": "Developed an enterprise web application for ABC Corporation, providing a centralized platform for their business operations. The application integrated modules for sales management, inventory tracking, and customer relationship management, streamlining processes and improving efficiency.",
+                            "keywords": [
+                                "enterprise web application",
+                                "sales management",
+                                "customer relationship management"
+                            ],
+                            "responsibilities": [
+                                "Collaborated with stakeholders to gather requirements",
+                                "Designed and developed application components",
+                                "Performed testing and deployment"
+                            ],
+                            "skills": [
+                                "Web development",
+                                "Sales management",
+                                "CRM integration"
+                            ]
+                        },
+                        {
+                            "title": "Data Analytics Platform",
+                            "client": "XYZ Analytics",
+                            "website": "https://www.xyzanalytics.com",
+                            "shortSummary": "Built a data analytics platform for XYZ Analytics.",
+                            "summary": "Built a data analytics platform for XYZ Analytics, enabling them to analyze large volumes of data and derive valuable insights. The platform incorporated features such as data visualization, predictive analytics, and real-time reporting, empowering clients to make data-driven decisions.",
+                            "keywords": [
+                                "data analytics",
+                                "data visualization",
+                                "predictive analytics"
+                            ],
+                            "responsibilities": [
+                                "Designed and implemented data processing pipelines",
+                                "Developed interactive data visualization dashboards",
+                                "Integrated machine learning models for predictive analytics"
+                            ],
+                            "skills": [
+                                "Data analytics",
+                                "Data visualization",
+                                "Predictive modeling"
+                            ]
+                        },
+                        {
+                            "title": "Mobile Banking App",
+                            "client": "EFG Bank",
+                            "website": "https://www.efgbank.com",
+                            "shortSummary": "Developed a secure mobile banking app for EFG Bank.",
+                            "summary": "Developed a secure mobile banking app for EFG Bank, enabling customers to access their accounts, perform transactions, and manage finances on the go. The app incorporated advanced security measures, including biometric authentication and encryption, ensuring a safe and seamless banking experience.",
+                            "keywords": [
+                                "mobile banking",
+                                "financial transactions",
+                                "security"
+                            ],
+                            "responsibilities": [
+                                "Collaborated with UX designers for app design",
+                                "Implemented app features and functionality",
+                                "Performed rigorous security testing"
+                            ],
+                            "skills": [
+                                "Mobile app development",
+                                "Financial transactions",
+                                "Security testing"
+                            ]
+                        },
+                        {
+                            "title": "Cloud Migration Strategy",
+                            "client": "LMN Enterprises",
+                            "website": "https://www.lmnenterprises.com",
+                            "shortSummary": "Developed a cloud migration strategy for LMN Enterprises.",
+                            "summary": "Developed a comprehensive cloud migration strategy for LMN Enterprises, guiding them through the process of transitioning their IT infrastructure to the cloud. The strategy included assessing existing systems, designing a scalable cloud architecture, and implementing a secure migration plan.",
+                            "keywords": [
+                                "cloud migration",
+                                "cloud architecture",
+                                "IT infrastructure"
+                            ],
+                            "responsibilities": [
+                                "Conducted infrastructure assessment and analysis",
+                                "Designed scalable cloud architecture",
+                                "Implemented cloud migration plan"
+                            ],
+                            "skills": [
+                                "Cloud migration strategy",
+                                "Infrastructure assessment",
+                                "Cloud architecture design"
+                            ]
+                        },
+                        {
+                            "title": "E-commerce Platform Development",
+                            "client": "PQR Retail",
+                            "website": "https://www.pqrretail.com",
+                            "shortSummary": "Developed an e-commerce platform for PQR Retail.",
+                            "summary": "Developed an e-commerce platform for PQR Retail, enabling them to sell products online and expand their digital presence. The platform included features such as product catalog management, secure payment gateway integration, and order processing capabilities.",
+                            "keywords": [
+                                "e-commerce platform",
+                                "product catalog management",
+                                "payment gateway integration"
+                            ],
+                            "responsibilities": [
+                                "Collaborated with UI/UX designers for platform design",
+                                "Implemented platform functionalities",
+                                "Integrated payment gateway for secure transactions"
+                            ],
+                            "skills": [
+                                "E-commerce platform development",
+                                "Front-end development",
+                                "Payment gateway integration"
+                            ]
+                        },
+                        {
+                            "title": "Supply Chain Optimization",
+                            "client": "IJK Logistics",
+                            "website": "https://www.ijklogistics.com",
+                            "shortSummary": "Optimized the supply chain processes for IJK Logistics.",
+                            "summary": "Optimized the supply chain processes for IJK Logistics, leveraging data analytics and automation to improve efficiency and reduce costs. Conducted process mapping, identified bottlenecks, and implemented solutions such as demand forecasting models, inventory management systems, and transportation optimization algorithms.",
+                            "keywords": [
+                                "supply chain optimization",
+                                "demand forecasting",
+                                "inventory management"
+                            ],
+                            "responsibilities": [
+                                "Analyzed supply chain processes and identified improvement opportunities",
+                                "Designed and implemented demand forecasting models",
+                                "Optimized inventory management and transportation processes"
+                            ],
+                            "skills": [
+                                "Supply chain optimization",
+                                "Demand forecasting",
+                                "Inventory management"
+                            ]
+                        },
+                        {
+                            "title": "Quality Assurance Framework",
+                            "client": "LMN Healthcare",
+                            "website": "https://www.lmnhealthcare.com",
+                            "shortSummary": "Developed a quality assurance framework for LMN Healthcare.",
+                            "summary": "Developed a quality assurance framework for LMN Healthcare, ensuring adherence to regulatory standards and best practices. Designed and implemented quality control processes, conducted audits, and established performance metrics to continuously monitor and improve the quality of healthcare services.",
+                            "keywords": [
+                                "quality assurance",
+                                "regulatory compliance",
+                                "performance metrics"
+                            ],
+                            "responsibilities": [
+                                "Developed quality control processes and procedures",
+                                "Conducted audits and implemented corrective actions",
+                                "Established performance metrics and monitoring mechanisms"
+                            ],
+                            "skills": [
+                                "Quality assurance",
+                                "Regulatory compliance",
+                                "Performance monitoring"
+                            ]
+                        },
+                        {
+                            "title": "Chatbot Development",
+                            "client": "PQR Insurance",
+                            "website": "https://www.pqrinsurance.com",
+                            "shortSummary": "Developed an AI-powered chatbot for PQR Insurance.",
+                            "summary": "Developed an AI-powered chatbot for PQR Insurance, enhancing customer support and engagement. The chatbot utilized natural language processing and machine learning algorithms to provide personalized assistance, answer FAQs, and streamline customer interactions.",
+                            "keywords": [
+                                "chatbot",
+                                "artificial intelligence",
+                                "natural language processing"
+                            ],
+                            "responsibilities": [
+                                "Designed chatbot conversational flows",
+                                "Implemented natural language processing algorithms",
+                                "Trained chatbot using machine learning techniques"
+                            ],
+                            "skills": [
+                                "Chatbot development",
+                                "Natural language processing",
+                                "Machine learning"
+                            ]
+                        },
+                        {
+                            "title": "Business Intelligence Dashboard",
+                            "client": "LMN Enterprises",
+                            "website": "https://www.lmnenterprises.com",
+                            "shortSummary": "Developed a business intelligence dashboard for LMN Enterprises.",
+                            "summary": "Developed a business intelligence dashboard for LMN Enterprises, enabling data-driven decision-making through interactive visualizations and analytics. The dashboard integrated data from multiple sources, provided real-time insights, and facilitated performance monitoring and reporting.",
+                            "keywords": [
+                                "business intelligence",
+                                "data visualization",
+                                "performance monitoring"
+                            ],
+                            "responsibilities": [
+                                "Designed and developed dashboard components",
+                                "Implemented data integration and visualization",
+                                "Configured automated reporting"
+                            ],
+                            "skills": [
+                                "Business intelligence",
+                                "Data visualization",
+                                "Performance monitoring"
+                            ]
+                        },
+                        {
+                            "title": "Robotic Process Automation",
+                            "client": "QRS Bank",
+                            "website": "https://www.qrsbank.com",
+                            "shortSummary": "Implemented robotic process automation for QRS Bank.",
+                            "summary": "Implemented robotic process automation (RPA) for QRS Bank, streamlining repetitive and rule-based tasks. Developed RPA bots using tools such as UiPath, automated data entry and validation processes, and improved operational efficiency.",
+                            "keywords": [
+                                "robotic process automation",
+                                "RPA",
+                                "automation"
+                            ],
+                            "responsibilities": [
+                                "Analyzed business processes for automation opportunities",
+                                "Designed and developed RPA bots",
+                                "Performed testing and deployment of RPA solutions"
+                            ],
+                            "skills": [
+                                "Robotic process automation",
+                                "RPA development",
+                                "Process optimization"
+                            ]
+                        },
+                        {
+                            "title": "Cloud Security Implementation",
+                            "client": "TUV Enterprises",
+                            "website": "https://www.tuventerprises.com",
+                            "shortSummary": "Implemented cloud security measures for TUV Enterprises.",
+                            "summary": "Implemented robust cloud security measures for TUV Enterprises, ensuring the confidentiality, integrity, and availability of their cloud-based systems. Conducted security assessments, implemented access controls, and monitored system vulnerabilities to mitigate risks.",
+                            "keywords": [
+                                "cloud security",
+                                "security assessment",
+                                "access controls"
+                            ],
+                            "responsibilities": [
+                                "Conducted cloud security assessments and audits",
+                                "Implemented access control mechanisms",
+                                "Performed vulnerability scanning and remediation"
+                            ],
+                            "skills": [
+                                "Cloud security",
+                                "Security assessment",
+                                "Access control"
+                            ]
+                        }
+                    ],
+                    "responsibilities": [
+                        "Collaborated with cross-functional teams to deliver software solutions",
+                        "Participated in code reviews and quality assurance",
+                        "Provided technical support and troubleshooting"
+                    ],
+                    "skills": [
+                        "Software development",
+                        "Agile methodologies",
+                        "Problem-solving"
+                    ]
+                }
             }
-          ],
-          "responsibilities": ["Sales management", "Client relationship development", "Lead generation", "Sales target achievement"],
-          "skills": ["Sales", "Client Relationship Management", "Lead Generation", "Negotiation"]
+        },
+        {
+            "name": "HCL Technologies",
+            "website": "https://www.hcltech.com",
+            "position": "Software Engineer",
+            "summary": {
+                "company": {
+                    "details": "HCL Technologies is a global technology company that offers a wide range of IT services, including software development, infrastructure management, and digital solutions. With a customer-centric approach and a focus on innovation, HCL Technologies helps organizations transform their business processes and achieve digital excellence."
+                },
+                "work": {
+                    "details": "Responsible for software development and implementation.",
+                    "email": "john.doe@hcltech.com",
+                    "manager": {
+                        "name": "Sarah Johnson",
+                        "email": "sarah.johnson@hcltech.com",
+                        "mobile": "+1 1234567890",
+                        "team": "Development Team"
+                    },
+                    "hr": {
+                        "name": "Michael Smith",
+                        "email": "michael.smith@hcltech.com",
+                        "mobile": "+1 9876543210"
+                    },
+                    "employeeId": "12345",
+                    "contact": "+1 5551234567",
+                    "present": false,
+                    "duration": {
+                        "start": {
+                            "month": "June",
+                            "year": "2012"
+                        },
+                        "end": {
+                            "month": "March",
+                            "year": "2009"
+                        }
+                    },
+                    "teamSize": 12,
+                    "location": {
+                        "type": "standard",
+                        "country": "United States",
+                        "city": "San Francisco"
+                    },
+                    "projects": [
+                        {
+                            "title": "Enterprise Resource Planning System",
+                            "client": "ABC Corporation",
+                            "website": "https://www.abccorp.com",
+                            "shortSummary": "Developed an enterprise resource planning system for ABC Corporation.",
+                            "summary": "Developed an enterprise resource planning (ERP) system for ABC Corporation, enabling efficient management of their business processes. The ERP system integrated modules for inventory management, order processing, and financial tracking, improving productivity and streamlining operations.",
+                            "keywords": [
+                                "enterprise resource planning",
+                                "inventory management",
+                                "order processing"
+                            ],
+                            "responsibilities": [
+                                "Collaborated with stakeholders to gather requirements",
+                                "Designed and developed ERP system modules",
+                                "Performed testing and deployment"
+                            ],
+                            "skills": [
+                                "Enterprise resource planning",
+                                "Inventory management",
+                                "Business process optimization"
+                            ]
+                        },
+                        {
+                            "title": "Customer Relationship Management System",
+                            "client": "XYZ Enterprises",
+                            "website": "https://www.xyzenterprises.com",
+                            "shortSummary": "Developed a customer relationship management system for XYZ Enterprises.",
+                            "summary": "Developed a customer relationship management (CRM) system for XYZ Enterprises, enabling effective management of customer interactions and sales processes. The CRM system included features such as lead tracking, opportunity management, and sales forecasting, empowering the sales team and improving customer satisfaction.",
+                            "keywords": [
+                                "customer relationship management",
+                                "lead tracking",
+                                "sales forecasting"
+                            ],
+                            "responsibilities": [
+                                "Designed and implemented CRM system functionalities",
+                                "Integrated with existing systems and databases",
+                                "Provided user training and support"
+                            ],
+                            "skills": [
+                                "Customer relationship management",
+                                "Sales process optimization",
+                                "CRM integration"
+                            ]
+                        },
+                        {
+                            "title": "Mobile App for Retail Store",
+                            "client": "PQR Retail",
+                            "website": "https://www.pqrretail.com",
+                            "shortSummary": "Developed a mobile app for PQR Retail store customers.",
+                            "summary": "Developed a mobile app for PQR Retail store customers, allowing them to browse products, place orders, and receive personalized offers. The app integrated with the store's backend system, providing real-time inventory updates and seamless checkout experiences.",
+                            "keywords": [
+                                "mobile app development",
+                                "e-commerce",
+                                "personalized offers"
+                            ],
+                            "responsibilities": [
+                                "Collaborated with UX designers for app design",
+                                "Implemented app features and functionalities",
+                                "Performed testing and bug fixing"
+                            ],
+                            "skills": [
+                                "Mobile app development",
+                                "E-commerce integration",
+                                "User experience design"
+                            ]
+                        },
+                        {
+                            "title": "Data Analytics Platform",
+                            "client": "LMN Analytics",
+                            "website": "https://www.lmnanalytics.com",
+                            "shortSummary": "Developed a data analytics platform for LMN Analytics.",
+                            "summary": "Developed a data analytics platform for LMN Analytics, enabling data-driven insights and decision-making. The platform integrated with various data sources, performed data processing and analysis, and generated interactive visualizations and reports.",
+                            "keywords": [
+                                "data analytics",
+                                "data processing",
+                                "visualization"
+                            ],
+                            "responsibilities": [
+                                "Designed and implemented data processing algorithms",
+                                "Developed data visualization components",
+                                "Optimized platform performance"
+                            ],
+                            "skills": [
+                                "Data analytics",
+                                "Data processing",
+                                "Data visualization"
+                            ]
+                        },
+                        {
+                            "title": "Cybersecurity Solution",
+                            "client": "EFG Bank",
+                            "website": "https://www.efgbank.com",
+                            "shortSummary": "Developed a cybersecurity solution for EFG Bank.",
+                            "summary": "Developed a comprehensive cybersecurity solution for EFG Bank, safeguarding their digital assets and protecting against cyber threats. The solution included network monitoring, vulnerability scanning, and incident response mechanisms, ensuring the bank's systems and data remained secure.",
+                            "keywords": [
+                                "cybersecurity",
+                                "network monitoring",
+                                "incident response"
+                            ],
+                            "responsibilities": [
+                                "Performed cybersecurity risk assessments",
+                                "Implemented security measures and controls",
+                                "Conducted security audits and penetration testing"
+                            ],
+                            "skills": [
+                                "Cybersecurity",
+                                "Network security",
+                                "Incident response"
+                            ]
+                        },
+                        {
+                            "title": "Cloud Migration Strategy",
+                            "client": "LMN Enterprises",
+                            "website": "https://www.lmnenterprises.com",
+                            "shortSummary": "Developed a cloud migration strategy for LMN Enterprises.",
+                            "summary": "Developed a comprehensive cloud migration strategy for LMN Enterprises, guiding them through the process of transitioning their IT infrastructure to the cloud. The strategy included assessing existing systems, designing a scalable cloud architecture, and implementing a secure migration plan.",
+                            "keywords": [
+                                "cloud migration",
+                                "cloud architecture",
+                                "IT infrastructure"
+                            ],
+                            "responsibilities": [
+                                "Conducted infrastructure assessment and analysis",
+                                "Designed scalable cloud architecture",
+                                "Implemented cloud migration plan"
+                            ],
+                            "skills": [
+                                "Cloud migration strategy",
+                                "Infrastructure assessment",
+                                "Cloud architecture design"
+                            ]
+                        },
+                        {
+                            "title": "E-commerce Platform Development",
+                            "client": "PQR Retail",
+                            "website": "https://www.pqrretail.com",
+                            "shortSummary": "Developed an e-commerce platform for PQR Retail.",
+                            "summary": "Developed an e-commerce platform for PQR Retail, enabling them to sell products online and expand their digital presence. The platform included features such as product catalog management, secure payment gateway integration, and order processing capabilities.",
+                            "keywords": [
+                                "e-commerce platform",
+                                "product catalog management",
+                                "payment gateway integration"
+                            ],
+                            "responsibilities": [
+                                "Collaborated with UI/UX designers for platform design",
+                                "Implemented e-commerce functionalities",
+                                "Performed platform testing and optimization"
+                            ],
+                            "skills": [
+                                "E-commerce platform development",
+                                "Payment gateway integration",
+                                "Order processing"
+                            ]
+                        },
+                        {
+                            "title": "Automation Testing Framework",
+                            "client": "QRS Technologies",
+                            "website": "https://www.qrstechnologies.com",
+                            "shortSummary": "Developed an automation testing framework for QRS Technologies.",
+                            "summary": "Developed an automation testing framework for QRS Technologies, enabling efficient and reliable testing of their software applications. The framework included test script development, test data management, and result reporting, improving testing efficiency and accuracy.",
+                            "keywords": [
+                                "automation testing",
+                                "test script development",
+                                "test data management"
+                            ],
+                            "responsibilities": [
+                                "Designed and developed the automation testing framework",
+                                "Integrated with continuous integration tools",
+                                "Provided training and support to the testing team"
+                            ],
+                            "skills": [
+                                "Automation testing",
+                                "Test script development",
+                                "Continuous integration"
+                            ]
+                        },
+                        {
+                            "title": "Blockchain Solution Development",
+                            "client": "TUV Enterprises",
+                            "website": "https://www.tuventerprises.com",
+                            "shortSummary": "Developed a blockchain solution for TUV Enterprises.",
+                            "summary": "Developed a blockchain-based solution for TUV Enterprises, enabling secure and transparent transaction recording and verification. The solution utilized smart contracts, decentralized storage, and consensus algorithms, enhancing trust and efficiency in business processes.",
+                            "keywords": [
+                                "blockchain",
+                                "smart contracts",
+                                "decentralized storage"
+                            ],
+                            "responsibilities": [
+                                "Analyzed use cases for blockchain implementation",
+                                "Developed smart contracts and blockchain components",
+                                "Conducted testing and deployment"
+                            ],
+                            "skills": [
+                                "Blockchain development",
+                                "Smart contracts",
+                                "Decentralized applications"
+                            ]
+                        },
+                        {
+                            "title": "Artificial Intelligence Chatbot",
+                            "client": "GHI Insurance",
+                            "website": "https://www.ghiinsurance.com",
+                            "shortSummary": "Developed an artificial intelligence chatbot for GHI Insurance.",
+                            "summary": "Developed an artificial intelligence-powered chatbot for GHI Insurance, providing automated customer support and enhancing user experience. The chatbot utilized natural language processing and machine learning algorithms to understand user queries, provide relevant information, and assist in policy inquiries.",
+                            "keywords": [
+                                "artificial intelligence",
+                                "chatbot",
+                                "natural language processing"
+                            ],
+                            "responsibilities": [
+                                "Designed chatbot conversational flows and intents",
+                                "Implemented natural language processing algorithms",
+                                "Trained chatbot using machine learning techniques"
+                            ],
+                            "skills": [
+                                "Artificial intelligence",
+                                "Chatbot development",
+                                "Natural language processing"
+                            ]
+                        },
+                        {
+                            "title": "Data Migration and Integration",
+                            "client": "LMN Enterprises",
+                            "website": "https://www.lmnenterprises.com",
+                            "shortSummary": "Performed data migration and integration for LMN Enterprises.",
+                            "summary": "Performed data migration and integration for LMN Enterprises, ensuring smooth transfer of data from legacy systems to new platforms. Developed ETL (Extract, Transform, Load) processes, mapped data fields, and resolved data inconsistencies, ensuring data integrity and compatibility.",
+                            "keywords": [
+                                "data migration",
+                                "data integration",
+                                "ETL processes"
+                            ],
+                            "responsibilities": [
+                                "Analyzed data migration requirements",
+                                "Developed ETL processes for data transformation",
+                                "Performed data validation and reconciliation"
+                            ],
+                            "skills": [
+                                "Data migration",
+                                "Data integration",
+                                "ETL processes"
+                            ]
+                        }
+                    ],
+                    "responsibilities": [
+                        "Collaborated with cross-functional teams to deliver software solutions",
+                        "Participated in code reviews and quality assurance",
+                        "Provided technical support and troubleshooting"
+                    ],
+                    "skills": [
+                        "Software development",
+                        "Agile methodologies",
+                        "Problem-solving"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Inatech",
+            "website": "https://www.inatech.com",
+            "position": "Software Developer",
+            "summary": {
+                "company": {
+                    "details": "Inatech is a leading provider of energy trading and risk management (ETRM) solutions. With a focus on innovation and technology, Inatech offers comprehensive software solutions that enable energy companies to streamline their trading operations, manage risks, and optimize their profitability."
+                },
+                "work": {
+                    "details": "Responsible for software development and implementation.",
+                    "email": "john.doe@inatech.com",
+                    "manager": {
+                        "name": "Sarah Johnson",
+                        "email": "sarah.johnson@inatech.com",
+                        "mobile": "+1 1234567890",
+                        "team": "Development Team"
+                    },
+                    "hr": {
+                        "name": "Michael Smith",
+                        "email": "michael.smith@inatech.com",
+                        "mobile": "+1 9876543210"
+                    },
+                    "employeeId": "12345",
+                    "contact": "+1 5551234567",
+                    "present": false,
+                    "duration": {
+                        "start": {
+                            "month": "Feb",
+                            "year": "2009"
+                        },
+                        "end": {
+                            "month": "June",
+                            "year": "2012"
+                        }
+                    },
+                    "teamSize": 8,
+                    "location": {
+                        "type": "standard",
+                        "country": "United Kingdom",
+                        "city": "London"
+                    },
+                    "projects": [
+                        {
+                            "title": "Energy Trading Platform",
+                            "client": "ABC Energy",
+                            "website": "https://www.abcenergy.com",
+                            "shortSummary": "Developed an energy trading platform for ABC Energy.",
+                            "summary": "Developed an energy trading platform for ABC Energy, enabling them to manage their energy trading activities efficiently. The platform included modules for trade capture, position monitoring, risk analysis, and reporting, providing ABC Energy with real-time insights and enhancing their decision-making process.",
+                            "keywords": [
+                                "energy trading",
+                                "trade capture",
+                                "risk analysis"
+                            ],
+                            "responsibilities": [
+                                "Collaborated with stakeholders to gather requirements",
+                                "Designed and developed trading platform modules",
+                                "Performed testing and deployment"
+                            ],
+                            "skills": [
+                                "Energy trading",
+                                "Risk management",
+                                "Real-time data processing"
+                            ]
+                        },
+                        {
+                            "title": "Commodity Price Forecasting System",
+                            "client": "XYZ Commodities",
+                            "website": "https://www.xyzcommodities.com",
+                            "shortSummary": "Developed a commodity price forecasting system for XYZ Commodities.",
+                            "summary": "Developed a commodity price forecasting system for XYZ Commodities, leveraging advanced statistical models and machine learning algorithms. The system utilized historical data, market indicators, and external factors to generate accurate price forecasts, helping XYZ Commodities make informed trading decisions and optimize their profitability.",
+                            "keywords": [
+                                "commodity price forecasting",
+                                "statistical models",
+                                "machine learning"
+                            ],
+                            "responsibilities": [
+                                "Developed forecasting algorithms and models",
+                                "Integrated data sources and market indicators",
+                                "Evaluated model performance and accuracy"
+                            ],
+                            "skills": [
+                                "Commodity trading",
+                                "Statistical analysis",
+                                "Machine learning"
+                            ]
+                        },
+                        {
+                            "title": "Risk Management Dashboard",
+                            "client": "EFG Trading",
+                            "website": "https://www.efgtrading.com",
+                            "shortSummary": "Developed a risk management dashboard for EFG Trading.",
+                            "summary": "Developed a risk management dashboard for EFG Trading, providing a comprehensive view of their trading positions, risk exposure, and compliance metrics. The dashboard included interactive visualizations, alerts, and scenario analysis tools, enabling EFG Trading to proactively manage risks and ensure regulatory compliance.",
+                            "keywords": [
+                                "risk management",
+                                "dashboard",
+                                "compliance"
+                            ],
+                            "responsibilities": [
+                                "Designed and developed the risk management dashboard",
+                                "Integrated data from multiple sources",
+                                "Implemented risk monitoring and alerting mechanisms"
+                            ],
+                            "skills": [
+                                "Risk management",
+                                "Data visualization",
+                                "Compliance monitoring"
+                            ]
+                        },
+                        {
+                            "title": "Automated Trade Settlement System",
+                            "client": "LMN Traders",
+                            "website": "https://www.lmntraders.com",
+                            "shortSummary": "Developed an automated trade settlement system for LMN Traders.",
+                            "summary": "Developed an automated trade settlement system for LMN Traders, streamlining the trade confirmation, invoicing, and settlement processes. The system integrated with external trading platforms, financial systems, and clearinghouses, reducing manual effort, minimizing errors, and ensuring timely settlement of trades.",
+                            "keywords": [
+                                "trade settlement",
+                                "trade confirmation",
+                                "financial systems"
+                            ],
+                            "responsibilities": [
+                                "Collaborated with operations teams to understand settlement workflows",
+                                "Developed system components for trade confirmation and invoicing",
+                                "Integrated with external systems and APIs"
+                            ],
+                            "skills": [
+                                "Trade settlement",
+                                "Financial systems integration",
+                                "Workflow automation"
+                            ]
+                        },
+                        {
+                            "title": "Market Data Integration",
+                            "client": "PQR Energy",
+                            "website": "https://www.pqrenergy.com",
+                            "shortSummary": "Integrated market data feeds for PQR Energy.",
+                            "summary": "Integrated market data feeds from various sources for PQR Energy, ensuring real-time access to market prices, indices, and other relevant data. The integration involved data normalization, API integration, and data quality validation, providing PQR Energy with accurate and up-to-date market information for their trading activities.",
+                            "keywords": [
+                                "market data integration",
+                                "API integration",
+                                "data normalization"
+                            ],
+                            "responsibilities": [
+                                "Identified and evaluated market data providers",
+                                "Implemented data integration and normalization processes",
+                                "Performed data quality checks and validation"
+                            ],
+                            "skills": [
+                                "Market data integration",
+                                "API development",
+                                "Data quality assurance"
+                            ]
+                        },
+                        {
+                            "title": "Energy Portfolio Optimization",
+                            "client": "LMN Power",
+                            "website": "https://www.lmnpower.com",
+                            "shortSummary": "Developed an energy portfolio optimization system for LMN Power.",
+                            "summary": "Developed an energy portfolio optimization system for LMN Power, enabling them to optimize their energy trading strategies and maximize portfolio profitability. The system utilized mathematical optimization models, historical data, and market forecasts to generate optimal trading recommendations, helping LMN Power achieve better trading outcomes.",
+                            "keywords": [
+                                "portfolio optimization",
+                                "mathematical models",
+                                "trading strategies"
+                            ],
+                            "responsibilities": [
+                                "Designed and implemented optimization algorithms",
+                                "Integrated data sources and market forecasts",
+                                "Conducted performance analysis and backtesting"
+                            ],
+                            "skills": [
+                                "Portfolio optimization",
+                                "Mathematical modeling",
+                                "Trading strategies"
+                            ]
+                        },
+                        {
+                            "title": "Compliance Reporting System",
+                            "client": "ABC Commodities",
+                            "website": "https://www.abccommodities.com",
+                            "shortSummary": "Developed a compliance reporting system for ABC Commodities.",
+                            "summary": "Developed a compliance reporting system for ABC Commodities, enabling them to generate regulatory reports and comply with industry regulations. The system automated the generation of trade reports, position reports, and regulatory filings, reducing manual effort and ensuring timely and accurate compliance reporting.",
+                            "keywords": [
+                                "compliance reporting",
+                                "regulatory filings",
+                                "industry regulations"
+                            ],
+                            "responsibilities": [
+                                "Collaborated with compliance teams to define reporting requirements",
+                                "Developed report generation modules",
+                                "Implemented data validation and quality checks"
+                            ],
+                            "skills": [
+                                "Compliance reporting",
+                                "Regulatory compliance",
+                                "Report generation"
+                            ]
+                        },
+                        {
+                            "title": "Algorithmic Trading System",
+                            "client": "XYZ Traders",
+                            "website": "https://www.xyztraders.com",
+                            "shortSummary": "Developed an algorithmic trading system for XYZ Traders.",
+                            "summary": "Developed an algorithmic trading system for XYZ Traders, enabling them to execute automated trading strategies based on predefined rules and market signals. The system incorporated real-time data feeds, order routing mechanisms, and risk management controls, allowing XYZ Traders to execute trades quickly and efficiently.",
+                            "keywords": [
+                                "algorithmic trading",
+                                "automated trading strategies",
+                                "real-time data feeds"
+                            ],
+                            "responsibilities": [
+                                "Designed and developed trading algorithms",
+                                "Integrated with market data providers and trading platforms",
+                                "Implemented risk management controls"
+                            ],
+                            "skills": [
+                                "Algorithmic trading",
+                                "Automated trading strategies",
+                                "Real-time data processing"
+                            ]
+                        },
+                        {
+                            "title": "Trading Analytics Dashboard",
+                            "client": "EFG Commodities",
+                            "website": "https://www.efgcommodities.com",
+                            "shortSummary": "Developed a trading analytics dashboard for EFG Commodities.",
+                            "summary": "Developed a trading analytics dashboard for EFG Commodities, providing visualizations and insights into their trading performance, risk exposure, and profitability. The dashboard included interactive charts, performance metrics, and scenario analysis tools, empowering EFG Commodities to make data-driven trading decisions and optimize their trading strategies.",
+                            "keywords": [
+                                "trading analytics",
+                                "dashboard",
+                                "performance metrics"
+                            ],
+                            "responsibilities": [
+                                "Designed and developed the trading analytics dashboard",
+                                "Integrated data from multiple sources",
+                                "Implemented data visualization and interactive features"
+                            ],
+                            "skills": [
+                                "Trading analytics",
+                                "Data visualization",
+                                "Performance analysis"
+                            ]
+                        },
+                        {
+                            "title": "Trade Reconciliation System",
+                            "client": "PQR Traders",
+                            "website": "https://www.pqrtraders.com",
+                            "shortSummary": "Developed a trade reconciliation system for PQR Traders.",
+                            "summary": "Developed a trade reconciliation system for PQR Traders, automating the reconciliation process for trade data across multiple systems and counterparties. The system matched and verified trade details, resolved discrepancies, and generated reconciliation reports, ensuring accurate and timely settlement of trades.",
+                            "keywords": [
+                                "trade reconciliation",
+                                "data verification",
+                                "settlement process"
+                            ],
+                            "responsibilities": [
+                                "Analyzed trade reconciliation workflows",
+                                "Developed matching and verification algorithms",
+                                "Implemented reconciliation reporting and exception handling"
+                            ],
+                            "skills": [
+                                "Trade reconciliation",
+                                "Data verification",
+                                "Settlement process"
+                            ]
+                        }
+                    ],
+                    "responsibilities": [
+                        "Collaborated with cross-functional teams to deliver software solutions",
+                        "Participated in code reviews and quality assurance",
+                        "Provided technical support and troubleshooting"
+                    ],
+                    "skills": [
+                        "Software development",
+                        "Agile methodologies",
+                        "Problem-solving"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Midas Communication Technologies",
+            "website": "https://www.midascommtech.com",
+            "position": "Software Engineer",
+            "summary": {
+                "company": {
+                    "details": "Midas Communication Technologies is a leading provider of communication solutions for businesses. With a focus on delivering reliable and efficient communication systems, Midas helps organizations streamline their communication processes and enhance collaboration."
+                },
+                "work": {
+                    "details": "Responsible for software development and system integration.",
+                    "email": "jane.doe@midascommtech.com",
+                    "manager": {
+                        "name": "Robert Johnson",
+                        "email": "robert.johnson@midascommtech.com",
+                        "mobile": "+1 1234567890",
+                        "team": "Development Team"
+                    },
+                    "hr": {
+                        "name": "Jennifer Smith",
+                        "email": "jennifer.smith@midascommtech.com",
+                        "mobile": "+1 9876543210"
+                    },
+                    "employeeId": "54321",
+                    "contact": "+1 5559876543",
+                    "present": false,
+                    "duration": {
+                        "start": {
+                            "month": "June",
+                            "year": "2019"
+                        },
+                        "end": {
+                            "month": "June",
+                            "year": "2019"
+                        }
+                    },
+                    "teamSize": 6,
+                    "location": {
+                        "type": "standard",
+                        "country": "United States",
+                        "city": "New York"
+                    },
+                    "projects": [
+                        {
+                            "title": "Unified Communication Platform",
+                            "client": "ABC Corporation",
+                            "website": "https://www.abccorp.com",
+                            "shortSummary": "Developed a unified communication platform for ABC Corporation.",
+                            "summary": "Developed a unified communication platform for ABC Corporation, enabling seamless communication and collaboration across various channels. The platform integrated voice, video, and messaging functionalities, providing users with a unified and user-friendly communication experience. It also included features like presence management, file sharing, and conference calling.",
+                            "keywords": [
+                                "unified communication",
+                                "voice",
+                                "video",
+                                "messaging",
+                                "collaboration"
+                            ],
+                            "responsibilities": [
+                                "Collaborated with the development team to design and implement platform features",
+                                "Integrated communication protocols and APIs",
+                                "Performed testing and bug fixing"
+                            ],
+                            "skills": [
+                                "Unified communication",
+                                "VoIP",
+                                "Messaging protocols"
+                            ]
+                        },
+                        {
+                            "title": "Mobile Communication Application",
+                            "client": "XYZ Inc.",
+                            "website": "https://www.xyzinc.com",
+                            "shortSummary": "Developed a mobile communication application for XYZ Inc.",
+                            "summary": "Developed a mobile communication application for XYZ Inc., providing users with a convenient and secure way to communicate using their mobile devices. The application supported voice calls, messaging, and file sharing, with features like push notifications, contact management, and end-to-end encryption. It was available for both iOS and Android platforms.",
+                            "keywords": [
+                                "mobile communication",
+                                "voice calls",
+                                "messaging",
+                                "file sharing",
+                                "end-to-end encryption"
+                            ],
+                            "responsibilities": [
+                                "Designed and implemented the mobile application architecture",
+                                "Integrated communication APIs and libraries",
+                                "Conducted performance optimization and testing"
+                            ],
+                            "skills": [
+                                "Mobile app development",
+                                "Cross-platform development",
+                                "Secure communication"
+                            ]
+                        }
+                    ],
+                    "responsibilities": [
+                        "Collaborated with cross-functional teams to develop communication software solutions",
+                        "Participated in software architecture and design discussions",
+                        "Performed code reviews and quality assurance"
+                    ],
+                    "skills": [
+                        "Software development",
+                        "Telecommunications",
+                        "Collaboration tools"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "HTL Limited Chennai",
+            "website": "https://www.htllimited.com",
+            "position": "Software Developer",
+            "summary": {
+                "company": {
+                    "details": "HTL Limited Chennai is a leading IT solutions provider specializing in software development, digital transformation, and IT consulting services. With a focus on delivering innovative solutions, HTL Limited helps businesses leverage technology to drive growth and enhance operational efficiency."
+                },
+                "work": {
+                    "details": "Responsible for software development and system integration.",
+                    "email": "john.smith@htllimited.com",
+                    "manager": {
+                        "name": "Michael Johnson",
+                        "email": "michael.johnson@htllimited.com",
+                        "mobile": "+1 1234567890",
+                        "team": "Development Team"
+                    },
+                    "hr": {
+                        "name": "Sarah Wilson",
+                        "email": "sarah.wilson@htllimited.com",
+                        "mobile": "+1 9876543210"
+                    },
+                    "employeeId": "98765",
+                    "contact": "+1 5551234567",
+                    "present": false,
+                    "duration": {
+                        "start": {
+                            "month": "January",
+                            "year": "2020"
+                        },
+                        "end": {
+                            "month": "January",
+                            "year": "2020"
+                        }
+                    },
+                    "teamSize": 8,
+                    "location": {
+                        "type": "standard",
+                        "country": "India",
+                        "city": "Chennai"
+                    },
+                    "projects": [
+                        {
+                            "title": "Enterprise Resource Planning System",
+                            "client": "ABC Manufacturing",
+                            "website": "https://www.abcmfg.com",
+                            "shortSummary": "Developed an enterprise resource planning system for ABC Manufacturing.",
+                            "summary": "Developed an enterprise resource planning (ERP) system for ABC Manufacturing, enabling efficient management of their business processes, including inventory, sales, and finance. The system integrated various modules, such as procurement, production planning, and customer relationship management, providing a centralized platform for streamlined operations and data-driven decision-making.",
+                            "keywords": [
+                                "enterprise resource planning",
+                                "inventory management",
+                                "sales",
+                                "finance",
+                                "business processes"
+                            ],
+                            "responsibilities": [
+                                "Collaborated with the development team to design and implement ERP modules",
+                                "Integrated with external systems and databases",
+                                "Conducted testing and performance optimization"
+                            ],
+                            "skills": [
+                                "Enterprise resource planning (ERP)",
+                                "Database management",
+                                "Business process optimization"
+                            ]
+                        },
+                        {
+                            "title": "E-commerce Platform",
+                            "client": "XYZ Retail",
+                            "website": "https://www.xyzretail.com",
+                            "shortSummary": "Developed an e-commerce platform for XYZ Retail.",
+                            "summary": "Developed an e-commerce platform for XYZ Retail, enabling them to sell products online and reach a wider customer base. The platform included features such as product catalog management, shopping cart functionality, secure payment integration, and order processing. It provided an intuitive and seamless shopping experience for customers and streamlined business operations for XYZ Retail.",
+                            "keywords": [
+                                "e-commerce",
+                                "product catalog",
+                                "shopping cart",
+                                "payment integration",
+                                "order processing"
+                            ],
+                            "responsibilities": [
+                                "Designed and developed the e-commerce platform architecture",
+                                "Integrated with payment gateways and shipping providers",
+                                "Implemented user authentication and security measures"
+                            ],
+                            "skills": [
+                                "E-commerce development",
+                                "Payment gateway integration",
+                                "User experience design"
+                            ]
+                        }
+                    ],
+                    "responsibilities": [
+                        "Participated in software design and development activities",
+                        "Collaborated with clients to gather requirements and provide technical solutions",
+                        "Conducted code reviews and implemented best coding practices"
+                    ],
+                    "skills": [
+                        "Software development",
+                        "IT consulting",
+                        "Agile methodologies"
+                    ]
+                }
+            }
         }
-      }
-    }
-  ]
+    ]
 }

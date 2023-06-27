@@ -1,7 +1,5 @@
-import { RequiredType } from './IPersonalData';
-
-export interface ICompanies {
-    data: Company[];
+export interface IExperience {
+    companies: Company[];
 }
 
 export interface Company {
@@ -25,7 +23,17 @@ export interface Work {
     hr: Hr;
     employeeId: string;
     contact: string;
-    duration: string;
+    present: boolean;
+    duration: {
+        start: {
+            month: string,
+            year: string
+        },
+        end: {
+            month: string,
+            year: string,
+        }
+    };
     teamSize: number;
     location: Location;
     projects: Project[];
@@ -34,7 +42,7 @@ export interface Work {
 }
 
 export interface Location {
-    type: RequiredType;
+    type: DataType;
     country: string;
     city: string;
 }
@@ -62,4 +70,10 @@ export interface Project {
     responsibilities: string[];
     skills: string[];
     duration?: string;
+}
+
+enum DataType {
+    mandatory,
+    standard,
+    optional,
 }

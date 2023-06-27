@@ -20,14 +20,14 @@ export interface Contact {
 export interface SkillGroup {
     id: string;
     title: string;
-    type: RequiredType;
+    type: DataType;
     data: Skill[];
 }
 
 export interface Skill {
     id: string;
     name: string;
-    type: RequiredType;
+    type: DataType;
 }
 
 export interface Education {
@@ -35,7 +35,7 @@ export interface Education {
     university: string;
     program: string;
     latest: boolean;
-    type: RequiredType;
+    type: DataType;
 }
 
 export interface Reference {
@@ -45,7 +45,7 @@ export interface Reference {
     designation: string;
     mobile: string;
     email: string;
-    type: RequiredType;
+    type: DataType;
 }
 
 export enum ContactType {
@@ -54,7 +54,7 @@ export enum ContactType {
     teams,
 }
 
-export enum RequiredType {
+enum DataType {
     mandatory,
     standard,
     optional,

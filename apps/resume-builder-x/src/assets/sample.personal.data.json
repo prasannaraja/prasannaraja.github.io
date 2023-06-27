@@ -1,6 +1,6 @@
 {
-  "firstName": "John",
-  "lastName": "Doe",
+  "firstName": "Jonathan",
+  "lastName": "Lewis",
   "contacts": [
     {
       "id": "6fbb2a44-20b9-4e21-bb69-08b3a5e5f2d1",
@@ -26,7 +26,7 @@
   "githubProfile": "https://github.com/johndoe",
   "profileSummary": "Experienced software engineer with a passion for building scalable web applications. Highly skilled in JavaScript, Java, and Python, with expertise in React and Angular frameworks. Proficient in database management using MySQL, PostgreSQL, and MongoDB. Strong problem-solving abilities and ability to work in collaborative environments. Committed to delivering high-quality code and exceeding client expectations. Excellent communication and teamwork skills. Completed a Bachelor of Science in Computer Science from the University of ABC and a Master of Science in Software Engineering from XYZ University. Available for challenging software engineering opportunities.",
   "location": "New York, USA",
-  "jobTitle": "Senior Software Engineer",
+  "jobTitle": "Professional Title",
   "skills": [
     {
       "id": "7b44c7b5-23eb-4e2c-a3dd-7e799716a8f7",
