@@ -1,7 +1,7 @@
 <div class="py-20 lg:py-24 px-6 mx-auto max-w-7xl">
     <div class="relative">
         <!-- Your Name -->
-        <h1>{{fullName}}</h1>
+        <h1 class="mb-1">{{fullName}}</h1>
 
         <div class="relative grid grid-cols-1 lg:grid-cols-4 gap-10 xl:gap-24 z-10">
             <!-- Your Title -->
@@ -88,8 +88,13 @@
                             {{company.website}}
                         </a>
                     </p>
-                    <p *ngIf="company.summary.work.present" class="text-sm">{{company.summary.work.duration.start.month}} {{company.summary.work.duration.start.year}} - <b>Present</b></p>
-                    <p *ngIf="!company.summary.work.present" class="text-sm">{{company.summary.work.duration.start.month}} {{company.summary.work.duration.start.year}} - {{company.summary.work.duration.end.month}} {{company.summary.work.duration.end.year}}</p>
+                    <p *ngIf="company.summary.work.present" class="text-sm">
+                        {{company.summary.work.duration.start.month}} {{company.summary.work.duration.start.year}} -
+                        <b>Present</b>
+                    </p>
+                    <p *ngIf="!company.summary.work.present" class="text-sm">
+                        {{company.summary.work.duration.start.month}} {{company.summary.work.duration.start.year}} -
+                        {{company.summary.work.duration.end.month}} {{company.summary.work.duration.end.year}}</p>
                 </div>
 
                 <div class="lg:col-span-2">
