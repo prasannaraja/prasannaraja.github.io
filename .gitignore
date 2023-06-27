@@ -1,8 +1,5 @@
-
 .DS_Store
 .angular
+.vscode
 node_modules
 dist
-
-src/assets/experience.data.json
-src/assets/personal.data.json
