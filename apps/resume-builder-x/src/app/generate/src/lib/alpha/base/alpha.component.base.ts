@@ -1,5 +1,4 @@
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Company } from '../../../models/ICompanies';
 import {
     Contact,
     SkillGroup,
@@ -7,6 +6,7 @@ import {
     Education,
     ContactType,
 } from '../../../models/IPersonalData';
+import { Company } from '../../../models/IExperience';
 
 export abstract class AlphaComponentBase {
     contactsSubject$: BehaviorSubject<Contact[]>;
