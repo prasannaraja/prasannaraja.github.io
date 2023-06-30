@@ -15,8 +15,6 @@
         "skipDefaultLibCheck": true,
         "baseUrl": ".",
         "paths": {
-            "@ngMaterialUiKit": ["libs/ng-material-ui-kit/src/index.ts"],
-            "@ngTailwindUiKit": ["libs/ng-tailwind-ui-kit/src/index.ts"],
             "@prasannaraja.github.io/resume-builder-x/src/app/generate": [
                 "apps/resume-builder-x/src/app/generate/src/index.ts"
             ],
