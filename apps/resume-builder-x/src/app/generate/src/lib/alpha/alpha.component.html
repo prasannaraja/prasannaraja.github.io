@@ -88,17 +88,21 @@
                             {{company.website}}
                         </a>
                     </p>
-                    <p *ngIf="company.summary.work.present" class="text-sm">
-                        {{company.summary.work.duration.start.month}} {{company.summary.work.duration.start.year}} -
-                        <b>Present</b>
-                    </p>
-                    <p *ngIf="!company.summary.work.present" class="text-sm">
-                        {{company.summary.work.duration.start.month}} {{company.summary.work.duration.start.year}} -
-                        {{company.summary.work.duration.end.month}} {{company.summary.work.duration.end.year}}</p>
+                    <p *ngIf="company.summary.work.present; then presentCompany else oldCompany"></p>
+                    <ng-template #presentCompany>
+                        <p class="text-sm">
+                            {{company.summary.work.duration.start.month}} {{company.summary.work.duration.start.year}} -
+                            <b>Present</b>
+                        </p>
+                    </ng-template>
+                    <ng-template #oldCompany>
+                        <p class="text-sm">
+                            {{company.summary.work.duration.start.month}} {{company.summary.work.duration.start.year}} -
+                            {{company.summary.work.duration.end.month}} {{company.summary.work.duration.end.year}}</p>
+                    </ng-template>
                 </div>
-
                 <div class="lg:col-span-2">
-                    <!-- Job Title 2 -->
+                    <!-- Job Title -->
                     <h4 class="mb-4">{{company.position}}</h4>
                     <p>{{company.summary.company.details}}</p>
                     <p class="hidden"></p>
@@ -141,6 +145,7 @@
 
         </div>
     </div>
+    <!-- Projects -->
     <div class="grid-2 gap-10 lg:gap-24 items-start mt-12 lg:mt-24">
         <div class="lg:col-span-1">
             <h3>Projects</h3>
