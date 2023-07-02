@@ -6,7 +6,7 @@ import {
     Education,
     ContactType,
 } from '../../../models/IPersonalData';
-import { Company } from '../../../models/IExperience';
+import { Company, Project } from '../../../models/IExperience';
 
 export abstract class AlphaComponentBase {
     contactsSubject$: BehaviorSubject<Contact[]>;
@@ -98,5 +98,9 @@ export abstract class AlphaComponentBase {
 
     get companies$(): Observable<Company[]> {
         return this.companiesSubject$.asObservable();
+    }
+
+    get projects(): Project[] {
+        return this.companies.flatMap((c) => c.summary.work.projects);
     }
 }
