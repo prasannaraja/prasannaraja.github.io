@@ -26,13 +26,13 @@ export interface Work {
     present: boolean;
     duration: {
         start: {
-            month: string,
-            year: string
-        },
+            month: string;
+            year: string;
+        };
         end: {
-            month: string,
-            year: string,
-        }
+            month: string;
+            year: string;
+        };
     };
     teamSize: number;
     location: Location;
@@ -63,6 +63,7 @@ export interface Hr {
 export interface Project {
     title: string;
     client: string;
+    role: string;
     website: string;
     shortSummary: string;
     summary: string;
