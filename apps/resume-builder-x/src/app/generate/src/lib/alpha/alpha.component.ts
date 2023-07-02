@@ -1,4 +1,10 @@
-import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
+import {
+    Component,
+    ElementRef,
+    OnDestroy,
+    OnInit,
+    ViewChild,
+} from '@angular/core';
 import { Observable, Subscription, switchMap, tap } from 'rxjs';
 import { AlphaComponentBase } from './base/alpha.component.base';
 import { DataService } from '../../services/data.service';
@@ -9,23 +15,22 @@ import { PdfService } from '../../services/pdf.service';
 @Component({
     selector: 'rbx-alpha',
     templateUrl: './alpha.component.html',
-    styleUrls: ['./alpha.component.scss'],
+    styleUrls: ['./alpha.component.scss', './alpha.print.scss'],
 })
 export class AlphaComponent
     extends AlphaComponentBase
-    implements OnInit, OnDestroy, AfterViewInit
+    implements OnInit, OnDestroy
 {
+    @ViewChild('resume')
+    resumeContent!: ElementRef;
     private subscriptions: Subscription;
+
     constructor(
         public dataService: DataService,
         public pdfService: PdfService
     ) {
         super();
         this.subscriptions = new Subscription();
-    }
-    ngAfterViewInit(): void {
-        const htmlContent = `<html><body><h1>Hello, PDF!</h1></body></html>`;
-        this.pdfService.generatePdf(htmlContent);
     }
 
     ngOnInit(): void {
@@ -74,5 +79,12 @@ export class AlphaComponent
                 return this.experienceData$;
             })
         );
+    }
+
+    convertToPdf(): void {
+        const htmlElement = this.resumeContent.nativeElement;
+        const html = htmlElement.innerHTML;
+
+        this.pdfService.generatePdf(html);
     }
 }
