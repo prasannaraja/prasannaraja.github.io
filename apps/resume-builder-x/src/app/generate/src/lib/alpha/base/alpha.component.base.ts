@@ -1,4 +1,4 @@
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, map, tap } from 'rxjs';
 import {
     Contact,
     SkillGroup,
@@ -6,7 +6,7 @@ import {
     Education,
     ContactType,
 } from '../../../models/IPersonalData';
-import { Company } from '../../../models/IExperience';
+import { Company, Project } from '../../../models/IExperience';
 
 export abstract class AlphaComponentBase {
     contactsSubject$: BehaviorSubject<Contact[]>;
@@ -57,7 +57,7 @@ export abstract class AlphaComponentBase {
     }
 
     get skills(): SkillGroup[] {
-        return this.skillsSubject$.getValue();
+        return this.skillsSubject$.value;
     }
 
     get skills$(): Observable<SkillGroup[]> {
@@ -65,11 +65,11 @@ export abstract class AlphaComponentBase {
     }
 
     get references(): Reference[] {
-        return this.referencesSubject$.getValue();
+        return this.referencesSubject$.value;
     }
 
     get educations(): Education[] {
-        return this.educationsSubject$.getValue();
+        return this.educationsSubject$.value;
     }
 
     get fullName(): string {
@@ -77,26 +77,45 @@ export abstract class AlphaComponentBase {
     }
 
     get jobTitle(): string {
-        return this.jobTitleSubject$.getValue();
+        return this.jobTitleSubject$.value;
     }
 
     get githubProfileUrl(): string {
-        return this.githubProfileSubject$.getValue();
+        return this.githubProfileSubject$.value;
     }
 
     get location(): string {
-        return this.locationSubject$.getValue();
+        return this.locationSubject$.value;
     }
 
     get profileSummary(): string {
-        return this.profileSummarySubject$.getValue();
+        return this.profileSummarySubject$.value;
     }
 
     get companies(): Company[] {
-        return this.companiesSubject$.getValue();
+        return this.companiesSubject$.value;
     }
 
     get companies$(): Observable<Company[]> {
         return this.companiesSubject$.asObservable();
+    }
+
+    get projects$(): Observable<Project[]> {
+        return this.companiesSubject$.pipe(
+            map((companies) => {
+                return companies.map((company) => {
+                    company.summary.work.projects.map((project) => {
+                        project.role = company.position;
+                        return project;
+                    });
+                    return company;
+                });
+            }),
+            map((companies) => {
+                return companies.flatMap(
+                    (company) => company.summary.work.projects
+                );
+            })
+        );
     }
 }

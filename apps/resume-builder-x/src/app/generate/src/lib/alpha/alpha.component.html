@@ -88,17 +88,21 @@
                             {{company.website}}
                         </a>
                     </p>
-                    <p *ngIf="company.summary.work.present" class="text-sm">
-                        {{company.summary.work.duration.start.month}} {{company.summary.work.duration.start.year}} -
-                        <b>Present</b>
-                    </p>
-                    <p *ngIf="!company.summary.work.present" class="text-sm">
-                        {{company.summary.work.duration.start.month}} {{company.summary.work.duration.start.year}} -
-                        {{company.summary.work.duration.end.month}} {{company.summary.work.duration.end.year}}</p>
+                    <p *ngIf="company.summary.work.present; then presentCompany else oldCompany"></p>
+                    <ng-template #presentCompany>
+                        <p class="text-sm">
+                            {{company.summary.work.duration.start.month}} {{company.summary.work.duration.start.year}} -
+                            <b>Present</b>
+                        </p>
+                    </ng-template>
+                    <ng-template #oldCompany>
+                        <p class="text-sm">
+                            {{company.summary.work.duration.start.month}} {{company.summary.work.duration.start.year}} -
+                            {{company.summary.work.duration.end.month}} {{company.summary.work.duration.end.year}}</p>
+                    </ng-template>
                 </div>
-
                 <div class="lg:col-span-2">
-                    <!-- Job Title 2 -->
+                    <!-- Job Title -->
                     <h4 class="mb-4">{{company.position}}</h4>
                     <p>{{company.summary.company.details}}</p>
                     <p class="hidden"></p>
@@ -140,5 +144,23 @@
             </div>
 
         </div>
+    </div>
+    <!-- Projects -->
+    <div class="grid-2 gap-10 lg:gap-24 items-start mt-12 lg:mt-24">
+        <div class="lg:col-span-1">
+            <h3>Projects</h3>
+        </div>
+        <div class="grid-2 gap-x-4 lg:mt-12">
+            <ul *ngIf="projects$|async as projects">
+                <li *ngFor="let project of projects"><b>{{project.client}}</b> (Jan 2021-Feb 2023) {{project.role}},
+                    {{project.shortSummary}} {{project.responsibilities}} using
+                    <div *ngFor="let skill of project.skills"
+                        class="ml-1 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 bg-orange-200 text-orange-700 rounded-full">
+                        {{skill}}
+                    </div>
+                </li>
+            </ul>
+        </div>
+
     </div>
 </div>
