@@ -147,8 +147,15 @@
         </div>
         <div class="grid-2 gap-x-4 lg:mt-12">
             <ul>
-                <li *ngFor="let project of projects">[2020 - 2021] {{project.shortSummary}} {{project.skills|json}}</li>
+                <li *ngFor="let project of projects"><b>{{project.client}}</b> (Jan 2021-Feb 2023) Lead Developer,
+                    {{project.shortSummary}} {{project.responsibilities}} using
+                    <div *ngFor="let sk of project.skills"
+                        class="ml-1 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 bg-orange-200 text-orange-700 rounded-full">
+                        {{sk}}
+                    </div>
+                </li>
             </ul>
         </div>
+
     </div>
 </div>
