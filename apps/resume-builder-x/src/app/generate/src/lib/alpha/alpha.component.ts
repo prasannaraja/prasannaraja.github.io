@@ -1,10 +1,10 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription, switchMap, tap } from 'rxjs';
 import { AlphaComponentBase } from './base/alpha.component.base';
 import { DataService } from '../../services/data.service';
 import { IExperience } from '../../models/IExperience';
 import { IPersonalData } from '../../models/IPersonalData';
-
+import { PdfService } from '../../services/pdf.service';
 
 @Component({
     selector: 'rbx-alpha',
@@ -13,11 +13,19 @@ import { IPersonalData } from '../../models/IPersonalData';
 })
 export class AlphaComponent
     extends AlphaComponentBase
-    implements OnInit, OnDestroy {
+    implements OnInit, OnDestroy, AfterViewInit
+{
     private subscriptions: Subscription;
-    constructor(public dataService: DataService) {
+    constructor(
+        public dataService: DataService,
+        public pdfService: PdfService
+    ) {
         super();
         this.subscriptions = new Subscription();
+    }
+    ngAfterViewInit(): void {
+        const htmlContent = `<html><body><h1>Hello, PDF!</h1></body></html>`;
+        this.pdfService.generatePdf(htmlContent);
     }
 
     ngOnInit(): void {
