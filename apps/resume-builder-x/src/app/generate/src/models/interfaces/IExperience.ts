@@ -19,10 +19,9 @@ export interface Summary {
 export interface Work {
     details: string;
     email: string;
-    manager: Manager;
-    hr: Hr;
+    contacts: Contact[];
     employeeId: string;
-    contact: string;
+    phone: string;
     present: boolean;
     duration: {
         start: {
@@ -35,7 +34,7 @@ export interface Work {
         };
     };
     teamSize: number;
-    location: Location;
+    locations: Location[];
     projects: Project[];
     responsibilities: string[];
     skills: string[];
@@ -47,17 +46,12 @@ export interface Location {
     city: string;
 }
 
-export interface Manager {
+export interface Contact {
     name: string;
     email: string;
     mobile: string;
     team: string;
-}
-
-export interface Hr {
-    name: string;
-    email: string;
-    mobile: string;
+    type: string;
 }
 
 export interface Project {

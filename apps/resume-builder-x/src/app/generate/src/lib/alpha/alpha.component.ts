@@ -2,9 +2,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription, switchMap, tap } from 'rxjs';
 import { AlphaComponentBase } from './base/alpha.component.base';
 import { DataService } from '../../services/data.service';
-import { IExperience } from '../../models/IExperience';
-import { IPersonalData } from '../../models/IPersonalData';
-
+import { IExperience } from '../../models/interfaces/IExperience';
+import { IPersonalData } from '../../models/interfaces/IPersonalData';
 
 @Component({
     selector: 'rbx-alpha',
@@ -13,7 +12,8 @@ import { IPersonalData } from '../../models/IPersonalData';
 })
 export class AlphaComponent
     extends AlphaComponentBase
-    implements OnInit, OnDestroy {
+    implements OnInit, OnDestroy
+{
     private subscriptions: Subscription;
     constructor(public dataService: DataService) {
         super();
