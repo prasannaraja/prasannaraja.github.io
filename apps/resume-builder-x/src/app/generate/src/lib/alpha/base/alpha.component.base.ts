@@ -1,12 +1,12 @@
-import { BehaviorSubject, Observable, map, tap } from 'rxjs';
+import { BehaviorSubject, Observable, map, take } from 'rxjs';
 import {
     Contact,
     SkillGroup,
     Reference,
     Education,
     ContactType,
-} from '../../../models/IPersonalData';
-import { Company, Project } from '../../../models/IExperience';
+} from '../../../models/interfaces/IPersonalData';
+import { Company, Project } from '../../../models/interfaces/IExperience';
 
 export abstract class AlphaComponentBase {
     contactsSubject$: BehaviorSubject<Contact[]>;

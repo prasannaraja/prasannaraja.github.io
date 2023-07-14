@@ -82,7 +82,7 @@
                 <div>
                     <!-- Company -->
                     <h4 class="mb-1 lg:mb-4">{{company.name}}</h4>
-                    <p class="hidden">{{company.summary.work.location.country}}</p>
+                    <p class="hidden">{{company.summary.work.locations|json}}</p>
                     <p class="text-sm mb-1">
                         <a href={{company.website}} target="_blank" rel="noreferrer">
                             {{company.website}}
