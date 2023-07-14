@@ -3,3 +3,5 @@
 .vscode
 node_modules
 dist
+apps/resume-builder-x/src/assets/personal.data.json
+apps/resume-builder-x/src/assets/experience.data.json
