@@ -1,4 +1,4 @@
-import { BehaviorSubject, Observable, map, take } from 'rxjs';
+import { BehaviorSubject, Observable, map } from 'rxjs';
 import {
     Contact,
     SkillGroup,
