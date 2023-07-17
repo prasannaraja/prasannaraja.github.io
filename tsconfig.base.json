@@ -15,6 +15,9 @@
         "skipDefaultLibCheck": true,
         "baseUrl": ".",
         "paths": {
+            "@prasannaraja.github.io/portfolio/src/app/home": [
+                "apps/portfolio/src/app/home/src/index.ts"
+            ],
             "@prasannaraja.github.io/resume-builder-x/src/app/generate": [
                 "apps/resume-builder-x/src/app/generate/src/index.ts"
             ],
