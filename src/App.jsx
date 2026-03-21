@@ -39,7 +39,7 @@ const skills = [
 const GITHUB_USERNAME = 'prasannaraja';
 const LINKEDIN_USERNAME = 'prasannaraja';
 const EMAIL_ADDRESS = 'heyprasanna@yahoo.com';
-const RESUME_URL = 'https://registry.jsonresume.org/prasannaraja?theme=timeline-fixed#';
+const RESUME_URL = 'https://registry.jsonresume.org/prasannaraja?theme=academic-cv-lite#';
 
 const projects = [
   {
