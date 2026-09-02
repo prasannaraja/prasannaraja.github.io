@@ -111,6 +111,14 @@ const experience = [
     projects: ['GEMS Education Platform'],
   },
   {
+    years: 'Jul 2020 – Feb 2021',
+    title: 'Senior .Net Specialist',
+    company: 'Randstad India',
+    summary:
+      'Designed and developed the UI for the Capital Cost Estimation Tool at Shell India, leading front-end UI/UX development within an international team to build the interface from scratch.',
+    projects: ['Capital Cost Estimation Tool'],
+  },
+  {
     years: 'Nov 2018 – Dec 2019',
     title: 'Senior .NET Specialist',
     company: 'Raqmiyat',
@@ -119,14 +127,6 @@ const experience = [
     summary:
       'Developed a health insurance application for the Abu Dhabi Government using Angular 6, C#, ASP.NET Core, Entity Framework, LINQ, SQL Server 2012, WCF, Web API, HTML, CSS, and JavaScript. Worked as an individual contributor on a greenfield application and managed Azure DevOps CI/CD pipelines with approval-based deployment.',
     projects: ['Health Insurance Application'],
-  },
-  {
-    years: 'Jul 2020 – Feb 2021',
-    title: 'Senior .Net Specialist',
-    company: 'Randstad India',
-    summary:
-      'Designed and developed the UI for the Capital Cost Estimation Tool at Shell India, leading front-end UI/UX development within an international team to build the interface from scratch.',
-    projects: ['Capital Cost Estimation Tool'],
   },
   {
     years: 'Dec 2014 – Aug 2018',
