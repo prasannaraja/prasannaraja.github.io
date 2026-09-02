@@ -15,7 +15,15 @@ export default function ExperienceCard({ item, index }) {
       </div>
 
       <h3 className="text-xl font-semibold text-white">{item.title}</h3>
-      <p className="mt-1 text-slate-300">{item.company}</p>
+      <div className="mt-1 flex flex-wrap items-center gap-2 text-slate-300">
+        <span>{item.company}</span>
+        {item.employmentType && (
+          <span className="rounded-full border border-white/10 bg-white/5 px-2 py-0.5 text-[10px] uppercase tracking-[0.12em] text-slate-400">
+            {item.employmentType}
+          </span>
+        )}
+      </div>
+      {item.location && <p className="mt-1 text-sm text-slate-400">{item.location}</p>}
 
       <p className="mt-4 text-sm leading-7 text-slate-300">{item.summary}</p>
 

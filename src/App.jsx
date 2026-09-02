@@ -111,6 +111,16 @@ const experience = [
     projects: ['GEMS Education Platform'],
   },
   {
+    years: 'Nov 2018 – Dec 2019',
+    title: 'Senior .NET Specialist',
+    company: 'Raqmiyat',
+    employmentType: 'Full-time',
+    location: 'Abu Dhabi, United Arab Emirates',
+    summary:
+      'Developed a health insurance application for the Abu Dhabi Government using Angular 6, C#, ASP.NET Core, Entity Framework, LINQ, SQL Server 2012, WCF, Web API, HTML, CSS, and JavaScript. Worked as an individual contributor on a greenfield application and managed Azure DevOps CI/CD pipelines with approval-based deployment.',
+    projects: ['Health Insurance Application'],
+  },
+  {
     years: 'Jul 2020 – Feb 2021',
     title: 'Senior .Net Specialist',
     company: 'Randstad India',
