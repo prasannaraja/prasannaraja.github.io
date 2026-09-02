@@ -40,7 +40,7 @@ const skills = [
 const GITHUB_USERNAME = 'prasannaraja';
 const LINKEDIN_USERNAME = 'prasannaraja';
 const EMAIL_ADDRESS = 'heyprasanna@outlook.com';
-const RESUME_URL = 'https://registry.jsonresume.org/prasannaraja?theme=academic-cv-lite#';
+const RESUME_URL = '/prasanna-resume-senior-engineer.pdf';
 
 const projects = [
   {
@@ -131,8 +131,8 @@ const experience = [
     title: 'Senior Software Engineer / Tech Lead',
     company: 'Various (HCL, Inatech, Midas)',
     summary:
-      'Gathered requirements, designed, and maintained applications spanning banking, oil domain reporting, and telecom production systems. Managed software packaging, deployments, and customer support.',
-    projects: ['Banking Regulatory Apps', 'Report Frameworks', 'Telecom Support'],
+      'Gathered requirements, designed, and maintained applications spanning banking, oil domain reporting, and enterprise support workflows. Managed software packaging, deployments, and customer support.',
+    projects: ['Banking Regulatory Apps', 'Report Frameworks', 'Enterprise Support'],
   },
 ];
 
@@ -200,7 +200,7 @@ export default function App() {
               </h1>
 
               <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 md:text-lg">
-                I build scalable, data-driven enterprise applications using .NET and React, with a focus on modern cloud architecture, analytics, and AI-assisted engineering. I contributed to KPMG Dash, an award-winning product used by customers across the UK, spanning the .NET backend, React frontend, and Cube.js-powered analytics layer to deliver reliable, user-focused capabilities in a complex enterprise environment.
+                I’m Prasanna Raja, a Senior Software Engineer with over 16 years of experience building enterprise platforms, scalable architecture, and data-driven products. I contributed to KPMG Dash, helping deliver a dependable .NET and React platform with Cube.js-powered analytics for a complex enterprise environment.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
@@ -237,7 +237,7 @@ export default function App() {
 
               <div className="mt-10 grid gap-4 sm:grid-cols-3">
                 {[
-                  { label: 'Years of Experience', value: '18+' },
+                  { label: 'Years of Experience', value: '16+' },
                   { label: 'Core Expertise', value: '.NET & Angular' },
                   { label: 'Domain', value: 'Enterprise & AI' },
                 ].map((item) => (
@@ -301,8 +301,8 @@ export default function App() {
         <section id="about" className="section-container py-16">
           <SectionTitle
             eyebrow="About"
-            title="A senior architect focused on data-driven business impact."
-            subtitle="From early telecom systems to modern AI-driven enterprise analytics platforms, my work has consistently centered on scalable architecture, seamless API integration, and empowering decision intelligence."
+            title="A senior engineer focused on data-driven business impact."
+            subtitle="From modern AI-driven enterprise analytics platforms to scalable business systems, my work has centered on clean architecture, seamless API integration, and practical decision intelligence."
           />
 
           <div className="glass rounded-[2rem] p-8 md:p-10">
@@ -372,8 +372,8 @@ export default function App() {
         <section id="experience" className="section-container py-16">
           <SectionTitle
             eyebrow="Experience"
-            title="18+ years of software development"
-            subtitle="A progression from early technical systems engineering into senior-level enterprise platform architecture."
+            title="16+ years of software development"
+            subtitle="A progression from hands-on system engineering into senior-level enterprise platform architecture."
           />
 
           <div className="space-y-6">
@@ -453,8 +453,7 @@ export default function App() {
 
               <a
                 href={RESUME_URL}
-                target="_blank"
-                rel="noreferrer"
+                download="prasanna-resume-senior-engineer.pdf"
                 className="inline-flex items-center rounded-2xl border border-white/10 bg-white/5 px-5 py-3 font-medium text-white transition hover:bg-white/10"
               >
                 <FileText className="mr-2 h-4 w-4" />
