@@ -31,6 +31,7 @@ const skills = [
   'Azure DevOps',
   'CI/CD Pipelines',
   'Qlik Sense',
+  'CubeJs',
   'AI-driven Analytics',
   'Tailwind CSS',
   'System Design',
@@ -38,16 +39,24 @@ const skills = [
 
 const GITHUB_USERNAME = 'prasannaraja';
 const LINKEDIN_USERNAME = 'prasannaraja';
-const EMAIL_ADDRESS = 'heyprasanna@yahoo.com';
+const EMAIL_ADDRESS = 'heyprasanna@outlook.com';
 const RESUME_URL = 'https://registry.jsonresume.org/prasannaraja?theme=academic-cv-lite#';
 
 const projects = [
+  {
+    name: 'KPMG Dash',
+    type: 'AI-powered location & consumer analytics platform',
+    description:
+      'A KPMG-built and run SaaS platform that blends a client\'s own data with billions of external data points (6B+) to drive location, product, and cost decisions for consumer-facing businesses. It uses machine learning to predict prospective site revenue with 85%+ accuracy across 14,000+ UK retail zones and 200+ external factors, and serves Property, Commercial, Finance, Site Management, Marketing, and C-Suite teams.',
+    tags: ['.NET Core', 'React', 'Monlithic','CubeJs', 'Machine Learning','XGboost','Azure Cloud'],
+    link: 'https://kpmgdash.co.uk/',
+  },
   {
     name: 'KART (Analytical Reporting Tool)',
     type: 'Auditing Platform',
     description:
       'Led the design and development of a microservices architecture for auditing purposes using .NET Core and Angular. Established the core development codebase.',
-    tags: ['.NET Core', 'Angular', 'Microservices', 'Architecture'],
+    tags: ['.NET Core', 'Angular', 'Microservices', 'SQL Server','Azure Cloud'],
     link: '#',
   },
   {
@@ -55,7 +64,7 @@ const projects = [
     type: 'Multi-lingual Platform',
     description:
       'Developed a multi-national platform with React and .NET Core. Created API interfaces with Redis caching for seamless, performant integration.',
-    tags: ['React', '.NET Core', 'Redis', 'Web API'],
+    tags: ['React', '.NET Core', 'Redis', 'Web API','Private Cloud'],
     link: '#',
   },
   {
@@ -63,7 +72,7 @@ const projects = [
     type: 'Enterprise Tool UI',
     description:
       'Designed and developed the UI from scratch for an international team at Shell India, significantly enhancing the user experience for complex cost estimation workflows.',
-    tags: ['UI/UX', 'React', 'Front-End Design'],
+    tags: ['UI/UX', 'Angular', 'Front-End Design'],
     link: '#',
   },
   {
@@ -183,7 +192,7 @@ export default function App() {
             >
               <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-sm text-cyan-300">
                 <Sparkles className="h-4 w-4" />
-                Senior Software Engineer • Technical Architect
+                Senior Software Engineer
               </div>
 
               <h1 className="mt-6 text-4xl font-bold tracking-tight text-white md:text-6xl lg:text-7xl">
@@ -191,7 +200,7 @@ export default function App() {
               </h1>
 
               <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 md:text-lg">
-                I’m Prasanna Raja, a Senior Software Engineer with over 18 years of experience building mission-critical business platforms, clean architecture, automated data pipelines, and bridging the gap between web applications and predictive analytics.
+                I build scalable, data-driven enterprise applications using .NET and React, with a focus on modern cloud architecture, analytics, and AI-assisted engineering. I contributed to KPMG Dash, an award-winning product used by customers across the UK, spanning the .NET backend, React frontend, and Cube.js-powered analytics layer to deliver reliable, user-focused capabilities in a complex enterprise environment.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
