@@ -11,3 +11,5 @@ openspec/config.yaml
 .github/prompts/*
 .github/skills/*   
 .github/workflows/copilot-setup-steps.yml
+
+.playwright-mcp/*
