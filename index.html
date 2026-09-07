@@ -309,6 +309,21 @@
                 margin: 0;
                 letter-spacing: -0.01em;
             }
+            .job-head h3 .location {
+                font-size: 13px;
+                font-weight: 400;
+                color: var(--faint);
+                letter-spacing: normal;
+            }
+            .job-head h3 .location::before {
+                content: '';
+                display: inline-block;
+                width: 3px;
+                height: 3px;
+                border-radius: 50%;
+                background: var(--faint);
+                margin: 0 7px 2px;
+            }
             .job-head .role {
                 font-size: 15px;
                 color: var(--muted);
@@ -607,7 +622,12 @@
 
                 <article class="job reveal">
                     <div class="job-head">
-                        <h3>KPMG, Microsoft Business Solutions</h3>
+                        <h3>
+                            KPMG, Microsoft Business Solutions<span
+                                class="location"
+                                >Malta</span
+                            >
+                        </h3>
                         <span class="role">Senior Software Engineer</span>
                         <span class="date">Oct 2021 — Present</span>
                     </div>
@@ -631,7 +651,9 @@
 
                 <article class="job reveal">
                     <div class="job-head">
-                        <h3>Finesse Global</h3>
+                        <h3>
+                            Finesse Global<span class="location">UAE</span>
+                        </h3>
                         <span class="role">Senior Software Developer</span>
                         <span class="date">Mar 2021 — Sep 2021</span>
                     </div>
@@ -650,7 +672,9 @@
 
                 <article class="job reveal">
                     <div class="job-head">
-                        <h3>Randstad India</h3>
+                        <h3>
+                            Randstad India<span class="location">India</span>
+                        </h3>
                         <span class="role">Senior .Net Specialist</span>
                         <span class="date">Jul 2020 — Feb 2021</span>
                     </div>
@@ -669,7 +693,9 @@
 
                 <article class="job reveal">
                     <div class="job-head">
-                        <h3>Raqmiyat</h3>
+                        <h3>
+                            Raqmiyat<span class="location">UAE</span>
+                        </h3>
                         <span class="role">Senior .NET Specialist</span>
                         <span class="date">Nov 2018 — Dec 2019</span>
                     </div>
@@ -690,7 +716,12 @@
 
                 <article class="job reveal">
                     <div class="job-head">
-                        <h3>Cognizant Technology Solutions</h3>
+                        <h3>
+                            Cognizant Technology Solutions<span
+                                class="location"
+                                >UK</span
+                            >
+                        </h3>
                         <span class="role">Associate</span>
                         <span class="date">Dec 2014 — Aug 2018</span>
                     </div>
@@ -721,7 +752,12 @@
 
                 <article class="job reveal">
                     <div class="job-head">
-                        <h3>Various (HCL, Inatech, Midas)</h3>
+                        <h3>
+                            Various (HCL, Inatech, Midas)<span
+                                class="location"
+                                >India</span
+                            >
+                        </h3>
                         <span class="role"
                             >Senior Software Engineer / Tech Lead</span
                         >
