@@ -295,15 +295,6 @@
                 margin: 0 0 26px;
                 text-wrap: balance;
             }
-            .hero .position {
-                font-family: var(--sans);
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: 0.04em;
-                color: var(--accent);
-                margin: 0 0 14px;
-                text-transform: uppercase;
-            }
             .hero p {
                 color: var(--muted);
                 margin: 0 0 16px;
@@ -565,35 +556,29 @@
             }
             .flow {
                 display: flex;
-                flex-direction: column;
-                gap: 0;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 10px 6px;
                 margin: 4px 0 18px;
                 font-family: var(--mono);
                 font-size: 12.5px;
             }
-            .flow .step {
+            .flow-item {
                 display: flex;
                 align-items: center;
-                gap: 10px;
+                gap: 8px;
+            }
+            .flow .step {
+                display: inline-flex;
+                align-items: center;
                 padding: 8px 12px;
                 background: var(--chip);
                 border-radius: 8px;
                 color: var(--ink);
+                white-space: nowrap;
             }
             .flow .arrow {
-                align-self: flex-start;
-                margin: 3px 0 3px 20px;
                 color: var(--faint);
-            }
-            @media (min-width: 640px) {
-                .flow {
-                    flex-direction: row;
-                    flex-wrap: wrap;
-                    align-items: center;
-                }
-                .flow .arrow {
-                    margin: 0;
-                }
             }
             .card details {
                 margin-top: 6px;
@@ -862,10 +847,6 @@
                     ><span class="pulse"></span> Senior Software Engineer at
                     KPMG, Malta</span
                 >
-                <p class="position">
-                    Senior Software Engineer · Enterprise Architecture · AI
-                    &amp; Data Platforms
-                </p>
                 <h1>
                     Designing and building scalable enterprise platforms that
                     turn complex data into intelligent business decisions.
@@ -1174,19 +1155,35 @@
                         </div>
                         <div class="subhead">Architecture</div>
                         <div class="flow">
-                            <span class="step">External Data</span
-                            ><span class="arrow">→</span>
-                            <span class="step">Data Processing / ETL</span
-                            ><span class="arrow">→</span>
-                            <span class="step">Azure Data Platform</span
-                            ><span class="arrow">→</span>
-                            <span class="step">.NET APIs</span
-                            ><span class="arrow">→</span>
-                            <span class="step">Cube.js Analytics &amp; ML</span
-                            ><span class="arrow">→</span>
-                            <span class="step">React Application</span
-                            ><span class="arrow">→</span>
-                            <span class="step">Business Decisions</span>
+                            <div class="flow-item">
+                                <span class="step">External Data</span>
+                                <span class="arrow">→</span>
+                            </div>
+                            <div class="flow-item">
+                                <span class="step">Data Processing / ETL</span>
+                                <span class="arrow">→</span>
+                            </div>
+                            <div class="flow-item">
+                                <span class="step">Azure Data Platform</span>
+                                <span class="arrow">→</span>
+                            </div>
+                            <div class="flow-item">
+                                <span class="step">.NET APIs</span>
+                                <span class="arrow">→</span>
+                            </div>
+                            <div class="flow-item">
+                                <span class="step"
+                                    >Cube.js Analytics &amp; ML</span
+                                >
+                                <span class="arrow">→</span>
+                            </div>
+                            <div class="flow-item">
+                                <span class="step">React Application</span>
+                                <span class="arrow">→</span>
+                            </div>
+                            <div class="flow-item">
+                                <span class="step">Business Decisions</span>
+                            </div>
                         </div>
                         <details>
                             <summary>My Contribution</summary>
