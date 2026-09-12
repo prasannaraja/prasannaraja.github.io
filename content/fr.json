@@ -1,0 +1,243 @@
+{
+  "lang": "fr",
+  "meta": {
+    "title": "Prasanna Raja | Senior Software Engineer, Architecture d'entreprise",
+    "description": "Senior Software Engineer avec plus de 16 ans d'expérience dans la conception et le développement de plateformes d'entreprise, d'architectures cloud et de systèmes analytiques — étendant aujourd'hui cette expertise à des applications intégrant l'IA, pilotées par la donnée.",
+    "keywords": "Senior Software Engineer, Architecte technique, Architecture d'entreprise, Ingénieur .NET, Azure, Ingénierie IA, Machine Learning, Plateformes de données, Architecture logicielle",
+    "ogTitle": "Prasanna Raja | Senior Software Engineer · Architecture d'entreprise · IA & Plateformes de données",
+    "ogDescription": "Je conçois des plateformes d'entreprise évolutives qui transforment des données complexes en décisions métier intelligentes — avec des fondations en .NET et en ingénierie cloud, étendues à l'IA et aux plateformes de données.",
+    "twitterDescription": "Conception et développement de plateformes d'entreprise évolutives qui transforment des données complexes en décisions métier intelligentes.",
+    "url": "https://prasannaraja.github.io/fr/"
+  },
+  "nav": {
+    "brand": "Prasanna Raja",
+    "home": "Accueil",
+    "about": "À propos",
+    "experience": "Expérience",
+    "projects": "Projets",
+    "approach": "Approche",
+    "stack": "Stack",
+    "contact": "Contact",
+    "skipToContent": "Passer au contenu",
+    "ariaLabel": "Navigation principale",
+    "toggleDarkMode": "Basculer le mode sombre",
+    "languageLabel": "Langue"
+  },
+  "hero": {
+    "availabilityBadge": "Senior Software Engineer chez KPMG, Malte",
+    "headline": "Conception et développement de plateformes d'entreprise évolutives qui transforment des données complexes en décisions métier intelligentes.",
+    "paragraph1": "Je suis Prasanna Raja — plus de 16 ans d'expérience en ingénierie logicielle, couvrant le développement d'applications d'entreprise, l'architecture système, ainsi que les plateformes cloud et data. Mon travail transforme des données opérationnelles et géospatiales complexes en systèmes qui soutiennent de réelles décisions métier, et s'étend de plus en plus à l'apprentissage automatique appliqué et à l'ingénierie moderne de l'IA.",
+    "paragraph2": "J'ai contribué à KPMG Dash, une plateforme d'analyse primée utilisée par des clients dans tout le Royaume-Uni, couvrant le backend .NET, le frontend React et la couche analytique Cube.js. Je conçois également des solutions géospatiales et analytiques qui combinent données clients, données de marché et données spatiales au sein de cartes interactives et de tableaux de bord. J'étends aujourd'hui mon activité à l'Agentic AI et à Azure AI Foundry, en développant des applications d'entreprise intelligentes à l'intersection du génie logiciel, de l'analytique et de l'IA.",
+    "ctaExplore": "Découvrir l'expérience",
+    "ctaProjects": "Voir les projets",
+    "ctaGitHub": "GitHub",
+    "ctaLinkedIn": "LinkedIn",
+    "metaTags": [
+      "Architecture d'entreprise",
+      "Plateformes de données et d'analytique",
+      "Applications intégrant l'IA",
+      "Ingénierie .NET & Cloud"
+    ]
+  },
+  "about": {
+    "heading": "À propos",
+    "paragraph1": "Je suis Senior Software Engineer, avec une solide expérience dans le développement d'applications d'entreprise, l'architecture système et les plateformes backend évolutives — principalement basées sur .NET et une infrastructure cloud, avec React et TypeScript côté frontend.",
+    "paragraph2": "Ces dernières années, cette base s'est étendue aux plateformes de données et d'analytique, y compris des systèmes géospatiaux qui combinent de vastes ensembles de données externes avec des données clients et de marché pour éclairer les décisions métier. C'est ce travail qui m'a conduit vers l'apprentissage automatique appliqué, puis, plus récemment, vers l'ingénierie moderne de l'IA : intégration de LLM, génération augmentée par récupération (RAG), le Model Context Protocol (MCP), l'appel d'outils (tool calling), les workflows agentiques et l'infrastructure LLM locale, en grande partie via Azure AI Foundry.",
+    "paragraph3": "Je considère l'IA comme une nouvelle couche de l'architecture d'entreprise, et non comme une rupture avec celle-ci — mon objectif est de concevoir des applications intégrant l'IA, orientées production, en m'appuyant sur la même rigueur d'ingénierie qu'exigent les systèmes d'entreprise à grande échelle."
+  },
+  "experience": {
+    "heading": "Expérience",
+    "jobs": [
+      {
+        "company": "KPMG, Microsoft Business Solutions",
+        "location": "Malta",
+        "role": "Senior Software Engineer",
+        "dates": "Oct. 2021 — aujourd'hui",
+        "bullets": [
+          "Contexte — KPMG conçoit et exploite des produits de niveau entreprise utilisés en interne et par des clients externes, notamment des plateformes analytiques qui transforment de vastes ensembles de données externes et opérationnelles en décisions métier.",
+          "Responsabilité — conception et développement de l'architecture produit pour KART et KPMG Dash, de la conception des API backend jusqu'aux couches analytique et interface utilisateur.",
+          "Ingénierie — microservices développés avec .NET Core et Angular, intégrés à une couche analytique qui transforme des données à grande échelle en vues exploitables, prêtes pour la décision.",
+          "Impact — moteur de l'innovation produit sur deux produits phares de KPMG, alliant ingénierie produit et aide à la décision fondée sur la donnée pour des clients grands comptes."
+        ]
+      },
+      {
+        "company": "Finesse Global",
+        "location": "UAE",
+        "role": "Senior Software Developer",
+        "dates": "Mars 2021 — Sep. 2021",
+        "bullets": [
+          "Développement d'une plateforme éducative multinationale et multilingue avec React, .NET Core et Redis.",
+          "Conception d'interfaces API robustes garantissant une intégration applicative fluide et des performances élevées."
+        ]
+      },
+      {
+        "company": "Randstad India",
+        "location": "India",
+        "role": "Senior .Net Specialist",
+        "dates": "Juil. 2020 — Fév. 2021",
+        "bullets": [
+          "Conception et développement de l'interface utilisateur du Capital Cost Estimation Tool chez Shell India.",
+          "Pilotage de l'implémentation UI/UX front-end pour une équipe internationale, avec une interface conçue entièrement à partir de zéro."
+        ]
+      },
+      {
+        "company": "Raqmiyat",
+        "location": "UAE",
+        "role": "Senior .NET Specialist",
+        "dates": "Nov. 2018 — Déc. 2019",
+        "bullets": [
+          "Développement de l'application d'assurance maladie HAAD pour le gouvernement d'Abou Dabi",
+          "Un portail d'assurance facilitant la gestion et le traitement de la souscription à l'assurance maladie, des demandes de remboursement et des processus associés pour le gouvernement d'Abou Dabi, avec intégration du paiement EDirham."
+        ]
+      },
+      {
+        "company": "Cognizant Technology Solutions",
+        "location": "UK",
+        "role": "Associate",
+        "dates": "Déc. 2014 — Août 2018",
+        "bullets": [
+          "Développement de modules applicatifs centraux et intégration de tableaux de bord Qlik Sense dans des applications web d'entreprise.",
+          "Intégration de l'API Mashup Qlik Sense avec AngularJS pour intégrer des visualisations interactives, notamment des graphiques, tableaux, filtres et conteneurs.",
+          "Conception, développement et publication de tableaux de bord, création de rapports ad hoc et mise en place de connexions de données vers des systèmes sources complexes.",
+          "Utilisation de NPrinting pour générer des rapports Excel, avec configuration de tâches serveur et de traitements planifiés pour une distribution automatisée."
+        ]
+      },
+      {
+        "company": "Various (HCL, Inatech, Midas)",
+        "location": "India",
+        "role": "Senior Software Engineer / Tech Lead",
+        "dates": "2003 — 2014",
+        "bullets": [
+          "Recueil des besoins, conception et maintenance d'applications couvrant la banque, le reporting du secteur pétrolier, les systèmes de production télécoms et les processus de support client.",
+          "Gestion du packaging logiciel, des déploiements et du support pour des systèmes d'entreprise critiques."
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "heading": "Projets",
+    "sectionIntro": "Un regard plus approfondi sur la manière dont ces projets sont construits — en commençant par la plateforme qui illustre le mieux ma façon de penser l'architecture, la donnée et l'ingénierie produit ensemble.",
+    "featuredCaseStudiesLabel": "Études de cas phares",
+    "kpmgDash": {
+      "featuredLabel": "Étude de cas phare",
+      "title": "KPMG Dash",
+      "subtitle": "Plateforme d'analyse de localisation et de consommation",
+      "problemLabel": "Le problème.",
+      "problemText": "Les entreprises orientées grand public doivent décider où ouvrir, développer ou repositionner leurs points de vente — des décisions qui dépendent de la capacité à combiner les données propres d'un client avec un large éventail de signaux de marché externes.",
+      "platformLabel": "La plateforme.",
+      "platformText": "Dash est une plateforme SaaS conçue et exploitée par KPMG, qui combine les données propres d'un client avec plus de 6B+ points de données externes pour éclairer les décisions de localisation, de produit et de coûts des entreprises grand public. Elle utilise l'apprentissage automatique pour prédire le chiffre d'affaires potentiel d'un site avec une précision de 85%+, sur plus de 14 000+ zones de vente au Royaume-Uni et plus de 200+ facteurs externes.",
+      "stats": [
+        { "value": "6B+", "label": "points de données externes" },
+        { "value": "14K+", "label": "zones de vente au Royaume-Uni" },
+        { "value": "85%+", "label": "précision de prévision du chiffre d'affaires" }
+      ],
+      "architectureLabel": "Architecture",
+      "flow": [
+        "Données externes",
+        "Traitement des données / ETL",
+        "Plateforme de données Azure",
+        "API .NET",
+        "Cube.js Analytics & ML",
+        "Application React",
+        "Décisions métier"
+      ],
+      "contributionLabel": "Ma contribution",
+      "contribution": [
+        "Architecture et développement des API backend sur la plateforme .NET Core",
+        "Développement de fonctionnalités front-end avec React/TypeScript",
+        "Intégration de la couche analytique Cube.js",
+        "Fonctionnalités analytiques géospatiales (H3)",
+        "Configuration des fonctionnalités et optimisation des performances sur l'ensemble de la plateforme",
+        "Intégration du machine learning pour la prédiction du chiffre d'affaires des sites"
+      ],
+      "tags": [".NET Core", "React", "TypeScript", "Cube.js", "Azure Cloud", "SQL Server", "Machine Learning", "XGBoost", "Géospatial / H3"]
+    },
+    "kart": {
+      "featuredLabel": "Étude de cas",
+      "title": "KART (Analytical Reporting Tool)",
+      "subtitle": "Plateforme d'audit",
+      "text": "Conçu pour les équipes d'audit de KPMG, KART est une plateforme interne permettant de structurer et de restituer les travaux d'audit analytique via une architecture microservices dédiée, plutôt que par des outils ponctuels.",
+      "detailsLabel": "Architecture et contribution",
+      "detailsText": "Responsable de la conception et du développement d'une architecture microservices avec .NET Core et Angular, adossée à SQL Server et déployée sur Azure, ainsi que de la mise en place de la base de code principale.",
+      "tags": [".NET Core", "Angular", "Microservices", "SQL Server", "Azure Cloud"]
+    },
+    "additionalExperienceLabel": "Autres expériences",
+    "additional": [
+      {
+        "title": "GEMS Education Platform",
+        "subtitle": "Plateforme multilingue",
+        "text": "Plateforme multinationale développée avec React et .NET Core ; interfaces API avec mise en cache Redis pour une intégration fluide et performante.",
+        "tags": ["React", ".NET Core", "Redis", "Web API", "Private Cloud"]
+      },
+      {
+        "title": "Capital Cost Estimation Tool",
+        "subtitle": "Interface d'outil d'entreprise",
+        "text": "Conception et développement de l'interface utilisateur, entièrement à partir de zéro, pour une équipe internationale chez Shell India, améliorant l'expérience pour des workflows complexes d'estimation des coûts.",
+        "tags": ["UI/UX", "Angular", "Front-End Design"]
+      },
+      {
+        "title": "Enterprise Qlik Dashboards",
+        "subtitle": "BI et visualisation de données",
+        "text": "Intégration de l'API Mashup Qlik Sense avec AngularJS et génération automatisée de rapports clients à grande échelle via NPrinting.",
+        "tags": ["AngularJS", "Data Analytics", "Qlik Sense", "Mashup API"]
+      },
+      {
+        "title": "Banking Regulatory Apps",
+        "subtitle": "Systèmes financiers",
+        "text": "Recueil des besoins, développement et maintenance de systèmes réglementaires bancaires critiques, avec support client et support au déploiement.",
+        "tags": ["Finance", "Software Packaging", "Maintenance"]
+      }
+    ]
+  },
+  "approach": {
+    "heading": "Approche",
+    "sectionIntro": "Un bref aperçu de ma façon de penser les systèmes, et de l'orientation que prend mon travail d'ingénierie.",
+    "howIBuildLabel": "Comment je conçois",
+    "principles": [
+      { "title": "Clean Architecture", "text": "Séparation de la logique métier et de l'infrastructure pour que les systèmes restent testables et évolutifs." },
+      { "title": "CQRS", "text": "Séparation des lectures et des écritures pour garder une logique métier et des chemins de reporting complexes mais clairs." },
+      { "title": "Microservices", "text": "Décomposition des plateformes en services déployables indépendamment, alignés sur les capacités métier." },
+      { "title": "API-First Design", "text": "Conception des contrats en amont pour permettre au frontend, aux partenaires et aux intégrations d'avancer en parallèle." },
+      { "title": "Event-Driven Systems", "text": "Découplage des services par événements, là où les workflows sont naturellement asynchrones." },
+      { "title": "Cloud-Native Services", "text": "Construction sur une infrastructure cloud managée pour la résilience, la scalabilité et la simplicité opérationnelle." },
+      { "title": "Data & Analytics Pipelines", "text": "Acheminement des données externes et opérationnelles via des pipelines ETL vers des modèles exploitables." },
+      { "title": "AI-Enabled Architecture", "text": "Extension des plateformes avec des LLM et des workflows agentiques comme une couche d'ingénierie à part entière, et non comme un ajout superficiel." }
+    ],
+    "aiSectionLabel": "IA et applications intelligentes",
+    "machineLearning": {
+      "title": "Machine Learning",
+      "tags": ["Feature Engineering", "XGBoost", "Model Evaluation", "SHAP", "Predictive Analytics"]
+    },
+    "generativeAi": {
+      "title": "IA générative",
+      "tags": ["LLM Integration", "RAG", "Model Context Protocol (MCP)", "Tool Calling", "Agentic Workflows", "Local LLM Infrastructure", "Azure AI Foundry"]
+    },
+    "note": "Mon objectif est de concevoir des applications intégrant l'IA, orientées production — et non de simplement expérimenter avec des chatbots."
+  },
+  "stack": {
+    "heading": "Stack",
+    "sectionIntro": "Organisé par domaine de compétence plutôt qu'en une longue liste — la technologie au service des plateformes présentées plus haut, pas comme argument en soi.",
+    "categories": [
+      { "title": "Architecture et Backend", "tags": [".NET Core", "C#", "ASP.NET", "Web API", "Microservices"] },
+      { "title": "Frontend", "tags": ["React", "TypeScript", "Angular", "JavaScript"] },
+      { "title": "Données et Analytique", "tags": ["SQL Server", "Cube.js", "Pandas", "Qlik Sense", "Geospatial Data", "Data Analytics", "Dashboards"] },
+      { "title": "Cloud et Infrastructure", "tags": ["Azure Cloud", "Private Cloud", "Redis", "CI/CD", "Azure DevOps"] },
+      { "title": "IA et Machine Learning", "tags": ["Python", "FastAPI", "Machine Learning", "XGBoost", "Azure AI Foundry", "LLM Integration", "Local Models (Ollama / LM Studio)", "OpenAI-compatible APIs", "Model Context Protocol (MCP)", "WebMCP", "RAG", "Function/Tool Calling", "Agentic Workflows"] },
+      { "title": "Pratiques d'ingénierie", "tags": ["GitHub Copilot", "GitHub Workflows", "OpenSpec", "Specification-Driven Development", "Playwright", "UI/UX", "AI-Assisted Development"] }
+    ]
+  },
+  "contact": {
+    "heading": "Contact",
+    "location": "Basé à Malte · ouvert aux opportunités internationales et en télétravail.",
+    "availability": "Ouvert à des opportunités en tant que Technical Architect, Senior Software Engineer, ou architecture d'entreprise intégrant l'IA. Me contacter à heyprasanna@outlook.com.",
+    "email": "heyprasanna@outlook.com",
+    "ctaEmail": "E-mail",
+    "ctaResume": "CV",
+    "ctaGitHub": "GitHub",
+    "ctaLinkedIn": "LinkedIn"
+  },
+  "footer": {
+    "copyrightName": "Prasanna Raja",
+    "location": "Malte"
+  }
+}
