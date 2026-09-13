@@ -21,6 +21,16 @@ export const App: React.FC = () => {
         if (metaDesc) {
             metaDesc.setAttribute('content', t.meta.description);
         }
+
+        // Trigger GoatCounter pageview on language change in SPA
+        const gc = (window as unknown as { goatcounter?: { count?: (opts: { path: string; title: string; event: boolean }) => void } }).goatcounter;
+        if (gc?.count) {
+            gc.count({
+                path: locale === 'en' ? '/' : `/${locale}/`,
+                title: t.meta.title,
+                event: false,
+            });
+        }
     }, [t, locale]);
 
     useEffect(() => {
