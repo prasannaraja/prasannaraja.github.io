@@ -26,16 +26,19 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
+          cache-dependency-path: './v1/my-career-twin/package-lock.json'
       - name: Install dependencies
+        working-directory: ./v1/my-career-twin
         run: npm ci
       - name: Build
+        working-directory: ./v1/my-career-twin
         run: npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist'
+          path: './v1/my-career-twin/dist'
 
   deploy:
     environment:
