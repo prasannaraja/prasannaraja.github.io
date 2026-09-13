@@ -23,7 +23,17 @@ export const App: React.FC = () => {
         }
 
         // Trigger GoatCounter pageview on language change in SPA
-        const gc = (window as unknown as { goatcounter?: { count?: (opts: { path: string; title: string; event: boolean }) => void } }).goatcounter;
+        const gc = (
+            window as unknown as {
+                goatcounter?: {
+                    count?: (opts: {
+                        path: string;
+                        title: string;
+                        event: boolean;
+                    }) => void;
+                };
+            }
+        ).goatcounter;
         if (gc?.count) {
             gc.count({
                 path: locale === 'en' ? '/' : `/${locale}/`,
