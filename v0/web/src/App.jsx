@@ -39,7 +39,7 @@ const skills = [
 
 const GITHUB_USERNAME = 'prasannaraja';
 const LINKEDIN_USERNAME = 'prasannaraja';
-const EMAIL_ADDRESS = 'heyprasanna@outlook.com';
+const EMAIL_ADDRESS = 'prasannaraja@msn.com';
 const RESUME_URL = '/prasanna-resume-senior-engineer.pdf';
 
 const projects = [

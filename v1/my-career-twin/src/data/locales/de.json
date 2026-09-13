@@ -229,8 +229,33 @@
   "contact": {
     "heading": "Kontakt",
     "location": "Ansässig auf Malta · offen für internationale und Remote-Möglichkeiten.",
-    "availability": "Offen für Positionen als Technical Architect, Senior Software Engineer sowie im Bereich KI-gestützter Enterprise-Architektur. Kontakt: heyprasanna@outlook.com.",
-    "email": "heyprasanna@outlook.com",
+    "availability": "Offen für Positionen als Technical Architect, Senior Software Engineer sowie im Bereich KI-gestützter Enterprise-Architektur. Kontakt: prasannaraja@msn.com.",
+    "email": "prasannaraja@msn.com",
+    "mobility": {
+      "title": "Arbeitserlaubnis & Mobilität",
+      "items": [
+        {
+          "label": "Standort & Präsenz",
+          "value": "Derzeit ansässig auf Malta / Europa (physisch in der EU anwesend)."
+        },
+        {
+          "label": "Arbeitserlaubnis & Visum",
+          "value": "Indischer Staatsbürger · Berechtigt/offen für EU Blue Card / Visum-Sponsoring · Inhaber eines gültigen Schengen-Visums."
+        },
+        {
+          "label": "Kündigungsfrist & Verfügbarkeit",
+          "value": "1 Monat offizielle Kündigungsfrist · Verfügbar für den Einstieg ab November 2026."
+        },
+        {
+          "label": "Umzugsbereitschaft",
+          "value": "Hoch motiviert und kurzfristig umzugsbereit nach Deutschland (Berlin, München), in die Niederlande (Amsterdam), die Schweiz oder Remote."
+        },
+        {
+          "label": "Einreise-Compliance",
+          "value": "Vollständig konform mit europäischen Einreisebestimmungen und einwandfreie Visa-Historie."
+        }
+      ]
+    },
     "ctaEmail": "E-Mail",
     "ctaResume": "Lebenslauf",
     "ctaGitHub": "GitHub",

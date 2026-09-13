@@ -649,6 +649,49 @@ h2 {
     border-bottom: 1px solid
         color-mix(in srgb, var(--accent) 40%, transparent);
 }
+.mobility-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 0 0 28px;
+    max-width: 680px;
+}
+.mobility-title {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.mobility-title svg {
+    opacity: 0.9;
+}
+.mobility-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+}
+.mobility-item {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.mobility-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: 0.01em;
+}
+.mobility-value {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+}
 .links {
     display: flex;
     flex-wrap: wrap;

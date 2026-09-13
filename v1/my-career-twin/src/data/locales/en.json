@@ -229,8 +229,33 @@
   "contact": {
     "heading": "Contact",
     "location": "Based in Malta · open to international and remote opportunities.",
-    "availability": "Open to Technical Architect, Senior Software Engineer, and AI-enabled Enterprise Architecture opportunities. Reach me at heyprasanna@outlook.com.",
-    "email": "heyprasanna@outlook.com",
+    "availability": "Open to Technical Architect, Senior Software Engineer, and AI-enabled Enterprise Architecture opportunities. Reach me at prasannaraja@msn.com.",
+    "email": "prasannaraja@msn.com",
+    "mobility": {
+      "title": "Work Authorization & Mobility",
+      "items": [
+        {
+          "label": "Current Location & Presence",
+          "value": "Currently based in Malta / Europe (physically present in EU)."
+        },
+        {
+          "label": "Visa Status & Sponsorship",
+          "value": "Indian Citizen · Open to EU Blue Card / visa sponsorship · Valid Schengen visa holder."
+        },
+        {
+          "label": "Notice Period & Availability",
+          "value": "1 month official notice period · Available to onboard from November 2026."
+        },
+        {
+          "label": "Relocation Preferences",
+          "value": "Highly motivated and ready to relocate to Germany (Berlin, Munich), Netherlands (Amsterdam), Switzerland, or Remote."
+        },
+        {
+          "label": "Travel & Compliance History",
+          "value": "Fully compliant with European immigration with an immaculate travel and visa compliance record."
+        }
+      ]
+    },
     "ctaEmail": "Email",
     "ctaResume": "Résumé",
     "ctaGitHub": "GitHub",

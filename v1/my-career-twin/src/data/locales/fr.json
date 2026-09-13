@@ -229,8 +229,33 @@
   "contact": {
     "heading": "Contact",
     "location": "Basé à Malte · ouvert aux opportunités internationales et en télétravail.",
-    "availability": "Ouvert à des opportunités en tant que Technical Architect, Senior Software Engineer, ou architecture d'entreprise intégrant l'IA. Me contacter à heyprasanna@outlook.com.",
-    "email": "heyprasanna@outlook.com",
+    "availability": "Ouvert à des opportunités en tant que Technical Architect, Senior Software Engineer, ou architecture d'entreprise intégrant l'IA. Me contacter à prasannaraja@msn.com.",
+    "email": "prasannaraja@msn.com",
+    "mobility": {
+      "title": "Autorisation de travail & Mobilité",
+      "items": [
+        {
+          "label": "Localisation & Présence",
+          "value": "Actuellement basé à Malte / Europe (physiquement présent dans l'UE)."
+        },
+        {
+          "label": "Statut de visa & Sponsoring",
+          "value": "Citoyen indien · Éligible/ouvert au sponsoring Carte Bleue Européenne (EU Blue Card) / visa · Titulaire d'un visa Schengen valide."
+        },
+        {
+          "label": "Préavis & Disponibilité",
+          "value": "Préavis officiel d'un mois · Disponible pour prise de fonction dès novembre 2026."
+        },
+        {
+          "label": "Mobilité géographique",
+          "value": "Très motivé et prêt à déménager rapidement en Allemagne (Berlin, Munich), aux Pays-Bas (Amsterdam), en Suisse, ou en télétravail."
+        },
+        {
+          "label": "Conformité d'immigration",
+          "value": "Conformité totale avec les réglementations européennes d'immigration et historique de voyage irréprochable."
+        }
+      ]
+    },
     "ctaEmail": "E-mail",
     "ctaResume": "CV",
     "ctaGitHub": "GitHub",
