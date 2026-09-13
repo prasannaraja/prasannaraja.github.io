@@ -212,7 +212,7 @@
       "title": "Generative AI",
       "tags": ["LLM Integration", "RAG", "Model Context Protocol (MCP)", "Tool Calling", "Agentic Workflows", "Local LLM Infrastructure", "Azure AI Foundry"]
     },
-    "note": "My focus is on building production-oriented, AI-enabled applications — not simply experimenting with chatbots."
+    "note": "My focus is on building production-oriented, AI-enabled applications — turning promising prototypes into reliable, real-world applications."
   },
   "stack": {
     "heading": "Stack",

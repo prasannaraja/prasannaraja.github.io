@@ -212,7 +212,7 @@
       "title": "Generative KI",
       "tags": ["LLM Integration", "RAG", "Model Context Protocol (MCP)", "Tool Calling", "Agentic Workflows", "Local LLM Infrastructure", "Azure AI Foundry"]
     },
-    "note": "Mein Fokus liegt auf produktionsorientierten, KI-gestützten Anwendungen — nicht auf einfachen Chatbot-Experimenten."
+    "note": "Mein Fokus liegt auf produktionsorientierten, KI-gestützten Anwendungen — vielversprechende Prototypen in verlässliche, praxistaugliche Anwendungen zu überführen."
   },
   "stack": {
     "heading": "Stack",

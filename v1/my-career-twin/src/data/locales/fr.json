@@ -212,7 +212,7 @@
       "title": "IA générative",
       "tags": ["LLM Integration", "RAG", "Model Context Protocol (MCP)", "Tool Calling", "Agentic Workflows", "Local LLM Infrastructure", "Azure AI Foundry"]
     },
-    "note": "Mon objectif est de concevoir des applications intégrant l'IA, orientées production — et non de simplement expérimenter avec des chatbots."
+    "note": "Mon objectif est de concevoir des applications intégrant l'IA, orientées production — transformant des prototypes prometteurs en applications fiables et concrètes."
   },
   "stack": {
     "heading": "Stack",
