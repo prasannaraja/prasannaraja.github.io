@@ -10,12 +10,16 @@ export const LanguageSwitcher: React.FC = () => {
     const handleSelect = (locale: LocaleKey, e: React.MouseEvent) => {
         e.preventDefault();
         dispatch(setLocale(locale));
+        const newPath = locale === 'en' ? '/' : `/${locale}/`;
+        if (window.location.pathname !== newPath) {
+            window.history.pushState({ locale }, '', newPath);
+        }
     };
 
     return (
         <nav className="lang-switch" aria-label="Language">
             <a
-                href="?lang=en"
+                href="/"
                 onClick={(e) => handleSelect('en', e)}
                 aria-current={currentLocale === 'en' ? 'true' : undefined}
             >
@@ -23,7 +27,7 @@ export const LanguageSwitcher: React.FC = () => {
             </a>
             <span className="sep">|</span>
             <a
-                href="?lang=de"
+                href="/de/"
                 onClick={(e) => handleSelect('de', e)}
                 aria-current={currentLocale === 'de' ? 'true' : undefined}
             >
@@ -31,7 +35,7 @@ export const LanguageSwitcher: React.FC = () => {
             </a>
             <span className="sep">|</span>
             <a
-                href="?lang=fr"
+                href="/fr/"
                 onClick={(e) => handleSelect('fr', e)}
                 aria-current={currentLocale === 'fr' ? 'true' : undefined}
             >
@@ -40,3 +44,4 @@ export const LanguageSwitcher: React.FC = () => {
         </nav>
     );
 };
+

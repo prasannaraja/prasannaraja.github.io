@@ -9,10 +9,26 @@ import { ApproachSection } from './components/sections/ApproachSection';
 import { StackSection } from './components/sections/StackSection';
 import { ContactSection } from './components/sections/ContactSection';
 import { useTranslation } from './hooks/useTranslation';
+import { useAppDispatch } from './store/hooks';
+import { setLocale, getPathLocale } from './store/slices/localeSlice';
 import './styles/main.css';
 
 export const App: React.FC = () => {
     const { t, locale } = useTranslation();
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        const handlePopState = () => {
+            const pathLoc = getPathLocale();
+            if (pathLoc && pathLoc !== locale) {
+                dispatch(setLocale(pathLoc));
+            } else if (!pathLoc && locale !== 'en') {
+                dispatch(setLocale('en'));
+            }
+        };
+        window.addEventListener('popstate', handlePopState);
+        return () => window.removeEventListener('popstate', handlePopState);
+    }, [dispatch, locale]);
 
     useEffect(() => {
         // Update document title and description based on current locale
