@@ -50,17 +50,25 @@ a {
 }
 .skip {
     position: absolute;
-    left: -999px;
-    top: 0;
+    top: -100px;
+    left: 12px;
     background: var(--ink);
     color: var(--bg);
-    padding: 10px 14px;
+    padding: 8px 14px;
     border-radius: 8px;
-    z-index: 99;
+    z-index: 9999;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: top 0.2s ease, opacity 0.2s ease;
 }
-.skip:focus {
-    left: 12px;
+.skip:focus,
+.skip:focus-visible {
     top: 12px;
+    opacity: 1;
+    pointer-events: auto;
 }
 
 /* ---------- nav ---------- */
