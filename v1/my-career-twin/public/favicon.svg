@@ -1,4 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <rect width="100" height="100" rx="24" fill="#0f172a"/>
-  <text x="50" y="66" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="44" font-weight="700" fill="#2dd4bf" text-anchor="middle" letter-spacing="-1">PR</text>
+  <rect width="100" height="100" rx="22" fill="#0f172a"/>
+  <g fill="none" stroke="#2dd4bf" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M33 34 L19 50 L33 66"/>
+    <path d="M57 26 L43 74"/>
+    <path d="M67 34 L81 50 L67 66"/>
+  </g>
 </svg>
