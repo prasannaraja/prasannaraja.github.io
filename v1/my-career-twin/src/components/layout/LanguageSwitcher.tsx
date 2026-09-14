@@ -44,4 +44,3 @@ export const LanguageSwitcher: React.FC = () => {
         </nav>
     );
 };
-

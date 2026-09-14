@@ -34,4 +34,3 @@ function spaMultiPathPlugin(): Plugin {
 export default defineConfig({
     plugins: [react(), spaMultiPathPlugin()],
 });
-
