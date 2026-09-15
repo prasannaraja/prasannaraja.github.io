@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
 import { HeroSection } from './components/sections/HeroSection';
@@ -8,6 +9,8 @@ import { ProjectsSection } from './components/sections/ProjectsSection';
 import { ApproachSection } from './components/sections/ApproachSection';
 import { StackSection } from './components/sections/StackSection';
 import { ContactSection } from './components/sections/ContactSection';
+import { DigitalTwinChat } from './components/twin/DigitalTwinChat';
+import { AnalyticsModal } from './components/twin/AnalyticsModal';
 import { useTranslation } from './hooks/useTranslation';
 import { useAppDispatch } from './store/hooks';
 import { setLocale, getPathLocale } from './store/slices/localeSlice';
@@ -16,6 +19,8 @@ import './styles/main.css';
 export const App: React.FC = () => {
     const { t, locale } = useTranslation();
     const dispatch = useAppDispatch();
+    const [isChatOpen, setIsChatOpen] = useState(false);
+    const [isAnalyticsOpen, setIsAnalyticsOpen] = useState(false);
 
     useEffect(() => {
         const handlePopState = () => {
@@ -89,8 +94,10 @@ export const App: React.FC = () => {
                 {t.nav.skipToContent || 'Skip to content'}
             </a>
             <Header />
+            <Header onOpenChat={() => setIsChatOpen(true)} onOpenAnalytics={() => setIsAnalyticsOpen(true)} />
             <main id="main">
                 <HeroSection />
+                <HeroSection onOpenChat={() => setIsChatOpen(true)} />
                 <AboutSection />
                 <ExperienceSection />
                 <ProjectsSection />
@@ -99,6 +106,32 @@ export const App: React.FC = () => {
                 <ContactSection />
             </main>
             <Footer />
+
+            {/* Floating Digital Twin Chatbot Trigger */}
+            <button
+                className="twin-launcher"
+                onClick={() => setIsChatOpen(true)}
+                title="Chat with Prasanna Raja Digital Twin"
+                aria-label="Open Digital Twin Chatbot"
+            >
+                <span className="pulse-dot"></span>
+                <span>🤖 Ask AI Digital Twin</span>
+            </button>
+
+            {/* Digital Twin Chat & Telemetry Modals */}
+            <DigitalTwinChat
+                isOpen={isChatOpen}
+                onClose={() => setIsChatOpen(false)}
+                onOpenAnalytics={() => {
+                    setIsChatOpen(false);
+                    setIsAnalyticsOpen(true);
+                }}
+            />
+
+            <AnalyticsModal
+                isOpen={isAnalyticsOpen}
+                onClose={() => setIsAnalyticsOpen(false)}
+            />
         </>
     );
 };

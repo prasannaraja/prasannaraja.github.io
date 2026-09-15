@@ -6,6 +6,12 @@ import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { setActiveSection } from '../../store/slices/uiSlice';
 
 export const Header: React.FC = () => {
+interface HeaderProps {
+  onOpenChat?: () => void;
+  onOpenAnalytics?: () => void;
+}
+
+export const Header: React.FC<HeaderProps> = ({ onOpenChat, onOpenAnalytics }) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const activeSection = useAppSelector((state) => state.ui.activeSection);
@@ -68,6 +74,31 @@ export const Header: React.FC = () => {
               </a>
             </li>
           ))}
+          {onOpenChat && (
+            <li>
+              <button
+                type="button"
+                className="link"
+                onClick={onOpenChat}
+                style={{ background: 'none', border: 'none', cursor: 'pointer', font: 'inherit', color: 'var(--accent)', fontWeight: 600 }}
+              >
+                🤖 AI Twin
+              </button>
+            </li>
+          )}
+          {onOpenAnalytics && (
+            <li>
+              <button
+                type="button"
+                className="link"
+                onClick={onOpenAnalytics}
+                style={{ background: 'none', border: 'none', cursor: 'pointer', font: 'inherit' }}
+                title="View Chatbot Telemetry"
+              >
+                📊 Analytics
+              </button>
+            </li>
+          )}
         </ul>
         <LanguageSwitcher />
         <ThemeToggle />

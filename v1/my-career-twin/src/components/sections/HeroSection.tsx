@@ -2,6 +2,11 @@ import React from 'react';
 import { useTranslation } from '../../hooks/useTranslation';
 
 export const HeroSection: React.FC = () => {
+interface HeroSectionProps {
+  onOpenChat?: () => void;
+}
+
+export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenChat }) => {
   const { t } = useTranslation();
 
   return (
@@ -30,6 +35,17 @@ export const HeroSection: React.FC = () => {
       </p>
       <div className="hero-cta">
         <a className="btn primary" href="#experience">
+        {onOpenChat && (
+          <button
+            type="button"
+            className="btn primary"
+            onClick={onOpenChat}
+            style={{ cursor: 'pointer' }}
+          >
+            🤖 Talk to AI Digital Twin
+          </button>
+        )}
+        <a className="btn" href="#experience">
           {t.hero.ctaExplore}
         </a>
         <a className="btn" href="#projects">
