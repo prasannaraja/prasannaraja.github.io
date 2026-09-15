@@ -11,7 +11,12 @@ openspec/config.yaml
 .github/prompts/*
 .github/skills/*   
 .github/workflows/copilot-setup-steps.yml
-
 .playwright-mcp/*
+
+# private files
 prasanna-portfolio-experience.json
+
+# Career workspace files
+career-workspace/*
+
 graphify-out/
