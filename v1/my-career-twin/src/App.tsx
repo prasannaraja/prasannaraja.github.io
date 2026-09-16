@@ -106,11 +106,19 @@ export const App: React.FC = () => {
             <button
                 className="twin-launcher"
                 onClick={() => setIsChatOpen(true)}
-                title="Chat with Prasanna Raja Digital Twin"
-                aria-label="Open Digital Twin Chatbot"
+                title={
+                    (t as any).twinChat?.launcherTitle ||
+                    'Chat with Prasanna Raja Digital Twin'
+                }
+                aria-label={
+                    (t as any).twinChat?.launcherAria ||
+                    'Open Digital Twin Chatbot'
+                }
             >
                 <span className="pulse-dot"></span>
-                <span>🤖 Ask My Digital Twin</span>
+                <span>
+                    🤖 {(t as any).twinChat?.launcher || 'Ask My Digital Twin'}
+                </span>
             </button>
 
             {/* Digital Twin Chat Modal */}

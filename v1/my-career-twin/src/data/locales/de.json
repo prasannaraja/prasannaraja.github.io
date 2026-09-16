@@ -146,11 +146,11 @@
         "Architektur und Entwicklung der Backend-APIs auf der .NET-Core-Plattform",
         "Entwicklung von Frontend-Funktionen mit React/TypeScript",
         "Integration der Cube.js-Analyseschicht",
-        "Geodatenbasierte (H3-) Analytics-Funktionalität",
+        "Geodatenbasierte Analytics & interaktive Kartierung (Uber H3 L10 Hex-Indexing & Mapbox GL)",
         "Feature-Konfiguration und Performance-Optimierung auf der gesamten Plattform",
         "Integration von Machine Learning zur Umsatzprognose für Standorte"
       ],
-      "tags": [".NET Core", "React", "TypeScript", "Cube.js", "Azure Cloud", "SQL Server", "Machine Learning", "XGBoost", "Geodaten / H3"]
+      "tags": [".NET Core", "React", "TypeScript", "Cube.js", "Azure Cloud", "SQL Server", "Machine Learning", "XGBoost", "Uber H3 (L10)", "Mapbox GL"]
     },
     "kart": {
       "featuredLabel": "Ausgewählte Fallstudie",
@@ -264,5 +264,16 @@
   "footer": {
     "copyrightName": "Prasanna Raja",
     "location": "Malta"
+  },
+  "twinChat": {
+    "launcher": "Meinen Digital Twin fragen",
+    "launcherTitle": "Chatte mit Prasanna Rajas Digital-Twin",
+    "launcherAria": "Digital-Twin-Chatbot öffnen",
+    "title": "Prasanna Raja KI-Digital-Twin",
+    "status": "Beruflicher & Technischer Werdegang",
+    "welcome": "Hallo! Ich bin der **KI-Digital-Twin von Prasanna Prabhakaran**.\n\nWie kann ich Ihnen heute helfen?",
+    "placeholder": "Fragen zu Architektur, RAG, GEMS Education, .NET, Führung...",
+    "groundedSources": "Verifizierte Quellen:",
+    "fallback": "Ich verfüge über mehr als 18 Jahre technische Erfahrung, spezialisiert auf Unternehmenssoftware-Architektur, .NET Core, React, Angular, Azure Cloud Services und GenAI RAG-Anwendungen. Erkunden Sie gerne meine vollständige Projekt- und Erfahrungshistorie in diesem Portfolio!"
   }
 }

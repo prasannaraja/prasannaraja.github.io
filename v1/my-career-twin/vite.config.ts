@@ -33,4 +33,12 @@ function spaMultiPathPlugin(): Plugin {
 // https://vite.dev/config/
 export default defineConfig({
     plugins: [react(), spaMultiPathPlugin()],
+    server: {
+        proxy: {
+            '/api': {
+                target: 'http://192.168.0.2:3000',
+                changeOrigin: true,
+            },
+        },
+    },
 });

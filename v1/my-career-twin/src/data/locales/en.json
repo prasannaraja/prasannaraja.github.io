@@ -146,11 +146,11 @@
         "Backend API architecture and engineering on the .NET Core platform",
         "React/TypeScript front-end feature development",
         "Cube.js analytics layer integration",
-        "Geospatial (H3) analytics functionality",
+        "Geospatial (Uber H3 L10 Hex Indexing & Mapbox GL) analytics and interactive mapping",
         "Feature configuration and performance optimisation across the platform",
         "Machine learning integration for site revenue prediction"
       ],
-      "tags": [".NET Core", "React", "TypeScript", "Cube.js", "Azure Cloud", "SQL Server", "Machine Learning", "XGBoost", "Geospatial / H3"]
+      "tags": [".NET Core", "React", "TypeScript", "Cube.js", "Azure Cloud", "SQL Server", "Machine Learning", "XGBoost", "Uber H3 (L10)", "Mapbox GL"]
     },
     "kart": {
       "featuredLabel": "Featured Case Study",
@@ -264,5 +264,16 @@
   "footer": {
     "copyrightName": "Prasanna Raja",
     "location": "Malta"
+  },
+  "twinChat": {
+    "launcher": "Ask My Digital Twin",
+    "launcherTitle": "Chat with Prasanna Raja Digital Twin",
+    "launcherAria": "Open Digital Twin Chatbot",
+    "title": "Prasanna Raja Digital Twin",
+    "status": "Career & Technical History",
+    "welcome": "Hello! I am the **AI Digital Twin of Prasanna Prabhakaran**.\n\nHow can I help you today?",
+    "placeholder": "Ask about architecture, RAG, GEMS Education, .NET, leadership...",
+    "groundedSources": "Grounded Sources:",
+    "fallback": "I have 18+ years of technical experience specializing in enterprise software architecture, .NET Core, React, Angular, Azure cloud services, and GenAI RAG applications. Feel free to explore my full project and experience history across this portfolio!"
   }
 }

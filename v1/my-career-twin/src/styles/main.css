@@ -989,7 +989,43 @@ footer .built {
     border-bottom-left-radius: 4px;
 }
 .twin-msg-text {
-    white-space: pre-wrap;
+    line-height: 1.58;
+    font-size: 13.5px;
+}
+.twin-msg-text p {
+    margin: 0 0 8px 0;
+}
+.twin-msg-text p:last-child {
+    margin-bottom: 0;
+}
+.twin-msg-text ul, .twin-msg-text ol {
+    margin: 6px 0 8px 18px;
+    padding-left: 0;
+    list-style-type: disc;
+}
+.twin-msg-text li {
+    margin-bottom: 4px;
+    line-height: 1.5;
+}
+.twin-msg-text h3 {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 10px 0 4px 0;
+    color: var(--accent);
+}
+.twin-msg-text h4 {
+    font-size: 13.5px;
+    font-weight: 600;
+    margin: 8px 0 3px 0;
+    color: var(--ink);
+}
+.twin-inline-code {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 12px;
 }
 
 .twin-sources-box {

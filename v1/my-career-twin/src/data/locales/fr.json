@@ -146,11 +146,11 @@
         "Architecture et développement des API backend sur la plateforme .NET Core",
         "Développement de fonctionnalités front-end avec React/TypeScript",
         "Intégration de la couche analytique Cube.js",
-        "Fonctionnalités analytiques géospatiales (H3)",
+        "Fonctionnalités analytiques géospatiales et cartographie interactive (Uber H3 L10 Hex Indexing & Mapbox GL)",
         "Configuration des fonctionnalités et optimisation des performances sur l'ensemble de la plateforme",
         "Intégration du machine learning pour la prédiction du chiffre d'affaires des sites"
       ],
-      "tags": [".NET Core", "React", "TypeScript", "Cube.js", "Azure Cloud", "SQL Server", "Machine Learning", "XGBoost", "Géospatial / H3"]
+      "tags": [".NET Core", "React", "TypeScript", "Cube.js", "Azure Cloud", "SQL Server", "Machine Learning", "XGBoost", "Uber H3 (L10)", "Mapbox GL"]
     },
     "kart": {
       "featuredLabel": "Étude de cas",
@@ -264,5 +264,16 @@
   "footer": {
     "copyrightName": "Prasanna Raja",
     "location": "Malte"
+  },
+  "twinChat": {
+    "launcher": "Interroger mon jumeau numérique",
+    "launcherTitle": "Discuter avec le jumeau numérique de Prasanna Raja",
+    "launcherAria": "Ouvrir le chatbot du jumeau numérique",
+    "title": "Jumeau Numérique de Prasanna Raja",
+    "status": "Historique Professionnel & Technique",
+    "welcome": "Bonjour ! Je suis le **jumeau numérique IA de Prasanna Prabhakaran**.\n\nComment puis-je vous aider aujourd'hui ?",
+    "placeholder": "Posez une question sur l'architecture, RAG, GEMS Education, .NET, le leadership...",
+    "groundedSources": "Sources vérifiées :",
+    "fallback": "Je possède plus de 18 ans d'expérience technique, spécialisé dans l'architecture logicielle d'entreprise, .NET Core, React, Angular, les services cloud Azure et les applications GenAI RAG. N'hésitez pas à explorer l'ensemble de mes projets et de mon parcours à travers ce portfolio !"
   }
 }

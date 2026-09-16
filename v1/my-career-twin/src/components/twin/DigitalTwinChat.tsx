@@ -1,4 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useSelector } from 'react-redux';
+import type { RootState } from '../../store';
+import { translations } from '../../data/locales';
+import type { LocaleKey } from '../../data/locales';
 
 interface Source {
     title: string;
@@ -18,9 +22,7 @@ interface ChatMessage {
     timestamp: string;
 }
 
-const API_BASE =
-    (import.meta as unknown as { env: { VITE_API_URL?: string } }).env
-        .VITE_API_URL || 'http://localhost:3000';
+import { API_BASE } from '../../config/api';
 
 function getOrCreateSessionId(): string {
     let sid = localStorage.getItem('career_twin_session_id');
@@ -120,11 +122,24 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
     isOpen,
     onClose,
 }) => {
+    const currentLocale =
+        (useSelector(
+            (state: RootState) => state.locale.currentLocale
+        ) as LocaleKey) || 'en';
+
+    const t =
+        translations[currentLocale] &&
+        (translations[currentLocale] as any).twinChat
+            ? (translations[currentLocale] as any).twinChat
+            : (translations['en'] as any).twinChat;
+
     const [messages, setMessages] = useState<ChatMessage[]>([
         {
             id: 'welcome',
             sender: 'twin',
-            text: 'Hello! I am the **AI Digital Twin of Prasanna Prabhakaran**.\n\nHow can I help you today?',
+            text:
+                t?.welcome ||
+                'Hello! I am the **AI Digital Twin of Prasanna Prabhakaran**.\n\nHow can I help you today?',
             timestamp: new Date().toLocaleTimeString([], {
                 hour: '2-digit',
                 minute: '2-digit',
@@ -134,6 +149,23 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
     const [input, setInput] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const messagesEndRef = useRef<HTMLDivElement>(null);
+
+    // Synchronize welcome message when locale changes (if user hasn't started a custom chat)
+    useEffect(() => {
+        if (t?.welcome) {
+            setMessages((prev) => {
+                if (prev.length === 1 && prev[0].id === 'welcome') {
+                    return [
+                        {
+                            ...prev[0],
+                            text: t.welcome,
+                        },
+                    ];
+                }
+                return prev;
+            });
+        }
+    }, [currentLocale, t?.welcome]);
 
     const scrollToBottom = () => {
         messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -175,6 +207,7 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
                 body: JSON.stringify({
                     question: q,
                     sessionId,
+                    locale: currentLocale,
                     history: messages
                         .filter((m) => m.id !== 'welcome')
                         .slice(-4)
@@ -216,7 +249,7 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
             const fallbackMsg: ChatMessage = {
                 id: 'fallback_' + Date.now(),
                 sender: 'twin',
-                text: `I've noted your question regarding: "${q}".\n\nI have 18+ years of technical experience specializing in enterprise software architecture, .NET Core, React, Angular, Azure cloud services, and GenAI RAG applications. Feel free to explore my full project and experience history across this portfolio!`,
+                text: `I've noted your question regarding: "${q}".\n\n${t?.fallback || 'I have 18+ years of technical experience specializing in enterprise software architecture, .NET Core, React, Angular, Azure cloud services, and GenAI RAG applications.'}`,
                 timestamp: new Date().toLocaleTimeString([], {
                     hour: '2-digit',
                     minute: '2-digit',
@@ -225,31 +258,6 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
             setMessages((prev) => [...prev, fallbackMsg]);
         } finally {
             setIsLoading(false);
-        }
-    };
-
-    const handleFeedback = async (
-        messageId: string,
-        queryId: string | undefined,
-        feedbackType: 'like' | 'dislike'
-    ) => {
-        // Update local UI
-        setMessages((prev) =>
-            prev.map((msg) =>
-                msg.id === messageId ? { ...msg, feedback: feedbackType } : msg
-            )
-        );
-
-        if (queryId) {
-            try {
-                await fetch(`${API_BASE}/api/twin/feedback`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ queryId, feedback: feedbackType }),
-                });
-            } catch (e) {
-                console.warn('Feedback sync error:', e);
-            }
         }
     };
 
@@ -267,11 +275,11 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
                         <div className="twin-avatar">PR</div>
                         <div>
                             <div className="twin-title">
-                                Prasanna Raja Digital Twin
+                                {t?.title || 'Prasanna Raja Digital Twin'}
                             </div>
                             <div className="twin-status">
-                                <span className="status-dot"></span> Career &
-                                Technical History
+                                <span className="status-dot"></span>{' '}
+                                {t?.status || 'Career & Technical History'}
                             </div>
                         </div>
                     </div>
@@ -302,7 +310,8 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
                                 {m.sources && m.sources.length > 0 && (
                                     <div className="twin-sources-box">
                                         <span className="sources-label">
-                                            Grounded Sources:
+                                            {t?.groundedSources ||
+                                                'Grounded Sources:'}
                                         </span>
                                         <div className="sources-chips">
                                             {m.sources.map((src, i) => (
@@ -321,7 +330,7 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
                                     </div>
                                 )}
 
-                                {/* Meta & Feedback Footer */}
+                                {/* Meta Footer */}
                                 <div className="twin-msg-meta">
                                     <span>{m.timestamp}</span>
                                     {m.category && (
@@ -329,37 +338,6 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
                                             {m.category}
                                         </span>
                                     )}
-                                    {m.sender === 'twin' &&
-                                        m.id !== 'welcome' && (
-                                            <div className="twin-feedback-btns">
-                                                <button
-                                                    className={`fb-btn ${m.feedback === 'like' ? 'active' : ''}`}
-                                                    title="Helpful response"
-                                                    onClick={() =>
-                                                        handleFeedback(
-                                                            m.id,
-                                                            m.queryId,
-                                                            'like'
-                                                        )
-                                                    }
-                                                >
-                                                    👍
-                                                </button>
-                                                <button
-                                                    className={`fb-btn ${m.feedback === 'dislike' ? 'active' : ''}`}
-                                                    title="Needs improvement / knowledge gap"
-                                                    onClick={() =>
-                                                        handleFeedback(
-                                                            m.id,
-                                                            m.queryId,
-                                                            'dislike'
-                                                        )
-                                                    }
-                                                >
-                                                    👎
-                                                </button>
-                                            </div>
-                                        )}
                                 </div>
                             </div>
                         </div>
@@ -389,7 +367,10 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
                 >
                     <input
                         type="text"
-                        placeholder="Ask about architecture, RAG, GEMS Education, .NET, leadership..."
+                        placeholder={
+                            t?.placeholder ||
+                            'Ask about my experience in Frontend, .NET, Python, RAG, LLMs, Team leadership...'
+                        }
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
                         disabled={isLoading}
