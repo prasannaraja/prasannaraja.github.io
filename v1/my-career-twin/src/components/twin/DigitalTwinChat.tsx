@@ -22,7 +22,7 @@ interface ChatMessage {
     timestamp: string;
 }
 
-import { API_BASE } from '../../config/api';
+import { API_BASE, TWIN_APP_KEY } from '../../config/api';
 
 function getOrCreateSessionId(): string {
     let sid = localStorage.getItem('career_twin_session_id');
@@ -254,6 +254,7 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
                 headers: {
                     'Content-Type': 'application/json',
                     'X-Session-ID': sessionId,
+                    'X-Twin-App-Key': TWIN_APP_KEY,
                 },
                 body: JSON.stringify({
                     question: q,
