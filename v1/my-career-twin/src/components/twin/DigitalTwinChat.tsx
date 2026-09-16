@@ -70,19 +70,29 @@ function renderFormattedMarkdown(text: string): React.ReactNode {
             flushList(index);
             if (trimmed.startsWith('### ')) {
                 elements.push(
-                    <h4 key={`h4_${index}`} className="twin-markdown-h4">
+                    <h4 key={`h4_${index}`} className="twin-markdown-h4 font-semibold text-base mt-2 mb-1 text-emerald-800 dark:text-emerald-400">
                         {trimmed.replace('### ', '')}
                     </h4>
                 );
             } else if (trimmed.startsWith('## ')) {
                 elements.push(
-                    <h3 key={`h3_${index}`} className="twin-markdown-h3">
+                    <h3 key={`h3_${index}`} className="twin-markdown-h3 font-bold text-lg mt-3 mb-1 text-emerald-900 dark:text-emerald-300">
                         {trimmed.replace('## ', '')}
                     </h3>
                 );
+            } else if (trimmed === '---' || trimmed === '***') {
+                elements.push(
+                    <hr key={`hr_${index}`} className="my-2 border-slate-200 dark:border-slate-700" />
+                );
+            } else if (trimmed.startsWith('ℹ️')) {
+                elements.push(
+                    <div key={`info_${index}`} className="p-2.5 my-1.5 rounded-lg bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/50 text-xs text-amber-900 dark:text-amber-200 flex items-start gap-2">
+                        <span>{parseInlineFormatting(trimmed)}</span>
+                    </div>
+                );
             } else if (trimmed.length > 0) {
                 elements.push(
-                    <p key={`p_${index}`} className="twin-markdown-p">
+                    <p key={`p_${index}`} className="twin-markdown-p my-1 leading-relaxed">
                         {parseInlineFormatting(trimmed)}
                     </p>
                 );
@@ -95,15 +105,18 @@ function renderFormattedMarkdown(text: string): React.ReactNode {
 }
 
 function parseInlineFormatting(text: string): React.ReactNode {
-    // Parse bold **text** and `code`
-    const parts = text.split(/(\*\*.*?\*\*|`.*?`)/g);
+    // Parse bold **text**, italics *text*, and `code`
+    const parts = text.split(/(\*\*.*?\*\*|\*[^*\n]+\*|`.*?`)/g);
     return parts.map((part, i) => {
-        if (part.startsWith('**') && part.endsWith('**')) {
-            return <strong key={i}>{part.slice(2, -2)}</strong>;
+        if (part.startsWith('**') && part.endsWith('**') && part.length > 4) {
+            return <strong key={i} className="font-semibold text-slate-900 dark:text-slate-100">{part.slice(2, -2)}</strong>;
         }
-        if (part.startsWith('`') && part.endsWith('`')) {
+        if (part.startsWith('*') && part.endsWith('*') && part.length > 2) {
+            return <em key={i} className="italic text-slate-700 dark:text-slate-300">{part.slice(1, -1)}</em>;
+        }
+        if (part.startsWith('`') && part.endsWith('`') && part.length > 2) {
             return (
-                <code key={i} className="twin-inline-code">
+                <code key={i} className="twin-inline-code px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 font-mono text-xs">
                     {part.slice(1, -1)}
                 </code>
             );
