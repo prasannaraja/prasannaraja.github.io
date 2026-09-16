@@ -7,7 +7,12 @@ export function getApiBaseUrl(): string {
     if (typeof window !== 'undefined') {
         const stored = localStorage.getItem('career_twin_api_url');
         if (stored) {
-            return stored.replace(/\/+$/, '');
+            // Clean up legacy/stale port 3000 on my-digital-twin.duckdns.org
+            const cleanUrl = stored.replace(/:3000\/?$/, '').replace(/\/+$/, '');
+            if (cleanUrl !== stored) {
+                localStorage.setItem('career_twin_api_url', cleanUrl);
+            }
+            return cleanUrl;
         }
     }
 
