@@ -847,9 +847,12 @@ footer .built {
     position: fixed;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.65);
+    height: 100dvh;
+    background: rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(8px);
     z-index: 1000;
     display: flex;
@@ -863,6 +866,7 @@ footer .built {
     width: 100%;
     max-width: 680px;
     height: 85vh;
+    height: 85dvh;
     max-height: 720px;
     background: var(--panel);
     color: var(--ink);
@@ -1138,6 +1142,7 @@ footer .built {
 /* Input Bar */
 .twin-input-bar {
     padding: 12px 16px;
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
     background: var(--panel);
     border-top: 1px solid var(--line);
     display: flex;
@@ -1401,8 +1406,25 @@ footer .built {
     .kpi-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    .twin-modal-overlay {
+        padding: 0;
+        align-items: flex-end;
+    }
     .twin-chat-window, .twin-analytics-window {
-        height: 94vh;
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
+        max-height: 100dvh;
+        border-radius: 16px 16px 0 0;
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
+    }
+    .twin-chat-header {
+        padding: 12px 16px;
+    }
+    .twin-chat-body {
+        padding: 14px 12px;
     }
 }
 
