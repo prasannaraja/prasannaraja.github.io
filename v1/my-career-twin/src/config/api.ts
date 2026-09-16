@@ -30,6 +30,6 @@ export const API_BASE = getApiBaseUrl();
 /**
  * Application Authentication Key for Digital Twin Backend Handshake
  */
-export const TWIN_APP_KEY = (
-    import.meta as unknown as { env: { VITE_TWIN_APP_KEY?: string } }
-).env.VITE_TWIN_APP_KEY || 'twin_live_sec_98f12a64c87e2b109ad5c';
+export const TWIN_APP_KEY =
+    (import.meta as unknown as { env: { VITE_TWIN_APP_KEY?: string } }).env
+        .VITE_TWIN_APP_KEY || 'twin_live_sec_98f12a64c87e2b109ad5c';
