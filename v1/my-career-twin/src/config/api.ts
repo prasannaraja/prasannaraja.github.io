@@ -3,25 +3,21 @@
  */
 
 export function getApiBaseUrl(): string {
-    // 1. Runtime override via localStorage (if set)
-    if (typeof window !== 'undefined') {
-        const stored = localStorage.getItem('career_twin_api_url');
-        if (stored) {
-            // Clean up legacy/stale port 3000 on my-digital-twin.duckdns.org
-            const cleanUrl = stored.replace(/:3000\/?$/, '').replace(/\/+$/, '');
-            if (cleanUrl !== stored) {
-                localStorage.setItem('career_twin_api_url', cleanUrl);
-            }
-            return cleanUrl;
-        }
-    }
-
-    // 2. Explicit environment variable
+    // 1. Explicit environment variable
     const envUrl = (
         import.meta as unknown as { env: { VITE_API_URL?: string } }
     ).env.VITE_API_URL;
     if (envUrl) {
         return envUrl.replace(/\/+$/, '');
+    }
+
+    // 2. Clear any stale localStorage career_twin_api_url if present
+    if (typeof window !== 'undefined') {
+        try {
+            localStorage.removeItem('career_twin_api_url');
+        } catch {
+            // ignore
+        }
     }
 
     // 3. In local development (localhost / Vite dev server), use relative path (proxied by Vite)
@@ -33,7 +29,7 @@ export function getApiBaseUrl(): string {
         return '';
     }
 
-    // 4. In production (e.g. prasannaraja.github.io), use DuckDNS HTTPS
+    // 4. In production (e.g. prasannaraja.github.io), use standard HTTPS port 443
     return 'https://my-digital-twin.duckdns.org';
 }
 
