@@ -272,7 +272,7 @@
     "title": "Prasanna Raja Digital Twin",
     "status": "Career & Technical History",
     "welcome": "Hello! I am the **AI Digital Twin of Prasanna Prabhakaran**.\n\nHow can I help you today?",
-    "placeholder": "Ask about architecture, RAG, GEMS Education, .NET, leadership...",
+    "placeholder": "Ask about my experience in Frontend, .NET, Python, RAG, LLMs, Team leadership...",
     "groundedSources": "Grounded Sources:",
     "fallback": "I have 18+ years of technical experience specializing in enterprise software architecture, .NET Core, React, Angular, Azure cloud services, and GenAI RAG applications. Feel free to explore my full project and experience history across this portfolio!"
   }
