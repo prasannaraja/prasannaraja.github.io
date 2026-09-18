@@ -3,7 +3,7 @@
 .vscode
 node_modules
 dist
-assets
+/assets
 .agents/skills/*
 
 openspec/config.yaml
