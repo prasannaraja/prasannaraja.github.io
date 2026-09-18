@@ -92,11 +92,18 @@ function renderFormattedMarkdown(text: string): React.ReactNode {
                     .map((cell) => cell.trim());
 
             const headerCells = parseRow(tableLines[0]);
-            const isSeparator = /^\|?(\s*:?-+:?\s*\|?)+$/.test(tableLines[1].trim());
-            const bodyRows = (isSeparator ? tableLines.slice(2) : tableLines.slice(1)).map(parseRow);
+            const isSeparator = /^\|?(\s*:?-+:?\s*\|?)+$/.test(
+                tableLines[1].trim()
+            );
+            const bodyRows = (
+                isSeparator ? tableLines.slice(2) : tableLines.slice(1)
+            ).map(parseRow);
 
             elements.push(
-                <div key={`tbl_wrap_${keyPrefix}`} className="twin-table-container my-3 overflow-x-auto rounded-lg border border-slate-200 dark:border-slate-800">
+                <div
+                    key={`tbl_wrap_${keyPrefix}`}
+                    className="twin-table-container my-3 overflow-x-auto rounded-lg border border-slate-200 dark:border-slate-800"
+                >
                     <table className="twin-markdown-table min-w-full text-xs text-left border-collapse">
                         <thead>
                             <tr className="bg-slate-100 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-700">
@@ -132,7 +139,10 @@ function renderFormattedMarkdown(text: string): React.ReactNode {
             );
         } else if (tableLines.length === 1) {
             elements.push(
-                <p key={`tbl_fallback_${keyPrefix}`} className="twin-markdown-p my-1.5 leading-relaxed">
+                <p
+                    key={`tbl_fallback_${keyPrefix}`}
+                    className="twin-markdown-p my-1.5 leading-relaxed"
+                >
                     {parseInlineFormatting(tableLines[0])}
                 </p>
             );
@@ -144,7 +154,11 @@ function renderFormattedMarkdown(text: string): React.ReactNode {
         const trimmed = line.trim();
 
         // 0. Check for Markdown Table Rows (| col 1 | col 2 |)
-        if (trimmed.startsWith('|') && trimmed.endsWith('|') && trimmed.length > 1) {
+        if (
+            trimmed.startsWith('|') &&
+            trimmed.endsWith('|') &&
+            trimmed.length > 1
+        ) {
             flushList(index);
             tableLines.push(trimmed);
             return;
@@ -372,7 +386,20 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
     ]);
     const [input, setInput] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+    const [copiedMsgId, setCopiedMsgId] = useState<string | null>(null);
     const messagesEndRef = useRef<HTMLDivElement>(null);
+
+    const handleCopy = async (id: string, text: string) => {
+        try {
+            await navigator.clipboard.writeText(text);
+            setCopiedMsgId(id);
+            setTimeout(() => {
+                setCopiedMsgId((prev) => (prev === id ? null : prev));
+            }, 2000);
+        } catch (err) {
+            console.error('Failed to copy text: ', err);
+        }
+    };
 
     // Synchronize welcome message when locale changes (if user hasn't started a custom chat)
     useEffect(() => {
@@ -596,12 +623,37 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
 
                                 {/* Meta Footer */}
                                 <div className="twin-msg-meta">
-                                    <span>{m.timestamp}</span>
-                                    {m.category && (
-                                        <span className="category-tag">
-                                            {m.category}
-                                        </span>
-                                    )}
+                                    <div className="flex items-center gap-2">
+                                        <span>{m.timestamp}</span>
+                                        {m.category && (
+                                            <span className="category-tag">
+                                                {m.category}
+                                            </span>
+                                        )}
+                                    </div>
+                                    <button
+                                        type="button"
+                                        onClick={() => handleCopy(m.id, m.text)}
+                                        className="twin-copy-btn flex items-center gap-1 px-1.5 py-0.5 rounded text-[11px] hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors"
+                                        title={copiedMsgId === m.id ? 'Copied to clipboard!' : 'Copy markdown'}
+                                        aria-label="Copy markdown"
+                                    >
+                                        {copiedMsgId === m.id ? (
+                                            <>
+                                                <svg className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                                </svg>
+                                                <span className="text-emerald-600 dark:text-emerald-400 text-[10px] font-medium">Copied</span>
+                                            </>
+                                        ) : (
+                                            <>
+                                                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                                </svg>
+                                                <span className="text-[10px]">Copy</span>
+                                            </>
+                                        )}
+                                    </button>
                                 </div>
                             </div>
                         </div>

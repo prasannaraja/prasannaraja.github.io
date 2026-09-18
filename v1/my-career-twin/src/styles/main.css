@@ -1132,6 +1132,22 @@ footer .built {
     border-radius: 4px;
     font-weight: 500;
 }
+.twin-copy-btn {
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 11px;
+    padding: 2px 6px;
+    color: var(--muted);
+    transition: all 0.15s ease;
+}
+.twin-copy-btn:hover {
+    background: var(--chip);
+    color: var(--ink);
+    border-color: var(--accent);
+}
+
 .twin-feedback-btns {
     display: flex;
     gap: 4px;
