@@ -640,19 +640,19 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
                                             </span>
                                         )}
                                     </div>
-                                    <button
-                                        type="button"
-                                        onClick={() => handleCopy(m.id, m.text)}
-                                        className="twin-copy-btn flex items-center gap-1 px-1.5 py-0.5 rounded text-[11px] hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors"
-                                        title={
-                                            copiedMsgId === m.id
-                                                ? 'Copied to clipboard!'
-                                                : 'Copy markdown'
-                                        }
-                                        aria-label="Copy markdown"
-                                    >
-                                        {copiedMsgId === m.id ? (
-                                            <>
+                                    {m.sender === 'twin' && (
+                                        <button
+                                            type="button"
+                                            onClick={() => handleCopy(m.id, m.text)}
+                                            className="twin-copy-btn flex items-center justify-center p-1 rounded hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors"
+                                            title={
+                                                copiedMsgId === m.id
+                                                    ? 'Copied to clipboard!'
+                                                    : 'Copy markdown'
+                                            }
+                                            aria-label="Copy markdown"
+                                        >
+                                            {copiedMsgId === m.id ? (
                                                 <svg
                                                     className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400"
                                                     fill="none"
@@ -666,12 +666,7 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
                                                         d="M5 13l4 4L19 7"
                                                     />
                                                 </svg>
-                                                <span className="text-emerald-600 dark:text-emerald-400 text-[10px] font-medium">
-                                                    Copied
-                                                </span>
-                                            </>
-                                        ) : (
-                                            <>
+                                            ) : (
                                                 <svg
                                                     className="w-3.5 h-3.5"
                                                     fill="none"
@@ -685,12 +680,9 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
                                                         d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
                                                     />
                                                 </svg>
-                                                <span className="text-[10px]">
-                                                    Copy
-                                                </span>
-                                            </>
-                                        )}
-                                    </button>
+                                            )}
+                                        </button>
+                                    )}
                                 </div>
                             </div>
                         </div>
@@ -732,7 +724,7 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
                             </span>
                         </div>
                     )}
-                    
+
                     <div className="twin-input-pill">
                         <textarea
                             ref={textareaRef}
@@ -771,8 +763,18 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
                                     title="Add Job Description / Context"
                                     aria-label="Add Context"
                                 >
-                                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                                    <svg
+                                        className="w-4 h-4"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M12 4v16m8-8H4"
+                                        />
                                     </svg>
                                 </button>
 
@@ -791,8 +793,18 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
                                     title="Search web or analyze URL"
                                     aria-label="Search Web"
                                 >
-                                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                                    <svg
+                                        className="w-3.5 h-3.5"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+                                        />
                                     </svg>
                                     <span>Search</span>
                                 </button>
@@ -801,15 +813,27 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
                                 <button
                                     type="button"
                                     onClick={() => {
-                                        setInput('Can you provide a structured summary of Prasanna\'s 18+ years career timeline across Malta, UAE, UK, and India?');
+                                        setInput(
+                                            "Can you provide a structured summary of Prasanna's 18+ years career timeline across Malta, UAE, UK, and India?"
+                                        );
                                         textareaRef.current?.focus();
                                     }}
                                     className="twin-toolbar-circle-btn"
                                     title="Quick Career Summary prompt"
                                     aria-label="More options"
                                 >
-                                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z" />
+                                    <svg
+                                        className="w-4 h-4"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"
+                                        />
                                     </svg>
                                 </button>
                             </div>
@@ -822,8 +846,18 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
                                 className="twin-pill-submit-btn"
                                 aria-label="Send message"
                             >
-                                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                                <svg
+                                    className="w-4 h-4"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2.5}
+                                        d="M5 10l7-7m0 0l7 7m-7-7v18"
+                                    />
                                 </svg>
                             </button>
                         </div>
