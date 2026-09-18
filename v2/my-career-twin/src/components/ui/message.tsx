@@ -1,11 +1,21 @@
 import React, { useState } from 'react';
-import { Check, Copy, ThumbsUp, ThumbsDown, Bot, User } from 'lucide-react';
+import {
+    Check,
+    Copy,
+    ThumbsUp,
+    ThumbsDown,
+    RotateCw,
+    Bot,
+    User,
+} from 'lucide-react';
 import { cn } from '../../lib/utils';
 
 export interface MessageActionsProps {
     text: string;
     feedback?: 'like' | 'dislike' | null;
     onFeedback?: (type: 'like' | 'dislike') => void;
+    onRetry?: () => void;
+    isRetrying?: boolean;
     className?: string;
 }
 
@@ -13,6 +23,8 @@ export const MessageActions: React.FC<MessageActionsProps> = ({
     text,
     feedback,
     onFeedback,
+    onRetry,
+    isRetrying,
     className,
 }) => {
     const [copied, setCopied] = useState(false);
@@ -38,6 +50,22 @@ export const MessageActions: React.FC<MessageActionsProps> = ({
             >
                 {copied ? <Check /> : <Copy />}
             </button>
+
+            {onRetry && (
+                <button
+                    type="button"
+                    onClick={onRetry}
+                    disabled={isRetrying}
+                    className={cn(
+                        'prompt-kit-action-icon-btn',
+                        isRetrying && 'retrying'
+                    )}
+                    title="Retry query with Gemini"
+                    aria-label="Retry query"
+                >
+                    <RotateCw className={cn(isRetrying && 'animate-spin')} />
+                </button>
+            )}
 
             {onFeedback && (
                 <>

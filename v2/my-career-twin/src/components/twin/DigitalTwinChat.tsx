@@ -19,7 +19,15 @@ import {
     type PromptSuggestionItem,
 } from '../ui/prompt-suggestions';
 import { Message, MessageActions } from '../ui/message';
-import { Plus, Globe, MoreHorizontal } from 'lucide-react';
+import {
+    Plus,
+    Globe,
+    MoreHorizontal,
+    Zap,
+    RotateCw,
+    Loader2,
+} from 'lucide-react';
+import { cn } from '../../lib/utils';
 
 interface ChatMessage {
     id: string;
@@ -31,6 +39,8 @@ interface ChatMessage {
     category?: string;
     feedback?: 'like' | 'dislike' | null;
     timestamp: string;
+    isFallback?: boolean;
+    promptQuery?: string;
 }
 
 function getOrCreateSessionId(): string {
@@ -446,6 +456,7 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
     ]);
     const [input, setInput] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+    const [retryingId, setRetryingId] = useState<string | null>(null);
     const messagesEndRef = useRef<HTMLDivElement>(null);
     const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -483,24 +494,31 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
     }, [messages, isOpen]);
 
     const handleFeedback = async (
-        msgId: string,
+        messageId: string,
         feedbackType: 'like' | 'dislike'
     ) => {
-        const msg = messages.find((m) => m.id === msgId);
         setMessages((prev) =>
-            prev.map((m) =>
-                m.id === msgId ? { ...m, feedback: feedbackType } : m
+            prev.map((msg) =>
+                msg.id === messageId
+                    ? {
+                          ...msg,
+                          feedback:
+                              msg.feedback === feedbackType
+                                  ? null
+                                  : feedbackType,
+                      }
+                    : msg
             )
         );
 
-        if (!msg?.queryId) return;
+        const msg = messages.find((m) => m.id === messageId);
+        if (!msg || !msg.queryId) return;
 
         try {
             await fetch(`${API_BASE}/api/twin/feedback`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'X-Session-ID': getOrCreateSessionId(),
                     'X-Twin-App-Key': TWIN_APP_KEY,
                 },
                 body: JSON.stringify({
@@ -513,39 +531,46 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
         }
     };
 
-    const handleSend = async (questionText?: string) => {
+    const handleSend = async (
+        questionText?: string,
+        retryTargetId?: string
+    ) => {
         const q = (questionText || input).trim();
-        if (!q || isLoading) return;
+        if (!q || (isLoading && !retryTargetId)) return;
 
-        const userMsg: ChatMessage = {
-            id: 'msg_' + Date.now(),
-            sender: 'user',
-            text: q,
-            timestamp: new Date().toLocaleTimeString([], {
-                hour: '2-digit',
-                minute: '2-digit',
-            }),
-        };
-
-        // Client-side length validation
-        if (q.length > 4000) {
-            const warnMsg: ChatMessage = {
-                id: 'warn_' + Date.now(),
-                sender: 'twin',
-                text: `⚠️ **Query Length Notice**: Your inquiry has ${q.length.toLocaleString()} characters, which exceeds the 4,000 character limit. Please shorten or summarize the key points and try again.`,
-                category: 'Validation Guardrail',
+        if (retryTargetId) {
+            setRetryingId(retryTargetId);
+        } else {
+            const userMsg: ChatMessage = {
+                id: 'msg_' + Date.now(),
+                sender: 'user',
+                text: q,
                 timestamp: new Date().toLocaleTimeString([], {
                     hour: '2-digit',
                     minute: '2-digit',
                 }),
             };
-            setMessages((prev) => [...prev, warnMsg]);
-            return;
-        }
 
-        setMessages((prev) => [...prev, userMsg]);
-        setInput('');
-        setIsLoading(true);
+            // Client-side length validation
+            if (q.length > 4000) {
+                const warnMsg: ChatMessage = {
+                    id: 'warn_' + Date.now(),
+                    sender: 'twin',
+                    text: `⚠️ **Query Length Notice**: Your inquiry has ${q.length.toLocaleString()} characters, which exceeds the 4,000 character limit. Please shorten or summarize the key points and try again.`,
+                    category: 'Validation Guardrail',
+                    timestamp: new Date().toLocaleTimeString([], {
+                        hour: '2-digit',
+                        minute: '2-digit',
+                    }),
+                };
+                setMessages((prev) => [...prev, warnMsg]);
+                return;
+            }
+
+            setMessages((prev) => [...prev, userMsg]);
+            setInput('');
+            setIsLoading(true);
+        }
 
         const sessionId = getOrCreateSessionId();
 
@@ -562,7 +587,11 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
                     sessionId,
                     locale: currentLocale,
                     history: messages
-                        .filter((m) => m.id !== 'welcome')
+                        .filter(
+                            (m) =>
+                                m.id !== 'welcome' &&
+                                (!retryTargetId || m.id !== retryTargetId)
+                        )
                         .slice(-4)
                         .map((m) => ({
                             role: m.sender === 'user' ? 'user' : 'model',
@@ -583,6 +612,7 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
                     sender: 'twin',
                     text: `⚠️ **${errCategory === 'TOO_LONG' ? 'Query Length Limit' : 'Notice'}**: ${errMsg}`,
                     category: errCategory,
+                    promptQuery: q,
                     timestamp: new Date().toLocaleTimeString([], {
                         hour: '2-digit',
                         minute: '2-digit',
@@ -593,40 +623,75 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
             }
 
             const data = await response.json();
+            const isFallback =
+                data.isFallback === true ||
+                data.model === 'grounded-vector-synthesis' ||
+                (typeof data.answer === 'string' &&
+                    (data.answer.includes(
+                        'temporarily experiencing high traffic'
+                    ) ||
+                        data.answer.includes('stark ausgelastet') ||
+                        data.answer.includes('très sollicité')));
+
+            let cleanAnswer = data.answer;
+            if (isFallback && typeof cleanAnswer === 'string') {
+                cleanAnswer = cleanAnswer
+                    .replace(/ℹ️\s*\*?Note:[^\n]+\*?/gi, '')
+                    .replace(/ℹ️\s*\*?Hinweis:[^\n]+\*?/gi, '')
+                    .replace(/^---\s*\n/gm, '')
+                    .trim();
+            }
 
             const twinMsg: ChatMessage = {
-                id: 'twin_' + Date.now(),
+                id: retryTargetId || 'twin_' + Date.now(),
                 sender: 'twin',
-                text: data.answer,
+                text: cleanAnswer,
                 sources: data.sources,
                 model: data.model,
                 queryId: data.queryId,
                 category: data.category,
                 feedback: null,
+                isFallback,
+                promptQuery: q,
                 timestamp: new Date().toLocaleTimeString([], {
                     hour: '2-digit',
                     minute: '2-digit',
                 }),
             };
 
-            setMessages((prev) => [...prev, twinMsg]);
+            if (retryTargetId) {
+                setMessages((prev) =>
+                    prev.map((m) => (m.id === retryTargetId ? twinMsg : m))
+                );
+            } else {
+                setMessages((prev) => [...prev, twinMsg]);
+            }
         } catch (err) {
             console.warn(
                 'Backend API offline or unreachable, providing local knowledge fallback:',
                 err
             );
             const fallbackMsg: ChatMessage = {
-                id: 'fallback_' + Date.now(),
+                id: retryTargetId || 'fallback_' + Date.now(),
                 sender: 'twin',
-                text: `I've noted your question regarding: "${q}".\n\n${t?.fallback || 'I have 18+ years of technical experience specializing in enterprise software architecture, .NET Core, React, Angular, Azure cloud services, and GenAI RAG applications.'}`,
+                text: `${t?.fallback || 'I have 18+ years of technical experience specializing in enterprise software architecture, .NET Core, React, Angular, Azure cloud services, and GenAI RAG applications.'}`,
+                isFallback: true,
+                promptQuery: q,
                 timestamp: new Date().toLocaleTimeString([], {
                     hour: '2-digit',
                     minute: '2-digit',
                 }),
             };
-            setMessages((prev) => [...prev, fallbackMsg]);
+            if (retryTargetId) {
+                setMessages((prev) =>
+                    prev.map((m) => (m.id === retryTargetId ? fallbackMsg : m))
+                );
+            } else {
+                setMessages((prev) => [...prev, fallbackMsg]);
+            }
         } finally {
             setIsLoading(false);
+            setRetryingId(null);
         }
     };
 
@@ -689,28 +754,110 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
                                         onFeedback={(type) =>
                                             handleFeedback(m.id, type)
                                         }
+                                        onRetry={
+                                            m.promptQuery
+                                                ? () =>
+                                                      handleSend(
+                                                          m.promptQuery,
+                                                          m.id
+                                                      )
+                                                : undefined
+                                        }
+                                        isRetrying={retryingId === m.id}
                                     />
                                 ) : undefined
                             }
                         >
-                            {/* Reasoning Accordion for RAG Sources */}
-                            {m.sender === 'twin' &&
-                                m.sources &&
-                                m.sources.length > 0 && (
-                                    <Reasoning
-                                        sources={m.sources}
-                                        model={m.model}
-                                        category={m.category}
-                                    />
-                                )}
+                            {retryingId === m.id ? (
+                                <div className="prompt-kit-retrying-card">
+                                    <div className="prompt-kit-retrying-header">
+                                        <Loader2 className="w-4 h-4 animate-spin text-accent" />
+                                        <span className="prompt-kit-retrying-title">
+                                            Retrying with Gemini...
+                                        </span>
+                                    </div>
+                                    <p className="prompt-kit-retrying-desc">
+                                        Reconnecting to Gemini LLM reasoning
+                                        engine to synthesize a grounded persona
+                                        response.
+                                    </p>
+                                    <div
+                                        className="typing-indicator"
+                                        style={{ marginTop: '6px' }}
+                                    >
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                            ) : (
+                                <>
+                                    {/* High-Traffic Fallback Notice Banner */}
+                                    {m.sender === 'twin' && m.isFallback && (
+                                        <div className="prompt-kit-fallback-banner">
+                                            <div className="prompt-kit-fallback-header">
+                                                <Zap className="w-3.5 h-3.5 text-amber-500" />
+                                                <span className="prompt-kit-fallback-title">
+                                                    High LLM Traffic Notice
+                                                </span>
+                                            </div>
+                                            <p className="prompt-kit-fallback-desc">
+                                                The Gemini reasoning engine is
+                                                temporarily busy. Displaying
+                                                verified ground truth facts
+                                                directly from the vector
+                                                knowledge base.
+                                            </p>
+                                            <button
+                                                type="button"
+                                                className="prompt-kit-retry-btn"
+                                                onClick={() =>
+                                                    handleSend(
+                                                        m.promptQuery,
+                                                        m.id
+                                                    )
+                                                }
+                                                disabled={
+                                                    isLoading ||
+                                                    retryingId === m.id
+                                                }
+                                            >
+                                                <RotateCw
+                                                    className={cn(
+                                                        'w-3.5 h-3.5',
+                                                        retryingId === m.id &&
+                                                            'animate-spin'
+                                                    )}
+                                                />
+                                                <span>
+                                                    {retryingId === m.id
+                                                        ? 'Retrying with Gemini...'
+                                                        : 'Retry with Gemini'}
+                                                </span>
+                                            </button>
+                                        </div>
+                                    )}
 
-                            <div className="twin-msg-text">
-                                {renderFormattedMarkdown(m.text)}
-                            </div>
+                                    {/* Reasoning Accordion for RAG Sources */}
+                                    {m.sender === 'twin' &&
+                                        m.sources &&
+                                        m.sources.length > 0 && (
+                                            <Reasoning
+                                                sources={m.sources}
+                                                model={m.model}
+                                                category={m.category}
+                                            />
+                                        )}
+
+                                    <div className="twin-msg-text">
+                                        {renderFormattedMarkdown(m.text)}
+                                    </div>
+                                </>
+                            )}
                         </Message>
                     ))}
 
-                    {isLoading && (
+                    {isLoading && !retryingId && (
                         <div className="twin-msg-wrapper twin">
                             <div className="twin-msg-bubble loading">
                                 <div className="typing-indicator">
