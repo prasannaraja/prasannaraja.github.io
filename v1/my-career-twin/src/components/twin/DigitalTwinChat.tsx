@@ -564,11 +564,8 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
     if (!isOpen) return null;
 
     return (
-        <div className="twin-modal-overlay" onClick={onClose}>
-            <div
-                className="twin-chat-window"
-                onClick={(e) => e.stopPropagation()}
-            >
+        <div className="twin-modal-overlay">
+            <div className="twin-chat-window">
                 {/* Header */}
                 <div className="twin-chat-header">
                     <div className="twin-avatar-info">
@@ -643,7 +640,9 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
                                     {m.sender === 'twin' && (
                                         <button
                                             type="button"
-                                            onClick={() => handleCopy(m.id, m.text)}
+                                            onClick={() =>
+                                                handleCopy(m.id, m.text)
+                                            }
                                             className="twin-copy-btn flex items-center justify-center p-1 rounded hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors"
                                             title={
                                                 copiedMsgId === m.id
