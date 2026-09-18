@@ -274,6 +274,6 @@
     "welcome": "Hello! I am the **AI Digital Twin of Prasanna Prabhakaran**.\n\nHow can I help you today?",
     "placeholder": "Ask about my experience in Frontend, .NET, Python, RAG, LLMs, Team leadership...",
     "groundedSources": "Grounded Sources:",
-    "fallback": "I have 18+ years of technical experience specializing in enterprise software architecture, .NET Core, React, Angular, Azure cloud services, and GenAI RAG applications. Feel free to explore my full project and experience history across this portfolio!"
+    "fallback": "I have 15+ years of post-degree enterprise software engineering & architecture experience (alongside 3+ years of pre-degree systems foundation, totaling 18+ years of technical experience) specializing in .NET Core, React, Angular, Azure cloud services, and GenAI RAG applications. Feel free to explore my full project and experience history across this portfolio!"
   }
 }
