@@ -30,23 +30,45 @@ export const Header: React.FC = () => {
             'stack',
             'contact',
         ];
-        const sectionElements = sectionIds
-            .map((id) => document.getElementById(id))
-            .filter((el): el is HTMLElement => el !== null);
 
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        dispatch(setActiveSection(entry.target.id));
+        const handleScroll = () => {
+            const scrollY = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+
+            // When near the top, always select Home ('top')
+            if (scrollY < 120) {
+                dispatch(setActiveSection('top'));
+                return;
+            }
+
+            // When at or near the bottom of the page, always select 'contact'
+            if (windowHeight + scrollY >= documentHeight - 80) {
+                dispatch(setActiveSection('contact'));
+                return;
+            }
+
+            // Calculate active section based on header offset
+            const headerOffset = 140;
+            let current = 'top';
+
+            for (const id of sectionIds) {
+                const el = document.getElementById(id);
+                if (el) {
+                    const top = el.getBoundingClientRect().top;
+                    if (top <= headerOffset) {
+                        current = id;
                     }
-                });
-            },
-            { rootMargin: '-45% 0px -50% 0px' }
-        );
+                }
+            }
 
-        sectionElements.forEach((el) => observer.observe(el));
-        return () => observer.disconnect();
+            dispatch(setActiveSection(current));
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        handleScroll();
+
+        return () => window.removeEventListener('scroll', handleScroll);
     }, [dispatch]);
 
     const navItems = [
@@ -62,7 +84,11 @@ export const Header: React.FC = () => {
     return (
         <header id="site-header" className={isScrolled ? 'scrolled' : ''}>
             <nav className="nav" aria-label={t.nav.ariaLabel || 'Primary'}>
-                <a className="brand" href="#top">
+                <a
+                    className="brand"
+                    href="#top"
+                    onClick={() => dispatch(setActiveSection('top'))}
+                >
                     {t.nav.brand || 'Prasanna Raja'}
                 </a>
                 <ul>
@@ -71,6 +97,9 @@ export const Header: React.FC = () => {
                             <a
                                 className={`link ${activeSection === item.id ? 'active' : ''}`}
                                 href={`#${item.id}`}
+                                onClick={() =>
+                                    dispatch(setActiveSection(item.id))
+                                }
                             >
                                 {item.label}
                             </a>

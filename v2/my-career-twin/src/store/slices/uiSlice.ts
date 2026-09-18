@@ -7,7 +7,7 @@ interface UiState {
 }
 
 const initialState: UiState = {
-  activeSection: 'about',
+  activeSection: 'top',
   mobileMenuOpen: false,
 };
 
