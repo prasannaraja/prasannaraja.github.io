@@ -1002,14 +1002,25 @@ footer .built {
 .twin-msg-text p:last-child {
     margin-bottom: 0;
 }
-.twin-msg-text ul, .twin-msg-text ol {
+.twin-msg-text ul {
     margin: 6px 0 8px 18px;
     padding-left: 0;
     list-style-type: disc;
 }
+.twin-msg-text ol {
+    margin: 6px 0 8px 18px;
+    padding-left: 0;
+    list-style-type: decimal;
+}
 .twin-msg-text li {
     margin-bottom: 4px;
     line-height: 1.5;
+}
+.twin-msg-text h2 {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 12px 0 4px 0;
+    color: var(--accent);
 }
 .twin-msg-text h3 {
     font-size: 14px;
@@ -1022,6 +1033,20 @@ footer .built {
     font-weight: 600;
     margin: 8px 0 3px 0;
     color: var(--ink);
+}
+.twin-msg-text h5 {
+    font-size: 13px;
+    font-weight: 600;
+    margin: 6px 0 2px 0;
+    color: var(--ink);
+}
+.twin-msg-text a {
+    color: var(--accent);
+    text-decoration: underline;
+    font-weight: 500;
+}
+.twin-msg-text a:hover {
+    opacity: 0.85;
 }
 .twin-inline-code {
     background: var(--panel);

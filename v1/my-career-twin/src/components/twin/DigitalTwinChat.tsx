@@ -38,80 +38,135 @@ function getOrCreateSessionId(): string {
 }
 
 /**
- * Basic markdown parser to render bold text, bullet lists, and paragraphs cleanly without heavy dependencies.
+ * Robust markdown parser to render headings, bold text, bullet/numbered lists, links, and paragraphs cleanly.
  */
 function renderFormattedMarkdown(text: string): React.ReactNode {
     const lines = text.split('\n');
     const elements: React.ReactNode[] = [];
-    let listItems: string[] = [];
+    let listItems: { type: 'ul' | 'ol'; text: string }[] = [];
 
     const flushList = (keyPrefix: number) => {
         if (listItems.length > 0) {
-            elements.push(
-                <ul key={`ul_${keyPrefix}`} className="twin-markdown-list">
-                    {listItems.map((item, idx) => (
-                        <li key={idx}>{parseInlineFormatting(item)}</li>
-                    ))}
-                </ul>
-            );
+            const listType = listItems[0].type;
+            if (listType === 'ol') {
+                elements.push(
+                    <ol key={`ol_${keyPrefix}`} className="twin-markdown-ol list-decimal list-inside my-2 space-y-1">
+                        {listItems.map((item, idx) => (
+                            <li key={idx} className="leading-relaxed">
+                                {parseInlineFormatting(item.text)}
+                            </li>
+                        ))}
+                    </ol>
+                );
+            } else {
+                elements.push(
+                    <ul key={`ul_${keyPrefix}`} className="twin-markdown-list list-disc list-inside my-2 space-y-1">
+                        {listItems.map((item, idx) => (
+                            <li key={idx} className="leading-relaxed">
+                                {parseInlineFormatting(item.text)}
+                            </li>
+                        ))}
+                    </ul>
+                );
+            }
             listItems = [];
         }
     };
 
     lines.forEach((line, index) => {
         const trimmed = line.trim();
-        if (
-            trimmed.startsWith('- ') ||
-            trimmed.startsWith('* ') ||
-            trimmed.startsWith('• ')
-        ) {
-            listItems.push(trimmed.replace(/^[-*•]\s+/, ''));
-        } else {
-            flushList(index);
-            if (trimmed.startsWith('### ')) {
-                elements.push(
-                    <h4
-                        key={`h4_${index}`}
-                        className="twin-markdown-h4 font-semibold text-base mt-2 mb-1 text-emerald-800 dark:text-emerald-400"
-                    >
-                        {trimmed.replace('### ', '')}
-                    </h4>
-                );
-            } else if (trimmed.startsWith('## ')) {
-                elements.push(
-                    <h3
-                        key={`h3_${index}`}
-                        className="twin-markdown-h3 font-bold text-lg mt-3 mb-1 text-emerald-900 dark:text-emerald-300"
-                    >
-                        {trimmed.replace('## ', '')}
-                    </h3>
-                );
-            } else if (trimmed === '---' || trimmed === '***') {
-                elements.push(
-                    <hr
-                        key={`hr_${index}`}
-                        className="my-2 border-slate-200 dark:border-slate-700"
-                    />
-                );
-            } else if (trimmed.startsWith('ℹ️')) {
-                elements.push(
-                    <div
-                        key={`info_${index}`}
-                        className="p-2.5 my-1.5 rounded-lg bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/50 text-xs text-amber-900 dark:text-amber-200 flex items-start gap-2"
-                    >
-                        <span>{parseInlineFormatting(trimmed)}</span>
-                    </div>
-                );
-            } else if (trimmed.length > 0) {
-                elements.push(
-                    <p
-                        key={`p_${index}`}
-                        className="twin-markdown-p my-1 leading-relaxed"
-                    >
-                        {parseInlineFormatting(trimmed)}
-                    </p>
-                );
+
+        // 1. Check for unordered list item (- , * , • )
+        if (/^[-*•]\s+/.test(trimmed)) {
+            if (listItems.length > 0 && listItems[0].type !== 'ul') {
+                flushList(index);
             }
+            listItems.push({ type: 'ul', text: trimmed.replace(/^[-*•]\s+/, '') });
+            return;
+        }
+
+        // 2. Check for ordered list item (1. , 2. , etc.)
+        if (/^\d+\.\s+/.test(trimmed)) {
+            if (listItems.length > 0 && listItems[0].type !== 'ol') {
+                flushList(index);
+            }
+            listItems.push({ type: 'ol', text: trimmed.replace(/^\d+\.\s+/, '') });
+            return;
+        }
+
+        // Not a list item: flush any pending list
+        flushList(index);
+
+        if (!trimmed) {
+            return;
+        }
+
+        // 3. Headings
+        if (trimmed.startsWith('#### ')) {
+            const headerContent = trimmed.replace(/^####\s+/, '').replace(/^\*\*|\*\*$/g, '');
+            elements.push(
+                <h5
+                    key={`h5_${index}`}
+                    className="twin-markdown-h5 font-semibold text-sm mt-2.5 mb-1 text-slate-800 dark:text-slate-200"
+                >
+                    {parseInlineFormatting(headerContent)}
+                </h5>
+            );
+        } else if (trimmed.startsWith('### ')) {
+            const headerContent = trimmed.replace(/^###\s+/, '').replace(/^\*\*|\*\*$/g, '');
+            elements.push(
+                <h4
+                    key={`h4_${index}`}
+                    className="twin-markdown-h4 font-bold text-base mt-3 mb-1 text-emerald-800 dark:text-emerald-400"
+                >
+                    {parseInlineFormatting(headerContent)}
+                </h4>
+            );
+        } else if (trimmed.startsWith('## ')) {
+            const headerContent = trimmed.replace(/^##\s+/, '').replace(/^\*\*|\*\*$/g, '');
+            elements.push(
+                <h3
+                    key={`h3_${index}`}
+                    className="twin-markdown-h3 font-bold text-lg mt-3.5 mb-1.5 text-emerald-900 dark:text-emerald-300"
+                >
+                    {parseInlineFormatting(headerContent)}
+                </h3>
+            );
+        } else if (trimmed.startsWith('# ')) {
+            const headerContent = trimmed.replace(/^#\s+/, '').replace(/^\*\*|\*\*$/g, '');
+            elements.push(
+                <h2
+                    key={`h2_${index}`}
+                    className="twin-markdown-h2 font-bold text-xl mt-4 mb-2 text-emerald-950 dark:text-emerald-200"
+                >
+                    {parseInlineFormatting(headerContent)}
+                </h2>
+            );
+        } else if (trimmed === '---' || trimmed === '***' || trimmed === '___') {
+            elements.push(
+                <hr
+                    key={`hr_${index}`}
+                    className="my-2.5 border-slate-200 dark:border-slate-700"
+                />
+            );
+        } else if (trimmed.startsWith('ℹ️')) {
+            elements.push(
+                <div
+                    key={`info_${index}`}
+                    className="p-2.5 my-1.5 rounded-lg bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/50 text-xs text-amber-900 dark:text-amber-200 flex items-start gap-2"
+                >
+                    <span>{parseInlineFormatting(trimmed)}</span>
+                </div>
+            );
+        } else {
+            elements.push(
+                <p
+                    key={`p_${index}`}
+                    className="twin-markdown-p my-1.5 leading-relaxed"
+                >
+                    {parseInlineFormatting(trimmed)}
+                </p>
+            );
         }
     });
 
@@ -120,10 +175,32 @@ function renderFormattedMarkdown(text: string): React.ReactNode {
 }
 
 function parseInlineFormatting(text: string): React.ReactNode {
-    // Parse bold **text**, italics *text*, and `code`
-    const parts = text.split(/(\*\*.*?\*\*|\*[^*\n]+\*|`.*?`)/g);
+    // Parse markdown links [text](url), bold **text**, italics *text*, and `code`
+    const regex = /(\[.*?\]\(https?:\/\/[^\s)]+\)|\*\*.*?\*\*|\*[^*\n]+\*|`.*?`)/g;
+    const parts = text.split(regex);
+
     return parts.map((part, i) => {
-        if (part.startsWith('**') && part.endsWith('**') && part.length > 4) {
+        if (!part) return null;
+
+        // Markdown Links: [Title](URL)
+        const linkMatch = part.match(/^\[(.*?)\]\((https?:\/\/[^\s)]+)\)$/);
+        if (linkMatch) {
+            const [, linkText, linkHref] = linkMatch;
+            return (
+                <a
+                    key={i}
+                    href={linkHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-700 dark:hover:text-emerald-300 font-medium transition-colors"
+                >
+                    {linkText}
+                </a>
+            );
+        }
+
+        // Bold: **text**
+        if (part.startsWith('**') && part.endsWith('**') && part.length >= 4) {
             return (
                 <strong
                     key={i}
@@ -133,7 +210,9 @@ function parseInlineFormatting(text: string): React.ReactNode {
                 </strong>
             );
         }
-        if (part.startsWith('*') && part.endsWith('*') && part.length > 2) {
+
+        // Italics: *text*
+        if (part.startsWith('*') && part.endsWith('*') && part.length >= 2) {
             return (
                 <em
                     key={i}
@@ -143,7 +222,9 @@ function parseInlineFormatting(text: string): React.ReactNode {
                 </em>
             );
         }
-        if (part.startsWith('`') && part.endsWith('`') && part.length > 2) {
+
+        // Inline Code: `code`
+        if (part.startsWith('`') && part.endsWith('`') && part.length >= 2) {
             return (
                 <code
                     key={i}
@@ -153,6 +234,7 @@ function parseInlineFormatting(text: string): React.ReactNode {
                 </code>
             );
         }
+
         return part;
     });
 }
