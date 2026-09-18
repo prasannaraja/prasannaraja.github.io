@@ -10,8 +10,9 @@ interface StepsContextValue {
 
 const StepsContext = createContext<StepsContextValue | null>(null);
 
-export interface StepsProps
-    extends React.ComponentPropsWithoutRef<typeof CollapsiblePrimitive.Root> {
+export interface StepsProps extends React.ComponentPropsWithoutRef<
+    typeof CollapsiblePrimitive.Root
+> {
     defaultOpen?: boolean;
     open?: boolean;
     onOpenChange?: (open: boolean) => void;
@@ -26,7 +27,8 @@ export const Steps: React.FC<StepsProps> = ({
     ...props
 }) => {
     const [uncontrolledOpen, setUncontrolledOpen] = useState(defaultOpen);
-    const isOpen = controlledOpen !== undefined ? controlledOpen : uncontrolledOpen;
+    const isOpen =
+        controlledOpen !== undefined ? controlledOpen : uncontrolledOpen;
 
     const handleOpenChange = (nextOpen: boolean) => {
         if (controlledOpen === undefined) {
@@ -52,10 +54,9 @@ export const Steps: React.FC<StepsProps> = ({
 };
 Steps.displayName = 'Steps';
 
-export interface StepsTriggerProps
-    extends React.ComponentPropsWithoutRef<
-        typeof CollapsiblePrimitive.CollapsibleTrigger
-    > {
+export interface StepsTriggerProps extends React.ComponentPropsWithoutRef<
+    typeof CollapsiblePrimitive.CollapsibleTrigger
+> {
     leftIcon?: React.ReactNode;
     swapIconOnHover?: boolean;
 }
@@ -80,7 +81,9 @@ export const StepsTrigger: React.FC<StepsTriggerProps> = ({
                         {leftIcon}
                     </span>
                 )}
-                <span className="prompt-kit-steps-trigger-text">{children}</span>
+                <span className="prompt-kit-steps-trigger-text">
+                    {children}
+                </span>
             </div>
             <ChevronDown
                 className={cn(
@@ -93,10 +96,9 @@ export const StepsTrigger: React.FC<StepsTriggerProps> = ({
 };
 StepsTrigger.displayName = 'StepsTrigger';
 
-export interface StepsContentProps
-    extends React.ComponentPropsWithoutRef<
-        typeof CollapsiblePrimitive.CollapsibleContent
-    > {
+export interface StepsContentProps extends React.ComponentPropsWithoutRef<
+    typeof CollapsiblePrimitive.CollapsibleContent
+> {
     bar?: React.ReactNode;
 }
 
@@ -139,8 +141,10 @@ export const StepsBar: React.FC<StepsBarProps> = ({ className, ...props }) => {
 };
 StepsBar.displayName = 'StepsBar';
 
-export interface StepsItemProps
-    extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> {
+export interface StepsItemProps extends Omit<
+    React.HTMLAttributes<HTMLDivElement>,
+    'title'
+> {
     status?: 'completed' | 'running' | 'pending';
     icon?: React.ReactNode;
     title?: React.ReactNode;
@@ -160,12 +164,18 @@ export const StepsItem: React.FC<StepsItemProps> = ({
         if (icon) return icon;
         switch (status) {
             case 'completed':
-                return <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />;
+                return (
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+                );
             case 'running':
-                return <Loader2 className="w-3.5 h-3.5 animate-spin text-amber-500" />;
+                return (
+                    <Loader2 className="w-3.5 h-3.5 animate-spin text-amber-500" />
+                );
             case 'pending':
             default:
-                return <Circle className="w-3.5 h-3.5 text-muted-foreground opacity-50" />;
+                return (
+                    <Circle className="w-3.5 h-3.5 text-muted-foreground opacity-50" />
+                );
         }
     };
 
@@ -184,7 +194,9 @@ export const StepsItem: React.FC<StepsItemProps> = ({
                 </span>
                 <div className="prompt-kit-steps-item-content">
                     {title && (
-                        <div className="prompt-kit-steps-item-title">{title}</div>
+                        <div className="prompt-kit-steps-item-title">
+                            {title}
+                        </div>
                     )}
                     {details && (
                         <div className="prompt-kit-steps-item-details">

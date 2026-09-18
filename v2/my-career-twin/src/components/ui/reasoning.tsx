@@ -85,7 +85,9 @@ export const Reasoning: React.FC<ReasoningProps> = ({
                     </div>
 
                     <Steps defaultOpen={false} className="mt-2">
-                        <StepsTrigger leftIcon={<Sparkles className="w-3.5 h-3.5" />}>
+                        <StepsTrigger
+                            leftIcon={<Sparkles className="w-3.5 h-3.5" />}
+                        >
                             Pipeline Execution Trace
                         </StepsTrigger>
                         <StepsContent>
