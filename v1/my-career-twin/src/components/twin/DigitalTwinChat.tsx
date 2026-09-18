@@ -38,19 +38,23 @@ function getOrCreateSessionId(): string {
 }
 
 /**
- * Robust markdown parser to render headings, bold text, bullet/numbered lists, links, and paragraphs cleanly.
+ * Robust markdown parser to render headings, bold text, bullet/numbered lists, tables, links, and paragraphs cleanly.
  */
 function renderFormattedMarkdown(text: string): React.ReactNode {
     const lines = text.split('\n');
     const elements: React.ReactNode[] = [];
     let listItems: { type: 'ul' | 'ol'; text: string }[] = [];
+    let tableLines: string[] = [];
 
     const flushList = (keyPrefix: number) => {
         if (listItems.length > 0) {
             const listType = listItems[0].type;
             if (listType === 'ol') {
                 elements.push(
-                    <ol key={`ol_${keyPrefix}`} className="twin-markdown-ol list-decimal list-inside my-2 space-y-1">
+                    <ol
+                        key={`ol_${keyPrefix}`}
+                        className="twin-markdown-ol list-decimal list-inside my-2 space-y-1"
+                    >
                         {listItems.map((item, idx) => (
                             <li key={idx} className="leading-relaxed">
                                 {parseInlineFormatting(item.text)}
@@ -60,7 +64,10 @@ function renderFormattedMarkdown(text: string): React.ReactNode {
                 );
             } else {
                 elements.push(
-                    <ul key={`ul_${keyPrefix}`} className="twin-markdown-list list-disc list-inside my-2 space-y-1">
+                    <ul
+                        key={`ul_${keyPrefix}`}
+                        className="twin-markdown-list list-disc list-inside my-2 space-y-1"
+                    >
                         {listItems.map((item, idx) => (
                             <li key={idx} className="leading-relaxed">
                                 {parseInlineFormatting(item.text)}
@@ -73,15 +80,88 @@ function renderFormattedMarkdown(text: string): React.ReactNode {
         }
     };
 
+    const flushTable = (keyPrefix: number) => {
+        if (tableLines.length >= 2) {
+            // Must have header and separator
+            const parseRow = (line: string) =>
+                line
+                    .trim()
+                    .replace(/^\|/, '')
+                    .replace(/\|$/, '')
+                    .split('|')
+                    .map((cell) => cell.trim());
+
+            const headerCells = parseRow(tableLines[0]);
+            const isSeparator = /^\|?(\s*:?-+:?\s*\|?)+$/.test(tableLines[1].trim());
+            const bodyRows = (isSeparator ? tableLines.slice(2) : tableLines.slice(1)).map(parseRow);
+
+            elements.push(
+                <div key={`tbl_wrap_${keyPrefix}`} className="twin-table-container my-3 overflow-x-auto rounded-lg border border-slate-200 dark:border-slate-800">
+                    <table className="twin-markdown-table min-w-full text-xs text-left border-collapse">
+                        <thead>
+                            <tr className="bg-slate-100 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-700">
+                                {headerCells.map((cell, idx) => (
+                                    <th
+                                        key={idx}
+                                        className="px-3 py-2 font-semibold text-slate-900 dark:text-slate-100"
+                                    >
+                                        {parseInlineFormatting(cell)}
+                                    </th>
+                                ))}
+                            </tr>
+                        </thead>
+                        <tbody className="divide-y divide-slate-200 dark:divide-slate-800">
+                            {bodyRows.map((row, rIdx) => (
+                                <tr
+                                    key={rIdx}
+                                    className="hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-colors"
+                                >
+                                    {row.map((cell, cIdx) => (
+                                        <td
+                                            key={cIdx}
+                                            className="px-3 py-2 text-slate-700 dark:text-slate-300 align-top"
+                                        >
+                                            {parseInlineFormatting(cell)}
+                                        </td>
+                                    ))}
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            );
+        } else if (tableLines.length === 1) {
+            elements.push(
+                <p key={`tbl_fallback_${keyPrefix}`} className="twin-markdown-p my-1.5 leading-relaxed">
+                    {parseInlineFormatting(tableLines[0])}
+                </p>
+            );
+        }
+        tableLines = [];
+    };
+
     lines.forEach((line, index) => {
         const trimmed = line.trim();
+
+        // 0. Check for Markdown Table Rows (| col 1 | col 2 |)
+        if (trimmed.startsWith('|') && trimmed.endsWith('|') && trimmed.length > 1) {
+            flushList(index);
+            tableLines.push(trimmed);
+            return;
+        }
+
+        // Not a table row: flush any accumulated table
+        flushTable(index);
 
         // 1. Check for unordered list item (- , * , • )
         if (/^[-*•]\s+/.test(trimmed)) {
             if (listItems.length > 0 && listItems[0].type !== 'ul') {
                 flushList(index);
             }
-            listItems.push({ type: 'ul', text: trimmed.replace(/^[-*•]\s+/, '') });
+            listItems.push({
+                type: 'ul',
+                text: trimmed.replace(/^[-*•]\s+/, ''),
+            });
             return;
         }
 
@@ -90,7 +170,10 @@ function renderFormattedMarkdown(text: string): React.ReactNode {
             if (listItems.length > 0 && listItems[0].type !== 'ol') {
                 flushList(index);
             }
-            listItems.push({ type: 'ol', text: trimmed.replace(/^\d+\.\s+/, '') });
+            listItems.push({
+                type: 'ol',
+                text: trimmed.replace(/^\d+\.\s+/, ''),
+            });
             return;
         }
 
@@ -103,7 +186,9 @@ function renderFormattedMarkdown(text: string): React.ReactNode {
 
         // 3. Headings
         if (trimmed.startsWith('#### ')) {
-            const headerContent = trimmed.replace(/^####\s+/, '').replace(/^\*\*|\*\*$/g, '');
+            const headerContent = trimmed
+                .replace(/^####\s+/, '')
+                .replace(/^\*\*|\*\*$/g, '');
             elements.push(
                 <h5
                     key={`h5_${index}`}
@@ -113,7 +198,9 @@ function renderFormattedMarkdown(text: string): React.ReactNode {
                 </h5>
             );
         } else if (trimmed.startsWith('### ')) {
-            const headerContent = trimmed.replace(/^###\s+/, '').replace(/^\*\*|\*\*$/g, '');
+            const headerContent = trimmed
+                .replace(/^###\s+/, '')
+                .replace(/^\*\*|\*\*$/g, '');
             elements.push(
                 <h4
                     key={`h4_${index}`}
@@ -123,7 +210,9 @@ function renderFormattedMarkdown(text: string): React.ReactNode {
                 </h4>
             );
         } else if (trimmed.startsWith('## ')) {
-            const headerContent = trimmed.replace(/^##\s+/, '').replace(/^\*\*|\*\*$/g, '');
+            const headerContent = trimmed
+                .replace(/^##\s+/, '')
+                .replace(/^\*\*|\*\*$/g, '');
             elements.push(
                 <h3
                     key={`h3_${index}`}
@@ -133,7 +222,9 @@ function renderFormattedMarkdown(text: string): React.ReactNode {
                 </h3>
             );
         } else if (trimmed.startsWith('# ')) {
-            const headerContent = trimmed.replace(/^#\s+/, '').replace(/^\*\*|\*\*$/g, '');
+            const headerContent = trimmed
+                .replace(/^#\s+/, '')
+                .replace(/^\*\*|\*\*$/g, '');
             elements.push(
                 <h2
                     key={`h2_${index}`}
@@ -142,7 +233,11 @@ function renderFormattedMarkdown(text: string): React.ReactNode {
                     {parseInlineFormatting(headerContent)}
                 </h2>
             );
-        } else if (trimmed === '---' || trimmed === '***' || trimmed === '___') {
+        } else if (
+            trimmed === '---' ||
+            trimmed === '***' ||
+            trimmed === '___'
+        ) {
             elements.push(
                 <hr
                     key={`hr_${index}`}
@@ -171,12 +266,14 @@ function renderFormattedMarkdown(text: string): React.ReactNode {
     });
 
     flushList(lines.length);
+    flushTable(lines.length);
     return elements;
 }
 
 function parseInlineFormatting(text: string): React.ReactNode {
     // Parse markdown links [text](url), bold **text**, italics *text*, and `code`
-    const regex = /(\[.*?\]\(https?:\/\/[^\s)]+\)|\*\*.*?\*\*|\*[^*\n]+\*|`.*?`)/g;
+    const regex =
+        /(\[.*?\]\(https?:\/\/[^\s)]+\)|\*\*.*?\*\*|\*[^*\n]+\*|`.*?`)/g;
     const parts = text.split(regex);
 
     return parts.map((part, i) => {

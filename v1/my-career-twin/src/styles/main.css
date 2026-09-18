@@ -1048,6 +1048,39 @@ footer .built {
 .twin-msg-text a:hover {
     opacity: 0.85;
 }
+.twin-table-container {
+    margin: 10px 0;
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--bg);
+}
+.twin-markdown-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12.5px;
+    text-align: left;
+}
+.twin-markdown-table th {
+    background: var(--panel);
+    font-weight: 600;
+    color: var(--ink);
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--line);
+}
+.twin-markdown-table td {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--line);
+    color: var(--muted);
+    vertical-align: top;
+}
+.twin-markdown-table tr:last-child td {
+    border-bottom: none;
+}
+.twin-markdown-table tr:hover td {
+    background: var(--chip);
+}
+
 .twin-inline-code {
     background: var(--panel);
     border: 1px solid var(--line);
