@@ -3,26 +3,35 @@ import { useSelector } from 'react-redux';
 import type { RootState } from '../../store';
 import { translations } from '../../data/locales';
 import type { LocaleKey } from '../../data/locales';
+import { API_BASE, TWIN_APP_KEY } from '../../config/api';
 
-interface Source {
-    title: string;
-    company?: string;
-    similarity?: string;
-}
+import {
+    PromptInput,
+    PromptInputTextarea,
+    PromptInputActions,
+    PromptInputAction,
+    PromptInputSubmit,
+} from '../ui/prompt-input';
+import { Reasoning, type SourceCitation } from '../ui/reasoning';
+import { CodeBlock } from '../ui/code-block';
+import {
+    PromptSuggestions,
+    type PromptSuggestionItem,
+} from '../ui/prompt-suggestions';
+import { Message, MessageActions } from '../ui/message';
+import { Plus, Globe, MoreHorizontal } from 'lucide-react';
 
 interface ChatMessage {
     id: string;
     sender: 'user' | 'twin';
     text: string;
-    sources?: Source[];
+    sources?: SourceCitation[];
     model?: string;
     queryId?: string;
     category?: string;
     feedback?: 'like' | 'dislike' | null;
     timestamp: string;
 }
-
-import { API_BASE, TWIN_APP_KEY } from '../../config/api';
 
 function getOrCreateSessionId(): string {
     let sid = localStorage.getItem('career_twin_session_id');
@@ -38,13 +47,16 @@ function getOrCreateSessionId(): string {
 }
 
 /**
- * Robust markdown parser to render headings, bold text, bullet/numbered lists, tables, links, and paragraphs cleanly.
+ * Robust markdown parser to render headings, bold text, bullet/numbered lists, tables, links, code blocks, and paragraphs cleanly.
  */
 function renderFormattedMarkdown(text: string): React.ReactNode {
     const lines = text.split('\n');
     const elements: React.ReactNode[] = [];
     let listItems: { type: 'ul' | 'ol'; text: string }[] = [];
     let tableLines: string[] = [];
+    let inCodeBlock = false;
+    let codeBlockLang = '';
+    let codeBlockLines: string[] = [];
 
     const flushList = (keyPrefix: number) => {
         if (listItems.length > 0) {
@@ -82,7 +94,6 @@ function renderFormattedMarkdown(text: string): React.ReactNode {
 
     const flushTable = (keyPrefix: number) => {
         if (tableLines.length >= 2) {
-            // Must have header and separator
             const parseRow = (line: string) =>
                 line
                     .trim()
@@ -153,7 +164,33 @@ function renderFormattedMarkdown(text: string): React.ReactNode {
     lines.forEach((line, index) => {
         const trimmed = line.trim();
 
-        // 0. Check for Markdown Table Rows (| col 1 | col 2 |)
+        // Check for fenced code block start/end ```
+        if (trimmed.startsWith('```')) {
+            flushList(index);
+            flushTable(index);
+            if (!inCodeBlock) {
+                inCodeBlock = true;
+                codeBlockLang = trimmed.replace(/^```/, '').trim();
+                codeBlockLines = [];
+            } else {
+                inCodeBlock = false;
+                elements.push(
+                    <CodeBlock
+                        key={`code_${index}`}
+                        code={codeBlockLines.join('\n')}
+                        language={codeBlockLang}
+                    />
+                );
+            }
+            return;
+        }
+
+        if (inCodeBlock) {
+            codeBlockLines.push(line);
+            return;
+        }
+
+        // Check for Markdown Table Rows (| col 1 | col 2 |)
         if (
             trimmed.startsWith('|') &&
             trimmed.endsWith('|') &&
@@ -167,7 +204,7 @@ function renderFormattedMarkdown(text: string): React.ReactNode {
         // Not a table row: flush any accumulated table
         flushTable(index);
 
-        // 1. Check for unordered list item (- , * , • )
+        // Check for unordered list item (- , * , • )
         if (/^[-*•]\s+/.test(trimmed)) {
             if (listItems.length > 0 && listItems[0].type !== 'ul') {
                 flushList(index);
@@ -179,7 +216,7 @@ function renderFormattedMarkdown(text: string): React.ReactNode {
             return;
         }
 
-        // 2. Check for ordered list item (1. , 2. , etc.)
+        // Check for ordered list item (1. , 2. , etc.)
         if (/^\d+\.\s+/.test(trimmed)) {
             if (listItems.length > 0 && listItems[0].type !== 'ol') {
                 flushList(index);
@@ -198,7 +235,7 @@ function renderFormattedMarkdown(text: string): React.ReactNode {
             return;
         }
 
-        // 3. Headings
+        // Headings
         if (trimmed.startsWith('#### ')) {
             const headerContent = trimmed
                 .replace(/^####\s+/, '')
@@ -258,15 +295,6 @@ function renderFormattedMarkdown(text: string): React.ReactNode {
                     className="my-2.5 border-slate-200 dark:border-slate-700"
                 />
             );
-        } else if (trimmed.startsWith('ℹ️')) {
-            elements.push(
-                <div
-                    key={`info_${index}`}
-                    className="p-2.5 my-1.5 rounded-lg bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/50 text-xs text-amber-900 dark:text-amber-200 flex items-start gap-2"
-                >
-                    <span>{parseInlineFormatting(trimmed)}</span>
-                </div>
-            );
         } else {
             elements.push(
                 <p
@@ -281,20 +309,33 @@ function renderFormattedMarkdown(text: string): React.ReactNode {
 
     flushList(lines.length);
     flushTable(lines.length);
+
+    if (inCodeBlock && codeBlockLines.length > 0) {
+        elements.push(
+            <CodeBlock
+                key={`code_eof`}
+                code={codeBlockLines.join('\n')}
+                language={codeBlockLang}
+            />
+        );
+    }
+
     return elements;
 }
 
+/**
+ * Helper to parse inline markdown elements: links, bold, italics, code
+ */
 function parseInlineFormatting(text: string): React.ReactNode {
-    // Parse markdown links [text](url), bold **text**, italics *text*, and `code`
-    const regex =
-        /(\[.*?\]\(https?:\/\/[^\s)]+\)|\*\*.*?\*\*|\*[^*\n]+\*|`.*?`)/g;
-    const parts = text.split(regex);
+    const parts = text.split(
+        /(\[[^\]]+\]\([^)]+\)|\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`)/g
+    );
 
     return parts.map((part, i) => {
         if (!part) return null;
 
-        // Markdown Links: [Title](URL)
-        const linkMatch = part.match(/^\[(.*?)\]\((https?:\/\/[^\s)]+)\)$/);
+        // Link: [label](url)
+        const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
         if (linkMatch) {
             const [, linkText, linkHref] = linkMatch;
             return (
@@ -350,6 +391,25 @@ function parseInlineFormatting(text: string): React.ReactNode {
     });
 }
 
+const SUGGESTION_ITEMS: PromptSuggestionItem[] = [
+    {
+        label: 'Frontend & Architecture',
+        prompt: 'Can you describe your React and TypeScript architectural approach in enterprise projects?',
+    },
+    {
+        label: 'Distributed .NET & Microservices',
+        prompt: 'Tell me about your experience architecting .NET Core microservices, Redis caching, and EF Core.',
+    },
+    {
+        label: 'AI & RAG Engineering',
+        prompt: 'How did you design the RAG pipeline with Gemini and vector embeddings for this portfolio?',
+    },
+    {
+        label: 'Leadership & Delivery',
+        prompt: 'What is your leadership style and experience managing distributed engineering teams across Malta, UK, and UAE?',
+    },
+];
+
 export interface DigitalTwinChatProps {
     isOpen: boolean;
     onClose: () => void;
@@ -386,31 +446,10 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
     ]);
     const [input, setInput] = useState('');
     const [isLoading, setIsLoading] = useState(false);
-    const [copiedMsgId, setCopiedMsgId] = useState<string | null>(null);
     const messagesEndRef = useRef<HTMLDivElement>(null);
     const textareaRef = useRef<HTMLTextAreaElement>(null);
 
-    // Auto-resize textarea based on content
-    useEffect(() => {
-        if (textareaRef.current) {
-            textareaRef.current.style.height = 'auto';
-            textareaRef.current.style.height = `${Math.min(textareaRef.current.scrollHeight, 140)}px`;
-        }
-    }, [input]);
-
-    const handleCopy = async (id: string, text: string) => {
-        try {
-            await navigator.clipboard.writeText(text);
-            setCopiedMsgId(id);
-            setTimeout(() => {
-                setCopiedMsgId((prev) => (prev === id ? null : prev));
-            }, 2000);
-        } catch (err) {
-            console.error('Failed to copy text: ', err);
-        }
-    };
-
-    // Synchronize welcome message when locale changes (if user hasn't started a custom chat)
+    // Synchronize welcome message when locale changes
     useEffect(() => {
         if (t?.welcome) {
             setMessages((prev) => {
@@ -443,6 +482,37 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
         };
     }, [messages, isOpen]);
 
+    const handleFeedback = async (
+        msgId: string,
+        feedbackType: 'like' | 'dislike'
+    ) => {
+        const msg = messages.find((m) => m.id === msgId);
+        setMessages((prev) =>
+            prev.map((m) =>
+                m.id === msgId ? { ...m, feedback: feedbackType } : m
+            )
+        );
+
+        if (!msg?.queryId) return;
+
+        try {
+            await fetch(`${API_BASE}/api/twin/feedback`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Session-ID': getOrCreateSessionId(),
+                    'X-Twin-App-Key': TWIN_APP_KEY,
+                },
+                body: JSON.stringify({
+                    queryId: msg.queryId,
+                    feedback: feedbackType,
+                }),
+            });
+        } catch (err) {
+            console.warn('Failed to record feedback:', err);
+        }
+    };
+
     const handleSend = async (questionText?: string) => {
         const q = (questionText || input).trim();
         if (!q || isLoading) return;
@@ -474,7 +544,7 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
         }
 
         setMessages((prev) => [...prev, userMsg]);
-        if (!questionText) setInput('');
+        setInput('');
         setIsLoading(true);
 
         const sessionId = getOrCreateSessionId();
@@ -545,7 +615,6 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
                 'Backend API offline or unreachable, providing local knowledge fallback:',
                 err
             );
-            // Fallback
             const fallbackMsg: ChatMessage = {
                 id: 'fallback_' + Date.now(),
                 sender: 'twin',
@@ -593,98 +662,51 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
 
                 {/* Messages Body */}
                 <div className="twin-chat-body">
-                    {messages.map((m) => (
-                        <div
-                            key={m.id}
-                            className={`twin-msg-wrapper ${m.sender}`}
-                        >
-                            <div className="twin-msg-bubble">
-                                <div className="twin-msg-text">
-                                    {renderFormattedMarkdown(m.text)}
-                                </div>
+                    {/* Prompt Suggestions at top if early conversation */}
+                    {messages.length <= 2 && (
+                        <div className="twin-suggestions-wrapper">
+                            <div className="twin-suggestions-title">
+                                Suggested questions:
+                            </div>
+                            <PromptSuggestions
+                                suggestions={SUGGESTION_ITEMS}
+                                onSelect={(prompt) => handleSend(prompt)}
+                            />
+                        </div>
+                    )}
 
-                                {/* Sources & Citations */}
-                                {m.sources && m.sources.length > 0 && (
-                                    <div className="twin-sources-box">
-                                        <span className="sources-label">
-                                            {t?.groundedSources ||
-                                                'Grounded Sources:'}
-                                        </span>
-                                        <div className="sources-chips">
-                                            {m.sources.map((src, i) => (
-                                                <span
-                                                    key={i}
-                                                    className="source-chip"
-                                                    title={src.company}
-                                                >
-                                                    {src.title}{' '}
-                                                    {src.similarity
-                                                        ? `(${src.similarity})`
-                                                        : ''}
-                                                </span>
-                                            ))}
-                                        </div>
-                                    </div>
+                    {messages.map((m) => (
+                        <Message
+                            key={m.id}
+                            sender={m.sender}
+                            timestamp={m.timestamp}
+                            actions={
+                                m.sender === 'twin' ? (
+                                    <MessageActions
+                                        text={m.text}
+                                        feedback={m.feedback}
+                                        onFeedback={(type) =>
+                                            handleFeedback(m.id, type)
+                                        }
+                                    />
+                                ) : undefined
+                            }
+                        >
+                            {/* Reasoning Accordion for RAG Sources */}
+                            {m.sender === 'twin' &&
+                                m.sources &&
+                                m.sources.length > 0 && (
+                                    <Reasoning
+                                        sources={m.sources}
+                                        model={m.model}
+                                        category={m.category}
+                                    />
                                 )}
 
-                                {/* Meta Footer */}
-                                <div className="twin-msg-meta">
-                                    <div className="flex items-center gap-2">
-                                        <span>{m.timestamp}</span>
-                                        {m.category && (
-                                            <span className="category-tag">
-                                                {m.category}
-                                            </span>
-                                        )}
-                                    </div>
-                                    {m.sender === 'twin' && (
-                                        <button
-                                            type="button"
-                                            onClick={() =>
-                                                handleCopy(m.id, m.text)
-                                            }
-                                            className="twin-copy-btn flex items-center justify-center p-1 rounded hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors"
-                                            title={
-                                                copiedMsgId === m.id
-                                                    ? 'Copied to clipboard!'
-                                                    : 'Copy markdown'
-                                            }
-                                            aria-label="Copy markdown"
-                                        >
-                                            {copiedMsgId === m.id ? (
-                                                <svg
-                                                    className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400"
-                                                    fill="none"
-                                                    viewBox="0 0 24 24"
-                                                    stroke="currentColor"
-                                                >
-                                                    <path
-                                                        strokeLinecap="round"
-                                                        strokeLinejoin="round"
-                                                        strokeWidth={2}
-                                                        d="M5 13l4 4L19 7"
-                                                    />
-                                                </svg>
-                                            ) : (
-                                                <svg
-                                                    className="w-3.5 h-3.5"
-                                                    fill="none"
-                                                    viewBox="0 0 24 24"
-                                                    stroke="currentColor"
-                                                >
-                                                    <path
-                                                        strokeLinecap="round"
-                                                        strokeLinejoin="round"
-                                                        strokeWidth={2}
-                                                        d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-                                                    />
-                                                </svg>
-                                            )}
-                                        </button>
-                                    )}
-                                </div>
+                            <div className="twin-msg-text">
+                                {renderFormattedMarkdown(m.text)}
                             </div>
-                        </div>
+                        </Message>
                     ))}
 
                     {isLoading && (
@@ -701,10 +723,10 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
                     <div ref={messagesEndRef} />
                 </div>
 
-                {/* ChatGPT-style Floating Input Pill */}
-                <div className="twin-input-container">
+                {/* Prompt-Kit Input Suite */}
+                <PromptInput>
                     {input.length > 200 && (
-                        <div className="px-3 pb-1 flex justify-between items-center text-[10.5px] text-slate-500 dark:text-slate-400 font-mono">
+                        <div className="prompt-kit-char-counter">
                             <span>
                                 {input.length > 4000
                                     ? '⚠️ Query exceeds 4,000 character limit'
@@ -713,10 +735,10 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
                             <span
                                 className={
                                     input.length > 4000
-                                        ? 'text-red-500 font-bold'
+                                        ? 'limit-danger'
                                         : input.length > 3500
-                                          ? 'text-amber-500 font-medium'
-                                          : 'text-slate-500'
+                                          ? 'limit-warn'
+                                          : ''
                                 }
                             >
                                 {input.length.toLocaleString()} / 4,000 chars
@@ -724,144 +746,75 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
                         </div>
                     )}
 
-                    <div className="twin-input-pill">
-                        <textarea
-                            ref={textareaRef}
-                            rows={1}
-                            placeholder={
-                                t?.placeholder ||
-                                'Ask about my experience in Frontend, .NET, Python, RAG, LLMs, Team leadership...'
-                            }
-                            value={input}
-                            onChange={(e) => setInput(e.target.value)}
-                            onKeyDown={(e) => {
-                                if (e.key === 'Enter' && !e.shiftKey) {
-                                    e.preventDefault();
-                                    handleSend();
-                                }
-                            }}
-                            disabled={isLoading}
-                            className="twin-pill-textarea"
-                        />
+                    <PromptInputTextarea
+                        ref={textareaRef}
+                        placeholder={
+                            t?.placeholder ||
+                            'Ask about my experience in Frontend, .NET, Python, RAG, LLMs, Team leadership...'
+                        }
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}
+                        onSubmit={() => handleSend()}
+                        disabled={isLoading}
+                    />
 
-                        {/* Bottom Actions Row */}
-                        <div className="twin-pill-toolbar">
-                            <div className="twin-pill-left-actions">
-                                {/* Plus button */}
-                                <button
-                                    type="button"
-                                    onClick={() => {
-                                        setInput((prev) =>
-                                            prev
-                                                ? `${prev}\n\nHere is a Job Description / Architecture requirement to assess:`
-                                                : 'Can you assess my technical experience for this role / requirement:\n'
-                                        );
-                                        textareaRef.current?.focus();
-                                    }}
-                                    className="twin-toolbar-circle-btn"
-                                    title="Add Job Description / Context"
-                                    aria-label="Add Context"
-                                >
-                                    <svg
-                                        className="w-4 h-4"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M12 4v16m8-8H4"
-                                        />
-                                    </svg>
-                                </button>
-
-                                {/* Search Pill */}
-                                <button
-                                    type="button"
-                                    onClick={() => {
-                                        setInput((prev) =>
-                                            prev
-                                                ? `${prev} https://`
-                                                : 'Can you review this job posting / URL and evaluate my suitability: https://'
-                                        );
-                                        textareaRef.current?.focus();
-                                    }}
-                                    className="twin-toolbar-search-btn"
-                                    title="Search web or analyze URL"
-                                    aria-label="Search Web"
-                                >
-                                    <svg
-                                        className="w-3.5 h-3.5"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
-                                        />
-                                    </svg>
-                                    <span>Search</span>
-                                </button>
-
-                                {/* More Pill (...) */}
-                                <button
-                                    type="button"
-                                    onClick={() => {
-                                        setInput(
-                                            "Can you provide a structured summary of Prasanna's 18+ years career timeline across Malta, UAE, UK, and India?"
-                                        );
-                                        textareaRef.current?.focus();
-                                    }}
-                                    className="twin-toolbar-circle-btn"
-                                    title="Quick Career Summary prompt"
-                                    aria-label="More options"
-                                >
-                                    <svg
-                                        className="w-4 h-4"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"
-                                        />
-                                    </svg>
-                                </button>
-                            </div>
-
-                            {/* Circular Submit Button (↑) */}
-                            <button
-                                type="button"
-                                onClick={() => handleSend()}
-                                disabled={!input.trim() || isLoading}
-                                className="twin-pill-submit-btn"
-                                aria-label="Send message"
+                    {/* Bottom Actions Row */}
+                    <PromptInputActions>
+                        <div className="prompt-kit-left-tools">
+                            {/* Plus button */}
+                            <PromptInputAction
+                                variant="circle"
+                                tooltip="Add Job Description / Context"
+                                onClick={() => {
+                                    setInput((prev) =>
+                                        prev
+                                            ? `${prev}\n\nHere is a Job Description / Architecture requirement to assess:`
+                                            : 'Can you assess my technical experience for this role / requirement:\n'
+                                    );
+                                    textareaRef.current?.focus();
+                                }}
                             >
-                                <svg
-                                    className="w-4 h-4"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2.5}
-                                        d="M5 10l7-7m0 0l7 7m-7-7v18"
-                                    />
-                                </svg>
-                            </button>
+                                <Plus />
+                            </PromptInputAction>
+
+                            {/* Search Tool Indicator Pill */}
+                            <PromptInputAction
+                                variant="pill"
+                                className="prompt-kit-tool-active"
+                                tooltip="Web search tool is enabled for live grounding"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    // Informative indicator badge: does not inject text
+                                }}
+                            >
+                                <Globe />
+                                <span>Search</span>
+                                <span className="prompt-kit-status-dot" />
+                            </PromptInputAction>
+
+                            {/* More Pill (...) */}
+                            <PromptInputAction
+                                variant="circle"
+                                tooltip="Quick Career Summary prompt"
+                                onClick={() => {
+                                    setInput(
+                                        "Can you provide a structured summary of Prasanna's 18+ years career timeline across Malta, UAE, UK, and India?"
+                                    );
+                                    textareaRef.current?.focus();
+                                }}
+                            >
+                                <MoreHorizontal />
+                            </PromptInputAction>
                         </div>
-                    </div>
-                </div>
+
+                        {/* Submit Button */}
+                        <PromptInputSubmit
+                            isLoading={isLoading}
+                            disabled={!input.trim()}
+                            onClick={() => handleSend()}
+                        />
+                    </PromptInputActions>
+                </PromptInput>
             </div>
         </div>
     );
