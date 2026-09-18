@@ -651,7 +651,8 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
                     </div>
                     <div className="twin-header-actions">
                         <button
-                            className="twin-close-btn"
+                            type="button"
+                            className="twin-header-btn twin-close-btn"
                             onClick={onClose}
                             aria-label="Close Chat"
                         >
