@@ -1286,6 +1286,14 @@ footer .built {
     padding: 0;
 }
 
+.twin-toolbar-circle-btn svg {
+    width: 15px;
+    height: 15px;
+    stroke: currentColor;
+    stroke-width: 2;
+    display: block;
+}
+
 .twin-toolbar-circle-btn:hover {
     background: var(--chip);
     color: var(--ink);
@@ -1300,12 +1308,20 @@ footer .built {
     color: var(--ink);
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 6px;
     padding: 0 10px;
     font-size: 12px;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.15s ease;
+}
+
+.twin-toolbar-search-btn svg {
+    width: 14px;
+    height: 14px;
+    stroke: currentColor;
+    stroke-width: 2;
+    display: block;
 }
 
 .twin-toolbar-search-btn:hover {
@@ -1327,6 +1343,14 @@ footer .built {
     cursor: pointer;
     transition: all 0.15s ease;
     padding: 0;
+}
+
+.twin-pill-submit-btn svg {
+    width: 16px;
+    height: 16px;
+    stroke: currentColor;
+    stroke-width: 2.5;
+    display: block;
 }
 
 .twin-pill-submit-btn:disabled {
