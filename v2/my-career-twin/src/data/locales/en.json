@@ -267,9 +267,9 @@
   },
   "twinChat": {
     "launcher": "Ask My Digital Twin",
-    "launcherTitle": "Chat with Prasanna Raja Digital Twin",
+    "launcherTitle": "Chat with Digital Twin",
     "launcherAria": "Open Digital Twin Chatbot",
-    "title": "Prasanna Raja Digital Twin",
+    "title": "Digital Twin",
     "status": "Career & Technical History",
     "welcome": "Hello! I am the **AI Digital Twin of Prasanna Prabhakaran**.\n\nHow can I help you today?",
     "placeholder": "Ask about my experience in Frontend, .NET, Python, RAG, LLMs, Team leadership...",

@@ -28,6 +28,7 @@ import {
     Loader2,
 } from 'lucide-react';
 import { cn } from '../../lib/utils';
+import dpImage from '../../assets/dp-1.png';
 
 interface ChatMessage {
     id: string;
@@ -703,10 +704,16 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
                 {/* Header */}
                 <div className="twin-chat-header">
                     <div className="twin-avatar-info">
-                        <div className="twin-avatar">PR</div>
+                        <div className="twin-avatar">
+                            <img
+                                src={dpImage}
+                                alt="Digital Twin"
+                                className="twin-avatar-img"
+                            />
+                        </div>
                         <div>
                             <div className="twin-title">
-                                {t?.title || 'Prasanna Raja Digital Twin'}
+                                {t?.title || 'Digital Twin'}
                             </div>
                             <div className="twin-status">
                                 <span className="status-dot"></span>{' '}
@@ -746,6 +753,9 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
                             key={m.id}
                             sender={m.sender}
                             timestamp={m.timestamp}
+                            avatarUrl={
+                                m.sender === 'twin' ? dpImage : undefined
+                            }
                             actions={
                                 m.sender === 'twin' ? (
                                     <MessageActions

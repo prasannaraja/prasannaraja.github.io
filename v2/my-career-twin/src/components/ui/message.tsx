@@ -103,6 +103,7 @@ export const MessageActions: React.FC<MessageActionsProps> = ({
 export interface MessageProps {
     sender: 'user' | 'twin';
     timestamp?: string;
+    avatarUrl?: string;
     children: React.ReactNode;
     actions?: React.ReactNode;
     className?: string;
@@ -111,6 +112,7 @@ export interface MessageProps {
 export const Message: React.FC<MessageProps> = ({
     sender,
     timestamp,
+    avatarUrl,
     children,
     actions,
     className,
@@ -126,7 +128,19 @@ export const Message: React.FC<MessageProps> = ({
             )}
         >
             <div className="prompt-kit-message-avatar">
-                {isTwin ? <Bot /> : <User />}
+                {isTwin ? (
+                    avatarUrl ? (
+                        <img
+                            src={avatarUrl}
+                            alt="Digital Twin"
+                            className="prompt-kit-avatar-img"
+                        />
+                    ) : (
+                        <Bot />
+                    )
+                ) : (
+                    <User />
+                )}
             </div>
 
             <div className="prompt-kit-message-content">

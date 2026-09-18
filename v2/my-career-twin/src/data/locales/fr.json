@@ -267,9 +267,9 @@
   },
   "twinChat": {
     "launcher": "Interroger mon jumeau numérique",
-    "launcherTitle": "Discuter avec le jumeau numérique de Prasanna Raja",
+    "launcherTitle": "Discuter avec le jumeau numérique",
     "launcherAria": "Ouvrir le chatbot du jumeau numérique",
-    "title": "Jumeau Numérique de Prasanna Raja",
+    "title": "Digital Twin",
     "status": "Historique Professionnel & Technique",
     "welcome": "Bonjour ! Je suis le **jumeau numérique IA de Prasanna Prabhakaran**.\n\nComment puis-je vous aider aujourd'hui ?",
     "placeholder": "Posez une question sur l'architecture, RAG, GEMS Education, .NET, le leadership...",
