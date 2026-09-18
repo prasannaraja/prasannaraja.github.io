@@ -242,6 +242,22 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
             }),
         };
 
+        // Client-side length validation
+        if (q.length > 4000) {
+            const warnMsg: ChatMessage = {
+                id: 'warn_' + Date.now(),
+                sender: 'twin',
+                text: `⚠️ **Query Length Notice**: Your inquiry has ${q.length.toLocaleString()} characters, which exceeds the 4,000 character limit. Please shorten or summarize the key points and try again.`,
+                category: 'Validation Guardrail',
+                timestamp: new Date().toLocaleTimeString([], {
+                    hour: '2-digit',
+                    minute: '2-digit',
+                }),
+            };
+            setMessages((prev) => [...prev, warnMsg]);
+            return;
+        }
+
         setMessages((prev) => [...prev, userMsg]);
         if (!questionText) setInput('');
         setIsLoading(true);
@@ -271,7 +287,24 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
             });
 
             if (!response.ok) {
-                throw new Error(`API responded with ${response.status}`);
+                const errData = await response.json().catch(() => null);
+                const errMsg =
+                    errData?.message ||
+                    `Service responded with status ${response.status}`;
+                const errCategory = errData?.error || 'Validation Notice';
+
+                const validationMsg: ChatMessage = {
+                    id: 'err_' + Date.now(),
+                    sender: 'twin',
+                    text: `⚠️ **${errCategory === 'TOO_LONG' ? 'Query Length Limit' : 'Notice'}**: ${errMsg}`,
+                    category: errCategory,
+                    timestamp: new Date().toLocaleTimeString([], {
+                        hour: '2-digit',
+                        minute: '2-digit',
+                    }),
+                };
+                setMessages((prev) => [...prev, validationMsg]);
+                return;
             }
 
             const data = await response.json();
@@ -410,6 +443,26 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
                 </div>
 
                 {/* Input Bar */}
+                {input.length > 200 && (
+                    <div className="px-4 py-1 flex justify-between items-center text-[11px] bg-slate-50 dark:bg-slate-900/60 border-t border-slate-100 dark:border-slate-800 text-slate-500 dark:text-slate-400 font-mono">
+                        <span>
+                            {input.length > 4000
+                                ? '⚠️ Query exceeds 4,000 character limit'
+                                : 'Job description / long query detected'}
+                        </span>
+                        <span
+                            className={
+                                input.length > 4000
+                                    ? 'text-red-500 font-bold'
+                                    : input.length > 3500
+                                      ? 'text-amber-500 font-medium'
+                                      : 'text-slate-500'
+                            }
+                        >
+                            {input.length.toLocaleString()} / 4,000 chars
+                        </span>
+                    </div>
+                )}
                 <form
                     className="twin-input-bar"
                     onSubmit={(e) => {
