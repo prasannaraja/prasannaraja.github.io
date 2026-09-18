@@ -1,0 +1,203 @@
+================================================================================
+KNOWLEDGE BASE: ABOUT PRASANNA RAJA (CAREER TWIN / RAG EMBEDDING DOCUMENT)
+================================================================================
+
+--------------------------------------------------------------------------------
+1. EXECUTIVE SUMMARY & PROFILE OVERVIEW
+--------------------------------------------------------------------------------
+Name: Prasanna Raja
+Current Role: Senior Software Engineer at KPMG, Microsoft Business Solutions (Malta)
+Total Experience: 16+ years in software engineering and system architecture
+Primary Specializations:
+- Enterprise Architecture & System Design
+- Scalable Cloud & Backend Engineering (.NET Core / C# / Azure)
+- Data & Analytics Platforms (Geospatial Analytics, Cube.js, SQL Server)
+- Modern AI Engineering & Applied Machine Learning (LLMs, RAG, MCP, Agentic Workflows, Azure AI Foundry, XGBoost)
+- Frontend Development (React, TypeScript, Angular)
+
+Professional Headline:
+"Designing and building scalable enterprise platforms that turn complex data into intelligent business decisions."
+
+Professional Narrative:
+Prasanna Raja is a Senior Software Engineer with over 16 years of experience designing and engineering enterprise-grade software, distributed systems, and data analytics platforms. His career spans building mission-critical platforms across the UK, Europe, UAE, and India. He specializes in bridging core enterprise software engineering (.NET, cloud microservices, clean architecture) with data platforms and cutting-edge artificial intelligence (LLM integration, Retrieval-Augmented Generation, Model Context Protocol, and Agentic workflows).
+
+Prasanna views AI not as a separate experiment or simple chatbot gimmick, but as the next natural evolutionary layer of enterprise software architecture — requiring the same rigor in reliability, testability, security, and scalability as enterprise backends.
+
+
+--------------------------------------------------------------------------------
+2. CONTACT, AVAILABILITY, VISA & RELOCATION DETAILS
+--------------------------------------------------------------------------------
+- Email: prasannaraja@msn.com
+- Portfolio Website: https://prasannaraja.github.io/
+  - English version: https://prasannaraja.github.io/
+  - German version: https://prasannaraja.github.io/de/
+  - French version: https://prasannaraja.github.io/fr/
+- LinkedIn: https://linkedin.com/in/prasannaraja
+- GitHub: https://github.com/prasannaraja
+- Current Location & Physical Presence: Currently based in Malta (physically present in Europe / EU).
+- Target Career Opportunities: Technical Architect, Lead Software Engineer, Senior Software Engineer, Enterprise Solution Architect, AI / Data Platform Engineer.
+- Work Authorization & Visa Status: Indian Citizen; eligible and open to EU Blue Card / visa sponsorship; holds a valid Schengen visa.
+- Notice Period & Availability: Official notice period is 1 month; fully available to onboard from November 2026.
+- Relocation Preferences: Highly motivated and ready to relocate to Germany (e.g., Berlin, Munich), Netherlands (e.g., Amsterdam), Switzerland, or remote setups across Europe / internationally.
+- Immigration Compliance Record: Fully compliant with European immigration laws with an immaculate travel and visa compliance record.
+
+
+--------------------------------------------------------------------------------
+3. FLAGSHIP PROJECTS & CASE STUDIES
+--------------------------------------------------------------------------------
+
+PROJECT 1: KPMG Dash (Flagship Case Study)
+- Subtitle: Location & consumer analytics SaaS platform
+- Business Problem: Consumer-facing businesses (retailers, hospitality, financial services) need data-driven intelligence on where to open, expand, or reposition physical sites. These multi-million-euro decisions require combining private client operational data with massive external market signals.
+- Platform Description: Dash is an award-winning SaaS platform developed and operated by KPMG. It blends a client's proprietary data with over 6 billion external data points across 14,000+ UK retail zones and 200+ external variables to drive location, product, and cost decisions. It uses machine learning models to predict prospective site revenues with 85%+ accuracy.
+- Key Metrics & Scale:
+  * 6B+ external data points integrated
+  * 14,000+ UK retail zones modeled
+  * 85%+ site revenue prediction accuracy
+- Architectural Flow:
+  External Data Sources -> Data Processing / ETL -> Azure Data Platform -> .NET Core APIs -> Cube.js Analytics & ML -> React/TypeScript Application -> Business Decisions
+- Prasanna's Specific Contributions:
+  * Designed and implemented the backend API architecture on .NET Core.
+  * Developed frontend user interfaces and data interactions using React and TypeScript.
+  * Integrated the Cube.js headless analytics layer to query complex dimensional data at high speed.
+  * Built geospatial analytics features using the Uber H3 spatial indexing system to render map polygons and spatial metrics.
+  * Configured platform features and executed end-to-end performance tuning.
+  * Integrated machine learning inference (XGBoost) for automated site revenue prediction.
+- Technology Stack: .NET Core, C#, React, TypeScript, Cube.js, Azure Cloud, SQL Server, Machine Learning, XGBoost, Geospatial H3 indexing.
+
+PROJECT 2: KART (KPMG Analytical Reporting Tool)
+- Subtitle: Enterprise analytical auditing and reporting platform
+- Description: An internal platform built for KPMG audit teams to structure, calculate, and report analytical audit procedures through a dedicated microservices architecture, replacing manual spreadsheet and ad-hoc workflows.
+- Architecture & Prasanna's Contributions:
+  * Led the architectural design and full-stack development of a microservices backend using .NET Core and an Angular frontend.
+  * Backed by Microsoft SQL Server and hosted in Microsoft Azure.
+  * Established the foundational codebase, software patterns, and CI/CD development practices for the engineering team.
+- Technology Stack: .NET Core, Angular, Microservices, SQL Server, Microsoft Azure.
+
+PROJECT 3: GEMS Education Platform (Finesse Global)
+- Description: Multinational, multilingual education platform designed for international student and administrative workflows.
+- Contributions: Built frontend in React and backend services in .NET Core. Implemented Redis caching layers and high-performance Web APIs for low-latency data access.
+- Technology Stack: React, .NET Core, Redis, Web API, Private Cloud.
+
+PROJECT 4: Capital Cost Estimation Tool (Shell India / Randstad)
+- Description: Complex enterprise cost calculation and estimation tool UI used by international engineering teams at Shell.
+- Contributions: Designed and developed the user interface from scratch, streamlining workflows for calculating multi-variable capital project costs.
+- Technology Stack: Angular, TypeScript, UI/UX Design, Front-End Architecture.
+
+PROJECT 5: Enterprise Qlik Dashboards & BI Reporting (Cognizant UK)
+- Description: Large-scale business intelligence and interactive dashboard suite for UK enterprise clients.
+- Contributions: Integrated Qlik Sense Mashup APIs with AngularJS web applications to deliver embedded interactive charts, filters, and pivot tables. Configured NPrinting server jobs to automate scheduled reporting delivery in Excel and PDF formats.
+- Technology Stack: AngularJS, Qlik Sense, Mashup API, NPrinting, Business Intelligence.
+
+PROJECT 6: HAAD Health Insurance Application (Raqmiyat / Abu Dhabi Government)
+- Description: Health insurance portal for the Abu Dhabi Health Authority (HAAD) facilitating insurance purchase, claims management, and government payment processing.
+- Contributions: Developed backend services, business logic, and integrated EDirham payment gateway workflows.
+- Technology Stack: .NET, C#, Oracle/SQL Server, EDirham Payment Integration.
+
+
+--------------------------------------------------------------------------------
+4. DETAILED WORK HISTORY & EXPERIENCE TIMELINE
+--------------------------------------------------------------------------------
+
+1. KPMG, Microsoft Business Solutions (Malta)
+   Role: Senior Software Engineer
+   Duration: Oct 2021 — Present
+   - Context: Engineering and maintaining KPMG's flagship data and analytics platforms used internally and by external enterprise clients across the UK and Europe.
+   - Core Responsibilities: Leading architectural design and full-stack development across KART and KPMG Dash, spanning backend APIs, analytics querying layers, and responsive web frontends.
+   - Engineering: Microservices architecture built on .NET Core, C#, Angular, React, TypeScript, Cube.js, and Azure Cloud, transforming massive raw datasets into decision-ready visual insights.
+   - Impact: Delivered platform enhancements and predictive ML capabilities that power major retail and location decisions for UK enterprise clients.
+
+2. Finesse Global (UAE)
+   Role: Senior Software Developer
+   Duration: Mar 2021 — Sep 2021
+   - Developed a multinational, multilingual educational platform using React, .NET Core, and Redis.
+   - Engineered resilient Web APIs and caching layers for optimal response times.
+
+3. Randstad India (Client: Shell India)
+   Role: Senior .NET Specialist
+   Duration: Jul 2020 — Feb 2021
+   - Designed and built the user interface for Shell's Capital Cost Estimation Tool from scratch.
+   - Led frontend UI/UX implementation in Angular for an international engineering team.
+
+4. Raqmiyat (UAE)
+   Role: Senior .NET Specialist
+   Duration: Nov 2018 — Dec 2019
+   - Developed the HAAD health insurance application for the Abu Dhabi Government.
+   - Implemented insurance claims processing, policy management, and EDirham secure payment integrations.
+
+5. Cognizant Technology Solutions (UK & India)
+   Role: Associate / Senior Developer
+   Duration: Dec 2014 — Aug 2018
+   - Developed core application modules and embedded Qlik Sense visualizations into enterprise web portals via the Qlik Mashup API.
+   - Engineered automated enterprise report generation pipelines using NPrinting.
+
+6. Early Career Roles (HCL, Inatech, Midas — India)
+   Role: Senior Software Engineer / Tech Lead
+   Duration: 2003 — 2014
+   - Spearheaded requirements gathering, design, implementation, packaging, and support for enterprise systems in banking, telecom operations, and oil domain reporting.
+
+
+--------------------------------------------------------------------------------
+5. ENGINEERING PHILOSOPHY & ARCHITECTURAL APPROACH
+--------------------------------------------------------------------------------
+Prasanna approaches system engineering with an emphasis on maintainability, modularity, testability, and business value alignment:
+
+1. Clean Architecture: Strict separation between domain business rules and external infrastructure (databases, frameworks, UI), ensuring software remains testable, decoupled, and easy to evolve.
+2. CQRS (Command Query Responsibility Segregation): Separating mutation (write) operations from query (read) paths, optimizing complex transactional logic on the command side while maximizing speed for analytics and reporting on the query side.
+3. Microservices: Decomposing large domains into independently deployable, loosely coupled services aligned around business subdomains and bounded contexts.
+4. API-First Design: Defining clear, versioned API contracts before writing implementation code, enabling frontend teams, backend engineers, and third-party consumers to build in parallel.
+5. Event-Driven Systems: Utilizing asynchronous events to decouple microservices and handle long-running workflows without tight temporal coupling.
+6. Cloud-Native Architecture: Leveraging managed cloud infrastructure (Microsoft Azure, Redis, Serverless, Containerized workloads) for scalability, high availability, and operational simplicity.
+7. Data & Analytics Pipelines: Ingesting, transforming, and modeling large datasets through ETL pipelines into high-performance query layers (such as Cube.js) that feed real-time business decision dashboards.
+8. AI-Enabled Enterprise Architecture: Integrating Large Language Models (LLMs), RAG pipelines, and Agentic tool-calling workflows as first-class architectural components rather than isolated prototypes.
+
+
+--------------------------------------------------------------------------------
+6. TECHNICAL SKILLS & TAXONOMY
+--------------------------------------------------------------------------------
+
+1. Architecture & Backend:
+   - .NET Core, .NET 8 / 9, C#, ASP.NET Core, Web API, RESTful APIs, Microservices, Clean Architecture, CQRS, Dependency Injection, Entity Framework Core.
+
+2. Frontend & UI Engineering:
+   - React 19, TypeScript, JavaScript (ES6+), Angular, AngularJS, HTML5, CSS3, Responsive Design, State Management (Redux Toolkit, Context API), Vite, Playwright, UI/UX Design.
+
+3. Data, Analytics & Databases:
+   - Microsoft SQL Server, Cube.js (Headless Analytics), Redis, Pandas, Qlik Sense, Qlik Mashup API, NPrinting, Geospatial Data & Indexing (Uber H3, GeoJSON, Polygons), Data Modeling, ETL.
+
+4. Cloud, DevOps & Infrastructure:
+   - Microsoft Azure (Azure App Services, Azure Functions, Azure SQL, Azure AI Foundry, Blob Storage), Private Cloud, CI/CD, GitHub Actions, Azure DevOps, Docker.
+
+5. AI, Machine Learning & Generative AI:
+   - Python, FastAPI, XGBoost, SHAP (Explainable AI), Feature Engineering, Predictive Analytics, Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), Model Context Protocol (MCP), WebMCP, Tool Calling / Function Calling, Agentic Workflows, Azure AI Foundry, Local LLM Infrastructure (Ollama, LM Studio), OpenAI-compatible APIs, AI-Assisted Development (GitHub Copilot).
+
+6. Engineering Methodologies & Practices:
+   - Specification-Driven Development (OpenSpec), Agile / Scrum, Test-Driven Development (TDD), CI/CD Automation, Git Workflows.
+
+
+--------------------------------------------------------------------------------
+7. CAREER TWIN CHATBOT FREQUENTLY ASKED QUESTIONS (VECTOR RETRIEVAL PAIRS)
+--------------------------------------------------------------------------------
+
+Q: Who is Prasanna Raja?
+A: Prasanna Raja is a Senior Software Engineer and Technical Architect with 16+ years of experience building enterprise systems, cloud backends (.NET/Azure), data analytics platforms, and AI-enabled applications. He currently works at KPMG in Malta.
+
+Q: What is Prasanna's current role and employer?
+A: He is currently a Senior Software Engineer at KPMG (Microsoft Business Solutions) in Malta, where he leads architecture and development across flagship analytics and reporting products like KPMG Dash and KART.
+
+Q: What is KPMG Dash?
+A: KPMG Dash is an award-winning SaaS analytics platform that combines a client's internal data with over 6 billion external data points across 14,000+ UK retail zones and 200+ factors. It uses machine learning to predict prospective store revenue with 85%+ accuracy. Prasanna contributed to the .NET Core backend APIs, React/TypeScript frontend, Cube.js analytics, Uber H3 geospatial mapping, and ML integration.
+
+Q: What are Prasanna's core technical skills?
+A: His primary stack includes .NET Core / C#, Microsoft Azure, React, TypeScript, Angular, SQL Server, Cube.js, Python, XGBoost, and modern AI engineering (RAG, LLMs, MCP, Agentic AI).
+
+Q: Is Prasanna open to relocation and new opportunities?
+A: Yes. Prasanna is open to Senior Software Engineer, Technical Architect, and AI/Enterprise Architecture roles. He is based in Malta (EU), has a 1-month notice period (available from November 2026), holds a valid Schengen visa, and is ready to relocate to Germany (Berlin, Munich), the Netherlands (Amsterdam), Switzerland, or remote positions.
+
+Q: How does Prasanna incorporate Artificial Intelligence into his work?
+A: Prasanna builds production-ready AI applications by combining enterprise system design with modern AI tools. His focus is on practical RAG systems, Model Context Protocol (MCP), tool-calling agents, and applied machine learning (e.g., XGBoost revenue prediction in KPMG Dash), turning experimental prototypes into robust, real-world enterprise software.
+
+Q: How can I get in touch with Prasanna?
+A: You can reach him by email at prasannaraja@msn.com, connect on LinkedIn at https://linkedin.com/in/prasannaraja, or explore his code on GitHub at https://github.com/prasannaraja.
+================================================================================
+

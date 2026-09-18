@@ -1,0 +1,312 @@
+# Comprehensive Technical Profile & Knowledge Base: Prasanna Prabhakaran (Prasanna Raja)
+
+================================================================================
+SECTION 1: PERSONAL & PROFESSIONAL OVERVIEW
+================================================================================
+
+- Full Name: Prasanna Prabhakaran
+- Professional Name / Known As: Prasanna Raja / Prasanna Prabhakaran
+- Primary Locations: Marsa / Valletta, Malta
+- International Work Experience: Malta, United Arab Emirates (Dubai, Abu Dhabi), United Kingdom, India (Chennai, Bengaluru)
+- Target Roles: Technical Architect, Solutions Architect, Lead Full-Stack Engineer (Data/AI Platforms), Principal Platform Software Engineer, Senior Software Engineer
+- Career Experience: 18+ Years of Professional Software Engineering & System Architecture Experience
+- Contact Information:
+  - Email: prasannaraja@msn.com / heyprasanna@yahoo.com
+  - WhatsApp / Phone: +356 9997 0397 / +971 506057610 / +91 9019222758
+  - LinkedIn: https://www.linkedin.com/in/prasannaraja/
+  - GitHub: https://github.com/prasannaraja
+  - Portfolio / Resume: https://registry.jsonresume.org/prasannaraja/dashboard
+- Languages: English (Fluent / Professional Working Proficiency), Tamil (Native)
+
+Executive Summary:
+Prasanna Prabhakaran is a Senior Software Engineer and Technical Architect with 18+ years of international experience designing and delivering scalable enterprise applications, multi-tenant cloud platforms, data-intensive analytics ecosystems, and AI-enabled decision intelligence systems. His expertise bridges frontend engineering (Angular, React, TypeScript), distributed backend microservices (.NET Core, ASP.NET Core, C#, Web API, EF Core), cloud-native infrastructure (Microsoft Azure, Azure DevOps, CI/CD), enterprise data and BI platforms (SQL Server, Cosmos DB, Redis, Qlik Sense, NPrinting, JasperSoft), and applied Artificial Intelligence (Agentic AI, Azure OpenAI, Azure AI Search, RAG, tool-use, prompt engineering, Python/scikit-learn). He is skilled at architecting systems from zero-to-one greenfield development to multi-region global deployments supporting tens of thousands of users across regulated industries including banking, healthcare, government, energy/oil & gas, education, and reinsurance.
+
+================================================================================
+SECTION 2: CORE TECHNICAL COMPETENCIES & DOMAIN KNOWLEDGE
+================================================================================
+
+2.1. ARCHITECTURE & DISTRIBUTED SYSTEMS
+- Architectural Styles & Patterns: Microservices Architecture, Monolith-to-Microservices Decomposition, Multi-Tenant SaaS Architecture, Domain-Driven Design (DDD) concepts, Clean Architecture, Onion Architecture, Hexagonal Architecture, CQRS (Command Query Responsibility Segregation), Event-Driven Architecture, Asynchronous Processing, Publish-Subscribe (Pub/Sub) messaging.
+- Software Design Patterns: SOLID Principles, Dependency Injection / Inversion of Control (StructureMap, Microsoft.Extensions.DependencyInjection), Repository Pattern, Unit of Work, Factory Pattern, Strategy Pattern, Observer Pattern, Adapter Pattern, Builder Pattern, Decorator Pattern.
+- Web & Frontend Design Patterns: Modular Architecture, Micro-frontends, Component-Driven Development, Reactive Programming (RxJS Observables, Subjects), State Management (Redux, NgRx concepts), JavaScript Sandbox Pattern, Namespace Pattern, Module Pattern.
+- API Design & Integration: RESTful API Design (HTTP standards, OpenAPI / Swagger, JSON schema), GraphQL, SOAP / WCF (legacy interoperability), API Versioning, Rate Limiting, Idempotency, API Contract Definition (Consumer-Driven Contracts), Webhooks, JSON/XML payload transformations.
+- Platform Engineering & Developer Enablement: Golden Paths, Reference Implementations, Shared Component Libraries, Reusable Architecture Templates, CI/CD Standards, Pull Request Facilitation, Automated Code Quality, Observability & Monitoring Standards.
+
+2.2. ARTIFICIAL INTELLIGENCE & MACHINE LEARNING
+- Applied Generative AI & Agentic Workflows: Agentic AI platform design, Retrieval-Augmented Generation (RAG), Autonomous Tool Use / Function Calling, Prompt Engineering, Context Window Management, Evaluation Workflows, Guardrails and Safety Boundaries, LLM Output Parsing and Validation.
+- Enterprise AI Services: Azure OpenAI Service (GPT-4, GPT-3.5, Embedding Models), Azure AI Search (Vector Search, Hybrid Search, Semantic Re-ranking, Indexing Workpapers and Policies), Azure Cognitive Services.
+- Machine Learning Foundations: Python, NumPy, pandas, scikit-learn, Exploratory Data Analysis (EDA), Data Wrangling, Feature Extraction, Supervised Learning, Model Evaluation Metrics (ROC-AUC, Precision, Recall, F1-Score, Confusion Matrix, Cross-Validation).
+- AI/Application Integration: Hosting lightweight NLP/ML extraction models behind containerized .NET Core APIs, Asynchronous job orchestration with Azure Functions and Azure Service Bus, End-to-end telemetry with Azure Application Insights.
+- Decision Intelligence & Predictive Analytics: Surfacing predictive forecasting, scenario modeling, location-based intelligence, and algorithmic business recommendations to C-suite and product stakeholders.
+
+2.3. FRONTEND & CLIENT-SIDE ENGINEERING
+- Core Frameworks & Languages: TypeScript, JavaScript (ES5, ES6+, Modern ECMAScript), Angular (Angular 2 up to modern Angular versions, Angular Material, Angular CLI), AngularJS (1.x, Mashup integrations), React (React Hooks, Functional Components, Context API, Redux), HTML5, CSS3, SCSS / SASS, Blade UI architecture.
+- Styling & UI Component Libraries: Tailwind CSS, Angular Material, Material UI (MUI), Kendo UI, jQxWidgets, Bootstrap, Responsive Web Design, Flexbox, CSS Grid, Cross-Browser Compatibility.
+- Data Visualization & Dashboard Libraries: HighCharts, HighStocks, DataTables.net, D3.js concepts, Canvas/SVG charting, Interactive Filter Widgets, Custom KPI Cards, Geospatial Map Visualizations.
+- Frontend Tooling & Testing: Webpack, Vite, npm, Yarn, Jasmine, Karma, Jest, Chrome DevTools profiling, Lighthouse auditing, Single Page Application (SPA) routing, Lazy Loading, HTTP Interceptors, Guards, Lifecycle Hooks.
+
+2.4. BACKEND & SERVER-SIDE ENGINEERING
+- Core Languages & Runtimes: C#, .NET Core (1.0 through modern .NET 8+), .NET Framework (3.5, 4.0, 4.5, 4.8), ASP.NET Core, ASP.NET MVC (MVC 3, MVC 4, MVC 5 with Razor View Engine), ASP.NET Web API, WCF (Windows Communication Foundation), ASMX Web Services, Windows Services.
+- ORM & Data Access: Entity Framework Core (EF Core), Entity Framework (EF 4.0, EF 6.0), Code-First Migrations, Database-First Modeling, Data Annotations, Fluent API configuration, LINQ (Language Integrated Query), Lambda Expressions, ADO.NET, Dapper concepts.
+- Code Generation & Templating: T4 Templates (Text Template Transformation Toolkit) for automatic scaffolding of custom views, metadata decorators, and validator providers.
+- Asynchronous & High-Performance Computing: Task Parallel Library (TPL), async/await patterns, Memory Cache, Distributed Caching with Redis, Multi-threading, Background Workers, Message Queue Consumers.
+
+2.5. DATA MANAGEMENT, DATABASES & BUSINESS INTELLIGENCE
+- Relational Databases: Microsoft SQL Server (2008 R2, 2012, 2016, 2019, Azure SQL Database), Database Schema Design, Index Tuning, Stored Procedures, Functions, Views, Performance Profiling, Execution Plan Analysis, Transaction Management (ACID).
+- NoSQL & In-Memory Databases: Azure Cosmos DB, Redis (Session storage, High-speed query caching, Distributed cache invalidation).
+- Business Intelligence & Reporting Platforms:
+  - Qlik Sense: Dashboard Architecture, Data Modeling, Associative Engine, Expressions (Set Analysis), Sheet Design, Mashup API (Embedding Qlik visualizations inside web apps), QlikView.
+  - Qlik NPrinting: Automated report generation, Multi-format distribution (Excel, PowerPoint, Word, PDF), Task Scheduling, Dynamic recipient filtering, Server configuration.
+  - JasperSoft / Jasper Server / iReport: Jasper Adhoc reporting environments, Custom report templates, Multi-level drill-down dashboards, Domain modeling.
+  - Documentum Server Integration: Document storage, enterprise content management and metadata synchronization.
+- Data Integration & ETL: ETL Pipeline design, Data extraction, Transformation, Cleaning, Schema mapping, Data warehousing fundamentals, Batch data processing for compliance reporting.
+
+2.6. CLOUD INFRASTRUCTURE & DEVOPS
+- Cloud Provider: Microsoft Azure
+  - Azure Compute: Azure App Services, Azure Functions (Serverless event-driven execution), Azure Container Instances (ACI), Docker container hosting.
+  - Azure Messaging & Integration: Azure Service Bus (Topics, Subscriptions, Queues), Azure Queue Storage, Event Grid.
+  - Azure Storage & Security: Azure Blob Storage, Azure Table Storage, Azure Key Vault (Secrets, Keys, Certificates management), Managed Identities, Azure Virtual Networks.
+  - Azure Monitoring & Observability: Azure Application Insights, Azure Monitor, Log Analytics, Custom Telemetry, Metric alerts.
+- DevOps & CI/CD: Azure DevOps (Pipelines, YAML multi-stage build and release pipelines, Gatekeeper approval workflows, Artifact feeds), GitHub Actions, GitLab CI, Automated Testing triggers, Deployment slot staging, Blue-Green deployments.
+- Version Control: Git, GitHub, GitLab, Bitbucket, Branching Strategies (GitFlow, Trunk-Based Development, Feature Branching), Pull Request reviews.
+
+2.7. SECURITY, IDENTITY & COMPLIANCE
+- Authentication & Authorization: OAuth 2.0, OpenID Connect (OIDC), Microsoft Authentication Library (MSAL), Azure Active Directory / Entra ID, JSON Web Tokens (JWT), Role-Based Access Control (RBAC), Claims-Based Authorization, Multi-Factor Authentication (MFA).
+- Financial & Payment Security: 3D Secure e-commerce fraud prevention protocols, E-Dirham integration, Payment gateway integrations, PCI-DSS compliance awareness.
+- Healthcare & Regulatory Compliance: Banking regulatory compliance (Standard Chartered Bank IDS), Special Educational Needs data governance (SEN/D), Healthcare compliance (Abu Dhabi DOH, Aetna PHIT quality metrics).
+
+2.8. TELECOMMUNICATIONS, OPERATING SYSTEMS & LOW-LEVEL SYSTEMS
+- Operating Systems & Shells: Unix / Linux (Solaris, RedHat, Ubuntu), Windows Server (2008, 2012, 2016, 2019), macOS.
+- Scripting & Automation: Bash Shell Scripting, Cron Job Automation, System Diagnostics, Log Parsing, Maintenance Scripting.
+- Telecom Protocols & Systems: Wireless in Local Loop (WLL) communication protocols, C-DOT (Centre for Development of Telematics) Digital Switching module validation, Telecom Switch testing and quality assurance.
+
+================================================================================
+SECTION 3: DETAILED CHRONOLOGICAL CAREER HISTORY & PROJECTS
+================================================================================
+
+--------------------------------------------------------------------------------
+PROJECT / ROLE 1: KPMG DASH & KATALYST — AI-POWERED DECISION INTELLIGENCE PLATFORM
+--------------------------------------------------------------------------------
+- Organization: KPMG, Microsoft Business Solutions Malta
+- Location: Marsa, Malta
+- Period / Duration: Oct 2024 – Present (Ongoing) (KPMG engagement started Oct 2021)
+- Roles: Senior Software Engineer / Senior Analyst Programmer / Platform Lead Contributor
+- Core Technologies: Angular, .NET Core / .NET Web API, C#, Microsoft SQL Server, Azure OpenAI, Azure AI Search, Azure Functions, Azure Service Bus, Azure Key Vault, Application Insights, Azure DevOps CI/CD, Python, scikit-learn, REST APIs, Microservices, RAG architecture.
+- Domain: AI-driven Decision Intelligence, Retail Analytics, Location Intelligence, Auditing & Compliance Workflows.
+- Detailed Description & Architectural Contributions:
+  - Product Development (KPMG Dash): Developed and scaled KPMG Dash, an AI-powered SaaS decision-intelligence platform combining internal enterprise datasets with external geographic/demographic data to deliver automated location and consumer analysis.
+  - Machine Learning & Analytics Integration: Built the UI and application layer that ingests predictive analytics, forecasting models, and business recommendations produced by machine learning pipelines, presenting intuitive visualizations to C-level executives.
+  - RAG Knowledge Discovery Assistant: Architected and built an internal Retrieval-Augmented Generation (RAG) assistant utilizing Azure OpenAI and Azure AI Search. Enabled intelligent semantic search and question-answering across thousands of complex auditing workpapers, policies, and regulatory documents.
+  - NLP Service Containerization: Containerized lightweight Natural Language Processing (NLP) text extraction models behind high-throughput .NET Core APIs, orchestrating asynchronous background processing using Azure Functions and Azure Service Bus queues.
+  - Platform Engineering (KPMG Katalyst): Defined golden-path architecture standards, reusable frontend component libraries in Angular, standardized API contracts in .NET Web API, and shared codebase templates that accelerated onboarding and cross-team feature delivery.
+  - Quality & Delivery Governance: Led peer code reviews, pull request workflows, test case definition (unit/integration), and automated Azure DevOps release gates, establishing high release confidence across multi-disciplinary engineering teams.
+  - Cross-Functional Collaboration: Acted as technical bridge between software engineering, data science/analytics teams, product managers, and business stakeholders.
+
+--------------------------------------------------------------------------------
+PROJECT / ROLE 2: SPECIAL EDUCATIONAL NEEDS (SEN/D) ASSESSMENT PLATFORM (B SQUARED)
+--------------------------------------------------------------------------------
+- Organization: B Squared (UK) / KPMG Engagement
+- Location: United Kingdom / Remote
+- Period / Duration: Oct 2021 – Sep 2024
+- Role: Senior Software Engineer
+- Core Technologies: Angular, TypeScript, .NET Web API, C#, Microsoft SQL Server, Entity Framework Core, RESTful APIs, HTML5, SCSS.
+- Domain: EdTech, Special Educational Needs and Disabilities (SEN/D), Educational Progress Assessment.
+- Detailed Description & Contributions:
+  - Educational Assessment Platform: Architected, developed, and maintained a comprehensive cloud platform for UK educational institutions to track, assess, and report the granular progress of pupils with Special Educational Needs and Disabilities.
+  - Micro-Milestone Tracking Engine: Designed sophisticated data models and user interfaces capable of recording non-linear, small-step developmental milestones across varied curriculum frameworks.
+  - Performance & Optimization: Optimized database queries, stored procedures, and frontend state caching to handle high-frequency school reporting cycles during assessment terms.
+  - Reusable Component Library: Built a robust suite of reusable Angular components and standardized API endpoints, significantly reducing defects and streamlining future feature additions.
+
+--------------------------------------------------------------------------------
+PROJECT / ROLE 3: GEMS EDUCATION MULTI-NATIONAL PLATFORM
+--------------------------------------------------------------------------------
+- Organization: Finesse Global
+- Client: GEMS Education (International Educational Group)
+- Location: Dubai, United Arab Emirates
+- Period / Duration: Mar 2021 – Sep 2021
+- Role: Senior Software Developer / Lead Full-Stack Developer
+- Core Technologies: React, TypeScript, .NET Core, C#, REST APIs, Redis Caching, MSAL (Microsoft Authentication Library), OAuth 2.0, Active Directory / Azure AD, Distributed Systems.
+- Scale: 20,000+ active users across 10 countries and 10+ regional data centers.
+- Domain: Education Management, Multi-National / Multi-Lingual Enterprise Platforms.
+- Detailed Description & Contributions:
+  - System Architecture & Delivery: Spearheaded the technical design, development, and multi-region deployment of an international educational portal serving students, teachers, parents, and administrative staff across 10 countries in multiple languages.
+  - High-Performance API Gateway: Engineered resilient, low-latency RESTful APIs interfacing with more than 5 distinct external and legacy enterprise systems (student information systems, billing, learning management systems).
+  - Caching & Scalability: Implemented distributed Redis caching strategies to dramatically reduce database load and ensure sub-second response times across geographic regions.
+  - Identity & Security: Implemented enterprise-grade single sign-on (SSO) and authentication using MSAL, OAuth 2.0, and Active Directory federation, ensuring strict data isolation per school district.
+
+--------------------------------------------------------------------------------
+PROJECT / ROLE 4: SHELL CAPITAL COST ESTIMATION TOOL (CCET)
+--------------------------------------------------------------------------------
+- Organization: Randstad India (Staffing Partner for Shell)
+- Client: Shell International / Shell India Private Limited
+- Location: Bengaluru, India (Distributed Global Team)
+- Period / Duration: Jul 2020 – Feb 2021
+- Role: Senior .NET Specialist / Lead UI/UX Developer
+- Core Technologies: Angular, TypeScript, .NET Core, C#, REST APIs, Blade UI Architecture, SCSS, Agile / Scrum.
+- Domain: Oil & Gas / Energy Infrastructure, Enterprise Capital Cost Estimation.
+- Detailed Description & Contributions:
+  - Greenfield Product Architecture: Built Shell's Capital Cost Estimation Tool (CCET) from the ground up as a key member of an international, distributed Agile team spanning India and Europe.
+  - Blade UI Implementation: Designed and implemented complex, multi-pane "Blade UI" frontend workflows enabling cost engineers to configure, estimate, and simulate multi-million dollar capital expenditure projects.
+  - Reusable Architecture: Established clean frontend-backend API contracts, component hierarchies, and modular state management to ensure seamless synchronization across distributed development teams.
+
+--------------------------------------------------------------------------------
+PROJECT / ROLE 5: ABU DHABI GOVERNMENT HEALTH INSURANCE PLATFORM
+--------------------------------------------------------------------------------
+- Organization: Raqmiyat
+- Client: Abu Dhabi Government / Department of Health (DOH)
+- Location: Abu Dhabi, United Arab Emirates
+- Period / Duration: Nov 2018 – Dec 2019
+- Role: Senior .NET Specialist / Greenfield Individual Contributor
+- Core Technologies: Angular 6, TypeScript, ASP.NET Core, C#, Entity Framework Core, LINQ, Microsoft SQL Server 2012, WCF, Web API, HTML5, CSS3, JavaScript, Azure DevOps, CI/CD.
+- Domain: Government Services, Healthcare & Health Insurance, Secure Financial Transactions.
+- Detailed Description & Contributions:
+  - Greenfield Government Health Portal: Architected and developed core application modules for the Abu Dhabi Government's official health insurance platform.
+  - Secure Payment Integration: Integrated application with official UAE E-Dirham payment gateways and transactional processing services ensuring strict government security standards.
+  - Automated Release Pipelines: Designed and configured end-to-end Azure DevOps CI/CD pipelines incorporating automated builds, security scanning, and multi-stage approval-based deployment workflows.
+  - Full-Stack Delivery: Implemented responsive citizen/admin portals using Angular 6 and high-throughput backend services using ASP.NET Core and EF Core.
+
+--------------------------------------------------------------------------------
+PROJECT / ROLE 6: COGNIZANT TECHNOLOGY SOLUTIONS — ENTERPRISE BI & WEB SOLUTIONS
+--------------------------------------------------------------------------------
+- Organization: Cognizant Technology Solutions
+- Locations: India (Chennai, Bangalore) & United Kingdom
+- Period / Duration: Dec 2014 – Aug 2018
+- Role: Associate / Senior Developer / Lead Developer
+- Core Technologies: Qlik Sense, QlikView, Qlik Sense Mashup API, Qlik NPrinting, AngularJS, JavaScript (Design Patterns: Module, Namespace, Sandbox), ASP.NET MVC 4.0 / 5.0, C#, LINQ, WCF, REST Web Services, Microsoft SQL Server 2008 R2, Documentum Server, Jasmine, Test & Target, SharePoint.
+- Domain: Banking & Financial Services, Health Insurance, Commercial Property & Casualty Reinsurance.
+- Major Sub-Projects & Client Engagements:
+  1. XL Catlin (Catlin / XL Group Insurance & Reinsurance, UK):
+     - Role: Lead Developer.
+     - Scope: Developed core insurance forecasting and risk-management modules. Integrated Qlik Sense visualizations with an AngularJS / ASP.NET MVC web portal using the Qlik Sense Mashup API.
+     - Content Management: Integrated application with EMC Documentum Server for policy document archiving and retrieval.
+     - Reporting: Configured Qlik NPrinting server tasks for automated generation and distribution of executive reports in Excel, PowerPoint, and Word formats.
+  2. SunTrust Bank (USA) — "Momentum onUp" Financial Wellness Program:
+     - Scope: Partnered with enterprise architects to build application foundation. Re-architected and rewrote existing legacy portal into a responsive web application using .NET 4.5 and AngularJS.
+     - Modules: Engineered Data Access Layer (DAL), Business Logic Layer (BLL), Admin management console, and secure SOAP/REST Web Services interfacing with SharePoint.
+  3. US Bank (USA) — Frontier Omni Transfers (Money Movement Solution):
+     - Scope: Developed core money transfer modules for online banking portal utilizing an omni-channel responsive architecture.
+     - Stack: ASP.NET MVC 5.0, .NET 4.5, AngularJS, Jasmine unit testing framework, Test & Target personalization engine.
+  4. Aetna, Inc. (USA) — ActiveHealth Management / Active Care Team (PHIT):
+     - Scope: Developed Quality Measurement and clinical decision support modules for healthcare management.
+     - Stack: ASP.NET MVC 4.0, C#, LINQ, jQuery UI components, DataTables library, advanced JavaScript design patterns (Namespace & Sandbox patterns).
+
+--------------------------------------------------------------------------------
+PROJECT / ROLE 7: STANDARD CHARTERED BANK REGULATORY REPORTING (IDS)
+--------------------------------------------------------------------------------
+- Organization: HCL Technologies (Hindustan Computers Limited)
+- Client: Standard Chartered Bank (Singapore / Global Regulatory Compliance)
+- Location: Chennai, India
+- Period / Duration: Jan 2014 – Dec 2014
+- Role: Senior Software Engineer
+- Core Technologies: ASP.NET MVC 4.0, C# 4.0, Entity Framework 6.0, LINQ, SQL Server, Repository Pattern, Kendo UI, ETL Data Pipelines, Windows Server Hosting.
+- Domain: Investment & Corporate Banking, Multi-Jurisdiction Regulatory Compliance Reporting.
+- Detailed Description & Contributions:
+  - Information Delivery System (IDS): Designed and developed the IDS platform used by Standard Chartered Bank to extract, transform, and aggregate high-volume transaction data for regulatory bodies across multiple countries.
+  - Architecture & Design: Designed data models, multidimensional reporting structures, and batch processing background workers utilizing Entity Framework 6.0 and the Repository Pattern.
+  - Deployment & Client Liaison: Managed software packaging, Windows Server deployment, staging environment validation, and technical documentation for compliance audits.
+
+--------------------------------------------------------------------------------
+PROJECT / ROLE 8: INATECH — SAAS REPORTING & OIL/BUNKERING ENTERPRISE PRODUCTS
+--------------------------------------------------------------------------------
+- Organization: Inatech Info Solutions Pvt Ltd (formerly California Software / Calsoft)
+- Location: Chennai, India
+- Period / Duration: Jul 2010 – Dec 2013
+- Role: Consultant / Software Engineer
+- Core Technologies: ASP.NET MVC 3.0, C# 4.0, Entity Framework 4.0 (Code First), StructureMap (Dependency Injection), T4 Templates, LINQ, JasperSoft / Jasper Server, Jasper Adhoc, iReport, HighCharts, jQuery, Kendo UI, jQxWidgets, WCF, XML, SQL Server.
+- Domain: Marine Oil & Bunkering Industry, Commodities Trading, Retail POS, Telecom.
+- Major Sub-Projects & Engagements:
+  1. BunkerTech SaaS Platform (Oil & Bunkering Solution):
+     - Scope: Core engineering team member developing the multi-tenant BunkerTech SaaS product (Procurement, Trade Risk Management, and Administration modules). Demonstrated as a prototype at SIBCON 2012 (Singapore International Bunkering Conference).
+     - Tech Details: Implemented Code-First EF 4.0 data models, StructureMap dependency injection, custom HTML Helpers, and custom validation providers. Created T4 templates to automatically scaffold customized views and metadata validators.
+  2. BunkerTech Reporting Framework:
+     - Scope: Designed and built an enterprise reporting engine leveraging Jasper Server and Jasper Adhoc. Built multi-level drill-down dashboards using iReport and HighCharts for real-time commercial analytics.
+  3. Chemoil Marine Fuel Project:
+     - Scope: Built specialized trading interfaces using WCF, ASP.NET MVC, and jQxWidgets.
+  4. Phones 4u (P4u, UK) / Orange UK — Orange Data Link Evolution:
+     - Scope: Developed Point-of-Sale (POS) desktop/client application used in retail stores to process mobile phone purchases, contract upgrades, and plan subscriptions via Orange Mobile Store Web Services (C#.NET, SQL, XML, Web Services 2.0).
+  5. Hutchison 3G (Three UK):
+     - Scope: Integrated 3D Secure online payment authentication protocol into telecommunications web store to prevent credit card fraud.
+
+--------------------------------------------------------------------------------
+PROJECT / ROLE 9: MIDAS COMMUNICATION TECHNOLOGIES — TELECOM R&D SUPPORT
+--------------------------------------------------------------------------------
+- Organization: Midas Communication Technologies (Incubated by IIT Madras & TeNeT Group)
+- Location: Chennai, India
+- Period / Duration: Feb 2003 – Jun 2005
+- Role: Technical Support Executive (R&D) / Installation Field Engineer
+- Core Technologies: Unix, Linux, Solaris, Bash Shell Scripting, Cron Scheduling, Network Diagnostics, WLL Protocols.
+- Domain: Telecommunications Infrastructure, Wireless in Local Loop (WLL) Technology.
+- Detailed Description & Contributions:
+  - R&D Production Support: Provided operational and technical support for Wireless in Local Loop (WLL) switching and access systems developed in collaboration with the Indian Institute of Technology (IIT) Madras.
+  - Automation & Diagnostics: Authored reusable Bash automation scripts and cron jobs to monitor server health, automate diagnostic routines, parse system logs, and optimize maintenance workflows.
+  - On-Call Operations: Maintained server availability, performed Unix system administration, and diagnosed network protocol anomalies.
+
+--------------------------------------------------------------------------------
+PROJECT / ROLE 10: HTL LIMITED CHENNAI — TELECOM SWITCH VALIDATION
+--------------------------------------------------------------------------------
+- Organization: HTL Limited Chennai
+- Location: Guindy, Chennai, India
+- Period / Duration: Dec 2001 – Feb 2003
+- Role: Technician / Telecom QA Trainee
+- Core Technologies: Unix, C-DOT Switching Protocols, Hardware & Software Validation Protocols, Defect Tracking.
+- Domain: Telecommunications Manufacturing & Switching Systems.
+- Detailed Description & Contributions:
+  - C-DOT Switching Validation: Executed rigorous functional, load, and performance testing cycles for C-DOT (Centre for Development of Telematics) telecom switching modules.
+  - Quality Assurance: Validated protocol adherence against national telecom standards, logged defect lifecycles, and ensured operational compliance before field deployment.
+
+--------------------------------------------------------------------------------
+PROJECT / ROLE 11: FREELANCE & INDEPENDENT CONSULTING
+--------------------------------------------------------------------------------
+- Period / Duration: 2015 – Present (Selective engagements)
+- Role: Freelance Senior .NET Developer & Technical Architect Consultant
+- Core Technologies: .NET Core, ASP.NET Core, Angular, React, Azure (Functions, Service Bus, Storage, Key Vault), SQL Server, Cosmos DB, Redis, Qlik Sense, NPrinting.
+- Scope & Deliverables:
+  - Built custom responsive full-stack applications and microservices for international clients across Europe and the Middle East.
+  - Created customized Qlik Sense dashboards, data pipelines, and automated NPrinting report schedules for healthcare and financial consulting firms.
+  - Implemented secure cloud architectures and CI/CD pipelines in Azure.
+
+================================================================================
+SECTION 4: FORMAL EDUCATION, ACADEMIC QUALIFICATIONS & TRAINING
+================================================================================
+
+4.1. BACHELOR OF ENGINEERING (B.E.) — COMPUTER SCIENCE & ENGINEERING
+- Institution: Sri Venkateswara College of Engineering (SVCE), Sriperumbudur, Chennai (Affiliated to Anna University, Chennai)
+- Period / Duration: 2005 – 2008
+- Classification: First Class
+- Mode: Lateral Entry (Admitted directly into Year 2 following completion of Diploma in Engineering).
+- Curriculum & Focus: Data Structures, Analysis & Design of Algorithms, Operating Systems, Computer Architecture, Database Management Systems (DBMS), Object-Oriented Programming, Software Engineering, Computer Networks, Theory of Computation.
+
+4.2. DIPLOMA IN ELECTRONICS & COMMUNICATION ENGINEERING (D.E.C.E.)
+- Institution: Central Polytechnic College (CPT), Taramani, Chennai
+- Period / Duration: 1998 – 2001 (Completed Dec 2001)
+- Classification: First Class
+- Curriculum & Focus: Electronic Devices & Circuits, Microprocessors & Microcontrollers, Analog & Digital Communications, Telecommunication Systems, Digital Electronics, C Programming.
+
+4.3. SECONDARY SCHOOL EDUCATION (CLASS 10 / SSLC)
+- Institution: DRBCC Higher Secondary School, Trivellore, Chennai, Tamil Nadu, India
+- Completed: 1998 (Class 10 Matriculation / State Board)
+
+4.4. PROFESSIONAL CERTIFICATIONS & SPECIALIZED TRAINING
+- NIIT Nungambakkam, Chennai (Apr 2009 – Feb 2010): Advanced Professional Program in .NET Framework (.NET 3.5, C#, ASP.NET, ADO.NET, SQL Server 2005, Windows Applications, Web Applications, Microsoft Certified Technology Specialist - MCTS track).
+- Microsoft Certified: Azure Developer Associate track & MCP (Microsoft Certified Professional) training.
+- NASSCOM National Skills Registry (NSR): Registered Member (ITPIN: 681094819843).
+- Agile & Scrum Methodologies Certification and continuous professional training.
+
+================================================================================
+SECTION 5: SYSTEM DESIGN, METHODOLOGIES & ENGINEERING PRACTICES
+================================================================================
+
+- SDLC Methodologies: Agile (Scrum, Kanban, Sprint Planning, Daily Standups, Retrospectives), Waterfall / V-Model (early telecom roles), Hybrid Agile for multi-timezone enterprise delivery.
+- Software Engineering Best Practices:
+  - Clean Code & SOLID Principles: Writing readable, maintainable, self-documenting code with high cohesion and loose coupling.
+  - Test-Driven & Quality Engineering: Unit Testing (Jasmine, NUnit/xUnit concepts), Integration Testing, Automated Regression Testing, Test Coverage profiling.
+  - Code Review & Governance: Peer code reviews, Pull Request gating, automated linting/formatting, branch protection policies, architectural sign-offs.
+  - Security by Design: Principle of Least Privilege, Secret management via Key Vaults, Input sanitization, SQL Injection prevention (via parameterized queries and EF Core), XSS/CSRF mitigation, encrypted communication (TLS/HTTPS).
+  - Scalability & Performance Tuning: Profiling execution bottlenecks, indexing strategies, caching patterns (cache-aside, write-through with Redis), asynchronous I/O, database connection pooling, asset bundle optimization (Tree Shaking, Lazy Loading, Gzip/Brotli compression).
+  - Monitoring & Telemetry: Distributed tracing, Application Performance Monitoring (APM via Azure Application Insights), structured logging (Serilog, Winston), health checks, automated anomaly alerting.
+
+================================================================================
+SECTION 6: KEYWORD MATRIX FOR VECTOR DATABASE RETRIEVAL
+================================================================================
+Prasanna Prabhakaran, Prasanna Raja, Senior Software Engineer, Technical Architect, Solutions Architect, Platform Engineer, Full-Stack Developer, .NET Core, ASP.NET Core, C#, Web API, Entity Framework, EF Core, LINQ, Microservices, CQRS, Clean Architecture, Repository Pattern, Dependency Injection, T4 Templates, Angular, AngularJS, React, TypeScript, JavaScript, HTML5, CSS3, SCSS, Tailwind CSS, Angular Material, MUI, Material UI, Kendo UI, Redux, RxJS, Blade UI, HighCharts, DataTables, Microsoft Azure, Azure Functions, Azure Service Bus, Azure Queue Storage, Azure Key Vault, Azure App Services, Application Insights, Azure DevOps, CI/CD Pipelines, Docker, Containerization, Microsoft SQL Server, Azure SQL, Cosmos DB, Redis, Qlik Sense, Qlik Sense Mashup API, QlikView, Qlik NPrinting, JasperSoft, Jasper Adhoc, iReport, Documentum, GraphQL, REST APIs, SOAP, WCF, MSAL, OAuth 2.0, OpenID Connect, JWT, Active Directory, Azure AD, Entra ID, RBAC, 3D Secure, E-Dirham, Generative AI, Agentic AI, Large Language Models, LLM, Retrieval-Augmented Generation, RAG, Azure OpenAI, Azure AI Search, Prompt Engineering, Function Calling, AI Guardrails, Python, pandas, NumPy, scikit-learn, Exploratory Data Analysis, Predictive Analytics, Forecasting, Decision Intelligence, Retail Analytics, Location Intelligence, Oil & Gas, Bunkering, Maritime SaaS, Shell CCET, BunkerTech, SIBCON, EdTech, Special Educational Needs, SEN/D, B Squared, GEMS Education, Banking, Standard Chartered Bank, SunTrust Bank, US Bank, Aetna, Healthcare, Abu Dhabi Government, Health Insurance, XL Catlin, Reinsurance, Telecom, Wireless in Local Loop, WLL, Midas Communication, IIT Madras, TeNeT, C-DOT, HTL Limited, Unix, Linux, Solaris, Bash Scripting, Sri Venkateswara College of Engineering, SVCE, Anna University, Central Polytechnic College, NIIT, NASSCOM NSR.
+
