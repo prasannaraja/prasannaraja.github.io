@@ -863,7 +863,7 @@ footer .built {
 
 /* Chat Window */
 .twin-chat-window {
-    width: 680px;
+    width: 748px;
     max-width: 95vw;
     min-width: min(100%, 360px);
     height: 720px;
