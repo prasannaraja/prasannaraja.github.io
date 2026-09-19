@@ -1,129 +1,186 @@
-# AI Digital Twin & Production RAG Architecture
-### Interactive Portfolio & Generative Career Twin of Prasanna Prabhakaran (Prasanna Raja)
+# Production-Grade AI Digital Twin & Multilingual RAG Architecture
 
-[![Live Web Application](https://img.shields.io/badge/Live%20Demo-prasannaraja.github.io-0A66C2?style=for-the-badge&logo=googlechrome&logoColor=white)](https://prasannaraja.github.io/)
-[![Architecture](https://img.shields.io/badge/Architecture-Production--Grade%20RAG-7952B3?style=for-the-badge&logo=diagramsdotnet&logoColor=white)](#-rag--system-architecture)
-[![Tech Stack](https://img.shields.io/badge/Stack-React%2018%20%7C%20Node.js%20%7C%20Gemini%20%7C%20Prisma%20%7C%20FastAPI-009688?style=for-the-badge&logo=react&logoColor=white)](#-technical-stack--ecosystem)
-[![Multilingual](https://img.shields.io/badge/Languages-EN%20%7C%20DE%20%7C%20FR-4CAF50?style=for-the-badge)](https://prasannaraja.github.io/)
+[![Live Application](https://img.shields.io/badge/Live%20Demo-prasannaraja.github.io-0A66C2?style=for-the-badge&logo=googlechrome&logoColor=white)](https://prasannaraja.github.io/)
+[![Architecture](https://img.shields.io/badge/Pattern-Dual--Context%20RAG-7952B3?style=for-the-badge&logo=diagramsdotnet&logoColor=white)](#-core-architecture--data-flow)
+[![Stack](https://img.shields.io/badge/Stack-React%2018%20%7C%20Node.js%20%7C%20Gemini%20%7C%20Prisma%20%7C%20FastAPI-009688?style=for-the-badge&logo=react&logoColor=white)](#-engineering-stack)
+[![Multilingual](https://img.shields.io/badge/Vector%20Locales-EN%20%7C%20DE%20%7C%20FR-4CAF50?style=for-the-badge)](https://prasannaraja.github.io/)
 
 ---
 
-## 🎯 Executive Overview
+## ⚡ Technical Summary
 
-This repository powers the **AI Digital Twin & Intelligent Portfolio** for **Prasanna Prabhakaran (Prasanna Raja)** — a Senior Software Engineer & Technical Architect with **15+ years of post-degree enterprise engineering experience** (and 18+ years of total technical track record) across **Malta & EU, the UAE, the UK, and India**.
+This repository contains the architecture and implementation of a **Production-Grade, Multilingual Retrieval-Augmented Generation (RAG) Digital Twin**. 
 
-Instead of presenting a static resume, this project demonstrates an end-to-end, enterprise-grade **Retrieval-Augmented Generation (RAG)** decision intelligence system. Technical Managers, Hiring Leaders, and HR teams can interact with the digital twin to interrogate architectural depth, delivery history, technology trade-offs, and live Job Description alignments.
+Rather than relying on generic LLM prompts or unstructured document dumps, this system implements an end-to-end intelligent retrieval platform featuring **semantic entity chunking**, **deterministic embedding fallback chains**, **autonomous headless web crawling (Crawl4AI)** for real-time document comparison, **SSRF security guardrails**, and **telemetry-driven query gap analytics**.
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│                                    LIVE CAPABILITIES                                   │
+│                                ARCHITECTURAL HIGHLIGHTS                                │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
-│  ⚡ Zero-Hallucination Grounding : Strict cosine similarity floor (0.45) on 23 chunks   │
-│  🌐 Multilingual Intelligence   : Native reasoning & vector routing in EN, DE, & FR   │
-│  🔍 Autonomous Web Crawler      : Ingests live external JD URLs (FastAPI + Crawl4AI)   │
-│  📊 Telemetry & Question Mining : Prisma ORM SQLite query analytics & missing skill log│
-│  🛡️ Enterprise Security         : SSRF DNS validation, prompt guardrails, PII filters  │
+│  🎯 Zero-Hallucination Retrieval : Dynamic cosine similarity floor with source binding │
+│  🌐 Native Multilingual Stores   : Isolated vector stores for EN, DE, & FR queries     │
+│  🕷️ Dual-Context Web Crawler    : Headless Chromium runtime for live JD & URL parsing  │
+│  🛡️ Defense-in-Depth Security   : SSRF DNS validation, injection guards & CORS filters  │
+│  📊 Query Analytics Engine       : Prisma ORM SQLite telemetry mining unanswered topics │
+│  🤖 Model Context Protocol (MCP) : Stdio JSON-RPC interface for external agent tooling  │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 🏛️ System Architecture
+## 🏛️ Core Architecture & Data Flow
 
 ```
 +─────────────────────────────────────────────────────────────────────────────────────────+
-|                                  CLIENT & CONSUMER TIER                                 |
+|                                  CLIENT & AGENT CONSUMERS                               |
 +─────────────────────────────────────────────────────────────────────────────────────────+
    │                                                                           │
    │  HTTPS (Port 443 / CORS)                                                  │ JSON-RPC (Stdio)
    ▼                                                                           ▼
 +─────────────────────────────────────────+                         +─────────────────────+
-|     prasannaraja.github.io (v2)         |                         |  Claude Code / AGY  |
-|  React 18 + TS + Tailwind + Redux       |                         |  Model Context MCP  |
-|  Multilingual (EN, DE, FR)              |                         +─────────────────────+
-+─────────────────────────────────────────+                                    │
+|     Web UI (React 18 + TS + Redux)      |                         |  AI Agent Tooling   |
+|  • Streaming Markdown Response Parser   |                         |  • Model Context    |
+|  • Locale State (EN, DE, FR)            |                         |    Protocol (MCP)   |
++─────────────────────────────────────────+                         +─────────────────────+
    │                                                                           │
    │ REST (POST /api/twin/chat)                                                │
    ▼                                                                           │
 +──────────────────────────────────────────────────────────────────────────────┴──────────+
-|                    ENTERPRISE BACKEND SERVICE (career-core-service)                     |
-|                    Node.js 20 + Express.js (Docker on Linux Server)                     |
+|                    BACKEND CORE SERVICE (Express.js + Node.js 20)                       |
 +─────────────────────────────────────────────────────────────────────────────────────────+
    │                                                               
-   ├── 1. Input Guardrails & SSRF Pre-flight ──► Block malicious injection / IP scans
+   ├── 1. Security & Pre-Flight Guardrails
+   │      ├── Prompt Injection Sanitization (Regex token boundary checks)
+   │      └── SSRF Defense: DNS pre-flight checking for private/loopback/cloud IP ranges
    │
-   ├── 2. Live Web Crawler Dispatch (FastAPI + Crawl4AI + Playwright Chromium)
-   │      └── When external JD URL is detected ──► Fetches LLM-ready fit_markdown
+   ├── 2. Live Document Extraction (Autonomous Crawler Subsystem)
+   │      ├── FastAPI + Crawl4AI + Playwright Headless Chromium
+   │      └── Strips DOM bloat, tracking scripts, and cookie banners to return fit_markdown
    │
-   ├── 3. Semantic Vector Search (Cosine Similarity Engine)
-   │      ├── Dense Embeddings : Google Gemini text-embedding-004 (768 Dimensions)
-   │      ├── Deterministic Hash : Local normalization fallback engine
-   │      └── Multi-Locale Store : career_vectors_en / de / fr (23 Chunks / Locale)
+   ├── 3. Semantic Vector Retrieval Engine
+   │      ├── Query Embedding: Google Gemini text-embedding-004 (768 Dimensions)
+   │      ├── Fallback Vectorizer: Local deterministic semantic hashing (768 Dimensions)
+   │      └── Cosine Similarity Search over localized vector stores (career_vectors_{locale}.json)
    │
-   ├── 4. Dual-Context Dynamic LLM Synthesis
-   │      ├── Marquee Enrichment : KPMG Katalyst, Geographic Timeline Matrix, Distributed Systems
-   │      ├── Prioritized Fallback : gemini-flash-latest ──► gemini-3.1-flash ──► gemini-pro
-   │      └── First-Person Persona : Google XYZ formula achievement framing
+   ├── 4. Dual-Context Context Assembly & Persona Injection
+   │      ├── Merges Ground-Truth Chunks + Crawled External Markdown
+   │      ├── Confidence Floor (0.45 threshold): Rejects low-confidence speculative hallucinations
+   │      └── Injects Marquee Enterprise Context (Architecture patterns, metrics, timelines)
    │
-   └── 5. Telemetry & Analytics Engine (Prisma ORM + SQLite dev.db)
-          └── Logs question frequency, query categories, response latencies, and knowledge gaps
+   ├── 5. Multi-Model LLM Synthesis Chain
+   │      └── gemini-flash-latest ──► gemini-3.1-flash-lite ──► gemini-3.5-flash ──► gemini-pro
+   │
+   └── 6. Telemetry & Analytics Mining (Prisma ORM + SQLite dev.db)
+          └── Asynchronously logs query category, response latency, and knowledge gap metrics
 ```
 
 ---
 
-## 🧠 Deep-Dive: Enterprise RAG Pipeline Engineering
+## 🔬 Deep-Dive: Advanced Engineering Patterns
 
-### 1. High-Density Semantic Chunking Strategy
-Standard RAG pipelines often chunk text arbitrarily by character count (e.g. 500 characters), which tears apart technical narratives, metrics, and project constraints.
+### 1. High-Density Semantic Entity Chunking
+Traditional RAG pipelines naively split text by token or character count (e.g. 500 characters), which severs architectural relationships, project metrics, and technical constraints.
 
-Our custom chunker ([`chunker.js`](file:///software-engineer/core/database/source-of-truth/src/chunker.js)) employs **Semantic Entity Chunking**:
-- **Discrete Bounded Contexts:** Segmented into exactly **23 discrete chunks** per language (Project Milestones, Architecture Competencies, System Chronology, and Career Matrices).
-- **Enriched Metadata Injection:** Every chunk contains structured headers (`id`, `title`, `category`, `company`, `role`, `period`, `country`, `duration`).
-- **Pre-Aggregated Chronology Matrix:** Centralized geographic matrix pre-calculating tenures across India (11–12 yrs), UAE (2 yrs), and Malta/EU (almost 5 yrs), preventing aggregate duration hallucinations.
+This platform utilizes **Domain-Bounded Semantic Entity Chunking**:
+- **Bounded Bounded Contexts:** Content is segmented into **23 discrete, self-contained entity chunks** per language (Project Architectures, Core Competencies, Chronology Matrices, and Systems Engineering).
+- **Metadata Injection:** Every chunk is enriched with structured headers (`category`, `company`, `role`, `period`, `country`, `duration`).
+- **Pre-Aggregated Master Chronology Matrix:** Consolidates multi-year tenures across different countries into an authoritative reference chunk, preventing the LLM from hallucinating aggregate durations during multi-tenure questions.
 
-### 2. Live Job Description Alignment (Dual-Context RAG)
-When a recruiter pastes a live Job Description URL or text snippet into the chatbot:
-1. The backend routes the request to our **Crawl4AI Microservice** ([`core/ai-agents/web-search`](file:///software-engineer/core/ai-agents/web-search)).
-2. An async headless **Chromium browser** renders the page, bypasses dynamic JS, and strips DOM clutter into clean `fit_markdown`.
-3. The LLM performs **Dual-Context Synthesis**: mapping each requirement from the target JD directly against Prasanna's 15+ years of post-degree .NET Core microservices, cloud systems (Azure), and production GenAI pipelines.
-
-### 3. Hallucination Prevention & Guardrails
-- **Strict Confidence Floor (0.45):** Queries with low semantic overlap with the knowledge base trigger a graceful, honest boundary response rather than speculative fabrication.
-- **SSRF Defense Layer:** Pre-flight DNS resolution validates destination IPs to strictly block private networks (`10.0.0.0/8`, `192.168.0.0/16`), loopbacks (`127.0.0.1`), and cloud metadata services (`169.254.169.254`).
-- **Prompt Injection Defense:** Input sanitation strips common system-override jailbreaks.
+```
+Raw Markdown Knowledge Base
+           │
+           ▼
+[Custom Semantic Chunker]
+  ├── Extracts Frontmatter & Section Boundaries
+  ├── Normalizes Tech Stacks & Impact Metrics
+  └── Injects Metadata Tags
+           │
+           ▼
+23 Structured JSON Chunks (EN / DE / FR)
+           │
+           ▼
+[Batch Embeddings Generator (Gemini 768-dim)]
+           │
+           ▼
+Pre-Computed Indexed Vector Stores (career_vectors_{locale}.json)
+```
 
 ---
 
-## 🛠️ Technical Stack & Ecosystem
+### 2. Dual-Context Web Ingestion (Crawl4AI Microservice)
+When a user pastes a live URL (such as a Job Description, GitHub repo, or architecture article):
+1. The backend automatically extracts the target hyperlink via regex boundary matching.
+2. The URL is routed to the Python-based **Crawl4AI microservice** ([`core/ai-agents/web-search`](file:///software-engineer/core/ai-agents/web-search)).
+3. A headless **Playwright Chromium** instance loads the page, executes required client-side JS, extracts the main readable content, and filters it into token-efficient `fit_markdown`.
+4. The RAG engine feeds both contexts into the LLM prompt:
+   - **Context A:** The external live document requirements.
+   - **Context B:** Ground-truth architectural experience chunks.
+5. The LLM performs **Dual-Context Capability Mapping**, point-by-point contrasting the external document requirements against actual engineering background.
 
-| Tier | Technologies & Frameworks | Key Highlights |
+---
+
+### 3. Strict SSRF Defense & Security Architecture
+Because the system ingests arbitrary user-supplied URLs, it enforces a strict **Defense-in-Depth SSRF Guardrail**:
+- **Pre-Flight DNS Resolution:** Resolves target hostnames to concrete IP addresses prior to dispatching browser instances.
+- **IP Blocklist Enforcement:** Verifies that resolved IPs are not:
+  - Private subnets (`10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`)
+  - Loopback adapters (`127.0.0.0/8`, `::1`)
+  - Cloud Instance Metadata Endpoints (`169.254.169.254`)
+  - Link-local or multicast ranges
+- **Input Sanitization:** Strips common prompt-override delimiters and injection triggers before context concatenation.
+
+---
+
+### 4. Telemetry & Missing Knowledge Mining
+Every interaction is asynchronously analyzed and stored via **Prisma ORM (SQLite)**:
+- **Confidence Tracking:** Detects queries that hit the confidence floor (< 0.45 similarity).
+- **Knowledge Gap Detection:** Automatically surfaces recurring keywords or technologies that are frequently asked about but absent from the ground-truth store, generating actionable suggestions for knowledge base augmentation.
+- **Latency & Model Analytics:** Tracks inference latency across fallback models.
+
+---
+
+### 5. Model Context Protocol (MCP) Server Integration
+The platform exposes a standard **MCP Server** over `stdio JSON-RPC` ([`core/tools`](file:///software-engineer/core/tools)), allowing autonomous coding agents (Claude Code, Antigravity, OpenCode) to directly invoke:
+- `get_career_profile`: Structured biographical & technical entity query.
+- `search_career_vectors`: Live semantic similarity search over career chunks.
+- `get_skills_matrix`: Categorized competency lookup (.NET, Cloud, React, AI, DBs).
+- `get_telemetry_analytics`: Query statistics and knowledge gap summaries.
+
+---
+
+## 🛠️ Engineering Stack
+
+| Layer | Technologies | Architectural Role |
 | :--- | :--- | :--- |
-| **Frontend (UI / UX)** | React 18, TypeScript, Tailwind CSS, Vite, Redux Toolkit, Lucide Icons | Dark/Light Mode, Fully Responsive, EN/DE/FR Locale Switcher, Markdown Streaming |
-| **Backend (API Layer)** | Node.js 20, Express.js, Prisma ORM, SQLite (`dev.db`), Docker | Clean REST APIs, Telemetry Ingestion, Dynamic Model Fallback Chain |
-| **Vector & RAG Engine** | Google Gemini `text-embedding-004` (768-dim), Cosine Similarity, Custom Chunker | Multilingual Indexing (23 Chunks/locale), Deterministic Hash Fallback |
-| **Agent Microservices** | Python 3.11, FastAPI, Crawl4AI, Playwright (Headless Chromium), Uvicorn | Async web scraping, DNS SSRF Validation, TTL In-Memory Caching |
-| **Agent Tooling (MCP)** | Model Context Protocol (`@modelcontextprotocol/sdk`) | Stdio JSON-RPC interface exposing career tools directly to AI Agents |
-| **CI / CD & Infra** | GitHub Actions, GitHub Pages, Linux Home Server, Nginx, Let's Encrypt SSL | Automated testing, build pipeline, Docker container orchestration |
+| **Frontend UI** | React 18, TypeScript, Tailwind CSS, Vite, Redux Toolkit | Responsive UI, state management, markdown streaming, dark/light persistence |
+| **API & RAG Layer** | Node.js 20, Express.js, Prisma ORM, SQLite (`dev.db`) | REST endpoints, vector retrieval, prompt construction, telemetry mining |
+| **Embedding Engine** | Google Gemini `text-embedding-004` (768-dim) | Dense vector generation with deterministic local fallback vectorizer |
+| **LLM Synthesis** | Google Gemini 2.5 Flash / Flash-Lite / Pro | Dynamic multi-model fallback chain for high-speed streaming synthesis |
+| **Agent Microservice** | Python 3.11, FastAPI, Crawl4AI, Playwright (Chromium) | Dynamic URL crawling, JS rendering, structured markdown extraction |
+| **Agent Tooling** | Model Context Protocol (`@modelcontextprotocol/sdk`) | Stdio JSON-RPC interface for IDE and agent interoperability |
+| **Infrastructure** | Docker, Nginx, Let's Encrypt SSL, Linux Server, GitHub Actions | Containerized microservices, reverse proxy SSL termination, automated CI/CD |
 
 ---
 
-## 📊 Monorepo Structure
+## 📁 Repository Layout
 
 ```
 career-workspace/
-├── software-engineer/                   # 💻 Software Engineering & Digital Twin Platform
-│   ├── core/                            # Intelligence & Backend Services
-│   │   ├── services/                    # Express.js REST API & Gemini RAG Engine
-│   │   │   ├── ragService.js            # Vector retrieval, prompt synthesis & fallback chain
-│   │   │   ├── guardrails/              # SSRF & input sanitization filters
+├── software-engineer/
+│   ├── docker-compose.yml               # Multi-container orchestration (Core API + Crawler)
+│   │
+│   ├── core/                            
+│   │   ├── services/                    # Express.js API & RAG Engine
+│   │   │   ├── ragService.js            # Vector retrieval, dual-context assembly & LLM chain
+│   │   │   ├── guardrails/              # SSRF & input security sanitizers
 │   │   │   ├── telemetry/               # Prisma analytics & query logging
-│   │   │   └── Dockerfile               # Node 20 Alpine production image
+│   │   │   └── Dockerfile               # Node 20 Alpine container
 │   │   │
-│   │   ├── database/source-of-truth/    # Master Knowledge Base & Embeddings
-│   │   │   ├── about-me/                # Master ground-truth knowledge bases (EN, DE, FR)
+│   │   ├── database/source-of-truth/    # Ground-Truth Knowledge Base & Embeddings
+│   │   │   ├── about-me/                # Master knowledge bases (EN, DE, FR)
 │   │   │   ├── src/chunker.js           # 23-chunk semantic segmenter
 │   │   │   ├── src/embeddings.js        # Gemini text-embedding-004 generator
-│   │   │   └── data/                    # Pre-indexed vector stores
+│   │   │   └── data/                    # Pre-computed vector JSON stores
 │   │   │
 │   │   ├── tools/                       # Model Context Protocol (MCP) Server
 │   │   │   ├── index.js                 # Stdio MCP Server interface
@@ -134,73 +191,60 @@ career-workspace/
 │   │       ├── crawler.py               # Crawl4AI markdown extractor
 │   │       └── Dockerfile               # Python 3.11 + Playwright runtime
 │   │
-│   ├── career-docs/                     # Master Documentation & Regional CVs
-│   │   └── senior-software-engineer/    # Markdown resumes, ATS exports, JSON datasets
-│   │
 │   └── frontend/prasannaraja.github.io/ # React Web Portfolio (Deployed to GitHub Pages)
 │       └── v2/my-career-twin/           # Active Modern React 18 + TS UI
 │
-├── occupational-therapist/              # 🏥 Occupational Therapy (Evelyn Brinnel)
-│   └── career-docs/                     # CPCM Malta credentials & pediatric profiles
-│
-└── openspec/                            # 📋 Specification-Driven Change Management
+├── occupational-therapist/              # Healthcare Domain (Separate Persona)
+└── openspec/                            # Spec-Driven Change Management
 ```
 
 ---
 
-## 🚀 Quick Start (Local Full-Stack Setup)
+## 🚀 Local Full-Stack Setup
 
 ### 1. Prerequisites
 - **Node.js**: `v20.x` or higher
-- **Python**: `v3.11+` (for optional crawler microservice)
+- **Python**: `v3.11+` (for crawler microservice)
 - **API Key**: Google Gemini API key (`GEMINI_API_KEY`)
 
 ### 2. Automated All-In-One Runner
-Run the verified local test runner from the root directory:
 ```bash
-# Clone the repository
 git clone https://github.com/prasannaraja/career-workspace.git
 cd career-workspace
 
-# Run complete stack (Backend API + MCP Server Tests + React Dev Server)
+# Starts Backend API + MCP Server Tests + React Dev Server
 ./run-digital-twin.sh
 ```
 
 ### 3. Manual Component Execution
 ```bash
-# A. Start Frontend (React + Vite)
+# Frontend Development
 cd software-engineer/frontend/prasannaraja.github.io/v2/my-career-twin
-npm install
-npm run dev
+npm install && npm run dev
 
-# B. Start Core Backend Service (Node.js Express)
+# Core Backend API
 cd software-engineer/core/services
-npm install
-npm run dev
+npm install && npm run dev
 
-# C. Run MCP Server Tests
+# Run MCP Tooling Tests
 cd software-engineer/core/tools
 npm test
 
-# D. Rebuild Vector Indexes (English, German, French)
+# Rebuild Vector Embeddings
 cd software-engineer/core/database/source-of-truth
 npm run ingest:all
 ```
 
 ---
 
-## 👨‍💻 Professional Profile & Contact
+## 👨‍💻 System Designer & Engineer
 
-**Prasanna Prabhakaran (Prasanna Raja)**  
-*Senior Software Engineer & Technical Architect*  
-📍 Marsa / Valletta, Malta (EU Resident / Maltese Citizen ID)
+**Prasanna Prabhakaran**  
+*Senior Software Engineer*  
 
 - 🌐 **Live Digital Twin**: [prasannaraja.github.io](https://prasannaraja.github.io/)
 - 💼 **LinkedIn**: [linkedin.com/in/prasannaraja](https://www.linkedin.com/in/prasannaraja/)
 - 🐙 **GitHub**: [github.com/prasannaraja](https://github.com/prasannaraja)
-- ✉️ **Email**: prasannaraja@msn.com / heyprasanna@yahoo.com
-- 📱 **Phone / WhatsApp**: +356 9997 0397 / +971 506057610 / +91 9019222758
 
 ---
-*Architected & engineered with precision to demonstrate production GenAI, scalable cloud architecture, and modern full-stack engineering.*
-
+*Architected and engineered to showcase real-world production RAG patterns, agentic workflows, and cloud-native resilience.*
