@@ -1,4 +1,4 @@
-# Production-Grade AI Digital Twin & Multilingual RAG Architecture
+# AI Digital Twin & Multilingual RAG Architecture
 
 [![Live Application](https://img.shields.io/badge/Live%20Demo-prasannaraja.github.io-0A66C2?style=for-the-badge&logo=googlechrome&logoColor=white)](https://prasannaraja.github.io/)
 [![Architecture](https://img.shields.io/badge/Pattern-Dual--Context%20RAG-7952B3?style=for-the-badge&logo=diagramsdotnet&logoColor=white)](#-core-architecture--data-flow)
@@ -9,7 +9,7 @@
 
 ## ⚡ Technical Summary
 
-This repository contains the architecture and implementation of a **Production-Grade, Multilingual Retrieval-Augmented Generation (RAG) Digital Twin**. 
+This repository contains the architecture and implementation of a **Multilingual Retrieval-Augmented Generation (RAG) Digital Twin**. 
 
 Rather than relying on generic LLM prompts or unstructured document dumps, this system implements an end-to-end intelligent retrieval platform featuring **semantic entity chunking**, **deterministic embedding fallback chains**, **autonomous headless web crawling (Crawl4AI)** for real-time document comparison, **SSRF security guardrails**, and **telemetry-driven query gap analytics**.
 
