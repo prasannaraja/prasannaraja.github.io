@@ -274,6 +274,6 @@
     "welcome": "Bonjour ! Je suis le **jumeau numérique IA de Prasanna Prabhakaran**.\n\nComment puis-je vous aider aujourd'hui ?",
     "placeholder": "Posez une question sur l'architecture, RAG, GEMS Education, .NET, le leadership...",
     "groundedSources": "Sources vérifiées :",
-    "fallback": "J'ai plus de 15 ans d'expérience post-diplôme en ingénierie d'entreprise et architecture logicielle (et 3+ ans de socle technique pré-diplôme, soit plus de 18 ans au total), spécialisé dans .NET Core, React, Angular, les services cloud Azure et les applications GenAI RAG. N'hésitez pas à explorer mon historique de projets et d'expériences sur ce portfolio !"
+    "fallback": "J'ai plus de 15 ans d'expérience post-diplôme en ingénierie logicielle et architecture (et 3+ ans de socle technique pré-diplôme, soit plus de 18 ans au total), spécialisé dans .NET Core, React, Angular, les services cloud Azure et les applications GenAI RAG. N'hésitez pas à explorer mon historique de projets et d'expériences sur ce portfolio !"
   }
 }
