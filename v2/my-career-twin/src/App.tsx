@@ -9,6 +9,7 @@ import { ApproachSection } from './components/sections/ApproachSection';
 import { StackSection } from './components/sections/StackSection';
 import { ContactSection } from './components/sections/ContactSection';
 import { DigitalTwinChat } from './components/twin/DigitalTwinChat';
+import { AnalyticsPage } from './components/twin/AnalyticsPage';
 import { useTranslation } from './hooks/useTranslation';
 import { useAppDispatch } from './store/hooks';
 import { setLocale, getPathLocale } from './store/slices/localeSlice';
@@ -84,6 +85,13 @@ export const App: React.FC = () => {
 
         return () => io.disconnect();
     }, [locale]);
+
+
+    const isAnalyticsPage = window.location.pathname.endsWith('/analytics') || window.location.search.includes('view=analytics');
+    
+    if (isAnalyticsPage) {
+        return <AnalyticsPage />;
+    }
 
     return (
         <>

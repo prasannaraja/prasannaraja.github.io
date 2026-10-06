@@ -38,15 +38,9 @@ interface AnalyticsData {
 
 import { API_BASE } from '../../config/api';
 
-interface AnalyticsModalProps {
-    isOpen: boolean;
-    onClose: () => void;
-}
 
-export const AnalyticsModal: React.FC<AnalyticsModalProps> = ({
-    isOpen,
-    onClose,
-}) => {
+
+export const AnalyticsPage: React.FC = () => {
     const [data, setData] = useState<AnalyticsData | null>(null);
     const [isLoading, setIsLoading] = useState(true);
     const [activeTab, setActiveTab] = useState<'topics' | 'gaps' | 'stream'>(
@@ -69,15 +63,15 @@ export const AnalyticsModal: React.FC<AnalyticsModalProps> = ({
     };
 
     useEffect(() => {
-        if (isOpen) {
+        if (true) {
             fetchAnalytics();
         }
-    }, [isOpen]);
+    }, []);
 
-    if (!isOpen) return null;
+    
 
     return (
-        <div className="twin-modal-overlay" onClick={onClose}>
+        <div className="analytics-page-wrapper">
             <div
                 className="twin-analytics-window"
                 onClick={(e) => e.stopPropagation()}
@@ -99,13 +93,7 @@ export const AnalyticsModal: React.FC<AnalyticsModalProps> = ({
                         >
                             🔄 Refresh
                         </button>
-                        <button
-                            className="twin-close-btn"
-                            onClick={onClose}
-                            aria-label="Close Analytics"
-                        >
-                            ✕
-                        </button>
+                        
                     </div>
                 </div>
 
