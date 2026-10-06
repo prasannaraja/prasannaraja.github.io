@@ -2538,3 +2538,417 @@ footer .built {
         border: none;
     }
 }
+
+/* =========================================
+   DIGITAL TWIN OBSERVATORY REDESIGN
+   ========================================= */
+
+.observatory-page-wrapper {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    background: var(--bg);
+    z-index: 9999;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    box-sizing: border-box;
+    font-family: var(--sans);
+    color: var(--ink);
+}
+
+.observatory-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 24px;
+}
+
+.observatory-title h2 {
+    font-family: var(--serif);
+    font-size: 24px;
+    margin: 0 0 8px 0;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+}
+
+.observatory-title p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.observatory-status-strip {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    background: var(--panel);
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--line);
+}
+
+.observatory-status-strip .separator {
+    color: var(--muted);
+}
+
+.close-btn {
+    background: none;
+    border: 1px solid var(--line);
+    padding: 6px 12px;
+    border-radius: 6px;
+    color: var(--ink);
+    cursor: pointer;
+    font-family: var(--mono);
+    font-size: 11px;
+    transition: background 0.2s;
+}
+
+.close-btn:hover {
+    background: var(--chip);
+}
+
+.observatory-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.analytics-kpis-strip {
+    margin-bottom: 8px;
+}
+
+.section-title {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+}
+
+.kpis-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.kpi-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.kpi-value {
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.1;
+    margin-bottom: 4px;
+}
+
+.kpi-label {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.observatory-grid-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+}
+
+.observatory-grid-middle {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 24px;
+}
+
+.observatory-grid-right {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.dashboard-panel {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 24px;
+}
+
+.dashboard-panel h3 {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    margin: 0 0 4px 0;
+}
+
+.panel-subtitle {
+    font-size: 14px;
+    color: var(--ink);
+    margin: 0 0 20px 0;
+    font-weight: 500;
+}
+
+/* Interest Map */
+.interest-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    position: relative;
+    cursor: default;
+}
+
+.interest-label {
+    width: 140px;
+    font-size: 13px;
+    color: var(--ink);
+}
+
+.interest-bar-container {
+    flex: 1;
+    height: 8px;
+    background: var(--chip);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.interest-bar {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 4px;
+    transition: width 0.8s ease-out;
+}
+
+.interest-value {
+    width: 40px;
+    text-align: right;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.interest-tooltip {
+    position: absolute;
+    top: -30px;
+    left: 150px;
+    background: var(--ink);
+    color: var(--bg);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-family: var(--mono);
+    z-index: 10;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Twin Health */
+.health-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.health-label {
+    width: 100px;
+    font-size: 13px;
+    color: var(--ink);
+}
+
+.health-bar-container {
+    flex: 1;
+    height: 6px;
+    background: var(--chip);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.health-bar {
+    height: 100%;
+    background: #10B981; /* Explicit green for health */
+    border-radius: 3px;
+}
+
+.health-value {
+    width: 45px;
+    text-align: right;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.health-status-footer {
+    margin-top: 24px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: #10B981;
+    border-top: 1px solid var(--line);
+    padding-top: 16px;
+}
+
+/* Query Activity & Trace */
+.activity-item {
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 16px;
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.activity-summary {
+    cursor: pointer;
+}
+
+.activity-time {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    margin-right: 12px;
+}
+
+.activity-question {
+    font-size: 14px;
+    color: var(--ink);
+    font-weight: 500;
+}
+
+.activity-meta {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+    font-family: var(--mono);
+    font-size: 11px;
+}
+
+.activity-tag {
+    color: var(--accent);
+}
+
+.activity-grounded.ok {
+    color: #10B981;
+}
+
+.activity-grounded.gap {
+    color: #F59E0B;
+}
+
+.activity-latency {
+    color: var(--muted);
+}
+
+.query-trace-view {
+    margin-top: 16px;
+    padding: 16px;
+    background: var(--bg);
+    border-radius: 8px;
+    border: 1px solid var(--line);
+    font-family: var(--mono);
+    font-size: 11px;
+}
+
+.trace-node {
+    padding: 4px 0;
+    color: var(--ink);
+}
+
+.trace-node span {
+    color: var(--muted);
+}
+
+.trace-arrow {
+    color: var(--muted);
+    padding: 2px 0;
+}
+
+/* Knowledge Evolution */
+.gap-item {
+    margin-bottom: 20px;
+}
+
+.gap-item:last-child {
+    margin-bottom: 0;
+}
+
+.gap-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.gap-title {
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--ink);
+}
+
+.gap-freq {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+}
+
+.gap-body p {
+    font-size: 13px;
+    color: var(--muted);
+    margin: 0 0 8px 0;
+    line-height: 1.5;
+}
+
+.gap-recommendation {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    background: var(--chip);
+    padding: 8px;
+    border-radius: 4px;
+}
+
+/* Engineering Signal */
+.signal-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink);
+    margin: 12px 0 0 0;
+}
+
+/* Responsive Overrides */
+@media (max-width: 1024px) {
+    .observatory-grid-top, .observatory-grid-middle {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .observatory-header {
+        flex-direction: column;
+        gap: 16px;
+    }
+    .observatory-status-strip {
+        flex-wrap: wrap;
+    }
+}
