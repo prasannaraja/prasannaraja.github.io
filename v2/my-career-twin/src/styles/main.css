@@ -2498,3 +2498,34 @@ footer .built {
 
 
 
+
+/* Analytics Standalone Page Overrides */
+.analytics-page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: var(--back);
+    padding: 20px;
+}
+
+.analytics-page-wrapper .twin-analytics-window {
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    max-height: 90vh;
+    box-shadow: 0 12px 36px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 768px) {
+    .analytics-page-wrapper {
+        padding: 0;
+    }
+    .analytics-page-wrapper .twin-analytics-window {
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 0;
+        border: none;
+    }
+}
