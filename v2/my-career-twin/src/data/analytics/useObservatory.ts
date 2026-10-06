@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import { OverviewMetrics, TwinSession, SessionTrace, GeographyData, AcquisitionData } from './viewModel';
 
-const API_BASE_URL = 'http://localhost:3000/api/twin/analytics'; // or import.meta.env.VITE_API_URL
+import { API_BASE } from '../../config/api';
+
+const API_BASE_URL = `${API_BASE}/api/twin/analytics`;
 
 export function useObservatory() {
   const [overview, setOverview] = useState<OverviewMetrics | null>(null);
