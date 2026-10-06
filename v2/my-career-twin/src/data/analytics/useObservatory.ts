@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { OverviewMetrics, TwinSession, SessionTrace, GeographyData, AcquisitionData } from './viewModel';
+import type { OverviewMetrics, TwinSession, SessionTrace, GeographyData, AcquisitionData } from './viewModel';
 
 import { API_BASE } from '../../config/api';
 

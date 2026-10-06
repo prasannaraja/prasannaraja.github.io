@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useObservatory } from '../../data/analytics/useObservatory';
 import { ObservatoryHeader } from './analytics/ObservatoryHeader';
 import { AnalyticsKpis } from './analytics/AnalyticsKpis';
-import { InterestMap } from './analytics/InterestMap';
 import { QueryActivity } from './analytics/QueryActivity';
 import { SessionInspector } from './analytics/SessionInspector';
 import { EngineeringSignal } from './analytics/EngineeringSignal';
