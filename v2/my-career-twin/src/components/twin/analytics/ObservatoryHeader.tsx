@@ -6,24 +6,37 @@ interface ObservatoryHeaderProps {
 
 export const ObservatoryHeader: React.FC<ObservatoryHeaderProps> = ({ onClose }) => {
     return (
-        <div className="observatory-header">
-            <div className="observatory-title">
-                <h2>DIGITAL TWIN / OBSERVATORY</h2>
-                <p>A live view of how people explore my engineering experience through an AI-powered digital twin.</p>
+        <div className="lv-header-container">
+            {/* Top Nav Bar */}
+            <div className="lv-top-nav">
+                <div className="lv-logo-area">
+                    <span className="lv-logo-text">TWIN/INTEL</span>
+                    <span className="lv-badge-dot"></span>
+                    <span className="lv-badge-text">PRIVATE - OWNER SESSION</span>
+                </div>
+                <div className="lv-nav-links">
+                    <span className="lv-nav-link active">Overview</span>
+                    <span className="lv-nav-link">Sessions</span>
+                    <span className="lv-nav-link">Sources</span>
+                    <span className="lv-nav-link">Topics</span>
+                    {onClose && (
+                        <button className="lv-btn-export" onClick={onClose}>
+                            Exit
+                        </button>
+                    )}
+                </div>
             </div>
-            <div className="observatory-status-strip">
-                <span className="status-dot pulse-dot"></span>
-                <span>ONLINE</span>
-                <span className="separator">·</span>
-                <span>RAG ENGINE Operational</span>
-                <span className="separator">·</span>
-                <span>KNOWLEDGE BASE Synced</span>
+
+            {/* Hero Title Area */}
+            <div className="lv-hero-area">
+                <div className="lv-hero-left">
+                    <span className="lv-hero-kicker">LAST 30 DAYS</span>
+                    <h1 className="lv-hero-title">DIGITAL TWIN<br/>OBSERVATORY</h1>
+                </div>
+                <div className="lv-hero-right">
+                    Where recruiters and engineers are probing your twin, what they ask, and how your technical expertise holds up under pressure.
+                </div>
             </div>
-            {onClose && (
-                <button className="close-btn" onClick={onClose}>
-                    PRASANNA RAJA ← Return to portfolio
-                </button>
-            )}
         </div>
     );
 };

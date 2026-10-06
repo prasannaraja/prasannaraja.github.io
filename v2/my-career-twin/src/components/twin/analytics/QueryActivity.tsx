@@ -7,44 +7,56 @@ interface Props {
 }
 
 export const QueryActivity: React.FC<Props> = ({ sessions, onRowClick }) => {
+    // Format duration e.g. 120 -> "02m00s"
+    const formatDuration = (seconds: number) => {
+        const m = Math.floor(seconds / 60).toString().padStart(2, '0');
+        const s = (seconds % 60).toString().padStart(2, '0');
+        return `${m}m${s}s`;
+    };
+
+    // Calculate "X ago"
+    const timeAgo = (dateStr: string) => {
+        const diff = Date.now() - new Date(dateStr).getTime();
+        const hrs = Math.floor(diff / (1000 * 60 * 60));
+        if (hrs < 24) return `${hrs}h ago`;
+        return `${Math.floor(hrs / 24)}d ago`;
+    };
+
     return (
-        <div className="query-activity-panel">
-            <h3 className="section-heading">WHAT PEOPLE ARE ASKING</h3>
-            <div className="table-responsive">
-                <table className="observatory-data-table full-width cursor-pointer">
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>Time</th>
-                            <th>Country</th>
-                            <th>Source</th>
-                            <th>Session ID</th>
-                            <th>Last Question</th>
-                            <th>Category</th>
-                            <th>Confidence</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {sessions.data.map((s) => {
-                            const dateObj = new Date(s.timestamp);
-                            return (
-                                <tr key={s.sessionId} onClick={() => onRowClick(s.sessionId)}>
-                                    <td>{dateObj.toLocaleDateString(undefined, { day: '2-digit', month: 'short' })}</td>
-                                    <td>{dateObj.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' })}</td>
-                                    <td>{s.country || 'Unknown'}</td>
-                                    <td>{s.source || 'Direct'}</td>
-                                    <td className="monospace">{s.sessionId.substring(0, 8)}</td>
-                                    <td className="truncate-text" style={{maxWidth: '300px'}}>{s.lastQuery || '-'}</td>
-                                    <td>{s.category || '-'}</td>
-                                    <td>{s.confidenceScore ? Math.round(s.confidenceScore * 100) + '%' : '-'}</td>
-                                </tr>
-                            );
-                        })}
-                    </tbody>
-                </table>
+        <div className="lv-sessions-panel">
+            <div className="lv-sessions-header">
+                <h3 className="lv-panel-header">RECENT SESSIONS</h3>
+                <div className="lv-filters">
+                    <span className="lv-filter-item">All</span>
+                    <span className="lv-filter-item">HR</span>
+                    <span className="lv-filter-item active">Technical</span>
+                    <span className="lv-filter-item inactive">{sessions.total} SHOWN</span>
+                </div>
             </div>
-            <div className="pagination-info">
-                Page {sessions.page} of {sessions.totalPages} (Total Sessions: {sessions.total})
+
+            <div className="lv-sessions-list">
+                {sessions.data.map((s) => (
+                    <div className="lv-session-row" key={s.sessionId} onClick={() => onRowClick(s.sessionId)}>
+                        <div className="lv-col-geo">
+                            {s.country ? s.country.substring(0, 2).toUpperCase() : '??'}
+                        </div>
+                        <div className="lv-col-identity">
+                            <span className="lv-id-text">Visitor #{s.sessionId.substring(0, 4)}</span>
+                        </div>
+                        <div className="lv-col-context">
+                            <span className="lv-context-text">via {s.source || 'direct'}</span>
+                        </div>
+                        <div className="lv-col-stats">
+                            {formatDuration(s.durationSeconds)} · {s.queryCount}q · {timeAgo(s.timestamp)}
+                        </div>
+                        <div className="lv-col-tags">
+                            <span className="lv-tag">{s.category || 'General'}</span>
+                        </div>
+                    </div>
+                ))}
+            </div>
+            <div className="lv-pagination">
+                Page {sessions.page} of {sessions.totalPages}
             </div>
         </div>
     );

@@ -4,7 +4,6 @@ import { ObservatoryHeader } from './analytics/ObservatoryHeader';
 import { AnalyticsKpis } from './analytics/AnalyticsKpis';
 import { QueryActivity } from './analytics/QueryActivity';
 import { SessionInspector } from './analytics/SessionInspector';
-import { EngineeringSignal } from './analytics/EngineeringSignal';
 
 export const AnalyticsPage: React.FC = () => {
     const { overview, sessions, geography, acquisition, loading, error } = useObservatory();
@@ -19,38 +18,38 @@ export const AnalyticsPage: React.FC = () => {
     };
 
     return (
-        <div className="observatory-page-wrapper">
-            <ObservatoryHeader onClose={handleClose} />
-            {loading && !overview ? (
-                <div className="observatory-loading">
-                    <span className="pulse-dot"></span> Loading observatory telemetry...
-                </div>
-            ) : overview && sessions ? (
-                <div className="observatory-content">
-                    <AnalyticsKpis 
-                        overview={overview}
-                        geography={geography}
-                        acquisition={acquisition}
-                    />
-                    
-                    <div className="observatory-grid-top">
-                        <QueryActivity sessions={sessions} onRowClick={setSelectedSessionId} />
-                    </div>
-
-                    <div className="observatory-grid-middle">
-                        <EngineeringSignal signal={`Visitors evaluate dimensions from diverse locations.`} />
-                    </div>
-
-                    {selectedSessionId && (
-                        <SessionInspector 
-                           sessionId={selectedSessionId} 
-                           onClose={() => setSelectedSessionId(null)} 
+        <div className="lv-page-wrapper">
+            <div className="lv-page-inner">
+                <ObservatoryHeader onClose={handleClose} />
+                
+                {loading && !overview ? (
+                    <div className="lv-loading">Loading telemetry...</div>
+                ) : overview && sessions ? (
+                    <div className="lv-content-flow">
+                        <AnalyticsKpis 
+                            overview={overview}
+                            geography={geography}
+                            acquisition={acquisition}
                         />
-                    )}
-                </div>
-            ) : (
-                <div className="observatory-error">{error || 'Unable to load data.'}</div>
-            )}
+                        
+                        <QueryActivity sessions={sessions} onRowClick={setSelectedSessionId} />
+
+                        {selectedSessionId && (
+                            <SessionInspector 
+                               sessionId={selectedSessionId} 
+                               onClose={() => setSelectedSessionId(null)} 
+                            />
+                        )}
+                        
+                        <div className="lv-footer-strip">
+                            <span>TWIN/INTEL</span> PRIVATE OWNER DASHBOARD
+                            <span className="lv-pull-right">LIVE DATA · NEVER SHARED</span>
+                        </div>
+                    </div>
+                ) : (
+                    <div className="lv-error">{error || 'Unable to load data.'}</div>
+                )}
+            </div>
         </div>
     );
 };

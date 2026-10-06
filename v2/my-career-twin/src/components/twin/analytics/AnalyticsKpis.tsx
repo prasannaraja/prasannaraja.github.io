@@ -8,80 +8,74 @@ interface Props {
 }
 
 export const AnalyticsKpis: React.FC<Props> = ({ overview, geography, acquisition }) => {
+    // Helper to calculate percentages for the bars
+    const maxAcq = Math.max(...acquisition.map(a => a.sessions), 1);
+
     return (
-        <div className="analytics-kpis-container">
-            <div className="kpi-section">
-                <h3 className="section-heading">ATTENTION</h3>
-                <div className="kpi-grid">
-                    <div className="kpi-box">
-                        <div className="kpi-value">{overview.totalQueries}</div>
-                        <div className="kpi-label">interactions</div>
-                    </div>
-                    <div className="kpi-box">
-                        <div className="kpi-value">{overview.totalSessions}</div>
-                        <div className="kpi-label">sessions</div>
-                    </div>
-                    <div className="kpi-box">
-                        <div className="kpi-value">{overview.avgQueriesPerSession}</div>
-                        <div className="kpi-label">avg interactions/session</div>
-                    </div>
-                    <div className="kpi-box">
-                        <div className="kpi-value">{overview.uniqueCountries}</div>
-                        <div className="kpi-label">countries</div>
-                    </div>
-                    <div className="kpi-box">
-                        <div className="kpi-value">{overview.deepSessions}</div>
-                        <div className="kpi-label">deep sessions</div>
-                    </div>
+        <div className="lv-kpis-container">
+            {/* Top 4 Cards Row */}
+            <div className="lv-kpi-row">
+                <div className="lv-kpi-card inverted">
+                    <div className="lv-kpi-label">TOTAL SESSIONS</div>
+                    <div className="lv-kpi-value">{overview.totalSessions}</div>
+                    <div className="lv-kpi-trend highlight">+10% vs prev 30d</div>
+                </div>
+                <div className="lv-kpi-card">
+                    <div className="lv-kpi-label">UNIQUE COUNTRIES</div>
+                    <div className="lv-kpi-value">{overview.uniqueCountries}</div>
+                    <div className="lv-kpi-trend highlight">+2 vs prev 30d</div>
+                </div>
+                <div className="lv-kpi-card">
+                    <div className="lv-kpi-label">QUESTIONS ASKED</div>
+                    <div className="lv-kpi-value">{overview.totalQueries}</div>
+                    <div className="lv-kpi-trend highlight">{overview.avgQueriesPerSession} avg / session</div>
+                </div>
+                <div className="lv-kpi-card">
+                    <div className="lv-kpi-label">DEEP SESSIONS</div>
+                    <div className="lv-kpi-value">{overview.deepSessions}</div>
+                    <div className="lv-kpi-trend">+15% vs prev 30d</div>
                 </div>
             </div>
 
-            <div className="kpi-section-two-cols">
-                <div className="kpi-section">
-                    <h3 className="section-heading">WHERE ARE THEY FROM?</h3>
-                    <div className="data-table-container">
-                        <table className="observatory-data-table">
-                            <thead>
-                                <tr>
-                                    <th>Country</th>
-                                    <th>Sessions</th>
-                                    <th>Interactions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {geography.slice(0, 5).map(g => (
-                                    <tr key={g.country}>
-                                        <td>{g.country}</td>
-                                        <td>{g.sessions}</td>
-                                        <td>{g.interactions}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
+            {/* Middle Grid (Data Panels) */}
+            <div className="lv-data-grid">
+                {/* Where they're from */}
+                <div className="lv-data-panel">
+                    <div className="lv-panel-header">WHERE THEY'RE FROM</div>
+                    <div className="lv-geo-list">
+                        {geography.slice(0, 5).map(g => (
+                            <div className="lv-geo-item" key={g.country}>
+                                <div className="lv-geo-left">
+                                    <span className="lv-geo-code">{g.country.substring(0,2).toUpperCase()}</span>
+                                    <span className="lv-geo-name">{g.country}</span>
+                                </div>
+                                <div className="lv-geo-right">{g.sessions}</div>
+                            </div>
+                        ))}
                     </div>
                 </div>
 
-                <div className="kpi-section">
-                    <h3 className="section-heading">ACQUISITION</h3>
-                    <div className="data-table-container">
-                        <table className="observatory-data-table">
-                            <thead>
-                                <tr>
-                                    <th>Source</th>
-                                    <th>Sessions</th>
-                                    <th>Interactions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {acquisition.slice(0, 5).map(a => (
-                                    <tr key={a.source}>
-                                        <td>{a.source}</td>
-                                        <td>{a.sessions}</td>
-                                        <td>{a.interactions}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
+                {/* Visitor Sources */}
+                <div className="lv-data-panel">
+                    <div className="lv-panel-header">VISITOR SOURCES</div>
+                    <div className="lv-source-list">
+                        {acquisition.slice(0, 5).map(a => {
+                            const pct = Math.round((a.sessions / overview.totalSessions) * 100);
+                            const widthPct = Math.round((a.sessions / maxAcq) * 100);
+                            return (
+                                <div className="lv-source-item" key={a.source}>
+                                    <div className="lv-source-top">
+                                        <div className="lv-source-name">
+                                            <span className="lv-dot"></span> {a.source}
+                                        </div>
+                                        <div className="lv-source-pct">{pct}%</div>
+                                    </div>
+                                    <div className="lv-source-bar-bg">
+                                        <div className="lv-source-bar-fill" style={{ width: `${widthPct}%` }}></div>
+                                    </div>
+                                </div>
+                            );
+                        })}
                     </div>
                 </div>
             </div>
