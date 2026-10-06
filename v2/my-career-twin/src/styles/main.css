@@ -2501,13 +2501,21 @@ footer .built {
 
 /* Analytics Standalone Page Overrides */
 .analytics-page-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background: var(--back);
+    height: 100dvh;
+    box-sizing: border-box;
+    background: var(--bg);
     padding: 20px;
+    z-index: 9999;
 }
 
 .analytics-page-wrapper .twin-analytics-window {
@@ -2516,6 +2524,7 @@ footer .built {
     height: 100%;
     max-height: 90vh;
     box-shadow: 0 12px 36px rgba(0,0,0,0.15);
+    margin: 0;
 }
 
 @media (max-width: 768px) {
