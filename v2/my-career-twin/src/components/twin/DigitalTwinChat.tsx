@@ -61,6 +61,7 @@ function getOrCreateSessionId(): string {
  * Robust markdown parser to render headings, bold text, bullet/numbered lists, tables, links, code blocks, and paragraphs cleanly.
  */
 function renderFormattedMarkdown(text: string): React.ReactNode {
+    if (!text) return null;
     const lines = text.split('\n');
     const elements: React.ReactNode[] = [];
     let listItems: { type: 'ul' | 'ol'; text: string }[] = [];
@@ -338,6 +339,7 @@ function renderFormattedMarkdown(text: string): React.ReactNode {
  * Helper to parse inline markdown elements: links, bold, italics, code
  */
 function parseInlineFormatting(text: string): React.ReactNode {
+    if (!text) return null;
     const parts = text.split(
         /(\[[^\]]+\]\([^)]+\)|\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`)/g
     );
@@ -860,7 +862,7 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
                                         )}
 
                                     <div className="twin-msg-text">
-                                        {renderFormattedMarkdown(m.text)}
+                                        {renderFormattedMarkdown(m.text || "")}
                                     </div>
                                 </>
                             )}
