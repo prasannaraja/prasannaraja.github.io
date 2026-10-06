@@ -1,49 +1,50 @@
-import React, { useState } from 'react';
-import { QueryTrace } from './QueryTrace';
+import React from 'react';
+import type { TwinSession } from '../../../data/analytics/viewModel';
 
-interface QueryData {
-    id: string;
-    timestamp: string;
-    question: string;
-    category: string;
-    confidenceScore: number;
-    isKnowledgeGap: boolean;
-    latencyMs: number;
-    feedback: 'like' | 'dislike' | null;
+interface Props {
+    sessions: { data: TwinSession[], total: number, page: number, totalPages: number };
+    onRowClick: (id: string) => void;
 }
 
-interface QueryActivityProps {
-    activity: QueryData[];
-}
-
-export const QueryActivity: React.FC<QueryActivityProps> = ({ activity }) => {
-    const [expandedId, setExpandedId] = useState<string | null>(null);
-
+export const QueryActivity: React.FC<Props> = ({ sessions, onRowClick }) => {
     return (
-        <div className="query-activity-panel dashboard-panel">
-            <h3>WHAT PEOPLE ARE ASKING</h3>
-            <div className="activity-list">
-                {activity.map(q => (
-                    <div key={q.id} className="activity-item">
-                        <div 
-                            className="activity-summary" 
-                            onClick={() => setExpandedId(expandedId === q.id ? null : q.id)}
-                        >
-                            <span className="activity-time">
-                                {new Date(q.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' })}
-                            </span>
-                            <span className="activity-question">"{q.question}"</span>
-                            <div className="activity-meta">
-                                <span className="activity-tag">{q.category}</span>
-                                <span className={`activity-grounded ${q.isKnowledgeGap ? 'gap' : 'ok'}`}>
-                                    {Math.round(q.confidenceScore * 100)}% grounded
-                                </span>
-                                <span className="activity-latency">{q.latencyMs}ms</span>
-                            </div>
-                        </div>
-                        {expandedId === q.id && <QueryTrace query={q} />}
-                    </div>
-                ))}
+        <div className="query-activity-panel">
+            <h3 className="section-heading">WHAT PEOPLE ARE ASKING</h3>
+            <div className="table-responsive">
+                <table className="observatory-data-table full-width cursor-pointer">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Country</th>
+                            <th>Source</th>
+                            <th>Session ID</th>
+                            <th>Last Question</th>
+                            <th>Category</th>
+                            <th>Confidence</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {sessions.data.map((s) => {
+                            const dateObj = new Date(s.timestamp);
+                            return (
+                                <tr key={s.sessionId} onClick={() => onRowClick(s.sessionId)}>
+                                    <td>{dateObj.toLocaleDateString(undefined, { day: '2-digit', month: 'short' })}</td>
+                                    <td>{dateObj.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' })}</td>
+                                    <td>{s.country || 'Unknown'}</td>
+                                    <td>{s.source || 'Direct'}</td>
+                                    <td className="monospace">{s.sessionId.substring(0, 8)}</td>
+                                    <td className="truncate-text" style={{maxWidth: '300px'}}>{s.lastQuery || '-'}</td>
+                                    <td>{s.category || '-'}</td>
+                                    <td>{s.confidenceScore ? Math.round(s.confidenceScore * 100) + '%' : '-'}</td>
+                                </tr>
+                            );
+                        })}
+                    </tbody>
+                </table>
+            </div>
+            <div className="pagination-info">
+                Page {sessions.page} of {sessions.totalPages} (Total Sessions: {sessions.total})
             </div>
         </div>
     );
