@@ -16,17 +16,14 @@ function spaMultiPathPlugin(): Plugin {
                 const deDir = path.join(distDir, 'de');
                 const frDir = path.join(distDir, 'fr');
                 const enDir = path.join(distDir, 'en');
-                const analyticsDir = path.join(distDir, 'analytics');
 
                 fs.mkdirSync(deDir, { recursive: true });
                 fs.mkdirSync(frDir, { recursive: true });
                 fs.mkdirSync(enDir, { recursive: true });
-                fs.mkdirSync(analyticsDir, { recursive: true });
 
                 fs.writeFileSync(path.join(deDir, 'index.html'), indexHtml);
                 fs.writeFileSync(path.join(frDir, 'index.html'), indexHtml);
                 fs.writeFileSync(path.join(enDir, 'index.html'), indexHtml);
-                fs.writeFileSync(path.join(analyticsDir, 'index.html'), indexHtml);
                 fs.writeFileSync(path.join(distDir, '404.html'), indexHtml);
             }
         },
