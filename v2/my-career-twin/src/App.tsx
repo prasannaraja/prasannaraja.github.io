@@ -87,7 +87,7 @@ export const App: React.FC = () => {
     }, [locale]);
 
 
-    const isAnalyticsPage = window.location.pathname.endsWith('/analytics') || window.location.search.includes('view=analytics');
+    const isAnalyticsPage = window.location.pathname.endsWith('/analytics') || window.location.pathname.endsWith('/analytics/') || window.location.search.includes('view=analytics');
     
     if (isAnalyticsPage) {
         return <AnalyticsPage />;
