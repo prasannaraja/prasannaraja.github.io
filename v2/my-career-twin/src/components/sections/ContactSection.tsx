@@ -72,8 +72,8 @@ export const ContactSection: React.FC = () => {
                 </a>
                 <a
                     className="btn"
-                    href="/prasanna-resume-senior-engineer.pdf"
-                    download="prasanna-resume-senior-engineer.pdf"
+                    href="/prasanna–senior-software-engineer.pdf"
+                    download="prasanna–senior-software-engineer.pdf"
                 >
                     <svg
                         viewBox="0 0 24 24"
