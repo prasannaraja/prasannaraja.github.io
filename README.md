@@ -2,7 +2,7 @@
 
 [![Live Application](https://img.shields.io/badge/Live%20Demo-prasannaraja.github.io-0A66C2?style=for-the-badge&logo=googlechrome&logoColor=white)](https://prasannaraja.github.io/)
 [![Architecture](https://img.shields.io/badge/Pattern-Dual--Context%20RAG-7952B3?style=for-the-badge&logo=diagramsdotnet&logoColor=white)](#-core-architecture--data-flow)
-[![Stack](https://img.shields.io/badge/Stack-React%2018%20%7C%20Node.js%20%7C%20Gemini%20%7C%20Prisma%20%7C%20FastAPI-009688?style=for-the-badge&logo=react&logoColor=white)](#-engineering-stack)
+[![Stack](https://img.shields.io/badge/Stack-React%2019%20%7C%20Rust%20%7C%20Gemini%20%7C%20FastAPI-009688?style=for-the-badge&logo=react&logoColor=white)](#-engineering-stack)
 [![Multilingual](https://img.shields.io/badge/Vector%20Locales-EN%20%7C%20DE%20%7C%20FR-4CAF50?style=for-the-badge)](https://prasannaraja.github.io/)
 
 ---
@@ -38,7 +38,7 @@ Rather than relying on generic LLM prompts or unstructured document dumps, this 
    │  HTTPS (Port 443 / CORS)                                                  │ JSON-RPC (Stdio)
    ▼                                                                           ▼
 +─────────────────────────────────────────+                         +─────────────────────+
-|     Web UI (React 18 + TS + Redux)      |                         |  AI Agent Tooling   |
+|     Web UI (React 19 + TS + Redux)      |                         |  AI Agent Tooling   |
 |  • Streaming Markdown Response Parser   |                         |  • Model Context    |
 |  • Locale State (EN, DE, FR)            |                         |    Protocol (MCP)   |
 +─────────────────────────────────────────+                         +─────────────────────+
@@ -46,7 +46,7 @@ Rather than relying on generic LLM prompts or unstructured document dumps, this 
    │ REST (POST /api/twin/chat)                                                │
    ▼                                                                           │
 +──────────────────────────────────────────────────────────────────────────────┴──────────+
-|                    BACKEND CORE SERVICE (Express.js + Node.js 20)                       |
+|                    BACKEND CORE SERVICE (Rust Axum 0.8)                               |
 +─────────────────────────────────────────────────────────────────────────────────────────+
    │                                                               
    ├── 1. Security & Pre-Flight Guardrails
@@ -70,7 +70,7 @@ Rather than relying on generic LLM prompts or unstructured document dumps, this 
    ├── 5. Multi-Model LLM Synthesis Chain
    │      └── gemini-flash-latest ──► gemini-3.1-flash-lite ──► gemini-3.5-flash ──► gemini-pro
    │
-   └── 6. Telemetry & Analytics Mining (Prisma ORM + SQLite dev.db)
+   └── 6. Telemetry & Analytics Mining (SQLx + SQLite)
           └── Asynchronously logs query category, response latency, and knowledge gap metrics
 ```
 
@@ -110,7 +110,7 @@ Pre-Computed Indexed Vector Stores (career_vectors_{locale}.json)
 ### 2. Dual-Context Web Ingestion (Crawl4AI Microservice)
 When a user pastes a live URL (such as a Job Description, GitHub repo, or architecture article):
 1. The backend automatically extracts the target hyperlink via regex boundary matching.
-2. The URL is routed to the Python-based **Crawl4AI microservice** ([`core/ai-agents/web-search`](file:///software-engineer/core/ai-agents/web-search)).
+2. The URL is routed to the Python-based **Crawl4AI microservice** ([`repos/private/api/v1/ai-agents/web-search`](../../private/api/v1/ai-agents/web-search)).
 3. A headless **Playwright Chromium** instance loads the page, executes required client-side JS, extracts the main readable content, and filters it into token-efficient `fit_markdown`.
 4. The RAG engine feeds both contexts into the LLM prompt:
    - **Context A:** The external live document requirements.
@@ -132,7 +132,7 @@ Because the system ingests arbitrary user-supplied URLs, it enforces a strict **
 ---
 
 ### 4. Telemetry & Missing Knowledge Mining
-Every interaction is asynchronously analyzed and stored via **Prisma ORM (SQLite)**:
+Every interaction is asynchronously analyzed and stored via **SQLx (SQLite)** in the Rust API:
 - **Confidence Tracking:** Detects queries that hit the confidence floor (< 0.45 similarity).
 - **Knowledge Gap Detection:** Automatically surfaces recurring keywords or technologies that are frequently asked about but absent from the ground-truth store, generating actionable suggestions for knowledge base augmentation.
 - **Latency & Model Analytics:** Tracks inference latency across fallback models.
@@ -140,7 +140,7 @@ Every interaction is asynchronously analyzed and stored via **Prisma ORM (SQLite
 ---
 
 ### 5. Model Context Protocol (MCP) Server Integration
-The platform exposes a standard **MCP Server** over `stdio JSON-RPC` ([`core/tools`](file:///software-engineer/core/tools)), allowing autonomous coding agents (Claude Code, Antigravity, OpenCode) to directly invoke:
+The platform exposes a standard **MCP Server** over `stdio JSON-RPC` from [`repos/private/api/v1/src/core/mcp.rs`](../../private/api/v1/src/core/mcp.rs), allowing autonomous coding agents to invoke:
 - `get_career_profile`: Structured biographical & technical entity query.
 - `search_career_vectors`: Live semantic similarity search over career chunks.
 - `get_skills_matrix`: Categorized competency lookup (.NET, Cloud, React, AI, DBs).
@@ -152,8 +152,8 @@ The platform exposes a standard **MCP Server** over `stdio JSON-RPC` ([`core/too
 
 | Layer | Technologies | Architectural Role |
 | :--- | :--- | :--- |
-| **Frontend UI** | React 18, TypeScript, Tailwind CSS, Vite, Redux Toolkit | Responsive UI, state management, markdown streaming, dark/light persistence |
-| **API & RAG Layer** | Node.js 20, Express.js, Prisma ORM, SQLite (`dev.db`) | REST endpoints, vector retrieval, prompt construction, telemetry mining |
+| **Frontend UI** | React 19, TypeScript, Tailwind CSS, Vite, Redux Toolkit | Responsive UI, state management, markdown streaming, dark/light persistence |
+| **API & RAG Layer** | Rust 2024, Axum 0.8, SQLx, SQLite | REST/SSE endpoints, vector retrieval, prompt construction, telemetry mining |
 | **Embedding Engine** | Google Gemini `text-embedding-004` (768-dim) | Dense vector generation with deterministic local fallback vectorizer |
 | **LLM Synthesis** | Google Gemini 2.5 Flash / Flash-Lite / Pro | Dynamic multi-model fallback chain for high-speed streaming synthesis |
 | **Agent Microservice** | Python 3.11, FastAPI, Crawl4AI, Playwright (Chromium) | Dynamic URL crawling, JS rendering, structured markdown extraction |
@@ -192,7 +192,7 @@ career-workspace/
 │   │       └── Dockerfile               # Python 3.11 + Playwright runtime
 │   │
 │   └── frontend/prasannaraja.github.io/ # React Web Portfolio (Deployed to GitHub Pages)
-│       └── v2/my-career-twin/           # Active Modern React 18 + TS UI
+│       └── v2/my-career-twin/           # Active Modern React 19 + TS UI
 │
 ├── occupational-therapist/              # Healthcare Domain (Separate Persona)
 └── openspec/                            # Spec-Driven Change Management
@@ -203,7 +203,7 @@ career-workspace/
 ## 🚀 Local Full-Stack Setup
 
 ### 1. Prerequisites
-- **Node.js**: `v20.x` or higher
+- **Rust**: stable toolchain with edition 2024 support
 - **Python**: `v3.11+` (for crawler microservice)
 - **API Key**: Google Gemini API key (`GEMINI_API_KEY`)
 
@@ -223,15 +223,15 @@ cd software-engineer/frontend/prasannaraja.github.io/v2/my-career-twin
 npm install && npm run dev
 
 # Core Backend API
-cd software-engineer/core/services
-npm install && npm run dev
+cd repos/private/api/v1
+cargo run -- serve
 
 # Run MCP Tooling Tests
-cd software-engineer/core/tools
-npm test
+cd repos/private/api/v1
+cargo run -- mcp
 
 # Rebuild Vector Embeddings
-cd software-engineer/core/database/source-of-truth
+cd repos/private/api/v1/rag
 npm run ingest:all
 ```
 

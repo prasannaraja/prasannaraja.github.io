@@ -1,6 +1,6 @@
-# Prasanna Raja — Digital Twin & Portfolio Web Application (`v1/my-career-twin`)
+# Prasanna Raja — Digital Twin & Portfolio Web Application (`v2/my-career-twin`)
 
-Interactive web application and AI Digital Twin for **Prasanna Prabhakaran (Prasanna Raja)**. Built with React 18, TypeScript, Tailwind CSS, and Redux Toolkit, deployed to GitHub Pages at [prasannaraja.github.io](https://prasannaraja.github.io).
+Interactive web application and AI Digital Twin for **Prasanna Prabhakaran (Prasanna Raja)**. Built with React 19, TypeScript, Tailwind CSS, and Redux Toolkit, deployed to GitHub Pages at [prasannaraja.github.io](https://prasannaraja.github.io).
 
 ---
 
@@ -17,7 +17,7 @@ Interactive web application and AI Digital Twin for **Prasanna Prabhakaran (Pras
 ## 2. Directory Layout
 
 ```
-v1/my-career-twin/
+v2/my-career-twin/
 ├── src/
 │   ├── components/
 │   │   ├── header/Navbar.tsx            # Global navigation, locale & theme switchers
