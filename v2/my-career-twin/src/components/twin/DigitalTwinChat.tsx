@@ -677,7 +677,7 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
             const fallbackMsg: ChatMessage = {
                 id: retryTargetId || 'fallback_' + Date.now(),
                 sender: 'twin',
-                text: `${t?.fallback || 'I have 18+ years of technical experience specializing in enterprise software architecture, .NET Core, React, Angular, Azure cloud services, and GenAI RAG applications.'}`,
+                text: `${t?.fallback || 'I have 15+ years of software engineering experience specializing in enterprise software architecture, .NET Core, React, Angular, Azure cloud services, and GenAI RAG applications.'}`,
                 isFallback: true,
                 promptQuery: q,
                 timestamp: new Date().toLocaleTimeString([], {
@@ -958,7 +958,7 @@ export const DigitalTwinChat: React.FC<DigitalTwinChatProps> = ({
                                 tooltip="Quick Career Summary prompt"
                                 onClick={() => {
                                     setInput(
-                                        "Can you provide a structured summary of Prasanna's 18+ years career timeline across Malta, UAE, UK, and India?"
+                                        "Can you provide a structured summary of Prasanna's career timeline across Malta, UAE, UK, and India?"
                                     );
                                     textareaRef.current?.focus();
                                 }}

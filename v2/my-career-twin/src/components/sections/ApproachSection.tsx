@@ -3,7 +3,7 @@ import { useTranslation } from '../../hooks/useTranslation';
 
 export const ApproachSection: React.FC = () => {
   const { t } = useTranslation();
-  const { howIBuildLabel, principles, aiSectionLabel, machineLearning, generativeAi, note } =
+  const { howIBuildLabel, principles, aiSectionLabel, machineLearning, generativeAi, certifications, note } =
     t.approach;
 
   return (
@@ -46,6 +46,29 @@ export const ApproachSection: React.FC = () => {
                 </span>
               ))}
             </div>
+          </div>
+
+          <div className="skillrow reveal">
+            <h4>{certifications.title}</h4>
+            <ul className="certs">
+              {certifications.items.map((cert) => (
+                <li key={cert.code}>
+                  <a
+                    className="cert"
+                    href={cert.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={certifications.verifyLabel}
+                  >
+                    <span className="cert-code">{cert.code}</span>
+                    <span className="cert-name">{cert.name}</span>
+                    <span className="cert-link" aria-hidden="true">
+                      ↗
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
         <p className="approach-note">{note}</p>

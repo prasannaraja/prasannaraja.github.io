@@ -2,7 +2,7 @@
   "lang": "fr",
   "meta": {
     "title": "Prasanna Raja | Senior Software Engineer, Architecture d'entreprise",
-    "description": "Senior Software Engineer avec plus de 16 ans d'expérience dans la conception et le développement de plateformes d'entreprise, d'architectures cloud et de systèmes analytiques — étendant aujourd'hui cette expertise à des applications intégrant l'IA, pilotées par la donnée.",
+    "description": "Senior Software Engineer avec plus de 15 ans d'expérience dans la conception et le développement de plateformes d'entreprise, d'architectures cloud et de systèmes analytiques — étendant aujourd'hui cette expertise à des applications intégrant l'IA, pilotées par la donnée.",
     "keywords": "Senior Software Engineer, Architecte technique, Architecture d'entreprise, Ingénieur .NET, Azure, Ingénierie IA, Machine Learning, Plateformes de données, Architecture logicielle",
     "ogTitle": "Prasanna Raja | Senior Software Engineer · Architecture d'entreprise · IA & Plateformes de données",
     "ogDescription": "Je conçois des plateformes d'entreprise évolutives qui transforment des données complexes en décisions métier intelligentes — avec des fondations en .NET et en ingénierie cloud, étendues à l'IA et aux plateformes de données.",
@@ -25,8 +25,9 @@
   },
   "hero": {
     "availabilityBadge": "Senior Software Engineer chez KPMG, Malte",
+    "certifiedLabel": "Certifié Microsoft",
     "headline": "Conception et développement de plateformes d'entreprise évolutives qui transforment des données complexes en décisions métier intelligentes.",
-    "paragraph1": "Je suis Prasanna Raja — plus de 16 ans d'expérience en ingénierie logicielle, couvrant le développement d'applications d'entreprise, l'architecture système, ainsi que les plateformes cloud et data. Mon travail transforme des données opérationnelles et géospatiales complexes en systèmes qui soutiennent de réelles décisions métier, et s'étend de plus en plus à l'apprentissage automatique appliqué et à l'ingénierie moderne de l'IA.",
+    "paragraph1": "Je suis Prasanna Raja — plus de 15 ans d'expérience en ingénierie logicielle, couvrant le développement d'applications d'entreprise, l'architecture système, ainsi que les plateformes cloud et data. Mon travail transforme des données opérationnelles et géospatiales complexes en systèmes qui soutiennent de réelles décisions métier, et s'étend de plus en plus à l'apprentissage automatique appliqué et à l'ingénierie moderne de l'IA.",
     "paragraph2": "J'ai contribué à KPMG Dash, une plateforme d'analyse primée utilisée par des clients dans tout le Royaume-Uni, couvrant le backend .NET, le frontend React et la couche analytique Cube.js. Je conçois également des solutions géospatiales et analytiques qui combinent données clients, données de marché et données spatiales au sein de cartes interactives et de tableaux de bord. J'étends aujourd'hui mon activité à l'Agentic AI et à Azure AI Foundry, en développant des applications d'entreprise intelligentes à l'intersection du génie logiciel, de l'analytique et de l'IA.",
     "ctaExplore": "Découvrir l'expérience",
     "ctaProjects": "Voir les projets",
@@ -211,6 +212,27 @@
     "generativeAi": {
       "title": "IA générative",
       "tags": ["LLM Integration", "RAG", "Model Context Protocol (MCP)", "Tool Calling", "Agentic Workflows", "Local LLM Infrastructure", "Azure AI Foundry"]
+    },
+    "certifications": {
+      "title": "Certifications",
+      "verifyLabel": "Vérifier sur Microsoft Learn",
+      "items": [
+        {
+          "code": "AI-103",
+          "name": "Microsoft Certified: Azure AI Apps and Agents Developer Associate",
+          "url": "https://learn.microsoft.com/en-us/users/prasannaraja/credentials/6883883da83ad8d0"
+        },
+        {
+          "code": "AI-901",
+          "name": "Microsoft Certified: Azure AI Fundamentals",
+          "url": "https://learn.microsoft.com/en-gb/users/prasannaraja/credentials/58d28fb05ab0cbe"
+        },
+        {
+          "code": "AZ-900",
+          "name": "Microsoft Certified: Azure Fundamentals",
+          "url": "https://learn.microsoft.com/en-gb/users/prasannaraja/credentials/84e080f56cea2489"
+        }
+      ]
     },
     "note": "Mon objectif est de concevoir des applications intégrant l'IA, orientées production — transformant des prototypes prometteurs en applications fiables et concrètes."
   },

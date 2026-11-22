@@ -2,7 +2,7 @@
   "lang": "de",
   "meta": {
     "title": "Prasanna Raja | Senior Software Engineer, Enterprise-Architektur",
-    "description": "Senior Software Engineer mit über 16 Jahren Erfahrung in der Konzeption und Entwicklung von Unternehmensplattformen, Cloud-Architektur und Analytics-Systemen — mittlerweile erweitert um KI-gestützte, datengetriebene Anwendungen.",
+    "description": "Senior Software Engineer mit über 15 Jahren Erfahrung in der Konzeption und Entwicklung von Unternehmensplattformen, Cloud-Architektur und Analytics-Systemen — mittlerweile erweitert um KI-gestützte, datengetriebene Anwendungen.",
     "keywords": "Senior Software Engineer, Technical Architect, Enterprise-Architektur, .NET-Entwickler, Azure, KI-Engineering, Machine Learning, Datenplattformen, Softwarearchitektur",
     "ogTitle": "Prasanna Raja | Senior Software Engineer · Enterprise-Architektur · KI & Datenplattformen",
     "ogDescription": "Ich entwickle skalierbare Unternehmensplattformen, die komplexe Daten in intelligente Geschäftsentscheidungen verwandeln — mit einem Fundament in .NET und Cloud-Engineering, erweitert um KI und Datenplattformen.",
@@ -25,8 +25,9 @@
   },
   "hero": {
     "availabilityBadge": "Senior Software Engineer bei KPMG, Malta",
+    "certifiedLabel": "Microsoft-zertifiziert",
     "headline": "Entwicklung skalierbarer Unternehmensplattformen, die komplexe Daten in intelligente Geschäftsentscheidungen verwandeln.",
-    "paragraph1": "Ich bin Prasanna Raja — mit über 16 Jahren Erfahrung in der Softwareentwicklung, von der Entwicklung von Unternehmensanwendungen über Systemarchitektur bis hin zu Cloud- und Datenplattformen. Meine Arbeit verwandelt komplexe operative Daten und Geodaten in Systeme, die reale Geschäftsentscheidungen unterstützen, und reicht zunehmend bis in angewandtes maschinelles Lernen und moderne KI-Entwicklung.",
+    "paragraph1": "Ich bin Prasanna Raja — mit über 15 Jahren Erfahrung in der Softwareentwicklung, von der Entwicklung von Unternehmensanwendungen über Systemarchitektur bis hin zu Cloud- und Datenplattformen. Meine Arbeit verwandelt komplexe operative Daten und Geodaten in Systeme, die reale Geschäftsentscheidungen unterstützen, und reicht zunehmend bis in angewandtes maschinelles Lernen und moderne KI-Entwicklung.",
     "paragraph2": "Ich habe an KPMG Dash mitgewirkt, einer preisgekrönten Analytics-Plattform, die von Kunden in ganz Großbritannien genutzt wird und das .NET-Backend, das React-Frontend sowie die Cube.js-Analyseschicht umfasst. Außerdem entwickle ich geodatenbasierte Analyselösungen, die Kunden-, Markt- und Standortdaten in interaktiven Karten und Dashboards zusammenführen. Ich erweitere meine Arbeit zunehmend um Agentic AI und Azure AI Foundry und entwickle intelligente Unternehmensanwendungen an der Schnittstelle von Softwareentwicklung, Analytics und KI.",
     "ctaExplore": "Erfahrung ansehen",
     "ctaProjects": "Projekte ansehen",
@@ -211,6 +212,27 @@
     "generativeAi": {
       "title": "Generative KI",
       "tags": ["LLM Integration", "RAG", "Model Context Protocol (MCP)", "Tool Calling", "Agentic Workflows", "Local LLM Infrastructure", "Azure AI Foundry"]
+    },
+    "certifications": {
+      "title": "Zertifizierungen",
+      "verifyLabel": "Auf Microsoft Learn prüfen",
+      "items": [
+        {
+          "code": "AI-103",
+          "name": "Microsoft Certified: Azure AI Apps and Agents Developer Associate",
+          "url": "https://learn.microsoft.com/en-us/users/prasannaraja/credentials/6883883da83ad8d0"
+        },
+        {
+          "code": "AI-901",
+          "name": "Microsoft Certified: Azure AI Fundamentals",
+          "url": "https://learn.microsoft.com/en-gb/users/prasannaraja/credentials/58d28fb05ab0cbe"
+        },
+        {
+          "code": "AZ-900",
+          "name": "Microsoft Certified: Azure Fundamentals",
+          "url": "https://learn.microsoft.com/en-gb/users/prasannaraja/credentials/84e080f56cea2489"
+        }
+      ]
     },
     "note": "Mein Fokus liegt auf produktionsorientierten, KI-gestützten Anwendungen — vielversprechende Prototypen in verlässliche, praxistaugliche Anwendungen zu überführen."
   },

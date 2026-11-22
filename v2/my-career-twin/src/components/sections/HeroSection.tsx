@@ -10,6 +10,25 @@ export const HeroSection: React.FC = () => {
                 <span className="pulse"></span> {t.hero.availabilityBadge}
             </span>
             <h1>{t.hero.headline}</h1>
+            <div className="hero-certs" aria-label={t.hero.certifiedLabel}>
+                <span className="hero-certs-label">{t.hero.certifiedLabel}</span>
+                <ul>
+                    {t.approach.certifications.items.map((cert) => (
+                        <li key={cert.code}>
+                            <a
+                                className="hero-cert"
+                                href={cert.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                title={`${cert.name} · ${t.approach.certifications.verifyLabel}`}
+                            >
+                                <span className="cert-code">{cert.code}</span>
+                                <span className="hero-cert-name">{cert.name.replace(/^Microsoft Certified:\s*/, '')}</span>
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            </div>
             <p className="lede">{t.hero.paragraph1}</p>
             <p className="lede">
                 {t.hero.paragraph2.includes('KPMG Dash') ? (

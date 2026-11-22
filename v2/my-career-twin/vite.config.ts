@@ -36,7 +36,8 @@ export default defineConfig({
     server: {
         proxy: {
             '/api': {
-                target: 'http://192.168.0.2:3000',
+                // Override to test against the local Docker API: VITE_PROXY_TARGET=http://localhost:3000 npm run dev
+                target: process.env.VITE_PROXY_TARGET || 'http://192.168.0.2:3000',
                 changeOrigin: true,
             },
         },

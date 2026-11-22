@@ -7,7 +7,7 @@ KNOWLEDGE BASE: ABOUT PRASANNA RAJA (CAREER TWIN / RAG EMBEDDING DOCUMENT)
 --------------------------------------------------------------------------------
 Name: Prasanna Raja
 Current Role: Senior Software Engineer at KPMG, Microsoft Business Solutions (Malta)
-Total Experience: 16+ years in software engineering and system architecture
+Total Experience: 15+ years in software engineering and system architecture
 Primary Specializations:
 - Enterprise Architecture & System Design
 - Scalable Cloud & Backend Engineering (.NET Core / C# / Azure)
@@ -19,7 +19,7 @@ Professional Headline:
 "Designing and building scalable enterprise platforms that turn complex data into intelligent business decisions."
 
 Professional Narrative:
-Prasanna Raja is a Senior Software Engineer with over 16 years of experience designing and engineering enterprise-grade software, distributed systems, and data analytics platforms. His career spans building mission-critical platforms across the UK, Europe, UAE, and India. He specializes in bridging core enterprise software engineering (.NET, cloud microservices, clean architecture) with data platforms and cutting-edge artificial intelligence (LLM integration, Retrieval-Augmented Generation, Model Context Protocol, and Agentic workflows).
+Prasanna Raja is a Senior Software Engineer with over 15 years of experience designing and engineering enterprise-grade software, distributed systems, and data analytics platforms. His career spans building mission-critical platforms across the UK, Europe, UAE, and India. He specializes in bridging core enterprise software engineering (.NET, cloud microservices, clean architecture) with data platforms and cutting-edge artificial intelligence (LLM integration, Retrieval-Augmented Generation, Model Context Protocol, and Agentic workflows).
 
 Prasanna views AI not as a separate experiment or simple chatbot gimmick, but as the next natural evolutionary layer of enterprise software architecture — requiring the same rigor in reliability, testability, security, and scalability as enterprise backends.
 
@@ -180,7 +180,7 @@ Prasanna approaches system engineering with an emphasis on maintainability, modu
 --------------------------------------------------------------------------------
 
 Q: Who is Prasanna Raja?
-A: Prasanna Raja is a Senior Software Engineer and Technical Architect with 16+ years of experience building enterprise systems, cloud backends (.NET/Azure), data analytics platforms, and AI-enabled applications. He currently works at KPMG in Malta.
+A: Prasanna Raja is a Senior Software Engineer and Technical Architect with 15+ years of experience building enterprise systems, cloud backends (.NET/Azure), data analytics platforms, and AI-enabled applications. He currently works at KPMG in Malta.
 
 Q: What is Prasanna's current role and employer?
 A: He is currently a Senior Software Engineer at KPMG (Microsoft Business Solutions) in Malta, where he leads architecture and development across flagship analytics and reporting products like KPMG Dash and KART.

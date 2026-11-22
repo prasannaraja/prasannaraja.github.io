@@ -9,7 +9,7 @@ SECTION 1: PERSONAL & PROFESSIONAL OVERVIEW
 - Primary Locations: Marsa / Valletta, Malta
 - International Work Experience: Malta, United Arab Emirates (Dubai, Abu Dhabi), United Kingdom, India (Chennai, Bengaluru)
 - Target Roles: Technical Architect, Solutions Architect, Lead Full-Stack Engineer (Data/AI Platforms), Principal Platform Software Engineer, Senior Software Engineer
-- Career Experience: 18+ Years of Professional Software Engineering & System Architecture Experience
+- Career Experience: 15+ Years of Professional Software Engineering & System Architecture Experience
 - Contact Information:
   - Email: prasannaraja@msn.com / heyprasanna@yahoo.com
   - WhatsApp / Phone: +356 9997 0397 / +971 506057610 / +91 9019222758
@@ -19,7 +19,7 @@ SECTION 1: PERSONAL & PROFESSIONAL OVERVIEW
 - Languages: English (Fluent / Professional Working Proficiency), Tamil (Native)
 
 Executive Summary:
-Prasanna Prabhakaran is a Senior Software Engineer and Technical Architect with 18+ years of international experience designing and delivering scalable enterprise applications, multi-tenant cloud platforms, data-intensive analytics ecosystems, and AI-enabled decision intelligence systems. His expertise bridges frontend engineering (Angular, React, TypeScript), distributed backend microservices (.NET Core, ASP.NET Core, C#, Web API, EF Core), cloud-native infrastructure (Microsoft Azure, Azure DevOps, CI/CD), enterprise data and BI platforms (SQL Server, Cosmos DB, Redis, Qlik Sense, NPrinting, JasperSoft), and applied Artificial Intelligence (Agentic AI, Azure OpenAI, Azure AI Search, RAG, tool-use, prompt engineering, Python/scikit-learn). He is skilled at architecting systems from zero-to-one greenfield development to multi-region global deployments supporting tens of thousands of users across regulated industries including banking, healthcare, government, energy/oil & gas, education, and reinsurance.
+Prasanna Prabhakaran is a Senior Software Engineer and Technical Architect with 15+ years of international experience designing and delivering scalable enterprise applications, multi-tenant cloud platforms, data-intensive analytics ecosystems, and AI-enabled decision intelligence systems. His expertise bridges frontend engineering (Angular, React, TypeScript), distributed backend microservices (.NET Core, ASP.NET Core, C#, Web API, EF Core), cloud-native infrastructure (Microsoft Azure, Azure DevOps, CI/CD), enterprise data and BI platforms (SQL Server, Cosmos DB, Redis, Qlik Sense, NPrinting, JasperSoft), and applied Artificial Intelligence (Agentic AI, Azure OpenAI, Azure AI Search, RAG, tool-use, prompt engineering, Python/scikit-learn). He is skilled at architecting systems from zero-to-one greenfield development to multi-region global deployments supporting tens of thousands of users across regulated industries including banking, healthcare, government, energy/oil & gas, education, and reinsurance.
 
 ================================================================================
 SECTION 2: CORE TECHNICAL COMPETENCIES & DOMAIN KNOWLEDGE
