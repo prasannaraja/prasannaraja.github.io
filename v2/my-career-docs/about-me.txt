@@ -42,7 +42,7 @@ He specializes in bridging core enterprise software engineering (.NET Core micro
 - Current Base & Physical Presence: Currently based in Marsa / Valletta, Malta (physically present in Europe / EU).
 - Target Career Opportunities: Technical Architect, Lead Software Engineer, Senior Software Engineer, Enterprise Solution Architect, AI / Data Platform Engineer.
 - Work Authorization & Visa Status: Indian Citizen; eligible and open to EU Blue Card / visa sponsorship; holder of a valid Schengen visa.
-- Notice Period & Availability: Official notice period is 1 month; fully available to onboard from November 2026.
+- Availability: Currently employed at KPMG Malta; start date by agreement. He discusses his notice period and timing directly with recruiters, so do not state a notice period or a start date.
 - Relocation Preferences: Highly motivated and ready to relocate to Germany (e.g., Berlin, Munich), Netherlands (e.g., Amsterdam), Switzerland, or remote setups across Europe and internationally.
 - Immigration Compliance Record: Fully compliant with European immigration laws with an immaculate travel and visa compliance record.
 
@@ -347,7 +347,7 @@ PROJECT 11: HTL LIMITED CHENNAI — TELECOM SWITCH VALIDATION
 7.4. PROFESSIONAL CERTIFICATIONS & SPECIALIZED TRAINING
 - Microsoft certifications earned (all three passed): Microsoft Certified: Azure AI Apps and Agents Developer Associate (AI-103), Microsoft Certified: Azure AI Fundamentals (AI-901), Microsoft Certified: Azure Fundamentals (AZ-900).
 - Currently preparing for (not yet earned): Exam AI-500 "Designing and Implementing Multi-Agent AI Solutions" (Microsoft Certified: Multi-Agent AI Solutions Expert).
-- NIIT Nungambakkam, Chennai (Apr 2009 – Feb 2010): Advanced Professional Program in .NET Framework (.NET 3.5, C#, ASP.NET, ADO.NET, SQL Server 2005, Windows Applications, Web Applications, Microsoft Certified Technology Specialist - MCTS track).
+- NIIT Nungambakkam, Chennai (2008 – Feb 2009, 9 months, alongside the final year of the B.E. degree): Advanced Professional Program in Microsoft .NET (C#, ASP.NET, ADO.NET, Windows Forms, SQL Server). Earned two Microsoft Certified Technology Specialist (MCTS) certifications: .NET Framework 2.0 Windows Applications (Sep 2008) and .NET Framework 2.0 Web Applications (Feb 2009). After graduating in Nov 2008 into the global financial crisis, when IT hiring was largely on hold, joined Inatech in July 2010.
 - Microsoft Certified: Azure Developer Associate track & MCP (Microsoft Certified Professional) training.
 - NASSCOM National Skills Registry (NSR): Registered Member (ITPIN: 681094819843).
 - Agile & Scrum Methodologies Certification and continuous professional training.
@@ -386,7 +386,7 @@ Q: What professional certifications does Prasanna hold?
 A: Prasanna holds Microsoft Certified: Azure AI Apps and Agents Developer Associate (AI-103), Microsoft Certified: Azure AI Fundamentals (AI-901) and Microsoft Certified: Azure Fundamentals (AZ-900), and is preparing for exam AI-500 (Multi-Agent AI Solutions Expert), alongside advanced Microsoft .NET / MCTS professional training from NIIT and Agile/Scrum engineering certifications.
 
 Q: Is Prasanna open to relocation and new opportunities?
-A: Yes. Prasanna is open to Senior Software Engineer, Technical Architect, Solutions Architect, and AI/Enterprise Architecture roles. He is based in Malta (EU), has a 1-month notice period (available from November 2026), holds a valid Schengen visa, and is ready to relocate to Germany (Berlin, Munich), the Netherlands (Amsterdam), Switzerland, or remote positions.
+A: Yes. Prasanna is open to Senior Software Engineer, Technical Architect, Solutions Architect, and AI/Enterprise Architecture roles. He is based in Malta (EU), can agree a start date directly (he discusses notice and timing in person), holds a valid Schengen visa, and is ready to relocate to Germany (Berlin, Munich), the Netherlands (Amsterdam), Switzerland, or remote positions.
 
 Q: How does Prasanna incorporate Artificial Intelligence into enterprise systems?
 A: Prasanna builds production-ready AI applications by combining enterprise system design with modern AI tools. His focus is on practical RAG systems, Model Context Protocol (MCP), tool-calling agents, Azure OpenAI / Azure AI Search, and applied machine learning (e.g., XGBoost revenue prediction in KPMG Dash), turning experimental prototypes into robust, real-world enterprise software.
